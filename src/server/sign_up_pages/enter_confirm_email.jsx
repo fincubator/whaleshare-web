@@ -1,17 +1,17 @@
-import koa_router from "koa-router";
-import koa_body from "koa-body";
-import request from "co-request";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import models from "db/models";
-import ServerHTML from "../server-html";
-import sendEmail from "../sendEmail";
-import { getRemoteIp, checkCSRF } from "server/utils/misc";
-import config from "config";
-import MiniHeader from "app/components/modules/MiniHeader";
-import secureRandom from "secure-random";
-import Mixpanel from "mixpanel";
-import Progress from "react-foundation-components/lib/global/progress-bar";
+import koa_router from 'koa-router';
+import koa_body from 'koa-body';
+import request from 'co-request';
+import React from 'react';
+import {renderToString} from 'react-dom/server';
+import models from 'db/models';
+import ServerHTML from '../server-html';
+import sendEmail from '../sendEmail';
+import {checkCSRF, getRemoteIp} from 'server/utils/misc';
+import config from 'config';
+import MiniHeader from 'app/components/modules/MiniHeader';
+import secureRandom from 'secure-random';
+import Mixpanel from 'mixpanel';
+import Progress from 'react-foundation-components/lib/global/progress-bar';
 import {api} from 'steem';
 
 const path = require('path');
@@ -89,17 +89,19 @@ function* confirmEmailHandler() {
     if (mixpanel)
         mixpanel.track("SignupStepConfirmEmail", { distinct_id: this.session.uid });
 
-    const eid_phone = yield models.Identity.findOne({
-        where: { user_id: eid.user_id, provider: "phone", verified: true}
-    });
 
-    if (eid_phone) {
-        // this.flash = { success: "Thanks for confirming your email!" };
-        this.redirect("/approval?confirm_email=true");
-    } else {
-        this.flash = { success: "Thanks for confirming your email. Your phone needs to be confirmed before proceeding." };
-        this.redirect("/enter_mobile");
-    }
+    // disable mobile verifying temporary
+    // const eid_phone = yield models.Identity.findOne({
+    //     where: { user_id: eid.user_id, provider: "phone", verified: true}
+    // });
+
+    // if (eid_phone) {
+    // this.flash = { success: "Thanks for confirming your email!" };
+    this.redirect("/approval?confirm_email=true");
+    // } else {
+    //     this.flash = { success: "Thanks for confirming your email. Your phone needs to be confirmed before proceeding." };
+    //     this.redirect("/enter_mobile");
+    // }
 
     // check if the phone is confirmed then redirect to create account - this is useful when we invite users and send them the link
     // const mid = yield models.Identity.findOne({
@@ -355,7 +357,8 @@ export default function useEnterAndConfirmEmailPages(app) {
         }
 
         // redirect to phone verification
-        this.redirect("/enter_mobile");
+        // this.redirect("/enter_mobile");
+        this.redirect("/approval");
     });
 
     router.get("/confirm_email/:code", confirmEmailHandler);

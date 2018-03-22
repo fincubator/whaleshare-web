@@ -65,7 +65,7 @@ export default function useGeneralApi(app) {
                 created: false
             })).catch(error => {
                 console.error('!!! Can\'t create account wait model in /accounts api', this.session.uid, error);
-        });
+            });
             if (mixpanel) {
                 mixpanel.track('Signup WaitList', {
                     distinct_id: this.session.uid,
@@ -459,20 +459,33 @@ export default function useGeneralApi(app) {
     });
 }
 
-/**
- @arg signingKey {string|PrivateKey} - WIF or PrivateKey object
- */
+
 function* createAccount({
-    signingKey, fee, creator, new_account_name, json_metadata = '', delegation,
-    owner, active, posting, memo
-}) {
-    const operations = [['account_create_with_delegation', {
-        fee, creator, new_account_name, json_metadata, delegation,
-        owner: {weight_threshold: 1, account_auths: [], key_auths: [[owner, 1]]},
-        active: {weight_threshold: 1, account_auths: [], key_auths: [[active, 1]]},
-        posting: {weight_threshold: 1, account_auths: [], key_auths: [[posting, 1]]},
-        memo_key: memo,
-    }]]
+                            signingKey, fee, creator, new_account_name, json_metadata = '', delegation,
+                            owner, active, posting, memo
+                        }) {
+
+    const operations = [
+        [
+            'account_create_with_delegation',
+            {
+                fee, creator, new_account_name, json_metadata, delegation,
+                owner: {weight_threshold: 1, account_auths: [], key_auths: [[owner, 1]]},
+                active: {weight_threshold: 1, account_auths: [], key_auths: [[active, 1]]},
+                posting: {weight_threshold: 1, account_auths: [], key_auths: [[posting, 1]]},
+                memo_key: memo,
+            }
+        ],
+        [
+            'transfer_to_vesting',
+            {
+                from: creator,
+                to: new_account_name,
+                amount: '1.000 WLS'
+            }
+        ]
+    ];
+
     yield broadcast.sendAsync({
         extensions: [],
         operations
