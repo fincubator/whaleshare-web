@@ -183,7 +183,7 @@ class Header extends React.Component {
                         <div className="columns">
                             <ul className="menu">
                                 <li className="Header__top-logo">
-                                    <Link to={logo_link}><img src={require('app/assets/images/logo2.png')} style={{width: "267px", height: "38px"}} /></Link>
+                                    <Link to={logo_link}><img src={require('app/assets/images/logo.png')} style={{width: "170px", height: "38px"}} /></Link>
                                 </li>
 
                                 {(topic_link || user_name || page_name) && sort_order }
