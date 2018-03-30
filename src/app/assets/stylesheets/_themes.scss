@@ -100,6 +100,40 @@ $themes: (
     buttonBoxShadow: $color-teal,
     buttonBoxShadowHover: $color-white,
   ),
+  wls: (
+    colorAccent: $color-lightblue,
+    colorAccentHover: $color-teal-dark,
+    colorAccentReverse: $color-blue-black,
+    colorWhite: $color-white,
+    backgroundColor: $color-background-off-white,
+    backgroundColorOpaque: $color-background-off-white,    
+    backgroundTransparent: transparent,
+    moduleBackgroundColor: $color-white,
+    menuBackgroundColor: $color-background-dark,
+    moduleMediumBackgroundColor: $color-transparent,
+    navBackgroundColor: $color-white,
+    highlightBackgroundColor: #f3faf0,
+    tableRowEvenBackgroundColor: #f4f4f4,
+    border: 1px solid $color-border-light,
+    borderLight: 1px solid $color-border-light-lightest,
+    borderDark: 1px solid $color-text-gray,
+    borderAccent: 1px solid $color-lightblue,
+    borderTransparent: transparent,
+    iconColorSecondary: #cacaca,
+    textColorPrimary: $color-text-darker,
+    textColorSecondary: $color-text-gray,
+    textColorAccent: $color-lightblue,   
+    textColorAccentHover: $color-lightblue-darker, 
+    textColorError: $color-text-red,
+    contentBorderAccent: $color-lightblue,
+    buttonBackground: $color-brightblue,
+    buttonBackgroundHover: $color-blue-black,
+    buttonText: $color-text-white,
+    buttonTextShadow: 0 1px 0 rgba(0,0,0,0.20),
+    buttonTextHover: $color-white,
+    buttonBoxShadow: $color-blue-black,
+    buttonBoxShadowHover: $color-brightblue,    
+  ),
 );
 
 /*
@@ -141,6 +175,13 @@ $themes: (
   .theme-dark {
     background-color: $color-background-dark; 
     color: $color-text-white;
+  }
+  .theme-wls {
+    background-color: $white; 
+    color: $color-text-darker;
+    @include MQ(M) {
+      background-color: $color-background-off-white; 
+    }    
   }
 
 
@@ -269,17 +310,17 @@ $themes: (
 .e-btn {  
   &--black {
     background-color: $color-blue-black;
-    box-shadow: 0px 0px 0px 0 rgba(0,0,0,0), 5px 5px 0 0 $color-teal;   
+    box-shadow: 0px 0px 0px 0 rgba(0,0,0,0), 5px 5px 0 0 $color-lightblue;   
     color: $color-white;
     &:hover, &:focus {
-      background-color: $color-teal;
+      background-color: $color-lightblue;
       box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.1), 7px 7px 0 0 $color-blue-black;   
       color: $color-white;
       text-shadow: 0 1px 0 rgba(0,0,0,0.20);
     }
     &:visited, &:active {
       background-color: $color-blue-black;
-      box-shadow: 0px 0px 0px 0 rgba(0,0,0,0), 5px 5px 0 0 $color-teal;   
+      box-shadow: 0px 0px 0px 0 rgba(0,0,0,0), 5px 5px 0 0 $color-lightblue;   
       color: $color-white;
     } 
     &.disabled, &[disabled] {

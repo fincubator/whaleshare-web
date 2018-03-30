@@ -57,30 +57,32 @@
 }
 
 .Voting__button-up {
-  .Icon {
-    margin-left: 0;
-    border-radius: 50%;
-  }
-  > a {
-    padding-right: 0.5rem;
-  }
-  path {
-    @include themify($themes) {
-      fill: themed('textColorAccent');
-    }       
-  }
-  circle {
-      @include themify($themes) {
-        stroke: themed('textColorAccent');
-      }       
-  }
-  // exclude small devices
-  @media screen and (min-width: 39.9375em) {
-      .Icon:hover {
-          box-shadow: 0 0 0 rgba(75, 162, 242, 1);
-          animation: pulse 2s infinite;
-      }
-  }
+	width: 2rem !important;
+	height: auto !important;
+	margin-right: 0.5rem;
+	.Icon {
+	margin-left: 0;
+	border-radius: 50%;
+	}
+	> a {
+	padding-right: 0.5rem;
+	}
+	svg {
+	  width: 2rem !important;
+	  height: auto !important;
+	  position: relative;
+	  top: -0.5rem;
+	}
+	path {
+	@include themify($themes) {
+	  fill: themed('buttonBackground');
+	}       
+	}
+	circle {
+	  @include themify($themes) {
+	    stroke: themed('buttonBackground');
+	  }       
+	}
 }
 
 .Voting__button-up > a:hover, a.confirm_weight:hover {
@@ -89,8 +91,8 @@
     }
     circle {
         @include themify($themes) {
-          fill: themed('colorAccent');
-          stroke: themed('colorAccent');
+          fill: themed('buttonBackground');
+          stroke: themed('buttonBackground');
         }   
     }
     svg {
@@ -119,6 +121,7 @@
 }
 
 .Voting__button-down {
+	display: none; 
   margin-left: 0.25rem;
   .Voting__button-downvotes {
     color: #aaa;

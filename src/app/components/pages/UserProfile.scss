@@ -1,5 +1,5 @@
 .UserProfile {
-    margin-top: -1.5rem;
+    margin-top: 0;
 }
 
 .UserProfile__tab_content {
@@ -71,10 +71,10 @@
         text-shadow: 1px 1px 4px black;
         .button {text-shadow: none;}
 
-        min-height: 155px;
+        min-height: 14rem;
     }
     h1 {
-        padding-top: 20px;
+        padding-top: 4rem;
         font-weight: 600;
         font-size: 1.84524rem!important;
         @media screen and (max-width: 39.9375em) {

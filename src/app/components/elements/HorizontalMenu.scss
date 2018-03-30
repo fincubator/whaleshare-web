@@ -17,6 +17,10 @@
   > li:last-child > a {
     padding-right: 0;
   }
+  > li > a[href^="/promoted"],
+  > li > a[href^="/hot"] { // RD1 hide promoted and hot
+	  display: none;
+  }
 }
 
 
@@ -27,7 +31,8 @@
 
     li > a {
       padding-left: 0.5em;
-      padding-right: 0.5em;  
+      padding-right: 0.5em;
+      padding-top: 1rem;  
     }
   }
 }
