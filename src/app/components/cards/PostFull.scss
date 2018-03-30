@@ -43,8 +43,10 @@
   font-size: 120%;
   display: block;
   > .Userpic {
-    margin-top: -4px;
     float: left;
+    margin: -1.35rem 0.75rem 0 0;
+  	width: 5rem;
+  	height: 5rem;
   }
   > .right-side {
     margin-left: 60px;

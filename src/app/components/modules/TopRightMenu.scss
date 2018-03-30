@@ -1,6 +1,6 @@
 .sub-menu {
     li {
-        padding: .7rem 0.5rem;
+        padding: 1.25rem 0.5rem 0.75rem 0.5rem;
         a {
             padding: 0px;
         }
@@ -17,8 +17,9 @@ li.Header__userpic {
       padding: 6px;
   }
   .Userpic {
-    width: 36px !important;
-    height: 36px !important;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    margin-top: 0.5rem;
   }
 }
 
@@ -46,7 +47,7 @@ div.Header__top
           }             
         }          
         > a {
-            padding: 14px;
+            padding: 1.25rem 0.25rem 0.875rem 0.875rem;
         }
         > a path {
             transition: 0.2s all ease-in-out;
@@ -56,6 +57,7 @@ div.Header__top
         }
     }
     li.Header__hamburger.toggle-menu {
+	    display: none; z
         &.toggle-menu {
             padding-left: 0.25rem;
         }
