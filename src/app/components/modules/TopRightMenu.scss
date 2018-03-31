@@ -57,12 +57,11 @@ div.Header__top
         }
     }
     li.Header__hamburger.toggle-menu {
-	    display: none; z
         &.toggle-menu {
             padding-left: 0.25rem;
         }
         > a {
-            padding: 14px 0 14px 14px;
+            padding: 1rem 1rem 1rem 0.5rem;
         }
     }
 }
