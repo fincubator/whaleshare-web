@@ -308,6 +308,8 @@
     align-items: center;
     position: relative;
     width: 100%;
+    margin-top: 0.75rem;
+
     @include font-size(15px); 
     @include MQ(M) {
       padding: 16px;

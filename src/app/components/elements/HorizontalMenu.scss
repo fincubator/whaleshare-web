@@ -18,7 +18,7 @@
     padding-right: 0;
   }
   > li > a[href^="/promoted"],
-  > li > a[href^="/hot"] { // RD1 hide promoted and hot
+  > li > a[href^="/hot"] { // hide promoted and hot
 	  display: none;
   }
 }

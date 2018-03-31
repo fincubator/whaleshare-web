@@ -28,20 +28,6 @@
   margin-top: 0;
 }
 
-.welcomeWrapper {
-  margin-top: -1rem;
-  padding-bottom: 1rem;
-}
-.welcomeBanner {
-  padding: 4em 0 4em;
-  background-color: $color-blue-black;
-  color: $color-white;
-  // background-image: url(../images/lp-bottom.jpg);
-  // background-repeat: repeat-x;
-  // background-position:bottom;
-  //background-attachment:fixed;
-}
-
 .RightMenu {
   background-color: #555;
   height: 100vh;
@@ -72,13 +58,26 @@
     @extend .link--secondary;
 }
 
+.welcomeWrapper {
+  margin-top: -1rem;
+  padding-bottom: 1rem;
+}
+
 .welcomeBanner {
   position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  padding: 6rem 0 4rem 0;
+  background-color: $color-blue-black;
+  color: $color-white;
+  background-image: url(../images/wls-front-banner.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+
   h2 {
     font-weight: bold;
     margin-bottom: 16px;
-    @include font-size(48px);
+    @include font-size(40px);
     font-family: helvetica, sans-serif;
   }
   h4 {
@@ -86,7 +85,6 @@
     font-weight: 500;
     margin-bottom: 1rem;
     width: 84%;
-    max-width: 440px;
     margin: 0 auto; 
     font-family: helvetica, sans-serif;
     @include font-size(18px);
@@ -100,16 +98,16 @@
     transition: 0.2s all ease-in-out;
     text-transform: capitalize;
     border-radius: 0;
-    font-size: 18px;       
+    font-size: 1.25rem;       
     background-color: $color-white;
     color: $color-blue-black;
     border: none;
-    box-shadow: 0px 0px 0px 0 rgba(0,0,0,0), 5px 5px 0 0 $color-teal;
+    box-shadow: 0px 0px 0px 0 rgba(0,0,0,0), 5px 5px 0 0 $color-brightblue;
     padding: 16px 22px;
     @include font-size(22px);
     cursor: pointer;
     &:hover, &:focus {
-      background-color: $color-teal;
+      background-color: $color-brightblue;
       color: $color-white;
       box-shadow: 0px 0px 0px 0 rgba(0,0,0,0.1), 7px 7px 0 0 $color-white;
       text-shadow: 0 1px 0 rgba(0,0,0,0.20);
@@ -117,7 +115,7 @@
   } 
   .close-button {
     top: 0.5rem;
-    right: 0;
+    right: 1rem;
   }
   .button.hollow {
     background-color: rgba(255,255,255,0.5);
