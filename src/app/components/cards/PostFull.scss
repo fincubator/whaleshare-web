@@ -1,8 +1,9 @@
 .PostFull {
-  padding-bottom: 1rem;
-  padding-top: 2rem;
+  padding: 2rem 1rem 1rem 1rem;
   margin: 0 auto;
   max-width: 50rem;
+  background-color: white;
+  
   @include themify($themes) {
       border-bottom: themed('border');  
   } 
@@ -15,6 +16,9 @@
 
   .ReplyEditor {
     margin-top: 1rem;
+  }
+  .Promote__button {
+      display: none;
   }
 }
 

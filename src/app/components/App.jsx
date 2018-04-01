@@ -173,8 +173,7 @@ class App extends React.Component {
         }
 
         let welcome_screen = null;
-        /* if (ip && new_visitor && this.state.showBanner) { */
-        if (this.state.showBanner) {
+        if (ip && new_visitor && this.state.showBanner) { 
             welcome_screen = (
                 <div className="welcomeWrapper">
                     <div className="welcomeBanner">
@@ -201,16 +200,6 @@ class App extends React.Component {
                 <TopRightMenu vertical navigate={this.navigate} />
                 <ul className="vertical menu">
                     <li>
-                        <a href="/welcome" onClick={this.navigate}>
-                            {tt('navigation.welcome')}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/faq.html" onClick={this.navigate}>
-                            {tt('navigation.faq')}
-                        </a>
-                    </li>
-                    <li>
                         <a href="/tags" onClick={this.navigate}>
                             {tt('navigation.explore')}
                         </a>
@@ -230,11 +219,6 @@ class App extends React.Component {
                             {tt('navigation.change_account_password')}
                         </a>
                     </li>
-                    <li className="last">
-                        <a href="/~witnesses" onClick={this.navigate}>
-                            {tt('navigation.vote_for_witnesses')}
-                        </a>
-                    </li>
                 </ul>
                 <ul className="vertical menu">
                     <li>
@@ -242,43 +226,8 @@ class App extends React.Component {
                             {tt('navigation.buy_LIQUID_TOKEN', {LIQUID_TOKEN})}&nbsp;<Icon name="extlink" />
                         </a>
                     </li>
-                    <li>
-                        <a href="https://thesteemitshop.com/" target="_blank" rel="noopener noreferrer">
-                            {tt('navigation.shop')}&nbsp;<Icon name="extlink" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://steemit.chat/home" target="_blank" rel="noopener noreferrer">
-                            {tt('navigation.chat')}&nbsp;<Icon name="extlink" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://steemtools.com/" onClick={this.navigate} target="_blank" rel="noopener noreferrer">
-                            {tt('navigation.app_center')}&nbsp;<Icon name="extlink" />
-                        </a>
-                    </li>
-                    <li className="last">
-                        <a href="https://steemit.github.io/steemit-docs/" target="_blank" rel="noopener noreferrer">
-                            {tt('navigation.api_docs')}&nbsp;<Icon name="extlink" />
-                        </a>
-                    </li>
                 </ul>
                 <ul className="vertical menu">
-                    <li>
-                        <a href="https://steem.io/steem-bluepaper.pdf" target="_blank" rel="noopener noreferrer">
-                            {tt('navigation.bluepaper')}&nbsp;<Icon name="extlink" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://steem.io/SteemWhitePaper.pdf" target="_blank" rel="noopener noreferrer">
-                            {tt('navigation.whitepaper')}&nbsp;<Icon name="extlink" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://steem.io" onClick={this.navigate}>
-                            {tt('navigation.about')}&nbsp;<Icon name="extlink" />
-                        </a>
-                    </li>
                     <li>
                         <a href="/privacy.html" onClick={this.navigate} rel="nofollow">
                             {tt('navigation.privacy_policy')}

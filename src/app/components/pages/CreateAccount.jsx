@@ -181,7 +181,7 @@ class CreateAccount extends React.Component {
                 <div className="column">
                     <br />
                     <div className="callout alert">
-                        <p>Membership to Steemit.com is now under invitation only because of unexpectedly high sign up rate.</p>
+                        <p>Membership to Whaleshares is now under invitation only because of unexpectedly high sign up rate.</p>
                     </div>
                 </div>
             </div>;
@@ -206,7 +206,7 @@ class CreateAccount extends React.Component {
                     <br />
                     <div className="callout alert">
                         <p>You need to <a href="#" onClick={logout}>Logout</a> before you can create another account.</p>
-                        <p>Please note that Steemit can only register one account per verified user.</p>
+                        <p>Please note that Whaleshares can only register one account per verified user.</p>
                     </div>
                 </div>
             </div>;
@@ -248,19 +248,19 @@ class CreateAccount extends React.Component {
             <div>
                 <div className="CreateAccount row">
                     <div className="column">
-                        <h4>Please read the Steemit Rules and fill in the form below to create your Steemit account</h4>
+                        <h4>Please read the Whaleshares Rules and fill in the form below to create your Whaleshares account</h4>
                         {/*<Progress tabIndex="0" value={95} max={100} />*/}
                         {showRules ? <div className="CreateAccount__rules">
                             <p>
-                                The first rule of Steemit is: Do not lose your password.<br />
-                                The second rule of Steemit is: Do <strong>not</strong> lose your password.<br />
-                                The third rule of Steemit is: We cannot recover your password, or your account if you lose your password.<br />
+                                The first rule of Whaleshares is: Do not lose your password.<br />
+                                The second rule of Whaleshares is: Do <strong>not</strong> lose your password.<br />
+                                The third rule of Whaleshares is: We cannot recover your password, or your account if you lose your password.<br />
                                 The forth rule: Do not tell anyone your password.<br />
                                 The fifth rule: Always back up your password.
                                 <br />
                                 <br />
                                 Seriously, we are, for technical reasons, entirely unable to gain
-                                access to an account without knowing the password.  Steemit is a
+                                access to an account without knowing the password.  Whaleshares is a
                                 new model, entirely unlike other sites on the Internet.  It's not
                                 simply policy: <strong>We cannot recover your account or password
                                 if you lose it.</strong>
@@ -275,7 +275,7 @@ class CreateAccount extends React.Component {
                             </div>
                             <hr />
                         </div> : <div className="text-center">
-                            <a className="CreateAccount__rules-button" href="#" onClick={() => this.setState({showRules: true})}>Steemit
+                            <a className="CreateAccount__rules-button" href="#" onClick={() => this.setState({showRules: true})}>Whaleshares
                                 Rules &nbsp; &raquo;</a>
                         </div>}
                         <br />
