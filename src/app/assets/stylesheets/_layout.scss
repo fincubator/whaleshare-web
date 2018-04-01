@@ -1,9 +1,12 @@
 // breakpoints
    
-$S: 20em;  // 320px / 16
-$M: 47.5em;  // 760px / 16   
-$L: 75em; // 1200px / 16    
-$XL: 100em; //  1600px / 16     
+$S: 20em;  // 320px
+$SM: 40em; // 640px -- used in Foundation as small (0-40em)
+$M: 47.5em;  // 760px    
+$ML: 52.5em; // 840px -- used in header layout
+$MML: 64em; // 1024px -- used in Foundation as medium (40-64em)
+$L: 75em; // 1200px -- used in Foundation as large (64-75rem)
+$XL: 100em; //  1600px   
 
 // media queries
 
@@ -11,8 +14,17 @@ $XL: 100em; //  1600px / 16
   @if $canvas == S {
    @media only screen and (min-width: $S) { @content; } 
   }
+  @else if $canvas == SM {
+   @media only screen and (min-width: $SM) { @content; } 
+  }
   @else if $canvas == M {
    @media only screen and (min-width: $M) { @content; } 
+  }
+  @else if $canvas == ML {
+   @media only screen and (min-width: $ML) { @content; } 
+  }
+  @else if $canvas == MML {
+   @media only screen and (min-width: $MML) { @content; } 
   }
   @else if $canvas == L {
    @media only screen and (min-width: $L) { @content; } 
