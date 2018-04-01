@@ -52,7 +52,7 @@
   }
   li.submit-story > a {
     @extend .e-btn;
-    margin: 0.25rem 1rem 0 1rem;
+    margin: 0 1rem 0.25rem 0.75rem;
   }
   a {
     @extend .link;
@@ -70,13 +70,28 @@
     padding: 1rem 0;
   }
   ul > li.Header__top-logo {
-    padding: .35rem 0 .35rem 0;
+    padding: 0 0 0.35rem 0;
+    
     img {
-      height: 3rem !important;
-      width: auto !important;
+      height: 2.75rem;
+      width: 12.3125rem;
+      max-width: none;
       position: relative;
-      top: -0.2rem;
-    }
+      
+        @include MQ(S) {
+          height: 44px;
+          width: auto;
+          top: 2px;
+          left: 4px;
+        }
+         @include MQ(SM) {
+          top: 0;
+        }
+        @include MQ(L) {
+          height: 3rem;
+          width: auto;
+        }
+   }
   }
   ul > li.delim {
     color: $medium-gray;

@@ -155,9 +155,9 @@ class Header extends React.Component {
 
         const sort_orders = [
             ['trending', tt('main_menu.trending')],
-            ['created', tt('g.new')],
-            ['hot', tt('main_menu.hot')],
-            ['promoted', tt('g.promoted')]
+            ['created', tt('g.new')]
+            //['hot', tt('main_menu.hot')],
+            //['promoted', tt('g.promoted')]
         ];
         if (current_account_name) sort_orders.unshift(['home', tt('header_jsx.home')]);
         const sort_order_menu = sort_orders.filter(so => so[0] !== sort_order).map(so => ({link: sortOrderToLink(so[0], topic, current_account_name), value: so[1]}));
@@ -165,9 +165,9 @@ class Header extends React.Component {
 
         const sort_orders_horizontal = [
             ['trending', tt('main_menu.trending')],
-            ['created', tt('g.new')],
-            ['hot', tt('main_menu.hot')],
-            ['promoted', tt('g.promoted')]
+            ['created', tt('g.new')]
+            //['hot', tt('main_menu.hot')],
+            //['promoted', tt('g.promoted')]
         ];
         // if (current_account_name) sort_orders_horizontal.unshift(['home', tt('header_jsx.home')]);
         const sort_order_menu_horizontal = sort_orders_horizontal.map((so) => {
@@ -182,10 +182,12 @@ class Header extends React.Component {
                     <div className="expanded row">
                         <div className="columns">
                             <ul className="menu">
-                                <li className="Header__top-logo">
-                                    <Link to={logo_link}><img src={require('app/assets/images/logo.png')} style={{width: "170px", height: "38px"}} /></Link>
+                                <li className="Header__top-logo show-for-small-only">
+                                    <Link to={logo_link}><img src={require('app/assets/images/wls-tail-logo-48.png')} /></Link>
                                 </li>
-
+                                <li className="Header__top-logo hide-for-small-only">
+                                    <Link to={logo_link}><img src={require('app/assets/images/logo.png')} /></Link>
+                                </li>
                                 {(topic_link || user_name || page_name) && sort_order }
                                 {selected_sort_order && <DropdownMenu className="Header__sort-order-menu menu-hide-for-large" items={sort_order_menu} selected={selected_sort_order[1]} el="li" />}
                                 <HorizontalMenu items={sort_order_menu_horizontal} />

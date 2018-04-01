@@ -113,9 +113,13 @@
       text-shadow: 0 1px 0 rgba(0,0,0,0.20);
     }
   } 
-  .close-button {
+  button.close-button {
     top: 0.5rem;
-    right: 1rem;
+    right: 0rem;
+
+      @include MQ(L) {
+        right: 1rem;
+      }
   }
   .button.hollow {
     background-color: rgba(255,255,255,0.5);

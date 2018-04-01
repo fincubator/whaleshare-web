@@ -11,13 +11,13 @@ function addSiteMeta(metas) {
     metas.push({property: 'og:site_name', content: 'Whaleshares'});
     metas.push({property: 'og:title', content: 'Whaleshares'});
     metas.push({property: 'og:description', content: site_desc});
-    metas.push({property: 'og:image', content: 'https://steemit.com/images/steemit.png'});
+    metas.push({property: 'og:image', content: 'http://51.15.137.162/images/wls-logo-lightblue-inverse.png'});
     metas.push({property: 'fb:app_id', content: $STM_Config.fb_app});
     metas.push({name: 'twitter:card', content: 'summary'});
     metas.push({name: 'twitter:site', content: '@whaleshares'});
     metas.push({name: 'twitter:title', content: '#Whaleshares'});
     metas.push({name: 'twitter:description', site_desc});
-    metas.push({name: 'twitter:image', content: 'https://steemit.com/images/steemit.png'});
+    metas.push({name: 'twitter:image', content: 'http://51.15.137.162/images/wls-logo-lightblue-inverse.png'});
 }
 
 export default function extractMeta(chain_data, rp) {
@@ -29,7 +29,7 @@ export default function extractMeta(chain_data, rp) {
         const profile = normalizeProfile(author);
         if (content && content.id !== '0.0.0') { // API currently returns 'false' data with id 0.0.0 for posts that do not exist
             const d = extractContent(objAccessor, content, false);
-            const url   = 'https://steemit.com' + d.link;
+            const url   = 'http://51.15.137.162' + d.link;
             const title = d.title + ' — Whaleshares';
             const desc  = d.desc + " by " + d.author;
             const image = d.image_link || profile.profile_image

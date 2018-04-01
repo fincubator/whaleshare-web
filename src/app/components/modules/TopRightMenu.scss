@@ -1,6 +1,6 @@
 .sub-menu {
     li {
-        padding: 1.25rem 0.5rem 0.75rem 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
         a {
             padding: 0px;
         }
@@ -14,12 +14,12 @@ li.Header__userpic {
   padding: 0;
   position: relative;
   a {
-      padding: 6px;
+      padding: 0 0.4rem 0 0;
   }
   .Userpic {
     width: 2.75rem !important;
     height: 2.75rem !important;
-    margin-top: 0.5rem;
+    margin-top: 2px;
   }
 }
 
@@ -32,8 +32,7 @@ li.Header__userpic {
     }
 }
 
-div.Header__top
-{
+div.Header__top {
     li.Header__search {
         padding: 0;
         &:hover path, &:focus path {
@@ -59,9 +58,12 @@ div.Header__top
     li.Header__hamburger.toggle-menu {
         &.toggle-menu {
             padding-left: 0.25rem;
-        }
-        > a {
-            padding: 1rem 1rem 1rem 0.5rem;
+            margin-top: -0.25rem;
+            
+            @include MQ(L) {
+                margin-right: 1rem;
+            }
+            
         }
     }
 }
