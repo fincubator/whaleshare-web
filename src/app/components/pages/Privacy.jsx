@@ -5,13 +5,13 @@ class Privacy extends React.Component {
         return (
             <div className="Privacy row">
                 <div className="column large-12">
-                    <h1>Steemit, Inc Privacy Policy</h1>
+                    <h1>Privacy Policy</h1>
                     <div>
-                        <h2>Effective April 1, 2016</h2>
+                        <h2>Effective April 1, 2018</h2>
                         <p>
                             <span className="section">1</span>
-                            We want you to understand how and why Steemit, Inc (“Steemit,” “we” or “us”) collects, uses, and shares information about you when
-                            you access and use Steemit’s websites, mobile apps, widgets, and other online products and services (collectively, the "Services")
+                            We want you to understand how and why Whaleshares (“Whaleshares,” “we” or “us”) collects, uses, and shares information about you when
+                            you access and use Whaleshares websites, mobile apps, widgets, and other online products and services (collectively, the "Services")
                             or when you otherwise interact with us.
                         </p>
                     </div>
@@ -104,8 +104,8 @@ class Privacy extends React.Component {
                             We use information about you to:
                             <ul>
                                 <li>Provide, maintain, and improve the Services;</li>
-                                <li>Help protect the safety of Steemit and our users, which includes blocking suspected spammers, addressing abuse, and
-                                    enforcing the Steemit user agreement and the Terms of Service;
+                                <li>Help protect the safety of Whaleshares and our users, which includes blocking suspected spammers, addressing abuse, and
+                                    enforcing the Whaleshares user agreement and the Terms of Service;
                                 </li>
                                 <li>Send you technical notices, updates, security alerts, invoices and other support and administrative messages;</li>
                                 <li>Provide customer service;</li>
@@ -160,10 +160,10 @@ class Privacy extends React.Component {
                                 <li>We may share information in response to an emergency if we believe it's necessary to prevent imminent and serious bodily
                                     harm to a person;
                                 </li>
-                                <li>We may share information if we believe your actions are inconsistent with our user agreements, or other Steemit policies, or
+                                <li>We may share information if we believe your actions are inconsistent with our user agreements, or other Whaleshares policies, or
                                     to protect the rights, property, and safety of ourselves and others;
                                 </li>
-                                <li>We may share information between and among Steemit, and its current and future parents, affiliates, subsidiaries, and other
+                                <li>We may share information between and among Whaleshares, and its current and future parents, affiliates, subsidiaries, and other
                                     companies under common control and ownership; and
                                 </li>
                                 <li>We may share information with your consent or at your direction.</li>
@@ -191,9 +191,9 @@ class Privacy extends React.Component {
                         <p>
                             <span className="section">17</span>
                             Our ad partners and network may use cookies and use related technologies to collect information when ads are delivered to you on our
-                            Services, but Steemit does not link to or provide your actual Steemit account details to these advertising partners. This means that
-                            Steemit does not share your individual account browsing habits with advertisers. Steemit cannot see advertisers’ cookies and
-                            advertisers will not see Steemit cookies.
+                            Services, but Whaleshares does not link to or provide your actual Whaleshares account details to these advertising partners. This means that
+                            Whaleshares does not share your individual account browsing habits with advertisers. Whaleshares cannot see advertisers’ cookies and
+                            advertisers will not see Whaleshares cookies.
                         </p>
                     </div>
                     <div>
@@ -223,7 +223,7 @@ class Privacy extends React.Component {
                         <h2>Children under 13</h2>
                         <p>
                             <span className="section">21</span>
-                            Although we welcome users from all walks of life, Steemit is not intended or directed at individuals under the age of 13. Therefore,
+                            Although we welcome users from all walks of life, Whaleshares is not intended or directed at individuals under the age of 13. Therefore,
                             individuals under the age of 13 may not create an account or otherwise access or use the Services.
                         </p>
                     </div>
@@ -231,7 +231,7 @@ class Privacy extends React.Component {
                         <h2>Your Choices</h2>
                         <p>
                             <span className="section">22</span>
-                            As a Steemit user, you have choices about how to protect and limit the collection, use, and disclosure of, information about you.
+                            As a Whaleshares user, you have choices about how to protect and limit the collection, use, and disclosure of, information about you.
                             This includes:
                         </p>
                     </div>
@@ -281,7 +281,7 @@ class Privacy extends React.Component {
                             <span className="section">27</span>
                             Do Not Track (“DNT”) is a privacy preference that you can set in most web browsers. We support DNT in our Services. There is no
                             accepted standard on how to respond to web browsers’ DNT signals. When you have DNT enabled, we may still use information collected
-                            for analytics and measurement purposes or to otherwise provide our Services (e.g., Steemit.com buttons), but we will not load any
+                            for analytics and measurement purposes or to otherwise provide our Services (e.g., Whaleshares buttons), but we will not load any
                             third-party trackers. You may, however, opt out of having information about you collected and used for behavioral advertising
                             purposes, as described above.
                         </p>
@@ -314,7 +314,7 @@ class Privacy extends React.Component {
                     <div>
                         <p>
                             <span className="section">31</span>
-                            Steemit complies with the U.S.-E.U. and U.S.-Swiss Safe Harbor Privacy Principles of notice, choice, onward transfer, security, data
+                            Whaleshares complies with the U.S.-E.U. and U.S.-Swiss Safe Harbor Privacy Principles of notice, choice, onward transfer, security, data
                             integrity, access, and enforcement. Despite an adverse judgment by the European Court of Justice on October 6, 2015, the U.S.
                             Department of Commerce has advised that it continues to administer the Safe Harbor program until further notice. To learn more about
                             the Safe Harbor program, and to view our certification, please visit the U.S. Department of Commerce website. If you have concerns

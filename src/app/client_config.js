@@ -1,9 +1,9 @@
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
-export const APP_NAME = 'Steemit';
+export const APP_NAME = 'Whaleshares';
 // sometimes APP_NAME is written in non-latin characters, but they are needed for technical purposes
 // ie. "Голос" > "Golos"
-export const APP_NAME_LATIN = 'Steemit';
-export const APP_NAME_UPPERCASE = 'STEEMIT';
+export const APP_NAME_LATIN = 'Whaleshares';
+export const APP_NAME_UPPERCASE = 'WHALESHARES';
 export const APP_ICON = 'steem';
 // FIXME figure out best way to do this on both client and server from env
 // vars. client should read $STM_Config, server should read config package.
@@ -17,7 +17,7 @@ export const INVEST_TOKEN_SHORT = 'SP';
 export const DEBT_TOKEN = 'STEEM DOLLAR';
 export const DEBT_TOKENS = 'STEEM DOLLARS';
 export const CURRENCY_SIGN = '$';
-export const WIKI_URL = ''; // https://wiki.golos.io/
+export const WIKI_URL = '';
 export const LANDING_PAGE_URL = 'https://steem.io/';
 export const TERMS_OF_SERVICE_URL = 'https://' + APP_DOMAIN + '/tos.html';
 export const PRIVACY_POLICY_URL = 'https://' + APP_DOMAIN + '/privacy.html';
@@ -37,16 +37,15 @@ export const FRACTION_DIGITS = 2; // default amount of decimal digits
 export const FRACTION_DIGITS_MARKET = 3; // accurate amount of deciaml digits (example: used in market)
 
 // meta info
-export const TWITTER_HANDLE = '@steemit';
+export const TWITTER_HANDLE = '@Whaleshares';
 export const SHARE_IMAGE = 'https://' +
     APP_DOMAIN +
-    '/images/steemit-share.png';
+    '/images/wls-logo-lightblue-inverse.png';
 export const TWITTER_SHARE_IMAGE = 'https://' +
     APP_DOMAIN +
-    '/images/steemit-twshare.png';
-export const SITE_DESCRIPTION = 'Steemit is a social media platform where everyone gets paid for ' +
-    'creating and curating content. It leverages a robust digital points system, called Steem, that ' +
-    'supports real value for digital rewards through market price discovery and liquidity';
+    '/images/wls-logo-lightblue-inverse.png';
+export const SITE_DESCRIPTION = 'Whaleshares is a social media platform where everyone gets paid for ' +
+    'creating and curating content.';
 
 // various
 export const SUPPORT_EMAIL = 'support@' + APP_DOMAIN;
