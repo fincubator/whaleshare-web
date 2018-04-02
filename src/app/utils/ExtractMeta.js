@@ -2,7 +2,7 @@ import extractContent from 'app/utils/ExtractContent';
 import {objAccessor} from 'app/utils/Accessors';
 import normalizeProfile from 'app/utils/NormalizeProfile';
 
-const site_desc = 'Whaleshares is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system (Steem) for digital rewards.';
+const site_desc = 'Whaleshares is a platform for building, managing and rewarding Friends in a Web of Trust.  Build a network of trusted Friends empower one another with Magical Whaleshares (WLS)!';
 
 function addSiteMeta(metas) {
     metas.push({title: 'Whaleshares'});
@@ -11,13 +11,13 @@ function addSiteMeta(metas) {
     metas.push({property: 'og:site_name', content: 'Whaleshares'});
     metas.push({property: 'og:title', content: 'Whaleshares'});
     metas.push({property: 'og:description', content: site_desc});
-    metas.push({property: 'og:image', content: 'http://51.15.137.162/images/wls-logo-lightblue-inverse.png'});
+    metas.push({property: 'og:image', content: 'https://beta.whaleshares.net/images/wls-logo-lightblue-inverse.png'});
     metas.push({property: 'fb:app_id', content: $STM_Config.fb_app});
     metas.push({name: 'twitter:card', content: 'summary'});
     metas.push({name: 'twitter:site', content: '@whaleshares'});
     metas.push({name: 'twitter:title', content: '#Whaleshares'});
     metas.push({name: 'twitter:description', site_desc});
-    metas.push({name: 'twitter:image', content: 'http://51.15.137.162/images/wls-logo-lightblue-inverse.png'});
+    metas.push({name: 'twitter:image', content: 'https://beta.whaleshares.net/images/wls-logo-lightblue-inverse.png'});
 }
 
 export default function extractMeta(chain_data, rp) {
@@ -44,7 +44,7 @@ export default function extractMeta(chain_data, rp) {
             metas.push({property: 'og:title',        content: title});
             metas.push({property: 'og:type',         content: 'article'});
             metas.push({property: 'og:url',          content: url});
-            metas.push({property: 'og:image',        content: image || 'http://51.15.137.162/images/wls-logo-lightblue-inverse.png'});
+            metas.push({property: 'og:image',        content: image || 'https://beta.whaleshares.net/images/wls-logo-lightblue-inverse.png'});
             metas.push({property: 'og:description',  content: desc});
             metas.push({property: 'og:site_name',    content: 'Whaleshares'});
             metas.push({property: 'fb:app_id',       content: $STM_Config.fb_app});
@@ -53,10 +53,10 @@ export default function extractMeta(chain_data, rp) {
 
             // Twitter card data
             metas.push({name: 'twitter:card',        content: image ? 'summary_large_image' : 'summary'});
-            metas.push({name: 'twitter:site',        content: '@steemit'});
+            metas.push({name: 'twitter:site',        content: '@whaleshares'});
             metas.push({name: 'twitter:title',       content: title});
             metas.push({name: 'twitter:description', content: desc});
-            metas.push({name: 'twitter:image',       content: image || 'https://steemit.com/images/steemit-twshare-2.png'});
+            metas.push({name: 'twitter:image',       content: image || 'https://beta.whaleshares.net/images/wls-icon-twshare-2.png'});
         } else {
             addSiteMeta(metas);
         }
@@ -64,8 +64,8 @@ export default function extractMeta(chain_data, rp) {
         const account = chain_data.accounts[rp.accountname];
         let {name, about, profile_image} = normalizeProfile(account);
         if(name == null) name = account.name;
-        if(about == null) about = "Join thousands on steemit who share, post and earn rewards.";
-        if(profile_image == null) profile_image = 'https://steemit.com/images/steemit-twshare-2.png';
+        if(about == null) about = "Join thousands on Whaleshares who share and earn rewards.";
+        if(profile_image == null) profile_image = 'https://beta.whaleshares.net/images/wls-icon-twshare-2.png';
         // Set profile tags
         const title = `@${account.name}`;
         const desc  = `The latest posts from ${name}. Follow me at @${account.name}. ${about}`;
@@ -76,7 +76,7 @@ export default function extractMeta(chain_data, rp) {
 
         // Twitter card data
         metas.push({name: 'twitter:card',        content: 'summary'});
-        metas.push({name: 'twitter:site',        content: '@steemit'});
+        metas.push({name: 'twitter:site',        content: '@whaleshares'});
         metas.push({name: 'twitter:title',       content: title});
         metas.push({name: 'twitter:description', content: desc});
         metas.push({name: 'twitter:image',       content: image});
