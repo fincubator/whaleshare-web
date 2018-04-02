@@ -1,4 +1,4 @@
-# Steemit FAQ 
+# Whaleshares FAQ 
 
 <a class="anchor" name="Table_of_Contents"></a>
 ## Table of Contents
