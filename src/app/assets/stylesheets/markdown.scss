@@ -1,5 +1,5 @@
 .Markdown {
-  font-family: 'Source Serif Pro', serif;
+  font-family: $body-font-family;
   font-size: 120%;
 
   line-height: 150%;
@@ -34,7 +34,7 @@
 
   h1 {
     margin: 2.5rem 0 .3rem;
-    font-size: 160%
+    font-size: 160%;
   }
   h2 {
     margin: 2.5rem 0 .3rem;
@@ -71,7 +71,7 @@
   }
 
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   ol, ul {
