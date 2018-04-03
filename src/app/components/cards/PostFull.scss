@@ -3,6 +3,13 @@
   margin: 0 auto;
   max-width: 50rem;
   background-color: white;
+  @include MQ(ML) {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+  @include MQ(L) {
+    max-width: 60rem;
+    padding: 2rem 3rem 1rem 3rem;
+  }
   
   @include themify($themes) {
       border-bottom: themed('border');  
@@ -46,6 +53,7 @@
   strong, a {color: #999}
   font-size: 120%;
   display: block;
+  
   > .Userpic {
     float: left;
     margin: -1.35rem 0.75rem 0 0;
@@ -60,11 +68,20 @@
 .PostFull__header, .PostFull__body {
   max-width: 40rem;
   margin: 0 auto;
+  
+  @include MQ(ML) {
+    max-width: 50rem;
+  }
+  @include MQ(L) {
+    max-width: 60rem;
+  }
+  
 }
 
 .PostFull__header {
-  padding-bottom: 1em;
-  margin-bottom: 8px;
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  
   @include themify($themes) {
     border-bottom: themed('border');  
   } 
@@ -72,8 +89,10 @@
     overflow: hidden;
     font-family: $body-font-family;
     font-size: 240%;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 2rem;
+    
     .Icon {
       margin: 0 0 0 0.5rem;
       vertical-align: -30%;
