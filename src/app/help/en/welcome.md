@@ -1,10 +1,10 @@
-## Welcome to Steemit!
+## Welcome to Whaleshares!
 
-This page is full of information to help you learn about the platform and become a successful Steemian. You can return to this page at any time by clicking on the "Welcome" link in the main menu. There is a table of contents below to help you navigate the page.
+This page is full of information to help you learn about the platform. You can return to this page at any time by clicking on the "Welcome" link in the main menu. There is a table of contents below to help you navigate the page.
 
 Included on the page is a "Quick Start Guide" with information on how the platform works, and a "To Do List" with recommended steps to get started with your account. 
 
-Below that is a section of "Helpful Posts from Steemit Users", which contains a collection of posts from users in the community that are helpful for new users getting started. 
+Below that is a section of "Helpful Posts", which contains a collection of posts from users in the community that are helpful for new users getting started. 
 
 Below that is a list of recommended users to follow, a collection of other resources including the <a href="/faq.html">FAQ Page</a>, and information on where to find live help. 
 
