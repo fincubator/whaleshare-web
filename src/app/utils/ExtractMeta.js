@@ -11,13 +11,13 @@ function addSiteMeta(metas) {
     metas.push({property: 'og:site_name', content: 'Whaleshares'});
     metas.push({property: 'og:title', content: 'Whaleshares'});
     metas.push({property: 'og:description', content: site_desc});
-    metas.push({property: 'og:image', content: 'https://beta.whaleshares.net/images/wls-logo-lightblue-inverse.png'});
+    metas.push({property: 'og:image', content: 'https://beta.whaleshares.net/images/wls-share.png'});
     metas.push({property: 'fb:app_id', content: $STM_Config.fb_app});
     metas.push({name: 'twitter:card', content: 'summary'});
     metas.push({name: 'twitter:site', content: '@whaleshares'});
     metas.push({name: 'twitter:title', content: '#Whaleshares'});
     metas.push({name: 'twitter:description', site_desc});
-    metas.push({name: 'twitter:image', content: 'https://beta.whaleshares.net/images/wls-logo-lightblue-inverse.png'});
+    metas.push({name: 'twitter:image', content: 'https://beta.whaleshares.net/images/wls-share.png'});
 }
 
 export default function extractMeta(chain_data, rp) {
@@ -44,7 +44,7 @@ export default function extractMeta(chain_data, rp) {
             metas.push({property: 'og:title',        content: title});
             metas.push({property: 'og:type',         content: 'article'});
             metas.push({property: 'og:url',          content: url});
-            metas.push({property: 'og:image',        content: image || 'https://beta.whaleshares.net/images/wls-logo-lightblue-inverse.png'});
+            metas.push({property: 'og:image',        content: image || 'https://beta.whaleshares.net/images/wls-share.png'});
             metas.push({property: 'og:description',  content: desc});
             metas.push({property: 'og:site_name',    content: 'Whaleshares'});
             metas.push({property: 'fb:app_id',       content: $STM_Config.fb_app});
@@ -56,7 +56,7 @@ export default function extractMeta(chain_data, rp) {
             metas.push({name: 'twitter:site',        content: '@whaleshares'});
             metas.push({name: 'twitter:title',       content: title});
             metas.push({name: 'twitter:description', content: desc});
-            metas.push({name: 'twitter:image',       content: image || 'https://beta.whaleshares.net/images/wls-icon-twshare-2.png'});
+            metas.push({name: 'twitter:image',       content: image || 'https://beta.whaleshares.net/images/wls-icon-twshare-2.jpg'});
         } else {
             addSiteMeta(metas);
         }
