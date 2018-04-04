@@ -29,7 +29,7 @@ export default function extractMeta(chain_data, rp) {
         const profile = normalizeProfile(author);
         if (content && content.id !== '0.0.0') { // API currently returns 'false' data with id 0.0.0 for posts that do not exist
             const d = extractContent(objAccessor, content, false);
-            const url   = 'http://51.15.137.162' + d.link;
+            const url   = 'https://beta.whaleshares.net' + d.link;
             const title = d.title + ' — Whaleshares';
             const desc  = d.desc + " by " + d.author;
             const image = d.image_link || profile.profile_image
