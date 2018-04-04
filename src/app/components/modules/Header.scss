@@ -81,15 +81,17 @@
         @include MQ(S) {
           height: 44px;
           width: auto;
-          top: 2px;
+          top: 1px;
           left: 4px;
         }
          @include MQ(SM) {
-          top: 0;
+          margin-right: 0.5rem;
+          top: 1px;
         }
         @include MQ(L) {
-          height: 3rem;
-          width: auto;
+          top: 2px;
+          width: 13.75rem;
+          height: auto;
         }
    }
   }

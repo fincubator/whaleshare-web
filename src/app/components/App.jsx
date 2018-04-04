@@ -204,11 +204,8 @@ class App extends React.Component {
                             {tt('navigation.explore')}
                         </a>
                     </li>
-                    <li>
-                        <a href="/market" onClick={this.navigate}>
-                            {tt('navigation.currency_market')}
-                        </a>
-                    </li>
+                </ul>
+                <ul className="vertical menu">                
                     <li>
                         <a href="/recover_account_step_1" onClick={this.navigate}>
                             {tt('navigation.stolen_account_recovery')}
@@ -217,13 +214,6 @@ class App extends React.Component {
                     <li>
                         <a href="/change_password" onClick={this.navigate}>
                             {tt('navigation.change_account_password')}
-                        </a>
-                    </li>
-                </ul>
-                <ul className="vertical menu">
-                    <li>
-                        <a onClick={() => depositSteem(username)}>
-                            {tt('navigation.buy_LIQUID_TOKEN', {LIQUID_TOKEN})}&nbsp;<Icon name="extlink" />
                         </a>
                     </li>
                 </ul>
