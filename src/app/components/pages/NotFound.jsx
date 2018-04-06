@@ -13,11 +13,9 @@ class NotFound extends React.Component {
                         <div className="top-bar-left">
                             <ul className="menu">
                                 <li className="Header__top-logo">
-                                    <Link to='/'>
-                                        <Icon name="steem" size="2x" />
-                                    </Link>
+                                    <Link to='/'><img src={require('app/assets/images/logo.png')} /></Link>
                                 </li>
-                                <li className="Header__top-steemit show-for-medium noPrint"><a href="/">steemit<span className="beta">beta</span></a></li>
+                                {/*<li className="Header__top-steemit show-for-medium noPrint"><a href="/">steemit<span className="beta">beta</span></a></li>*/}
                             </ul>
                         </div>
                     </div>
@@ -33,7 +31,7 @@ class NotFound extends React.Component {
                           <li><a href="/created">new posts</a></li>
                           <li><a href="/hot">hot posts</a></li>
                           <li><a href="/trending">trending posts</a></li>
-                          <li><a href="/promoted">promoted posts</a></li>
+                          {/*<li><a href="/promoted">promoted posts</a></li>*/}
                           <li><a href="/active">active posts</a></li>
                         </ul>
                     </div>
