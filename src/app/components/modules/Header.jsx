@@ -183,7 +183,7 @@ class Header extends React.Component {
                         <div className="columns">
                             <ul className="menu">
                                 <li className="Header__top-logo show-for-small-only">
-                                    <Link to={logo_link}><img src={require('app/assets/images/wls-tail-logo-48.png')} /></Link>
+                                    <Link to={logo_link}><img src={require('app/assets/images/logo-mobile.png')} /></Link>
                                 </li>
                                 <li className="Header__top-logo hide-for-small-only">
                                     <Link to={logo_link}><img src={require('app/assets/images/logo.png')} /></Link>
