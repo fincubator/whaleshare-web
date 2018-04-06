@@ -460,7 +460,7 @@
     "estimated_value": "The estimated value is based on an average value of %(LIQUID_TOKEN)s in US dollars.",
     "non_transferable": "%(VESTING_TOKEN)s is non-transferable and requires 3 months (13 payments) to convert back to %(LIQUID_TOKEN)s.",
     "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Converted %(VESTING_TOKEN)s can be sent to yourself or someone else but can not transfer again without converting back to %(LIQUID_TOKEN)s.",
-    "part_of_your_steem_power_is_currently_delegated": "Part of your STEEM POWER is currently delegated to you. Delegation is donated for influence or to help new users perform actions on steemit. Your delegation amount can fluctuate."
+    "part_of_your_steem_power_is_currently_delegated": "Part of your WLS POWER is currently delegated to you. Delegation is donated for influence or to help new users perform actions on steemit. Your delegation amount can fluctuate."
   },
   "promote_post_jsx": {
     "promote_post": "Promote Post",
@@ -629,7 +629,7 @@
     "transfers_are_temporary_disabled": "Transfers are temporary disabled.",
     "history": "HISTORY",
     "redeem_rewards": "Redeem Rewards (Transfer to Balance)",
-    "buy_steem_or_steem_power": "Buy STEEM or STEEM POWER"
+    "buy_steem_or_steem_power": "Buy WLS or WLS POWER"
   },
   "powerdown_jsx": {
     "power_down": "Power Down",

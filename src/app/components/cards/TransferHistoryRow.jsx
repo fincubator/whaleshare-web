@@ -23,56 +23,56 @@ class TransferHistoryRow extends React.Component {
         if( type === 'transfer_to_vesting' ) {
             if( data.from === context ) {
                 if( data.to === "" ) {
-                    description_start += tt('g.transfer') + data.amount.split(' ')[0] + tt('g.to') + "STEEM POWER";
+                    description_start += tt('g.transfer') + data.amount.split(' ')[0] + tt('g.to') + "WLS POWER";
                 }
                 else {
-                    description_start += tt('g.transfer') + data.amount.split(' ')[0] + " STEEM POWER" + tt('g.to');
+                    description_start += tt('g.transfer') + data.amount.split(' ')[0] + " WLS POWER" + tt('g.to');
                     other_account = data.to;
                 }
             }
             else if( data.to === context ) {
-                description_start += tt('g.receive') + data.amount.split(' ')[0] + " STEEM POWER" + tt('g.from');
+                description_start += tt('g.receive') + data.amount.split(' ')[0] + " WLS POWER" + tt('g.from');
                 other_account = data.from;
             } else {
-                description_start += tt('g.transfer') + data.amount.split(' ')[0] + " STEEM POWER" + tt('g.from') + data.from + tt('g.to');
+                description_start += tt('g.transfer') + data.amount.split(' ')[0] + " WLS POWER" + tt('g.from') + data.from + tt('g.to');
                 other_account = data.to;
             }
-        }
-        else if(/^transfer$|^transfer_to_savings$|^transfer_from_savings$/.test(type)) {
-            // transfer_to_savings
-            const fromWhere =
-                type === 'transfer_to_savings' ? tt('transferhistoryrow_jsx.to_savings') :
-                    type === 'transfer_from_savings' ? tt('transferhistoryrow_jsx.from_savings') :
-                        ''
-
-            if( data.from === context ) {
-                description_start += tt('g.transfer') + `${fromWhere} ${data.amount}` + tt('g.to');
-                other_account = data.to;
-            }
-            else if( data.to === context ) {
-                description_start += tt('g.receive') + `${fromWhere} ${data.amount}` + tt('g.from');
-                other_account = data.from;
-            } else {
-                description_start += tt('g.transfer') + `${fromWhere} ${data.amount}` + tt('g.from');
-                other_account = data.from;
-                description_end += tt('g.to') + data.to;
-            }
-            if(data.request_id != null)
-                description_end += ` (${tt('g.request')} ${data.request_id})`
-        } else if (type === 'cancel_transfer_from_savings') {
-            description_start += `${tt('transferhistoryrow_jsx.cancel_transfer_from_savings')} (${tt('g.request')} ${data.request_id})`;
+        // }
+        // else if(/^transfer$|^transfer_to_savings$|^transfer_from_savings$/.test(type)) {
+        //     // transfer_to_savings
+        //     const fromWhere =
+        //         type === 'transfer_to_savings' ? tt('transferhistoryrow_jsx.to_savings') :
+        //             type === 'transfer_from_savings' ? tt('transferhistoryrow_jsx.from_savings') :
+        //                 ''
+        //
+        //     if( data.from === context ) {
+        //         description_start += tt('g.transfer') + `${fromWhere} ${data.amount}` + tt('g.to');
+        //         other_account = data.to;
+        //     }
+        //     else if( data.to === context ) {
+        //         description_start += tt('g.receive') + `${fromWhere} ${data.amount}` + tt('g.from');
+        //         other_account = data.from;
+        //     } else {
+        //         description_start += tt('g.transfer') + `${fromWhere} ${data.amount}` + tt('g.from');
+        //         other_account = data.from;
+        //         description_end += tt('g.to') + data.to;
+        //     }
+        //     if(data.request_id != null)
+        //         description_end += ` (${tt('g.request')} ${data.request_id})`
+        // } else if (type === 'cancel_transfer_from_savings') {
+        //     description_start += `${tt('transferhistoryrow_jsx.cancel_transfer_from_savings')} (${tt('g.request')} ${data.request_id})`;
         } else if( type === 'withdraw_vesting' ) {
             if( data.vesting_shares === '0.000000 VESTS' )
                 description_start += tt('transferhistoryrow_jsx.stop_power_down');
             else
                 description_start += tt('transferhistoryrow_jsx.start_power_down_of') + ' ' + powerdown_vests + " STEEM";
         } else if( type === 'curation_reward' ) {
-            description_start += `${curation_reward} STEEM POWER` + tt('g.for');
+            description_start += `${curation_reward} WLS POWER` + tt('g.for');
             other_account = data.comment_author + "/" + data.comment_permlink;
         } else if (type === 'author_reward') {
             let steem_payout = "";
             if(data.steem_payout !== '0.000 STEEM') steem_payout = ", " + data.steem_payout;
-            description_start += `${data.sbd_payout}${steem_payout}, ${tt('g.and')} ${author_reward} STEEM POWER ${tt('g.for')} ${data.author}/${data.permlink}`;
+            description_start += `${data.sbd_payout}${steem_payout}, ${tt('g.and')} ${author_reward} WLS POWER ${tt('g.for')} ${data.author}/${data.permlink}`;
             // other_account = ``;
             description_end = '';
         } else if (type === 'claim_reward_balance') {
@@ -80,7 +80,7 @@ class TransferHistoryRow extends React.Component {
             let rewards = [];
             if(parseFloat(data.reward_steem.split(' ')[0]) > 0) rewards.push(data.reward_steem);
             if(parseFloat(data.reward_sbd.split(' ')[0]) > 0) rewards.push(data.reward_sbd);
-            if(parseFloat(data.reward_vests.split(' ')[0]) > 0) rewards.push(`${reward_vests} STEEM POWER`);
+            if(parseFloat(data.reward_vests.split(' ')[0]) > 0) rewards.push(`${reward_vests} WLS POWER`);
 
             let rewards_str;
             switch(rewards.length) {
@@ -112,7 +112,7 @@ class TransferHistoryRow extends React.Component {
         } else if (type === 'comment_benefactor_reward') {
           let steem_payout = "";
           if(data.steem_payout !== '0.000 STEEM') steem_payout = ", " + data.steem_payout;
-          description_start += `${benefactor_reward} STEEM POWER for ${data.author}/${data.permlink}`;
+          description_start += `${benefactor_reward} WLS POWER for ${data.author}/${data.permlink}`;
           description_end = '';
         } else {
             description_start += JSON.stringify({type, ...data}, null, 2);
