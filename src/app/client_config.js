@@ -7,24 +7,24 @@ export const APP_NAME_UPPERCASE = 'WHALESHARES';
 export const APP_ICON = 'steem';
 // FIXME figure out best way to do this on both client and server from env
 // vars. client should read $STM_Config, server should read config package.
-export const APP_DOMAIN = 'steemit.com';
-export const LIQUID_TOKEN = 'Steem';
+export const APP_DOMAIN = 'beta.whaleshares.net';
+export const LIQUID_TOKEN = 'WLS';
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
-export const LIQUID_TOKEN_UPPERCASE = 'STEEM';
-export const VESTING_TOKEN = 'STEEM POWER';
-export const INVEST_TOKEN_UPPERCASE = 'STEEM POWER';
+export const LIQUID_TOKEN_UPPERCASE = 'WLS';
+export const VESTING_TOKEN = 'WLS POWER';
+export const INVEST_TOKEN_UPPERCASE = 'WLS POWER';
 export const INVEST_TOKEN_SHORT = 'SP';
-export const DEBT_TOKEN = 'STEEM DOLLAR';
-export const DEBT_TOKENS = 'STEEM DOLLARS';
+export const DEBT_TOKEN = 'WLS DOLLAR';
+export const DEBT_TOKENS = 'WLS DOLLARS';
 export const CURRENCY_SIGN = '$';
 export const WIKI_URL = '';
-export const LANDING_PAGE_URL = 'https://steem.io/';
+export const LANDING_PAGE_URL = 'https://whaleshares.net/';
 export const TERMS_OF_SERVICE_URL = 'https://' + APP_DOMAIN + '/tos.html';
 export const PRIVACY_POLICY_URL = 'https://' + APP_DOMAIN + '/privacy.html';
 export const WHITEPAPER_URL = 'https://steem.io/SteemWhitePaper.pdf';
 
 // these are dealing with asset types, not displaying to client, rather sending data over websocket
-export const LIQUID_TICKER = 'STEEM';
+export const LIQUID_TICKER = 'WLS';
 export const VEST_TICKER = 'VESTS';
 export const DEBT_TICKER = 'SBD';
 export const DEBT_TOKEN_SHORT = 'SBD';

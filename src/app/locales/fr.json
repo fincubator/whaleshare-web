@@ -458,7 +458,7 @@
     "estimated_value": "La valeur estimée est basée sur la valeur moyenne de %(LIQUID_TOKEN)s en dollars américains.",
     "non_transferable": "%(VESTING_TOKEN)s est non transférable et demande 3 mois (13 paiements) pour être convertis en %(LIQUID_TOKEN)s. ",
     "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Les %(VESTING_TOKEN)s convertis peuvent être envoyés soit à vous, soit à quelqu'un d'autre, mais ne peuvent pas être transférés à nouveau sans être convertis en %(LIQUID_TOKEN)s.",
-    "part_of_your_steem_power_is_currently_delegated": "Une partie de votre influence, ou STEEM POWER, est actuellement déléguée. La délégation est un don pour augmenter l'influence ou pour encourager les nouveaux utilisateurs à effectuer des actions sur Steemit. Le montant délégué peut varier."
+    "part_of_your_steem_power_is_currently_delegated": "Une partie de votre influence, ou WLS POWER, est actuellement déléguée. La délégation est un don pour augmenter l'influence ou pour encourager les nouveaux utilisateurs à effectuer des actions sur Steemit. Le montant délégué peut varier."
   },
   "promote_post_jsx": {
     "promote_post": "Promouvoir un article",
@@ -627,7 +627,7 @@
     "transfers_are_temporary_disabled": "Les transferts sont temporairement désactivés.",
     "history": "HISTORIQUE",
     "redeem_rewards": "Réclamer les gains (transférer vers le solde)",
-    "buy_steem_or_steem_power": "Acheter du STEEM ou du STEEM POWER"
+    "buy_steem_or_steem_power": "Acheter du WLS ou du WLS POWER"
   },
   "powerdown_jsx": {
     "power_down": "Diminuer son influence",
