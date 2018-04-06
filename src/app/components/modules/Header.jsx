@@ -183,10 +183,10 @@ class Header extends React.Component {
                         <div className="columns">
                             <ul className="menu">
                                 <li className="Header__top-logo show-for-small-only">
-                                    <Link to={logo_link}><img src={require('app/assets/images/logo-mobile.png')} /></Link>
+                                    <Link to={logo_link}><img src='/images/logo-mobile.png' /></Link>
                                 </li>
                                 <li className="Header__top-logo hide-for-small-only">
-                                    <Link to={logo_link}><img src={require('app/assets/images/logo.png')} /></Link>
+                                    <Link to={logo_link}><img src='/images/logo.png' /></Link>
                                 </li>
                                 {(topic_link || user_name || page_name) && sort_order }
                                 {selected_sort_order && <DropdownMenu className="Header__sort-order-menu menu-hide-for-large" items={sort_order_menu} selected={selected_sort_order[1]} el="li" />}
