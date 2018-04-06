@@ -13,7 +13,7 @@ class NotFound extends React.Component {
                         <div className="top-bar-left">
                             <ul className="menu">
                                 <li className="Header__top-logo">
-                                    <Link to='/'><img src={require('app/assets/images/logo.png')} /></Link>
+                                    <Link to='/'><img src='/images/logo.png' /></Link>
                                 </li>
                                 {/*<li className="Header__top-steemit show-for-medium noPrint"><a href="/">steemit<span className="beta">beta</span></a></li>*/}
                             </ul>

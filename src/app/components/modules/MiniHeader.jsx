@@ -10,7 +10,7 @@ export default function MiniHeader() {
                 <div className="columns">
                     <ul className="menu">
                         <li className="Header__top-logo">
-                            <Link to='/'><img src={require('app/assets/images/logo.png')} /></Link>
+                            <Link to='/'><img src='/images/logo.png' /></Link>
                         </li>
                         {/*<li className="Header__top-steemit show-for-medium"><a href="/"><span className="beta">beta</span></a></li>*/}
                     </ul>
