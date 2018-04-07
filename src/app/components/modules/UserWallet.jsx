@@ -247,7 +247,7 @@ class UserWallet extends React.Component {
 
         // const reward_steem = parseFloat(account.get('reward_steem_balance').split(' ')[0]) > 0 ? account.get('reward_steem_balance') : null;
         // const reward_sbd = parseFloat(account.get('reward_sbd_balance').split(' ')[0]) > 0 ? account.get('reward_sbd_balance') : null;
-        const reward_sp = parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0 ? account.get('reward_vesting_steem').replace('STEEM', 'SP') : null;
+        const reward_sp = parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0 ? account.get('reward_vesting_steem').replace('WLS', 'SP') : null;
 
         let rewards = [];
         // if(reward_steem) rewards.push(reward_steem);
@@ -401,7 +401,7 @@ export default connect(
         const feed_price = state.global.get('feed_price')
         if(feed_price && feed_price.has('base') && feed_price.has('quote')) {
             const {base, quote} = feed_price.toJS()
-            if(/ SBD$/.test(base) && / STEEM$/.test(quote))
+            if(/ SBD$/.test(base) && / WLS/.test(quote))
                 price_per_steem = parseFloat(base.split(' ')[0])
         }
         const savings_withdraws = state.user.get('savings_withdraws')
