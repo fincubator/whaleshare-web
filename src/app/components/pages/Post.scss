@@ -1,14 +1,14 @@
 .Post__comments_sort_order {
   margin: 0.5rem 0;
   @include themify($themes) {
-    color: themed('textColorSecondary');  
-  }  
+    color: themed('textColorSecondary');
+  }
   font-size: 94%;
   svg polygon {
     fill: $dark-gray;
     @include themify($themes) {
-        fill: themed('textColorSecondary');  
-    } 
+        fill: themed('textColorSecondary');
+    }
   }
   > span {
     font-weight: bold;
@@ -23,16 +23,18 @@
   margin: 0 auto;
   padding: 1rem 0;
   @include themify($themes) {
-    border-bottom: themed('border');  
-  } 
-  .button { 
+    border-bottom: themed('border');
+  }
+  .button {
       margin-top: 1rem;
       text-transform: none;
   }
 }
 
 .Post_comments__content {
-  max-width: 50rem;
+  max-width: 60rem;
   margin: 0 auto 3.5rem;
   font-size: 92%;
+  background-color: whitesmoke;
+  padding: 2rem 3rem 1rem 3rem;
 }
