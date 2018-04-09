@@ -149,38 +149,38 @@ module.exports = {
             fetching_replies: false
         }
     },
-    market: {
-        current_feed: 1.00,
-        feed_history: [
-            /// last week of feed data with 1 hr sampling of median feed
-        ],
-        order_history: [
-            ['time', 'buy', 1000, 1.000], /// time, type, quantity, price
-            ['time', 'sell', 100, 0.99]
-        ],
-        available_candlesticks: [5, 15, 30, 120, 240, 1440],
-        available_zoom: [6, 24, 48, 96, 168/* 1 week*/, 540, 1000000/*all*/], /// hours
-        current_candlestick: 5, /// min
-        current_zoom: 24, /// hours
-        price_history: [
-            {
-                time: '2016-02-29T22:08:00',
-                open: 1.000,
-                close: 1.000,
-                high: 1.000,
-                low: 1.000,
-                volume: 10
-            },
-            {
-                time: '2016-02-29T22:09:00',
-                open: 1.000,
-                close: 1.000,
-                high: 1.000,
-                low: 1.000,
-                volume: 10
-            }
-        ]
-    },
+    // market: {
+    //     current_feed: 1.00,
+    //     feed_history: [
+    //         /// last week of feed data with 1 hr sampling of median feed
+    //     ],
+    //     order_history: [
+    //         ['time', 'buy', 1000, 1.000], /// time, type, quantity, price
+    //         ['time', 'sell', 100, 0.99]
+    //     ],
+    //     available_candlesticks: [5, 15, 30, 120, 240, 1440],
+    //     available_zoom: [6, 24, 48, 96, 168/* 1 week*/, 540, 1000000/*all*/], /// hours
+    //     current_candlestick: 5, /// min
+    //     current_zoom: 24, /// hours
+    //     price_history: [
+    //         {
+    //             time: '2016-02-29T22:08:00',
+    //             open: 1.000,
+    //             close: 1.000,
+    //             high: 1.000,
+    //             low: 1.000,
+    //             volume: 10
+    //         },
+    //         {
+    //             time: '2016-02-29T22:09:00',
+    //             open: 1.000,
+    //             close: 1.000,
+    //             high: 1.000,
+    //             low: 1.000,
+    //             volume: 10
+    //         }
+    //     ]
+    // },
     bids: [ /// sorted by price from highest to lowest
         {
             id: '...',

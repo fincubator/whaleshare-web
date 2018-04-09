@@ -409,7 +409,7 @@ export default connect(
         const sbd_interest = gprops.get('sbd_interest_rate')
         return {
             ...ownProps,
-            open_orders: state.market.get('open_orders'),
+            open_orders: [],
             price_per_steem,
             savings_withdraws,
             sbd_interest,

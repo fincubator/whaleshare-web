@@ -65,9 +65,6 @@ export default function resolveRoute(path)
     if (path === '/waiting_list.html') {
         return {page: 'WaitingList'};
     }
-    if (path === '/market') {
-        return {page: 'Market'};
-    }
     if (path === '/~witnesses') {
         return {page: 'Witnesses'};
     }
