@@ -20,26 +20,30 @@ class Userpic extends Component {
     shouldComponentUpdate = shouldComponentUpdate(this, 'Userpic')
 
     render() {
-        const {account, json_metadata, size} = this.props
-        const hideIfDefault = this.props.hideIfDefault || false
-        const avSize = (size && sizeList.indexOf(size) > -1)? '/' + size : '';
+
+        return (<div className="Userpic" style={{backgroundImage: 'url("/images/user.png")'}} />);
 
 
-        // try to extract image url from users metaData
-        if(hideIfDefault) {
-            try {
-                const md = JSON.parse(json_metadata);
-                if (!/^(https?:)\/\//.test(md.profile.profile_image)) {
-                    return null;
-                }
-            } catch (e) {
-                return null;
-            }
-        }
-
-        const style = {backgroundImage: 'url(' + imageProxy() + `u/${account}/avatar${avSize})` };
-
-        return (<div className="Userpic" style={style} />)
+        // const {account, json_metadata, size} = this.props
+        // const hideIfDefault = this.props.hideIfDefault || false
+        // const avSize = (size && sizeList.indexOf(size) > -1)? '/' + size : '';
+        //
+        //
+        // // try to extract image url from users metaData
+        // if(hideIfDefault) {
+        //     try {
+        //         const md = JSON.parse(json_metadata);
+        //         if (!/^(https?:)\/\//.test(md.profile.profile_image)) {
+        //             return null;
+        //         }
+        //     } catch (e) {
+        //         return null;
+        //     }
+        // }
+        //
+        // const style = {backgroundImage: 'url(' + imageProxy() + `u/${account}/avatar${avSize})` };
+        //
+        // return (<div className="Userpic" style={style} />)
     }
 }
 
