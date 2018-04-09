@@ -15,7 +15,6 @@ import createSagaMiddleware from 'redux-saga';
 import { syncHistoryWithStore } from 'react-router-redux';
 import rootReducer from 'app/redux/RootReducer';
 import {fetchDataWatches} from 'app/redux/FetchDataSaga';
-import {marketWatches} from 'app/redux/MarketSaga';
 import {sharedWatches} from 'app/redux/SagaShared';
 import {userWatches} from 'app/redux/UserSaga';
 import {authWatches} from 'app/redux/AuthSaga';
@@ -35,8 +34,7 @@ const sagaMiddleware = createSagaMiddleware(
     ...fetchDataWatches,
     ...sharedWatches,
     ...authWatches,
-    ...transactionWatches,
-    ...marketWatches
+    ...transactionWatches
 );
 
 let middleware;
@@ -89,7 +87,7 @@ async function universalRender({ location, initial_state, offchain, ErrorPage, t
         const history = syncHistoryWithStore(browserHistory, store);
 
         const scroll = useScroll();
-        
+
         if (process.env.NODE_ENV === 'production') {
             console.log('%c%s', 'color: red; background: yellow; font-size: 24px;', 'WARNING!');
             console.log('%c%s', 'color: black; font-size: 16px;', 'This is a developer console, you must read and understand anything you paste or type here or you could compromise your account and your private keys.');
