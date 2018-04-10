@@ -3,7 +3,12 @@
 }
 
 .UserProfile__tab_content {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
+    
+  .UserList ul.pager {
+    list-style-type: none;
+    margin-left: 0;
+  }
 }
 
 .UserProfile__top-nav {
