@@ -88,7 +88,11 @@
 
 .ReplyEditor .Preview .Markdown {
   border: 1px solid $light-gray;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
+}
+
+.theme-wls-light .ReplyEditor .Preview .Markdown {
+  background-color: white;
 }
 
 .ReplyEditor__body {

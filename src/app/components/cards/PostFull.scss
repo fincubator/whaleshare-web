@@ -2,7 +2,6 @@
   padding: 2rem 1rem 1rem 1rem;
   margin: 0 auto;
   max-width: 50rem;
-  background-color: white;
   @include MQ(ML) {
     padding: 2rem 2rem 1rem 2rem;
   }
@@ -27,6 +26,10 @@
   .Promote__button {
       display: none;
   }
+}
+
+.theme-wls-light .PostFull {  
+  background-color: white;
 }
 
 .PostFull__time_author_category {

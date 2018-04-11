@@ -226,7 +226,7 @@ class PostSummary extends React.Component {
                     </span>
                 );
             } else {
-                const listSize = proxifyImageUrl(p.image_link, '512x256').replace(/ /g, '%20');
+                const listSize = proxifyImageUrl(p.image_link, '220x130').replace(/ /g, '%20');
 
                 thumb = (
                     <span onClick={e => navigate(e, onClick, post, p.link)} className="articles__feature-img-container">
