@@ -163,8 +163,8 @@
     "cannot_increase_reward_of_post_within_the_last_minute_before_payout": "Cannot increase reward of post within the last minute before payout",
     "vote_currently_exists_user_must_be_indicate_a_to_reject_witness": "vote currently exists, user must be indicate a desire to reject witness",
     "only_one_APP_NAME_account_allowed_per_ip_address_every_10_minutes": "Only one Steem account allowed per IP address every 10 minutes",
-    "resteem_this_post": "Resteem This Post",
-    "reblog": "Resteem",
+    "resteem_this_post": "Recommend This Post",
+    "reblog": "Recommend",
     "write_your_story": "Write your story",
     "remember_voting_and_posting_key": "Remember voting & posting key",
     "auto_login_question_mark": "Auto login?",
@@ -454,8 +454,8 @@
     "images_were_hidden_due_to_low_ratings": "Images were hidden due to low ratings."
   },
   "postsummary_jsx": {
-    "resteemed": "Resteemed",
-    "resteemed_by": "Resteemed by",
+    "resteemed": "Recommended",
+    "resteemed_by": "Recommended by",
     "reveal_it": "Reveal this post",
     "adjust_your": "adjust your",
     "display_preferences": "display preferences",

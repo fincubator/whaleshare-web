@@ -191,7 +191,7 @@ class App extends React.Component {
             );
         }
 
-        const themeClass = nightmodeEnabled ? ' theme-dark' : ' theme-wls';
+        const themeClass = nightmodeEnabled ? ' theme-wls-dark' : ' theme-wls-light';
 
         return <div className={'App' + themeClass + (lp ? ' LP' : '') + (ip ? ' index-page' : '') + (miniHeader ? ' mini-header' : '')}
                     ref="App_root"

@@ -74,9 +74,9 @@
 	  top: -0.5rem;
 	}
 	path {
-	@include themify($themes) {
-	  fill: themed('buttonBackground');
-	}       
+  	@include themify($themes) {
+  	  fill: themed('buttonBackground');
+  	}       
 	}
 	circle {
 	  @include themify($themes) {
@@ -140,14 +140,16 @@
     animation: none !important;
   }
   path {
-    fill: #fff !important;
+    @include themify($themes) {
+      fill: themed('buttonText');
+    }
   }
 }
 
 .Voting__button--upvoted circle {
     @include themify($themes) {
-      fill: themed('colorAccent');
-      stroke: themed('colorAccent');
+      fill: themed('buttonBackground');
+      stroke: themed('buttonBackground');
     }    
 }
 
