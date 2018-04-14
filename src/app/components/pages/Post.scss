@@ -32,10 +32,18 @@
 }
 
 .Post_comments__content {
-  max-width: 60rem;
-  margin: 0 auto 3.5rem;
-  font-size: 92%;
-  padding: 2rem 3rem 1rem 3rem;
+    max-width: 50rem;
+    margin: 0 auto 3.5rem;
+    font-size: 92%;
+    padding: 2rem 3rem 1rem 3rem;
+
+    @include MQ(ML) {
+        padding: 2rem 2rem 1rem 2rem;
+    }
+    @include MQ(L) {
+        max-width: 60rem;
+        padding: 2rem 3rem 1rem 3rem;
+    }
 }
 
 .theme-wls-light .Post_comments__content {
