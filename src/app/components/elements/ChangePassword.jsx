@@ -205,7 +205,7 @@ class ChangePassword extends React.Component {
                     //     <p>
                     //         This feature will add a Whaleshares account as an additional owner on your account.  This is a service that can be used by yourself and Whaleshares to recover your account should it get compromised or you loose your password.
                     //     </p>
-                    //     <small><a href="//@steemit" target="_blank">@Whaleshares</a></small>
+                    //     <small><a href="//@whaleshares" target="_blank">@Whaleshares</a></small>
                     // </p>}
                     // <br />
     }

@@ -117,9 +117,9 @@ class PickAccount extends React.Component {
                 <div className="column">
                     <div className="callout alert">
                         <h4>Browser Out of Date</h4>
-                        <p>We will be unable to create your Steem account with this browser.</p>
+                        <p>We will be unable to create your account with this browser.</p>
                         <p>The latest versions of <a href="https://www.google.com/chrome/">Chrome</a> and <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>
-                            are well-tested and known to work well with steemit.com.</p>
+                            are well-tested and known to work well.</p>
                     </div>
                 </div>
             </div>;
@@ -165,10 +165,10 @@ class PickAccount extends React.Component {
         //     return <div className="row">
         //         <div className="column">
         //             <div className="callout alert">
-        //                 <p>Our records indicate that you already have steem account: <strong>{existingUserAccount}</strong></p>
+        //                 <p>Our records indicate that you already have an account: <strong>{existingUserAccount}</strong></p>
         //                 <p>In order to prevent abuse Whaleshares can only register one account per verified user.</p>
         //                 <p>You can either <a href="/login.html">login</a> to your existing account
-        //                     or <a href="mailto:support@steemit.com">send us email</a> if you need a new account.</p>
+        //                     or <a href="mailto:support@whaleshares.net">send us email</a> if you need a new account.</p>
         //             </div>
         //         </div>
         //     </div>;
