@@ -162,7 +162,7 @@
     "account_name_should_have_only_letters_digits_or_dashes": "Account name should have only letters, digits, or dashes.",
     "cannot_increase_reward_of_post_within_the_last_minute_before_payout": "Cannot increase reward of post within the last minute before payout",
     "vote_currently_exists_user_must_be_indicate_a_to_reject_witness": "vote currently exists, user must be indicate a desire to reject witness",
-    "only_one_APP_NAME_account_allowed_per_ip_address_every_10_minutes": "Only one Steem account allowed per IP address every 10 minutes",
+    "only_one_APP_NAME_account_allowed_per_ip_address_every_10_minutes": "Only one account allowed per IP address every 10 minutes",
     "resteem_this_post": "Recommend This Post",
     "reblog": "Recommend",
     "write_your_story": "Write your story",
@@ -208,7 +208,7 @@
       "other": "%(count)s Responses"
     },
     "post_key_warning": {
-        "confirm": "You are about to publish a STEEM private key or master password. You will probably lose control of the associated account and all its funds.",
+        "confirm": "You are about to publish a Whaleshares private key or master password. You will probably lose control of the associated account and all its funds.",
         "warning": "Legitimate users will never ask you for a private key or master password.",
         "checkbox": "I understand"
     }
@@ -296,7 +296,7 @@
     "unable_to_recover_account_not_change_ownership_recently": "We are unable to recover this account, it has not changed ownership recently.",
     "password_not_used_in_last_days": "This password was not used on this account in the last 30 days.",
     "request_already_submitted_contact_support": "Your request has been already submitted and we are working on it. Please contact %(SUPPORT_EMAIL)s for the status of your request.",
-    "recover_account_intro": "From time to time, a Steemian's owner key may be compromised. Stolen Account Recovery gives the rightful account owner 30 days to recover their account from the moment the thief changed their owner key. Stolen Account Recovery can only be used on %(APP_URL)s if the account owner had previously listed '%(APP_NAME)s' as their account trustee and complied with %(APP_NAME)s's Terms of Service.",
+    "recover_account_intro": "From time to time, a user's owner key may be compromised. Stolen Account Recovery gives the rightful account owner 30 days to recover their account from the moment the thief changed their owner key. Stolen Account Recovery can only be used on %(APP_URL)s if the account owner had previously listed '%(APP_NAME)s' as their account trustee and complied with %(APP_NAME)s's Terms of Service.",
     "login_with_facebook_or_reddit_media_to_verify_identity": "Please login with Facebook or Reddit to verify your identity",
     "login_with_social_media_to_verify_identity": "Please login with %(provider)s to verify your identity",
     "enter_email_toverify_identity": "We need to verify your identity. Please enter your email address below to begin the verification.",
@@ -436,7 +436,7 @@
     "estimated_value": "The estimated value is based on an average value of %(LIQUID_TOKEN)s in US dollars.",
     "non_transferable": "%(VESTING_TOKEN)s is non-transferable and requires 3 months (13 payments) to convert back to %(LIQUID_TOKEN)s.",
     "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Converted %(VESTING_TOKEN)s can be sent to yourself or someone else but can not transfer again without converting back to %(LIQUID_TOKEN)s.",
-    "part_of_your_steem_power_is_currently_delegated": "Part of your WLS POWER is currently delegated to you. Delegation is donated for influence or to help new users perform actions on steemit. Your delegation amount can fluctuate."
+    "part_of_your_steem_power_is_currently_delegated": "Part of your WLS POWER is currently delegated to you. Delegation is donated for influence or to help new users perform actions. Your delegation amount can fluctuate."
   },
   "promote_post_jsx": {
     "promote_post": "Promote Post",
@@ -446,7 +446,7 @@
   },
   "about_jsx": {
     "about_app": "About %(APP_NAME)s",
-    "about_app_details": "%(APP_NAME)s is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system, called Steem, that supports real value for digital rewards through market price discovery and liquidity.",
+    "about_app_details": "%(APP_NAME)s is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system, called Whaleshares, that supports real value for digital rewards through market price discovery and liquidity.",
     "learn_more_at_app_url": "Learn more at %(APP_URL)s",
     "resources": "Resources"
   },
@@ -558,9 +558,9 @@
     "public_profile_settings": "Public Profile Settings",
     "private_post_display_settings": "Private Post Display Settings",
     "not_safe_for_work_nsfw_content": "Not safe for work (NSFW) content",
-    "always_hide": "Always hide",
-    "always_warn": "Always warn",
-    "always_show": "Always show",
+    "always_hide": "Always Hide from My Feeds",
+    "always_warn": "Warn and Hide Preview",
+    "always_show": "Always Show in My Feeds",
     "muted_users": "Muted Users",
     "update": "Update",
     "profile_image_url": "Profile picture url",

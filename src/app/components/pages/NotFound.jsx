@@ -15,14 +15,12 @@ class NotFound extends React.Component {
                                 <li className="Header__top-logo">
                                     <Link to='/'><img src='/images/logo.png' /></Link>
                                 </li>
-                                {/*<li className="Header__top-steemit show-for-medium noPrint"><a href="/">steemit<span className="beta">beta</span></a></li>*/}
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className="NotFound float-center">
                     <div>
-                        <Icon name="steem" size="4x" />
                         <h4 className="NotFound__header">Sorry! This page doesn't exist.</h4>
                         <p>Not to worry. You can head back to <a style={{fontWeight: 800}} href="/">our homepage</a>,
                            or check out some great posts.

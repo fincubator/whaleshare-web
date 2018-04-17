@@ -65,13 +65,13 @@ class TransferHistoryRow extends React.Component {
             if( data.vesting_shares === '0.000000 VESTS' )
                 description_start += tt('transferhistoryrow_jsx.stop_power_down');
             else
-                description_start += tt('transferhistoryrow_jsx.start_power_down_of') + ' ' + powerdown_vests + " STEEM";
+                description_start += tt('transferhistoryrow_jsx.start_power_down_of') + ' ' + powerdown_vests + " WLS";
         } else if( type === 'curation_reward' ) {
             description_start += `${curation_reward} WLS POWER` + tt('g.for');
             other_account = data.comment_author + "/" + data.comment_permlink;
         } else if (type === 'author_reward') {
             let steem_payout = "";
-            if(data.steem_payout !== '0.000 STEEM') steem_payout = ", " + data.steem_payout;
+            if(data.steem_payout !== '0.000 WLS') steem_payout = ", " + data.steem_payout;
             description_start += `${data.sbd_payout}${steem_payout}, ${tt('g.and')} ${author_reward} WLS POWER ${tt('g.for')} ${data.author}/${data.permlink}`;
             // other_account = ``;
             description_end = '';
@@ -111,7 +111,7 @@ class TransferHistoryRow extends React.Component {
             }
         } else if (type === 'comment_benefactor_reward') {
           let steem_payout = "";
-          if(data.steem_payout !== '0.000 STEEM') steem_payout = ", " + data.steem_payout;
+          if(data.steem_payout !== '0.000 WLS') steem_payout = ", " + data.steem_payout;
           description_start += `${benefactor_reward} WLS POWER for ${data.author}/${data.permlink}`;
           description_end = '';
         } else {

@@ -139,8 +139,8 @@ function link(state, child) {
             }
 
             // Unlink potential phishing attempts
-            if (child.textContent.match(/https?:\/\/(.*@)?(www\.)?steemit\.com/)
-                && !url.match(/https?:\/\/(.*@)?(www\.)?steemit\.com/)) {
+            if (child.textContent.match(/https?:\/\/(.*@)?(www\.)?bet\.whaleshares\.net/)
+                && !url.match(/https?:\/\/(.*@)?(www\.)?beta\.whaleshares\.net/)) {
                 const phishyDiv = child.ownerDocument.createElement('div');
                 phishyDiv.textContent = `${child.textContent} / ${url}`;
                 phishyDiv.setAttribute('title', getPhishingWarningMessage());

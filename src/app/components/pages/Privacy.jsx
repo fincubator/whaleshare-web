@@ -36,7 +36,7 @@ class Privacy extends React.Component {
                         <h4>Transactional Information</h4>
                         <p>
                             <span className="section">4</span>
-                            If you purchase products or services from us (e.g., Steem Power), we will collect certain information from you, including your name,
+                            If you purchase products or services from us (e.g., WLS Power), we will collect certain information from you, including your name,
                             address, email address, and information about the product or service you are purchasing. Payments are processed by third-party
                             payment processors (e.g., Stripe and PayPal), so please refer to the applicable processor’s terms and privacy policy for more
                             information about how payment information is processed and stored.
@@ -129,7 +129,7 @@ class Privacy extends React.Component {
                                     should take that into consideration before posting to the Services.
                                 </li>
                                 <li>When other users view your profile, they will be able to see information about your activities on the Services, such as your
-                                    username, prior posts and comments, Steem Power, and how long you have been a member of the Services.
+                                    username, prior posts and comments, WLS Power, and how long you have been a member of the Services.
                                 </li>
                             </ul>
                         </div>
@@ -251,7 +251,7 @@ class Privacy extends React.Component {
                             you delete your account, your profile is no longer visible to other users and disassociated from content you posted under that
                             account. Please note, however, that the posts, comments, and messages you submitted prior to deleting your account will still be
                             visible to others, unless you delete such content. We may also retain certain information about you as required by law or for
-                            legitimate business purposes after you delete your account. Any information that has been published to the Steem blockchain will
+                            legitimate business purposes after you delete your account. Any information that has been published to the Whaleshares blockchain will
                             also remain indefinitely.
                         </p>
                     </div>
@@ -328,7 +328,7 @@ class Privacy extends React.Component {
                             <span className="section">32</span>
                             We may change this Privacy Policy from time to time. If we do, we will let you know by revising the date at the top of the policy.
                             If we make a change to this policy that, in our sole discretion, is material, we will provide you with additional notice (such as
-                            adding a statement to steemouncements, the front page of the Services or sending you a notification). We encourage you to review the
+                            adding a statement to announcements, the front page of the Services or sending you a notification). We encourage you to review the
                             Privacy Policy whenever you access or use our Services or otherwise interact with us to stay informed about our information
                             practices and the ways you can help protect your privacy. If you continue to use our Services after Privacy Policy changes go into
                             effect, you consent to the revised policy.
@@ -338,7 +338,7 @@ class Privacy extends React.Component {
                         <h2>Contact Us</h2>
                         <p>
                             <span className="section">33</span>
-                            If you have any questions about this Privacy Policy, please email <a href="mailto:contact@steemit.com">contact@steemit.com</a>.
+                            If you have any questions about this Privacy Policy, please email <a href="mailto:contact@whaleshares.net">contact@whaleshares.net</a>.
                         </p>
                     </div>
                 </div>
