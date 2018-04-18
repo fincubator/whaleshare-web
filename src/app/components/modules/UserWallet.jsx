@@ -303,15 +303,15 @@ class UserWallet extends React.Component {
             </div>
             <div className="UserWallet__balance row zebra">
                 <div className="column small-12 medium-8">
-                    WLS POWER
+                    WHALESTAKE
                     <FormattedHTMLMessage className="secondary" id="tips_js.influence_token" />
                     {delegated_steem != 0 ? <span className="secondary">{tt('tips_js.part_of_your_steem_power_is_currently_delegated')}</span> : null}
                 </div>
                 <div className="column small-12 medium-4">
                     {isMyAccount ?
-                    <FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={power_balance_str + ' WLS POWER'} menu={power_menu} />
-                    : power_balance_str + ' WLS POWER'}
-                    {delegated_steem != 0 ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Tooltip t="WLS POWER delegated to this account">({received_power_balance_str} WLS)</Tooltip></div> : null}
+                    <FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={power_balance_str + ' WHALESTAKE'} menu={power_menu} />
+                    : power_balance_str + ' WHALESTAKE'}
+                    {delegated_steem != 0 ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Tooltip t="WHALESTAKE delegated to this account">({received_power_balance_str} WLS)</Tooltip></div> : null}
                 </div>
             </div>
             {/*<div className="UserWallet__balance row">*/}

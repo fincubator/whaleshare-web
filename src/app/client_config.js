@@ -11,14 +11,14 @@ export const APP_DOMAIN = 'beta.whaleshares.net';
 export const LIQUID_TOKEN = 'WLS';
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
 export const LIQUID_TOKEN_UPPERCASE = 'WLS';
-export const VESTING_TOKEN = 'WLS POWER';
-export const INVEST_TOKEN_UPPERCASE = 'WLS POWER';
+export const VESTING_TOKEN = 'WHALESTAKE';
+export const INVEST_TOKEN_UPPERCASE = 'WHALESTAKE';
 export const INVEST_TOKEN_SHORT = 'SP';
 export const DEBT_TOKEN = 'WLS DOLLAR';
 export const DEBT_TOKENS = 'WLS DOLLARS';
 export const CURRENCY_SIGN = '$';
 export const WIKI_URL = '';
-export const LANDING_PAGE_URL = 'https://whaleshares.net/';
+export const LANDING_PAGE_URL = 'https://beta.whaleshares.net/';
 export const TERMS_OF_SERVICE_URL = 'https://' + APP_DOMAIN + '/tos.html';
 export const PRIVACY_POLICY_URL = 'https://' + APP_DOMAIN + '/privacy.html';
 export const WHITEPAPER_URL = 'https://steem.io/SteemWhitePaper.pdf';
@@ -40,10 +40,10 @@ export const FRACTION_DIGITS_MARKET = 3; // accurate amount of deciaml digits (e
 export const TWITTER_HANDLE = '@Whaleshares';
 export const SHARE_IMAGE = 'https://' +
     APP_DOMAIN +
-    '/images/wls-logo-lightblue-inverse.png';
+    '/images/wls-share.png';
 export const TWITTER_SHARE_IMAGE = 'https://' +
     APP_DOMAIN +
-    '/images/wls-logo-lightblue-inverse.png';
+    '/images/wls-icon-twshare-2.jpg';
 export const SITE_DESCRIPTION = 'Whaleshares is a social media platform where everyone gets paid for ' +
     'creating and curating content.';
 
