@@ -8,7 +8,8 @@ export function formatCoins(string) {
 	if(!string) return string
 	// TODO use .to:owerCase() ? for string normalisation
 	string = string.replace('SBD', DEBT_TOKEN_SHORT ).replace('SD', DEBT_TOKEN_SHORT)
-		  		   .replace('WLS Power', VESTING_TOKEN).replace('WLS POWER', VESTING_TOKEN)
+		  		   .replace('WHALESTAKE', VESTING_TOKEN).replace('STEEM POWER', VESTING_TOKEN)
+		  		   .replace('WHALESTAKE', VESTING_TOKEN).replace('WLS POWER', VESTING_TOKEN)
 		    	   .replace('WLS', LIQUID_TOKEN).replace('STEEM', LIQUID_TOKEN_UPPERCASE)
 				   .replace('$', CURRENCY_SIGN)
 	return string

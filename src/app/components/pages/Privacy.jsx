@@ -36,7 +36,7 @@ class Privacy extends React.Component {
                         <h4>Transactional Information</h4>
                         <p>
                             <span className="section">4</span>
-                            If you purchase products or services from us (e.g., WLS Power), we will collect certain information from you, including your name,
+                            If you purchase products or services from us (e.g., WHALESTAKE), we will collect certain information from you, including your name,
                             address, email address, and information about the product or service you are purchasing. Payments are processed by third-party
                             payment processors (e.g., Stripe and PayPal), so please refer to the applicable processor’s terms and privacy policy for more
                             information about how payment information is processed and stored.
@@ -129,7 +129,7 @@ class Privacy extends React.Component {
                                     should take that into consideration before posting to the Services.
                                 </li>
                                 <li>When other users view your profile, they will be able to see information about your activities on the Services, such as your
-                                    username, prior posts and comments, WLS Power, and how long you have been a member of the Services.
+                                    username, prior posts and comments, WHALESTAKE, and how long you have been a member of the Services.
                                 </li>
                             </ul>
                         </div>
