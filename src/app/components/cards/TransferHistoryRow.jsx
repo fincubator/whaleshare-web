@@ -72,7 +72,9 @@ class TransferHistoryRow extends React.Component {
         } else if (type === 'author_reward') {
             let steem_payout = "";
             if(data.steem_payout !== '0.000 WLS') steem_payout = ", " + data.steem_payout;
-            description_start += `${data.sbd_payout}${steem_payout}, ${tt('g.and')} ${author_reward} WHALESTAKE ${tt('g.for')} ${data.author}/${data.permlink}`;
+            // description_start += `${data.sbd_payout}${steem_payout}, ${tt('g.and')} ${author_reward} WHALESTAKE ${tt('g.for')} ${data.author}/${data.permlink}`;
+            description_start += `${author_reward} WHALESTAKE ${tt('g.for')} ${data.author}/${data.permlink}`;
+            
             // other_account = ``;
             description_end = '';
         } else if (type === 'claim_reward_balance') {

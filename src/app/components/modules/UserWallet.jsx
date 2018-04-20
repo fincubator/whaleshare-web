@@ -247,7 +247,7 @@ class UserWallet extends React.Component {
 
         // const reward_steem = parseFloat(account.get('reward_steem_balance').split(' ')[0]) > 0 ? account.get('reward_steem_balance') : null;
         // const reward_sbd = parseFloat(account.get('reward_sbd_balance').split(' ')[0]) > 0 ? account.get('reward_sbd_balance') : null;
-        const reward_sp = parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0 ? account.get('reward_vesting_steem').replace('WLS', 'SP') : null;
+        const reward_sp = parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0 ? account.get('reward_vesting_steem').replace('WLS', 'WHALESTAKE') : null;
 
         let rewards = [];
         // if(reward_steem) rewards.push(reward_steem);
@@ -289,18 +289,6 @@ class UserWallet extends React.Component {
                     {/*{isMyAccount && <button className="UserWallet__buysp button hollow" onClick={onShowDepositSteem}>{tt('userwallet_jsx.buy_steem_or_steem_power')}</button>}*/}
                 {/*</div>}*/}
             </div>
-            <div className="UserWallet__balance row">
-                <div className="column small-12 medium-8">
-                    WLS
-                    <FormattedHTMLMessage className="secondary" id="tips_js.liquid_token" params={{LIQUID_TOKEN, VESTING_TOKEN}} />
-                </div>
-                <div className="column small-12 medium-4">
-                    {isMyAccount ?
-                    <FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={steem_balance_str + ' WLS'} menu={steem_menu} />
-                    : steem_balance_str + ' WLS'}
-                    {/*{steemOrders ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Link to="/market"><Tooltip t={tt('market_jsx.open_orders')}>(+{steem_orders_balance_str} WLS)</Tooltip></Link></div> : null}*/}
-                </div>
-            </div>
             <div className="UserWallet__balance row zebra">
                 <div className="column small-12 medium-8">
                     WHALESTAKE
@@ -312,6 +300,18 @@ class UserWallet extends React.Component {
                     <FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={power_balance_str + ' WHALESTAKE'} menu={power_menu} />
                     : power_balance_str + ' WHALESTAKE'}
                     {delegated_steem != 0 ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Tooltip t="WHALESTAKE delegated to this account">({received_power_balance_str} WLS)</Tooltip></div> : null}
+                </div>
+            </div>
+            <div className="UserWallet__balance row">
+                <div className="column small-12 medium-8">
+                    WLS
+                    <FormattedHTMLMessage className="secondary" id="tips_js.liquid_token" params={{LIQUID_TOKEN, VESTING_TOKEN}} />
+                </div>
+                <div className="column small-12 medium-4">
+                    {isMyAccount ?
+                    <FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={steem_balance_str + ' WLS'} menu={steem_menu} />
+                    : steem_balance_str + ' WLS'}
+                    {/*{steemOrders ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Link to="/market"><Tooltip t={tt('market_jsx.open_orders')}>(+{steem_orders_balance_str} WLS)</Tooltip></Link></div> : null}*/}
                 </div>
             </div>
             {/*<div className="UserWallet__balance row">*/}
