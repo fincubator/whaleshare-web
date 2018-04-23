@@ -73,38 +73,37 @@
 	  position: relative;
 	  top: -0.5rem;
 	}
+	.confirm_weight svg {
+  	top: 0;
+	}
 	path {
   	@include themify($themes) {
-  	  fill: themed('buttonBackground');
+  	  fill: themed('buttonUpvoteStroke');
   	}       
 	}
 	circle {
 	  @include themify($themes) {
-	    stroke: themed('buttonBackground');
+	    stroke: themed('buttonUpvoteStroke');
+  	  fill: themed('buttonUpvoteFill');
 	  }       
 	}
-}
-
-.Voting__button-up > a:hover, a.confirm_weight:hover {
-    path {
-        fill: #fff;
-    }
-    circle {
-        @include themify($themes) {
-          fill: themed('buttonBackground');
-          stroke: themed('buttonBackground');
-        }   
-    }
-    svg {
-        background-size: contain;
-        border-radius: 50%;
-    }
+	a:hover path {
+  	@include themify($themes) {
+  	  fill: themed('buttonUpvoteFill');
+  	}       
+	}
+	a:hover circle {
+	  @include themify($themes) {
+	    stroke: themed('buttonUpvoteStroke');
+  	  fill: themed('buttonUpvoteStroke');
+	  }       
+	}
 }
 
 .Voting__button-up.votingUp {
   padding-right: 0.5rem;
   svg {
-    border: 1px solid $color-teal;
+    border: 1px solid $color-brightblue;
     border-radius: 50%;
     border-right-color: transparent;
     border-top-color: transparent;
@@ -290,7 +289,7 @@
       display: inline-block;
       position: absolute;
       &:active {
-        background: $color-teal;
+        background: $color-brightblue;
       }
     }
   }
@@ -302,7 +301,7 @@
     margin-top: 18px;
     .rangeslider__fill {
       height: 100%;
-      background: $color-teal;
+      background: $color-brightblue;
       box-shadow: none;
       left: 0;
     }
