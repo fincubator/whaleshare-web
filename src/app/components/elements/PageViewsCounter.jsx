@@ -21,7 +21,9 @@ export default class PageViewsCounter extends React.Component {
 
     pageView() {
         let ref = document.referrer || '';
-        recordPageView(window.location.pathname, ref).then(views => this.setState({views}));
+
+        // TODO: better page_view counter - https://gitlab.com/beyondbitcoin/whaleshares-web/issues/26
+        // recordPageView(window.location.pathname, ref).then(views => this.setState({views}));
         this.last_page = window.location.pathname;
     }
 
