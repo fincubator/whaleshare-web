@@ -747,6 +747,7 @@ a#changeLayout:focus {
       &__content {
         display: flex;
         align-items: top;
+        flex-wrap: wrap;
       }
       &__content-block {
         margin-bottom: 0;
@@ -755,7 +756,6 @@ a#changeLayout:focus {
         }
         &--text {
           margin-top: 0;
-          min-width: 300px;
         }
       }
       &__tags {
@@ -789,11 +789,61 @@ a#changeLayout:focus {
   }
 }
 
+@include MQ(M) {
+  .layout-list {
+    .articles {
+      &__content-block {
+        &--text {
+          max-width: 20rem;
+        }
+      }      
+    }
+  }
+  .UserProfile .layout-list {
+    .articles {
+      &__content-block {
+        &--text {
+          max-width: 25rem;
+        }
+      }      
+    }
+  }
+}
+
+@include MQ(ML) {
+  .UserProfile .layout-list {
+    .articles {
+      &__content-block {
+        &--text {
+          max-width: 30rem;
+        }
+      }      
+    }
+  }
+}
+
+@include MQ(MML) {
+  .UserProfile .layout-list {
+    .articles {
+      &__content-block {
+        &--text {
+          max-width: 42rem;
+        }
+      }      
+    }
+  }
+}
+
 @include MQ(L) {
   .layout-list {
     .articles {
       padding: 1.5em 3em; 
     }
+      &__content-block {
+        &--text {
+          max-width: 42rem;
+        }
+      }      
   }
 }
 
@@ -801,6 +851,12 @@ a#changeLayout:focus {
   .layout-list {
     .articles {
       padding: 1.5em 4em; 
+
+      &__content-block {
+        &--text {
+          max-width: 43rem;
+        }
+      }      
     }
   }
 }
