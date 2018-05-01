@@ -80,7 +80,7 @@
   "server_session_secret": "exiKdyF+IwRIXJDmtGIl4vWUz4i3eVSISpfZoeYc0s4=",
   "session_cookie_key": "stm-dev",
   "session_key": "steemses",
-  "site_domain": "steemitdev.com",
+  "site_domain": "beta.whaleshares.net",
   "tarantool": {
     "host": "localhost",
     "password": "",
@@ -95,9 +95,9 @@
     "account_sid": false,
     "auth_token": false
   },
-  "upload_image": false,
-  "steemd_connection_client": "wss://steemd.steemit.com",
-  "steemd_connection_server": "wss://steemd.steemit.com",
-  "chain_id": "0000000000000000000000000000000000000000000000000000000000000000",
-  "address_prefix": "STM"
+  "upload_image": "https://beta.whaleshares.net",
+  "steemd_connection_client": "wss://beta.whaleshares.net/ws",
+  "steemd_connection_server": "wss://beta.whaleshares.net/ws",
+  "chain_id": "de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866",
+  "address_prefix": "WLS"
 }
