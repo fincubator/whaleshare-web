@@ -34,7 +34,7 @@ const pageRequiresEntropy = (path) => {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {open: null, showCallout: true, showBanner: true, expandCallout: false};
+        this.state = {open: null, showCallout: true, showBanner: true, showNotice: true, expandCallout: false};
         this.toggleOffCanvasMenu = this.toggleOffCanvasMenu.bind(this);
         this.signUp = this.signUp.bind(this);
         this.learnMore = this.learnMore.bind(this);
@@ -87,6 +87,7 @@ class App extends React.Component {
             p.flash !== n.flash ||
             this.state.open !== nextState.open ||
             this.state.showBanner !== nextState.showBanner ||
+            this.state.showNotice !== nextState.showNotice ||
             this.state.showCallout !== nextState.showCallout ||
             p.nightmodeEnabled !== n.nightmodeEnabled
         );
@@ -172,6 +173,20 @@ class App extends React.Component {
             </div>;
         }
 
+        let sitewide_notice = null;
+        if (this.state.showNotice) { 
+            sitewide_notice = (
+              <div className="sitewideNotice">
+                <CloseButton onClick={() => this.setState({showNotice: false})} />
+                <div className="text-center">
+                    <p><strong>Please note:</strong> This is a TestNet. TestNet WLS / WHALESTAKE tokens have no value and will be reset before launch.
+                    <a className="button hollow uppercase" href="/whaleshares/@powerpics/important-information-about-the-whaleshares-beta" target="_blank" rel="noopener noreferrer" onClick={this.learnMore}> <strong>{tt('navigation.learn_more')}</strong></a>
+                    </p>
+                </div>
+              </div>
+            );
+        }
+
         let welcome_screen = null;
         if (ip && new_visitor && this.state.showBanner) { 
             welcome_screen = (
@@ -207,6 +222,11 @@ class App extends React.Component {
                 </ul>
                 <ul className="vertical menu">                
                     <li>
+                        <a href="/whaleshares/@powerpics/important-information-about-the-whaleshares-beta" onClick={this.navigate}>
+                            This is a TestNet
+                        </a>
+                    </li>
+                    <li>
                         <a href="/recover_account_step_1" onClick={this.navigate}>
                             {tt('navigation.stolen_account_recovery')}
                         </a>
@@ -232,6 +252,7 @@ class App extends React.Component {
             </SidePanel>
             {miniHeader ? headerHidden ? null : <MiniHeader /> : <Header toggleOffCanvasMenu={this.toggleOffCanvasMenu} menuOpen={this.state.open} />}
             <div className="App__content">
+                {sitewide_notice}
                 {welcome_screen}
                 {callout}
                 {children}

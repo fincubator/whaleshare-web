@@ -150,9 +150,6 @@ class PostSummary extends React.Component {
                     <span className="articles__tag-link">{tt('g.in')}&nbsp;<TagList post={p} single />&nbsp;•&nbsp;</span>
                     <Link className="timestamp__link" to={title_link_url} >
                         <span className="timestamp__time"><TimeAgoWrapper date={p.created} className="updated" /></span>
-
-                        {full_power && <span className="articles__icon-100" title={tt('g.powered_up_100')}><Icon name="steempower" /></span>}
-
                     </Link>
                 </div>
             </div>
