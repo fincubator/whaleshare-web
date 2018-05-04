@@ -109,9 +109,9 @@
     text-transform: lowercase;
   }
   @media screen and (max-width: 39.9375em) {
-      .shrink {
-          padding: 0 1rem;
-      }
+    .shrink {
+        padding: 0 1rem 0 0;
+    }
   }
 }
 

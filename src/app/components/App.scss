@@ -154,3 +154,50 @@
     right: 0;
   }
 }
+
+.sitewideNotice {
+  padding: 1.5em 2em 0.5em;
+  position: relative;
+  top: -1.5rem;
+  z-index: 110;
+  line-height: 1.2;
+  
+    @include MQ(ML) {
+      top: -1.5rem;
+    }
+    @include MQ(L) {
+      top: -1rem;
+    }
+
+  @include themify($themes) {
+      background-color: themed('highlightBackgroundColor');  
+      border-top: themed('border'); 
+      border-bottom: themed('border'); 
+  }
+  .button.hollow {
+    display: block;
+    margin-top: 0.5rem;
+    
+    @include MQ(SM) {
+      display: inline-block;
+      position: relative;
+      margin-top: 0;
+      top: 0.5rem;
+      left: 0.5rem;
+    }
+  }
+  
+  .close-button {
+    top: 0;
+    right: 0rem;
+
+    @include MQ(ML) {
+      top: 1rem;
+    }
+
+    @include MQ(L) {
+      top: 2rem;
+      right: 1rem;
+    }
+  }
+}
