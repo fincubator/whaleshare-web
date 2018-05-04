@@ -631,11 +631,11 @@ export default (formId) => connect(
                             max_accepted_payout: '0.000 SBD',
                         }
                         break;
-                    case '100%': // 100% steem power payout
-                        __config.comment_options = {
-                            percent_steem_dollars: 0, // 10000 === 100% (of 50%)
-                        }
-                        break;
+                    // case '100%': // 100% steem power payout
+                    //     __config.comment_options = {
+                    //         percent_steem_dollars: 0, // 10000 === 100% (of 50%)
+                    //     }
+                    //     break;
                     default: // 50% steem power, 50% sd+steem
                 }
             }
