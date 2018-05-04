@@ -222,6 +222,11 @@ class App extends React.Component {
                 </ul>
                 <ul className="vertical menu">                
                     <li>
+                        <a href="/whaleshares/@powerpics/important-information-about-the-whaleshares-beta" onClick={this.navigate}>
+                            This is a TestNet
+                        </a>
+                    </li>
+                    <li>
                         <a href="/recover_account_step_1" onClick={this.navigate}>
                             {tt('navigation.stolen_account_recovery')}
                         </a>
@@ -247,8 +252,8 @@ class App extends React.Component {
             </SidePanel>
             {miniHeader ? headerHidden ? null : <MiniHeader /> : <Header toggleOffCanvasMenu={this.toggleOffCanvasMenu} menuOpen={this.state.open} />}
             <div className="App__content">
-                {welcome_screen}
                 {sitewide_notice}
+                {welcome_screen}
                 {callout}
                 {children}
                 {lp ? <LpFooter /> : null}
