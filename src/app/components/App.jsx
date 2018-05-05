@@ -215,6 +215,11 @@ class App extends React.Component {
                 <TopRightMenu vertical navigate={this.navigate} />
                 <ul className="vertical menu">
                     <li>
+                        <a href="/whalesharesexplorer/" onClick={this.navigate}>
+                            {tt('navigation.explorer')}
+                        </a>
+                    </li>
+                    <li>
                         <a href="/tags" onClick={this.navigate}>
                             {tt('navigation.explore')}
                         </a>
