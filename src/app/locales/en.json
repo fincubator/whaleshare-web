@@ -215,7 +215,7 @@
   },
   "navigation": {
     "about": "About",
-    "explore": "Explore",
+    "explore": "Browse Tags",
     "APP_NAME_whitepaper": "%(APP_NAME)s Whitepaper",
     "buy_LIQUID_TOKEN": "Buy %(LIQUID_TOKEN)s",
     "sell_LIQUID_TOKEN": "Sell %(LIQUID_TOKEN)s",
@@ -237,7 +237,8 @@
     "bluepaper": "Steem Bluepaper",
     "whitepaper": "Steem Whitepaper",
     "intro_tagline": "Share Value. Receive Value",
-    "intro_paragraph": "Welcome to Whaleshares community!"
+    "intro_paragraph": "Welcome to Whaleshares community!",
+    "explorer": "Blockchain Explorer"
   },
   "main_menu": {
     "hot": "hot",

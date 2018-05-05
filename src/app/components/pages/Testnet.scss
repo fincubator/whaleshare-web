@@ -1,0 +1,15 @@
+.Testnet {
+	max-width: 900px;
+	padding: 2rem;
+  @include themify($themes) {
+    color: themed('textColorPrimary');
+    background-color: themed('moduleBackgroundColor');  
+    border: themed('border'); 
+  }
+}
+
+.App__content {
+    @include MQ(ML) {
+      padding-bottom: 2.5rem;
+    }
+}

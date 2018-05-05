@@ -180,7 +180,7 @@ class App extends React.Component {
                 <CloseButton onClick={() => this.setState({showNotice: false})} />
                 <div className="text-center">
                     <p><strong>Please note:</strong> This is a TestNet. TestNet WLS / WHALESTAKE tokens have no value and will be reset before launch.
-                    <a className="button hollow uppercase" href="/whaleshares/@powerpics/important-information-about-the-whaleshares-beta" target="_blank" rel="noopener noreferrer" onClick={this.learnMore}> <strong>{tt('navigation.learn_more')}</strong></a>
+                    <a className="button hollow uppercase" href="/testnet.html" target="_blank" rel="noopener noreferrer" onClick={this.learnMore}> <strong>{tt('navigation.learn_more')}</strong></a>
                     </p>
                 </div>
               </div>
@@ -215,6 +215,11 @@ class App extends React.Component {
                 <TopRightMenu vertical navigate={this.navigate} />
                 <ul className="vertical menu">
                     <li>
+                        <a href="/whalesharesexplorer/" onClick={this.navigate}>
+                            {tt('navigation.explorer')}
+                        </a>
+                    </li>
+                    <li>
                         <a href="/tags" onClick={this.navigate}>
                             {tt('navigation.explore')}
                         </a>
@@ -222,8 +227,8 @@ class App extends React.Component {
                 </ul>
                 <ul className="vertical menu">                
                     <li>
-                        <a href="/whaleshares/@powerpics/important-information-about-the-whaleshares-beta" onClick={this.navigate}>
-                            This is a TestNet
+                        <a href="/testnet.html" onClick={this.navigate} rel="nofollow">
+                            This is a TestNet!
                         </a>
                     </li>
                     <li>
