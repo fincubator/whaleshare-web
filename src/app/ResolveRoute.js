@@ -32,6 +32,9 @@ export default function resolveRoute(path)
     if (path === '/privacy.html') {
         return {page: 'Privacy'};
     }
+    if (path === '/testnet.html') {
+        return {page: 'Testnet'};
+    }
     if (path === '/support.html') {
         return {page: 'Support'};
     }
