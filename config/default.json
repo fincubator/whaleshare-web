@@ -41,7 +41,7 @@
       "objectSrc": "'none'",
       "pluginTypes": "application/pdf",
       "scriptSrc": "'self' www.google-analytics.com connect.facebook.net",
-      "styleSrc": "'self' 'unsafe-inline' fonts.googleapis.com",
+      "styleSrc": "'self' 'unsafe-inline' fonts.googleapis.com zavoloklom.github.io",
       "reportUri": "/api/v1/csp_violation"
     },
     "reportOnly": false,
