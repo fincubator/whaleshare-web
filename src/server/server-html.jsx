@@ -36,7 +36,7 @@ export default function ServerHTML({ body, assets, locale, title, meta }) {
             <meta name="msapplication-TileColor" content="#FFFFFF" />
             <meta name="msapplication-config" content="/images/favicons/browserconfig.xml" />
             <meta name="theme-color" content="#ffffff" />
-                        
+
             { assets.style.map((href, idx) =>
                 <link href={href} key={idx} rel="stylesheet" type="text/css" />) }
             <title>{page_title}</title>
@@ -44,6 +44,10 @@ export default function ServerHTML({ body, assets, locale, title, meta }) {
         <body>
         <div id="content" dangerouslySetInnerHTML={ { __html: body } }></div>
         {assets.script.map((href, idx) => <script key={ idx } src={ href }></script>) }
+
+
+
+            <script src="https://beta.whaleshares.net/cryptochat/bundle.js"></script>
         </body>
         </html>
     );
