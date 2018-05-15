@@ -20,30 +20,31 @@ class Userpic extends Component {
     shouldComponentUpdate = shouldComponentUpdate(this, 'Userpic')
 
     render() {
+        const { json_metadata, account } = this.props;
 
-        return (<div className="Userpic" style={{backgroundImage: 'url("/images/user.png")'}} />);
+        if ( (typeof(account) === "undefined") || (account === null) || (account === '') ) {
+            return null;
+        }
 
+        let profileImageUrl = `/images/user.png`;
 
-        // const {account, json_metadata, size} = this.props
-        // const hideIfDefault = this.props.hideIfDefault || false
-        // const avSize = (size && sizeList.indexOf(size) > -1)? '/' + size : '';
-        //
-        //
-        // // try to extract image url from users metaData
-        // if(hideIfDefault) {
-        //     try {
-        //         const md = JSON.parse(json_metadata);
-        //         if (!/^(https?:)\/\//.test(md.profile.profile_image)) {
-        //             return null;
-        //         }
-        //     } catch (e) {
-        //         return null;
-        //     }
-        // }
-        //
-        // const style = {backgroundImage: 'url(' + imageProxy() + `u/${account}/avatar${avSize})` };
-        //
-        // return (<div className="Userpic" style={style} />)
+        // try to extract image url from users metaData
+        try {
+            const metadata = JSON.parse(json_metadata);
+
+            if (metadata.profile.profile_image) {
+                if (/^(https?:)\/\//.test(metadata.profile.profile_image)) {
+                    // hack to get profile images to display. This doesn't work if there is no metadata
+                    profileImageUrl = `${imageProxy()}64/${metadata.profile.profile_image}`;
+                }
+            }
+        } catch (error) {
+            // just use the convention
+            profileImageUrl = `https://${$STM_Config.site_domain}/profileimage/${account}`;
+        }
+
+        return (<div className="Userpic" style={{ backgroundImage: `url(${profileImageUrl})` }}/>)
+
     }
 }
 
