@@ -108,9 +108,11 @@
     display: flex;
     text-transform: lowercase;
   }
-  @media screen and (max-width: 39.9375em) {
-    .shrink {
-        padding: 0 1rem 0 0;
+  .shrink {
+    padding: 0.35rem 1rem 0 0;
+    
+    @include MQ(SM) {
+      padding: 0.5rem 0 0 0;
     }
   }
 }

@@ -27,8 +27,8 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
     const lcn = vertical ? '' : 'show-for-medium';
     const nav = navigate || defaultNavigate;
     // const submit_story = $STM_Config.read_only_mode ? null : <li className={lcn + ' submit-story' + (vertical ? ' last' : '')}><a href="/submit.html" onClick={nav}>{tt('g.submit_a_story')}</a></li>;
-    const submit_story = $STM_Config.read_only_mode ? null : <li className={lcn + ' submit-story' + (vertical ? ' last' : '')}><a href="/submit.html" onClick={nav}>{tt('g.submit_a_story')}</a></li>;
-    const submit_icon = $STM_Config.read_only_mode ? null : <li className="show-for-small-only"><Link to="/submit.html"><Icon name="pencil2" /></Link></li>;
+    // const submit_icon = $STM_Config.read_only_mode ? null : <li className="show-for-small-only"><Link to="/submit.html"><Icon name="pencil2" /></Link></li>;
+    const submit_story = $STM_Config.read_only_mode ? null : <li className="submit-icon"><a href="/submit.html" onClick={nav}><Icon size="2x" name="i-post" /></a></li>;
     const feed_link = `/@${username}/feed`;
     const replies_link = `/@${username}/recent-replies`;
     const wallet_link = `/@${username}/transfers`;
@@ -54,7 +54,6 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
         return (
             <ul className={mcn + mcl}>
                 {submit_story}
-                {!vertical && submit_icon}
                 <LinkWithDropdown
                     closeOnClickOutside
                     dropdownPosition="bottom"
@@ -91,7 +90,6 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
             <li className={lcn}><a href="/pick_account">{tt('g.sign_up')}</a></li>
             <li className={lcn}><a href="/login.html" onClick={showLogin}>{tt('g.login')}</a></li>
             {submit_story}
-            {!vertical && submit_icon}
             {toggleOffCanvasMenu && <li className="toggle-menu Header__hamburger"><a href="#" onClick={toggleOffCanvasMenu}>
                 <span className="hamburger" />
             </a></li>}

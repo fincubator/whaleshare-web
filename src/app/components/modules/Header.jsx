@@ -182,7 +182,7 @@ class Header extends React.Component {
         return (
             <header className="Header noPrint">
                 <div className="Header__top header">
-                    <div className="row">
+                    <div className="expanded row">
                         <div className="columns">
                             <ul className="menu">
                                 <li className="Header__top-logo show-for-small-only">
@@ -194,7 +194,7 @@ class Header extends React.Component {
                                 {selected_sort_order && <DropdownMenu className="Header__sort-order-menu menu-hide-for-large" items={sort_order_menu} selected={selected_sort_order[1]} el="li" />}
                                 <HorizontalMenu items={sort_order_menu_horizontal} />
                                 <li className="Header__search">
-                                  <a href="/static/search.html" title={tt_search}><Icon name="search" /></a>
+                                  <a href="/static/search.html" title={tt_search}><Icon size="2x" name="i-search" /></a>
                                 </li>
                             </ul>
                         </div>
