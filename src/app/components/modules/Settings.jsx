@@ -131,7 +131,7 @@ class Settings extends React.Component {
 
         return <div className="Settings">
             <div className="row">
-                <form onSubmit={this.handleSubmitForm} className="small-12 medium-6 large-4 columns">
+                <form onSubmit={this.handleSubmitForm} className="small-12 medium-12 large-12 columns">
                     <h4>{tt('settings_jsx.public_profile_settings')}</h4>
                     <label>
                         {tt('settings_jsx.profile_image_url')}
@@ -184,7 +184,7 @@ class Settings extends React.Component {
 
             {isOwnAccount &&
                 <div className="row">
-                    <div className="small-12 medium-6 large-4 columns">
+                    <div className="small-12 medium-12 large-6 columns">
                         <br /><br />
                         <h4>{tt('settings_jsx.private_post_display_settings')}</h4>
                         <div>
@@ -201,7 +201,7 @@ class Settings extends React.Component {
                 </div>}
             {ignores && ignores.size > 0 &&
                 <div className="row">
-                    <div className="small-12 medium-6 large-4 columns">
+                    <div className="small-12 medium-12 large-6 columns">
                         <br /><br />
                         <UserList title={tt('settings_jsx.muted_users')} account={account} users={ignores} />
                     </div>
