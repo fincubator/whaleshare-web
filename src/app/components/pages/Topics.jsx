@@ -31,7 +31,7 @@ class Topics extends React.Component {
             props: {order, current, compact, className},
         } = this;
         let categories = this.props.categories.get('trending');
-        categories = categories.take(50);
+        categories = categories.take(20);
 
         const cn = 'Topics' + (className ? ` ${className}` : '');
         const currentValue = `/${order}/${current}`;
