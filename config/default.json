@@ -33,7 +33,7 @@
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' beta.whaleshares.net wss://beta.whaleshares.net/ws",
+      "connectSrc": "'self' beta.whaleshares.net wss://beta.whaleshares.net/ws https://beta.whaleshares.net/ws",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com fonts.googleapis.com zavoloklom.github.io",
       "frameAncestors": "'none'",
@@ -96,8 +96,8 @@
     "auth_token": false
   },
   "upload_image": "https://beta.whaleshares.net",
-  "steemd_connection_client": "wss://beta.whaleshares.net/ws",
-  "steemd_connection_server": "wss://beta.whaleshares.net/ws",
+  "steemd_connection_client": "https://beta.whaleshares.net/ws",
+  "steemd_connection_server": "https://beta.whaleshares.net/ws",
   "chain_id": "de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866",
   "address_prefix": "WLS"
 }
