@@ -33,7 +33,7 @@
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' steemit.com wss://steemd.steemit.com api.blocktrades.us",
+      "connectSrc": "'self' beta.whaleshares.net wss://beta.whaleshares.net/ws",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com fonts.googleapis.com zavoloklom.github.io",
       "frameAncestors": "'none'",
