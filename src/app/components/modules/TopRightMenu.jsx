@@ -28,7 +28,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
     const nav = navigate || defaultNavigate;
     // const submit_story = $STM_Config.read_only_mode ? null : <li className={lcn + ' submit-story' + (vertical ? ' last' : '')}><a href="/submit.html" onClick={nav}>{tt('g.submit_a_story')}</a></li>;
     // const submit_icon = $STM_Config.read_only_mode ? null : <li className="show-for-small-only"><Link to="/submit.html"><Icon name="pencil2" /></Link></li>;
-    const submit_story = $STM_Config.read_only_mode ? null : <li className="submit-icon"><a href="/submit.html" onClick={nav}><Icon size="2x" name="i-post" /></a></li>;
+    const submit_story = $STM_Config.read_only_mode ? null : <li className="submit-icon"><Link to="/submit.html"><Icon size="2x" name="i-post" /></Link></li>;
     const feed_link = `/@${username}/feed`;
     const replies_link = `/@${username}/recent-replies`;
     const wallet_link = `/@${username}/transfers`;
