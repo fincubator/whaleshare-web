@@ -437,7 +437,6 @@
     "estimated_value": "The estimated value is based on an average value of %(LIQUID_TOKEN)s in US dollars.",
     "non_transferable": "%(VESTING_TOKEN)s is non-transferable and requires 3 months (13 payments) to convert back to %(LIQUID_TOKEN)s.",
     "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Converted %(VESTING_TOKEN)s can be sent to yourself or someone else but can not transfer again without converting back to %(LIQUID_TOKEN)s.",
-    "part_of_your_steem_power_is_currently_delegated": "Part of your WHALESTAKE is currently delegated to you. Delegation is donated for influence or to help new users perform actions. Your delegation amount can fluctuate.",
     "mana": "Mana is like an energy bar in a computer game that goes down a little bit every time you vote. You start out with 100 percent mana. Every time you share, you will use a small amount of your mana."
   },
   "promote_post_jsx": {
@@ -590,7 +589,6 @@
     "convert_to_LIQUID_TOKEN": "Convert to %(LIQUID_TOKEN)s",
     "withdraw_LIQUID_TOKEN": "Withdraw %(LIQUID_TOKEN)s",
     "withdraw_DEBT_TOKENS": "Withdraw %(DEBT_TOKENS)s",
-    "tokens_worth_about_1_of_LIQUID_TICKER": "Tokens worth about $1.00 of %(LIQUID_TICKER)s, currently collecting %(sbdInterest)s%% APR.",
     "savings": "SAVINGS",
     "estimated_account_value": "Estimated Account Value",
     "next_power_down_is_scheduled_to_happen": "The next power down is scheduled to happen",

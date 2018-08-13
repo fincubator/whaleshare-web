@@ -431,8 +431,7 @@
     "influence_token": "Jetons d'influence qui vous donnent plus de contrôle sur les gains potentiels des articles et vous permettent d'augmenter vos gains de curation",
     "estimated_value": "La valeur estimée est basée sur la valeur moyenne de %(LIQUID_TOKEN)s en dollars américains.",
     "non_transferable": "%(VESTING_TOKEN)s est non transférable et demande 3 mois (13 paiements) pour être convertis en %(LIQUID_TOKEN)s. ",
-    "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Les %(VESTING_TOKEN)s convertis peuvent être envoyés soit à vous, soit à quelqu'un d'autre, mais ne peuvent pas être transférés à nouveau sans être convertis en %(LIQUID_TOKEN)s.",
-    "part_of_your_steem_power_is_currently_delegated": "Une partie de votre influence, ou WLS POWER, est actuellement déléguée. La délégation est un don pour augmenter l'influence ou pour encourager les nouveaux utilisateurs à effectuer des actions sur Steemit. Le montant délégué peut varier."
+    "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Les %(VESTING_TOKEN)s convertis peuvent être envoyés soit à vous, soit à quelqu'un d'autre, mais ne peuvent pas être transférés à nouveau sans être convertis en %(LIQUID_TOKEN)s."
   },
   "promote_post_jsx": {
     "this_post_was_hidden_due_to_low_ratings": "Cet article est masqué en raison d'une faible évaluation."
@@ -584,7 +583,6 @@
     "convert_to_LIQUID_TOKEN": "Convertir en %(LIQUID_TOKEN)s",
     "withdraw_LIQUID_TOKEN": "Retirer %(LIQUID_TOKEN)s",
     "withdraw_DEBT_TOKENS": "Retirer %(DEBT_TOKENS)s",
-    "tokens_worth_about_1_of_LIQUID_TICKER": "Des jetons d'environ 1.00$ de %(LIQUID_TICKER)s, actuellement donnant lieu à %(sbdInterest)s %% d'APR.",
     "savings": "EPARGNE",
     "estimated_account_value": "Valeur estimée du compte",
     "next_power_down_is_scheduled_to_happen": "Le prochain retrait d'influence, ou power down, est prévu dans ",
