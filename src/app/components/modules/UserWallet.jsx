@@ -5,7 +5,7 @@ import g from 'app/redux/GlobalReducer'
 import TransferHistoryRow from 'app/components/cards/TransferHistoryRow';
 import TransactionError from 'app/components/elements/TransactionError';
 import TimeAgoWrapper from 'app/components/elements/TimeAgoWrapper';
-import {numberWithCommas, vestingSteem, delegatedSteem, manaPower} from 'app/utils/StateFunctions'
+import {numberWithCommas, vestingSteem, manaPower} from 'app/utils/StateFunctions'
 import FoundationDropdownMenu from 'app/components/elements/FoundationDropdownMenu'
 import WalletSubMenu from 'app/components/elements/WalletSubMenu'
 import shouldComponentUpdate from 'app/utils/shouldComponentUpdate';
@@ -59,7 +59,6 @@ class UserWallet extends React.Component {
 
         if (!account) return null;
         let vesting_steem = vestingSteem(account.toJS(), gprops);
-        let delegated_steem = delegatedSteem(account.toJS(), gprops);
 
         let isMyAccount = current_user && current_user.get('username') === account.get('name');
 
@@ -159,25 +158,8 @@ class UserWallet extends React.Component {
         }
 
         const isWithdrawScheduled = new Date(account.get('next_vesting_withdrawal') + 'Z').getTime() > Date.now()
-
         const steem_balance_str = numberWithCommas(balance_steem.toFixed(3));
-        // const steem_orders_balance_str = numberWithCommas(steemOrders.toFixed(3));
         const power_balance_str = numberWithCommas(vesting_steem.toFixed(3));
-        const received_power_balance_str = (delegated_steem < 0 ? '+' : '') + numberWithCommas((-delegated_steem).toFixed(3));
-        // const sbd_balance_str = numberWithCommas('$' + sbd_balance.toFixed(3)); // formatDecimal(account.sbd_balance, 3)
-        // const sbd_orders_balance_str = numberWithCommas('$' + sbdOrders.toFixed(3));
-        // const savings_balance_str = numberWithCommas(saving_balance_steem.toFixed(3) + ' STEEM');
-        // const savings_sbd_balance_str = numberWithCommas('$' + sbd_balance_savings.toFixed(3));
-
-        // const savings_menu = [
-        //     { value: tt('userwallet_jsx.withdraw_LIQUID_TOKEN', {LIQUID_TOKEN}), link: '#', onClick: showTransfer.bind( this, 'STEEM', 'Savings Withdraw' ) },
-        // ];
-        // const savings_sbd_menu = [
-        //     { value: tt('userwallet_jsx.withdraw_DEBT_TOKENS', {DEBT_TOKENS}), link: '#', onClick: showTransfer.bind( this, 'SBD', 'Savings Withdraw' ) },
-        // ];
-        // set dynamic secondary wallet values
-        // const sbdMessage = <span>{tt('userwallet_jsx.tokens_worth_about_1_of_LIQUID_TICKER', {LIQUID_TICKER, sbdInterest})}</span>
-
         // const reward_steem = parseFloat(account.get('reward_steem_balance').split(' ')[0]) > 0 ? account.get('reward_steem_balance') : null;
         const reward_sp = parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0 ? account.get('reward_vesting_steem').replace('WLS', 'WHALESTAKE') : null;
 
@@ -226,13 +208,11 @@ class UserWallet extends React.Component {
                 <div className="column small-12 medium-8">
                     WHALESTAKE
                     <FormattedHTMLMessage className="secondary" id="tips_js.influence_token" />
-                    {delegated_steem != 0 ? <span className="secondary">{tt('tips_js.part_of_your_steem_power_is_currently_delegated')}</span> : null}
                 </div>
                 <div className="column small-12 medium-4">
                     {isMyAccount ?
                     <FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={power_balance_str + ' WHALESTAKE'} menu={power_menu} />
                     : power_balance_str + ' WHALESTAKE'}
-                    {delegated_steem != 0 ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Tooltip t="WHALESTAKE delegated to this account">({received_power_balance_str} WLS)</Tooltip></div> : null}
                 </div>
             </div>
             <div className="UserWallet__balance row">
@@ -251,7 +231,6 @@ class UserWallet extends React.Component {
                 <div className="column small-12 medium-8">
                     MANA
                     <FormattedHTMLMessage className="secondary" id="tips_js.mana" />
-                    {delegated_steem != 0 ? <span className="secondary">{tt('tips_js.part_of_your_steem_power_is_currently_delegated')}</span> : null}
                 </div>
                 <div className="column small-12 medium-4">
                     {mana.toFixed(2) + '%'}

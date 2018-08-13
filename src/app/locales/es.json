@@ -431,8 +431,7 @@
     "influence_token": "Tokens con influencia te dan más control sobre los pagos de los posts y te permiten ganar recompensas de curación",
     "estimated_value": "El valor estimado está basado en el valor medio de 1%(LIQUID_TOKEN)s en US dollars.",
     "non_transferable": "%(VESTING_TOKEN)s es intransferible y requiere 3 meses (13 pagos) para convertir de vuelta a %(LIQUID_TOKEN)s.",
-    "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Los %(VESTING_TOKEN)s convertidos pueden ser enviados a ti mismo o a otras personas pero no pueden ser transferidos de nuevo sin convertirlos de vuelta a %(LIQUID_TOKEN)s.",
-    "part_of_your_steem_power_is_currently_delegated": "Parte de tu WLS POWER te ha sido delegado. La delegación es influencia donada que ayuda a los nuevos usuarios a interactuar en steemit. La cantidad de tu delegación puede fluctuar."
+    "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Los %(VESTING_TOKEN)s convertidos pueden ser enviados a ti mismo o a otras personas pero no pueden ser transferidos de nuevo sin convertirlos de vuelta a %(LIQUID_TOKEN)s."
   },
   "promote_post_jsx": {
     "this_post_was_hidden_due_to_low_ratings": "El post ha sido ocultado por bajas calificaciones"
@@ -584,7 +583,6 @@
     "convert_to_LIQUID_TOKEN": "Convertir a %(LIQUID_TOKEN)s",
     "withdraw_LIQUID_TOKEN": "Retirar %(LIQUID_TOKEN)s",
     "withdraw_DEBT_TOKENS": "Retirar %(DEBT_TOKENS)s",
-    "tokens_worth_about_1_of_LIQUID_TICKER": "Los tokens valen alrededor de $1.00 de %(LIQUID_TICKER)s, ahora mismo recolectando %(sbdInterest)s%% APR.",
     "savings": "AHORROS",
     "estimated_account_value": "Valor de cuenta aproximado",
     "next_power_down_is_scheduled_to_happen": "El siguiente power down ocurrirá en ",
