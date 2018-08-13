@@ -74,14 +74,13 @@ class TransferHistoryRow extends React.Component {
             if(data.steem_payout !== '0.000 WLS') steem_payout = ", " + data.steem_payout;
             // description_start += `${data.sbd_payout}${steem_payout}, ${tt('g.and')} ${author_reward} WHALESTAKE ${tt('g.for')} ${data.author}/${data.permlink}`;
             description_start += `${author_reward} WHALESTAKE ${tt('g.for')} ${data.author}/${data.permlink}`;
-            
+
             // other_account = ``;
             description_end = '';
         } else if (type === 'claim_reward_balance') {
 
             let rewards = [];
             if(parseFloat(data.reward_steem.split(' ')[0]) > 0) rewards.push(data.reward_steem);
-            if(parseFloat(data.reward_sbd.split(' ')[0]) > 0) rewards.push(data.reward_sbd);
             if(parseFloat(data.reward_vests.split(' ')[0]) > 0) rewards.push(`${reward_vests} WHALESTAKE`);
 
             let rewards_str;

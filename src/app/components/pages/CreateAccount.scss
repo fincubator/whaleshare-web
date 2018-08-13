@@ -4,8 +4,9 @@
   padding: 1em;
   background-color: $color-white;
   border: 1px solid #eee;
+  
   @include MQ(M) {
-    padding: 2em;
+    padding: 2rem;
   }
   &__title {
     color: $color-blue-black;
@@ -33,7 +34,7 @@
     box-shadow: 0px 0px 0px 0 rgba(0,0,0,0);
   }
   &__step {
-    padding-top: 2em;
+    margin-top: 2em;
   }
   .button, .button.g-recaptcha {
     @extend .e-btn;
@@ -41,6 +42,11 @@
   } 
 }
 
+.App__content.CreateAccount {
+  @include MQ(M) {
+    margin-top: 2.75rem;
+  }
+}
 
 .CreateAccount__rules {
   opacity: 0.5;

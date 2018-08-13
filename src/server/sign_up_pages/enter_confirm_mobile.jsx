@@ -118,10 +118,10 @@ export default function useEnterAndConfirmMobilePages(app) {
         const country = this.query.country;
 
         const body = renderToString(
-            <div className="App CreateAccount">
+            <div className="App RootCreateAccount">
                 <MiniHeader />
-                <br />
-                <div className="row CreateAccount__step" style={{ maxWidth: "32rem" }}>
+                <div className="App__content CreateAccount">
+                  <div className="row CreateAccount__step" style={{ maxWidth: "32rem" }}>
                     <div className="column">
                         <Progress tabIndex="0" value={90} max={100} />
                         <form
@@ -174,6 +174,7 @@ recovery should your account ever be compromised.</em></p>
                         </form>
                     </div>
                 </div>
+              </div>
             </div>
         );
         const props = { body, title: "Phone Number", assets, meta: [] };

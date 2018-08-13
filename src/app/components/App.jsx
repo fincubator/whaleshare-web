@@ -16,9 +16,9 @@ import Icon from 'app/components/elements/Icon';
 import MiniHeader from 'app/components/modules/MiniHeader';
 import tt from 'counterpart';
 import PageViewsCounter from 'app/components/elements/PageViewsCounter';
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
 import { APP_NAME, VESTING_TOKEN, LIQUID_TOKEN } from 'app/client_config';
-import {key_utils} from 'steem/lib/auth/ecc';
+import {key_utils} from '@whaleshares/wlsjs/lib/auth/ecc';
 import resolveRoute from 'app/ResolveRoute';
 
 const pageRequiresEntropy = (path) => {
@@ -117,11 +117,11 @@ class App extends React.Component {
     }
 
     signUp() {
-        serverApiRecordEvent('Sign up', 'Hero banner');
+        // serverApiRecordEvent('Sign up', 'Hero banner');
     }
 
     learnMore() {
-        serverApiRecordEvent('Learn more', 'Hero banner');
+        // serverApiRecordEvent('Learn more', 'Hero banner');
     }
 
     render() {
@@ -174,13 +174,14 @@ class App extends React.Component {
         }
 
         let sitewide_notice = null;
-        if (this.state.showNotice) { 
+        if (this.state.showNotice) {
             sitewide_notice = (
               <div className="sitewideNotice">
                 <CloseButton onClick={() => this.setState({showNotice: false})} />
                 <div className="text-center">
-                    <p><strong>Please note:</strong> This is a TestNet. TestNet WLS / WHALESTAKE tokens have no value and will be reset before launch.
-                    <a className="button hollow uppercase" href="/testnet.html" target="_blank" rel="noopener noreferrer" onClick={this.learnMore}> <strong>{tt('navigation.learn_more')}</strong></a>
+                    <p>
+                      Please note: This is a TestNet. TestNet WLS / WHALESTAKE tokens have no value and will be reset at Pre-Launch (Open BETA) (August 15, 2018).
+                      <a className="button hollow uppercase" href="/testnet.html" target="_blank" rel="noopener noreferrer" onClick={this.learnMore}>{tt('navigation.learn_more')}</a>
                     </p>
                 </div>
               </div>
@@ -188,7 +189,7 @@ class App extends React.Component {
         }
 
         let welcome_screen = null;
-        if (ip && new_visitor && this.state.showBanner) { 
+        if (ip && new_visitor && this.state.showBanner) {
             welcome_screen = (
                 <div className="welcomeWrapper">
                     <div className="welcomeBanner">
@@ -225,7 +226,7 @@ class App extends React.Component {
                         </a>
                     </li>
                 </ul>
-                <ul className="vertical menu">                
+                <ul className="vertical menu">
                     <li>
                         <a href="/testnet.html" onClick={this.navigate} rel="nofollow">
                             This is a TestNet!
@@ -252,6 +253,14 @@ class App extends React.Component {
                         <a href="/tos.html" onClick={this.navigate} rel="nofollow">
                             {tt('navigation.terms_of_service')}
                         </a>
+                    </li>
+                </ul>
+                <ul className="vertical menu">
+                    <li>
+                        <a href="https://discord.gg/3pqBXKY">Whaleshares Discord</a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/whalesharesofficial">Whaleshares Telegram</a>
                     </li>
                 </ul>
             </SidePanel>

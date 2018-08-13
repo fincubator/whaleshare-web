@@ -45,6 +45,14 @@ export function vestingSteem(account, gprops) {
     return vesting_steemf;
 }
 
+export function manaPower(account) {
+    const last_vote_time = new Date(account["last_vote_time"] + "Z").getTime();
+    const diff_in_seconds = new Date(Date.now() - last_vote_time).getTime() / 1000;
+    const regenerated_vp = diff_in_seconds * 10000 / 432000;
+    const total_vp = (account["voting_power"] + regenerated_vp) / 100;
+    return total_vp > 100 ? 100 : total_vp;
+}
+
 // How much STEEM this account has delegated out (minus received).
 export function delegatedSteem(account, gprops) {
     const delegated_vests = parseFloat(account.delegated_vesting_shares.split( ' ' )[0]);

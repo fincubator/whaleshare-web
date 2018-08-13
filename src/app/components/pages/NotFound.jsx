@@ -29,7 +29,6 @@ class NotFound extends React.Component {
                           <li><a href="/created">new posts</a></li>
                           <li><a href="/hot">hot posts</a></li>
                           <li><a href="/trending">trending posts</a></li>
-                          {/*<li><a href="/promoted">promoted posts</a></li>*/}
                           <li><a href="/active">active posts</a></li>
                         </ul>
                     </div>

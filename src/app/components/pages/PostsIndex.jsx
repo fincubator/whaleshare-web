@@ -125,9 +125,6 @@ class PostsIndex extends React.Component {
                 case 'hot':
                     page_title = tt('main_menu.hot');
                     break;
-                case 'promoted':
-                    page_title = tt('g.promoted');
-                    break;
             }
             if (typeof category !== 'undefined') {
                 page_title = `${page_title}: ${category}`; // maybe todo: localize the colon?
@@ -148,8 +145,8 @@ class PostsIndex extends React.Component {
                                 <Topics order={topics_order} current={category} compact />
                             </div>
                             <ArticleLayoutSelector />
-                        </div>         
-                    </div> 
+                        </div>
+                    </div>
                     <hr className="articles__hr" />
                     {markNotificationRead}
                     {(!fetching && (posts && !posts.size)) ? <Callout>{emptyText}</Callout> :
@@ -162,7 +159,7 @@ class PostsIndex extends React.Component {
                             showSpam={showSpam}
                         />
                     }
-                </article>                
+                </article>
                  <aside className="c-sidebar c-sidebar--right">
                     { !this.props.username
                         ? <SidebarNewUsers />
@@ -174,7 +171,7 @@ class PostsIndex extends React.Component {
                 </aside>
                 <aside className="c-sidebar c-sidebar--left">
                     <Topics order={topics_order} current={category} compact={false} />
-                </aside>                  
+                </aside>
             </div>
         );
     }

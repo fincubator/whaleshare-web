@@ -4,7 +4,7 @@ import Icon from 'app/components/elements/Icon';
 import { APP_NAME } from 'app/client_config';
 
 export default function MiniHeader() {
-    return <header className="Header">
+    return <header className="Header simple">
         <div className="Header__top header">
             <div className="expanded row">
                 <div className="columns">

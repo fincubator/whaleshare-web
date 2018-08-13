@@ -1,7 +1,7 @@
 import assert from 'assert'
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient'
-import {PrivateKey, PublicKey} from 'steem/lib/auth/ecc'
-import {config} from 'steem';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient'
+import {PrivateKey, PublicKey} from '@whaleshares/wlsjs/lib/auth/ecc'
+import {config} from '@whaleshares/wlsjs';
 
 export const browserTests = {}
 
@@ -17,7 +17,7 @@ export default function runTests() {
             console.error(error)
             pass = false
             rpt += error.stack + '\n\n'
-            serverApiRecordEvent('client_error', error)
+            // serverApiRecordEvent('client_error', error)
         }
     }
 

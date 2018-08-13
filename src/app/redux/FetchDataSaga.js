@@ -5,7 +5,7 @@ import {getContent} from 'app/redux/SagaShared';
 import GlobalReducer from './GlobalReducer';
 import constants from './constants';
 import {fromJS, Map} from 'immutable'
-import {api} from 'steem';
+import {api} from '@whaleshares/wlsjs';
 
 export const fetchDataWatches = [watchLocationChange, watchDataRequests, watchFetchJsonRequests, watchFetchState, watchGetContent];
 
@@ -82,13 +82,6 @@ export function* fetchData(action) {
           start_permlink: permlink}];
     } else if (order === 'trending30') {
         call_name = 'getDiscussionsByTrending30Async';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if (order === 'promoted') {
-        call_name = 'getDiscussionsByPromotedAsync';
         args = [
         { tag: category,
           limit: constants.FETCH_DATA_BATCH_SIZE,

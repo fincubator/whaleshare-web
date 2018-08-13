@@ -5,10 +5,10 @@ import {accountAuthLookup} from 'app/redux/AuthSaga'
 import user from 'app/redux/User'
 import {getAccount} from 'app/redux/SagaShared'
 import {browserHistory} from 'react-router'
-import {serverApiLogin, serverApiLogout, serverApiRecordEvent} from 'app/utils/ServerApiClient';
+import {serverApiLogin, serverApiLogout /*, serverApiRecordEvent */ } from 'app/utils/ServerApiClient';
 import {loadFollows} from 'app/redux/FollowSaga'
-import {PrivateKey, Signature, hash} from 'steem/lib/auth/ecc';
-import {api} from 'steem';
+import {PrivateKey, Signature, hash} from '@whaleshares/wlsjs/lib/auth/ecc';
+import {api} from '@whaleshares/wlsjs';
 import {translate} from 'app/Translator';
 import DMCAUserList from 'app/utils/DMCAUserList';
 
@@ -21,7 +21,6 @@ export const userWatches = [
     // getCurrentAccountWatch,
     loginErrorWatch,
     lookupPreviousOwnerAuthorityWatch,
-    watchLoadSavingsWithdraw,
     uploadImageWatch,
 ]
 
@@ -44,30 +43,8 @@ function* loginErrorWatch() {
     yield* takeLatest('user/LOGIN_ERROR', loginError);
 }
 
-function* watchLoadSavingsWithdraw() {
-    yield* takeLatest('user/LOAD_SAVINGS_WITHDRAW', loadSavingsWithdraw);
-}
-
 export function* watchRemoveHighSecurityKeys() {
     yield* takeLatest('@@router/LOCATION_CHANGE', removeHighSecurityKeys);
-}
-
-function* loadSavingsWithdraw() {
-    const username = yield select(state => state.user.getIn(['current', 'username']))
-    const to = yield call([api, api.getSavingsWithdrawToAsync], username)
-    const fro = yield call([api, api.getSavingsWithdrawFromAsync], username)
-
-    const m = {}
-    for(const v of to) m[v.id] = v
-    for(const v of fro) m[v.id] = v
-
-    const withdraws = List(fromJS(m).values())
-        .sort((a, b) => strCmp(a.get('complete'), b.get('complete')))
-
-    yield put(user.actions.set({
-        key: 'savings_withdraws',
-        value: withdraws,
-    }))
 }
 
 const strCmp = (a, b) => a > b ? 1 : a < b ? -1 : 0
@@ -203,7 +180,7 @@ function* usernamePasswordLogin2({payload: {username, password, saveLogin,
             yield put(user.actions.loginError({ error: 'active_login_blocked' }))
         } else {
             const generated_type = password[0] === 'P' && password.length > 40;
-            serverApiRecordEvent('login_attempt', JSON.stringify({name: username, login_owner_pubkey, owner_pub_key, generated_type}))
+            // serverApiRecordEvent('login_attempt', JSON.stringify({name: username, login_owner_pubkey, owner_pub_key, generated_type}))
             yield put(user.actions.loginError({ error: 'Incorrect Password' }))
         }
         return

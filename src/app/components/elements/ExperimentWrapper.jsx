@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Experiment from 'react-ab-test/lib/Experiment';
 import emitter from 'react-ab-test/lib/emitter';
 import experimentDebugger from 'react-ab-test/lib/debugger';
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
 
 /*
 Usage example:
@@ -60,12 +60,12 @@ class ExperimentWrapper extends React.Component {
 
 emitter.addPlayListener( (experimentName, variantName) => {
     // console.log("Displaying experiment ‘" + experimentName + "’ variant ‘" + variantName + "’");
-    serverApiRecordEvent('Ex:' + experimentName, 'Show:' + variantName, 10);
+    // serverApiRecordEvent('Ex:' + experimentName, 'Show:' + variantName, 10);
 });
 
 emitter.addWinListener( (experimentName, variantName) => {
     // console.log("Variant ‘" + variantName + "’ of experiment ‘" + experimentName + "’  was clicked");
-    serverApiRecordEvent('Ex: ' + experimentName, 'Win:' + variantName, 10);
+    // serverApiRecordEvent('Ex: ' + experimentName, 'Win:' + variantName, 10);
 });
 
 

@@ -4,8 +4,8 @@ import GeneratedPasswordInput from 'app/components/elements/GeneratedPasswordInp
 import LoadingIndicator from 'app/components/elements/LoadingIndicator';
 import tt from 'counterpart';
 import Callout from 'app/components/elements/Callout';
-import {PrivateKey} from 'steem/lib/auth/ecc';
-import {api} from 'steem';
+import {PrivateKey} from '@whaleshares/wlsjs/lib/auth/ecc';
+import {api} from '@whaleshares/wlsjs';
 
 function passwordToOwnerPubKey(account_name, password) {
     let pub_key;

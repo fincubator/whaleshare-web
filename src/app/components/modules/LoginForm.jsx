@@ -7,10 +7,10 @@ import {validate_account_name} from 'app/utils/ChainValidation';
 import runTests from 'app/utils/BrowserTests';
 import shouldComponentUpdate from 'app/utils/shouldComponentUpdate'
 import reactForm from 'app/utils/ReactForm'
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
 import tt from 'counterpart';
 import { APP_URL } from 'app/client_config';
-import {PrivateKey, PublicKey} from 'steem/lib/auth/ecc';
+import {PrivateKey, PublicKey} from '@whaleshares/wlsjs/lib/auth/ecc';
 
 class LoginForm extends Component {
 
@@ -77,13 +77,13 @@ class LoginForm extends Component {
 
     SignUp() {
         const onType = document.getElementsByClassName("OpAction")[0].textContent;
-        serverApiRecordEvent('FreeMoneySignUp', onType);
+        // serverApiRecordEvent('FreeMoneySignUp', onType);
         window.location.href = "/pick_account";
     }
 
     SignIn() {
         const onType = document.getElementsByClassName("OpAction")[0].textContent;
-        serverApiRecordEvent('SignIn', onType);
+        // serverApiRecordEvent('SignIn', onType);
     }
 
     saveLoginToggle = () => {
@@ -199,7 +199,7 @@ class LoginForm extends Component {
                 </div>}
                 <div>
                     <label className="LoginForm__save-login" htmlFor="saveLogin">
-                        
+
                         <input id="saveLogin" type="checkbox" ref="pw" {...saveLogin.props} onChange={this.saveLoginToggle} disabled={submitting} />&nbsp;{tt('loginform_jsx.keep_me_logged_in')}</label>
                 </div>
                 <div className="login-modal-buttons">

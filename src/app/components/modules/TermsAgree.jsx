@@ -1,6 +1,6 @@
 /* eslint react/prop-types: 0 */
 import React, { PropTypes, Component } from 'react';
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
 import { translate } from 'app/Translator';
 import { Tos } from 'app/components/pages/Tos';
 
@@ -14,13 +14,13 @@ class TermsAgree extends Component {
 
     termsAgree(e) {
         // let user proceed
-        serverApiRecordEvent('AgreeTerms', true);
+        // serverApiRecordEvent('AgreeTerms', true);
         document.querySelectorAll('[role=dialog]')[0].remove();
     }
 
     termsCancel() {
         // do not allow to proceed
-        serverApiRecordEvent('CancelTerms', true);
+        // serverApiRecordEvent('CancelTerms', true);
         window.location.href = "/";
     }
 

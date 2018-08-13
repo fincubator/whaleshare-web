@@ -9,33 +9,30 @@
     max-width: 60rem;
     padding: 2rem 3rem 1rem 3rem;
   }
-  
+
   @include themify($themes) {
-      border-bottom: themed('border');  
-  } 
+      border-bottom: themed('border');
+  }
   .button.hollow {
     @include themify($themes) {
-        border: themed('borderAccent');  
-        color: themed('textColorAccent');  
-    }     
+        border: themed('borderAccent');
+        color: themed('textColorAccent');
+    }
   }
 
   .ReplyEditor {
     margin-top: 1rem;
   }
-  .Promote__button {
-      display: none;
-  }
 }
 
-.theme-wls-light .PostFull {  
+.theme-wls-light .PostFull {
   background-color: white;
 }
 
 .PostFull__time_author_category {
   font-weight: 400;
   @include themify($themes) {
-      border-right: themed('border');  
+      border-right: themed('border');
       color: themed('textColorSecondary');
   }
 
@@ -48,15 +45,15 @@
 
 .PostFull__time_author_category_large {
   margin: 1.75rem 0 1.2rem 0;
-  
+
   @include themify($themes) {
-      color: themed('textColorSecondary');  
-    }   
+      color: themed('textColorSecondary');
+    }
 
   strong, a {color: #999}
   font-size: 120%;
   display: block;
-  
+
   > .Userpic {
     float: left;
     margin: -1.35rem 0.75rem 0 0;
@@ -71,23 +68,23 @@
 .PostFull__header, .PostFull__body {
   max-width: 40rem;
   margin: 0 auto;
-  
+
   @include MQ(ML) {
     max-width: 50rem;
   }
   @include MQ(L) {
     max-width: 60rem;
   }
-  
+
 }
 
 .PostFull__header {
   padding-bottom: 1rem;
   margin-bottom: 0.5rem;
-  
+
   @include themify($themes) {
-    border-bottom: themed('border');  
-  } 
+    border-bottom: themed('border');
+  }
   > h1 {
     overflow: hidden;
     font-family: $body-font-family;
@@ -95,7 +92,7 @@
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 2rem;
-    
+
     .Icon {
       margin: 0 0 0 0.5rem;
       vertical-align: -30%;
@@ -113,8 +110,8 @@
       top: 5px;
       svg {
         @include themify($themes) {
-            fill: themed('textColorSecondary');  
-        } 
+            fill: themed('textColorSecondary');
+        }
       }
     }
   }
@@ -135,8 +132,8 @@
   font-size: 94%;
   svg {
     @include themify($themes) {
-        fill: themed('textColorSecondary');  
-    } 
+        fill: themed('textColorSecondary');
+    }
   }
   a, .FoundationDropdownMenu__label {
     font-size: 94%;
@@ -150,8 +147,8 @@
   }
   .VerticalMenu > li > a {
     @include themify($themes) {
-      fill: themed('textColorSecondary');  
-    } 
+      fill: themed('textColorSecondary');
+    }
   }
   span {
     white-space: normal;
@@ -161,8 +158,8 @@
     padding-right: .4rem;
     margin-right: .4rem;
     @include themify($themes) {
-        border-right: themed('border');  
-    }    
+        border-right: themed('border');
+    }
   }
 }
 
@@ -176,24 +173,24 @@
   font-size: 94%;
   font-weight: 600;
   @include themify($themes) {
-      border-right: themed('border');  
-      fill: themed('textColorSecondary');  
-  }  
+      border-right: themed('border');
+      fill: themed('textColorSecondary');
+  }
 }
 
 .PostFull__reply {
   padding-right: .4rem;
   margin-right: .4rem;
   @include themify($themes) {
-      border-right: themed('border');  
-  }    
+      border-right: themed('border');
+  }
   a {margin: 0 0.15rem;}
 }
 
 .PostFull__lifetime {
   @include themify($themes) {
-    fill: themed('textColorSecondary');  
-  }   
+    fill: themed('textColorSecondary');
+  }
   font-size: 80%;
 }
 

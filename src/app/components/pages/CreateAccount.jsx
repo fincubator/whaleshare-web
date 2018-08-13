@@ -4,12 +4,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import LoadingIndicator from 'app/components/elements/LoadingIndicator';
 import user from 'app/redux/User';
-import {PrivateKey} from 'steem/lib/auth/ecc';
+import {PrivateKey} from '@whaleshares/wlsjs/lib/auth/ecc';
 import {validate_account_name} from 'app/utils/ChainValidation';
 import runTests from 'app/utils/BrowserTests';
 import GeneratedPasswordInput from 'app/components/elements/GeneratedPasswordInput';
 import {saveCords} from 'app/utils/ServerApiClient';
-import {api} from 'steem';
+import {api} from '@whaleshares/wlsjs';
 import { Link } from 'react-router';
 
 class CreateAccount extends React.Component {

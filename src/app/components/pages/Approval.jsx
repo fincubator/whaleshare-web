@@ -33,7 +33,7 @@ class Approval extends React.Component {
         }
         return (
             <div className="row">
-                <div className="column" style={{maxWidth: '36rem', margin: '0 auto'}}>
+                <div className="column Approval_text" style={{maxWidth: '36rem', margin: '0 auto', padding: '1rem', backgroundColor: 'white'}}>
                     <div>
                         {body}
                     </div>
