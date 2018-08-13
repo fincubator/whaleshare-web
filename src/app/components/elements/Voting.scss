@@ -60,12 +60,9 @@
 	width: 2rem !important;
 	height: auto !important;
 	margin-right: 0.5rem;
-	.Icon {
-	margin-left: 0;
-	border-radius: 50%;
-	}
+	
 	> a {
-	padding-right: 0.5rem;
+	  padding-right: 0.5rem;
 	}
 	svg {
 	  width: 2rem !important;
@@ -78,25 +75,13 @@
 	}
 	path {
   	@include themify($themes) {
-  	  fill: themed('buttonUpvoteStroke');
+  	  fill: themed('iconSecondary');
   	}       
-	}
-	circle {
-	  @include themify($themes) {
-	    stroke: themed('buttonUpvoteStroke');
-  	  fill: themed('buttonUpvoteFill');
-	  }       
 	}
 	a:hover path {
   	@include themify($themes) {
-  	  fill: themed('buttonUpvoteFill');
+  	  fill: themed('iconPrimary');
   	}       
-	}
-	a:hover circle {
-	  @include themify($themes) {
-	    stroke: themed('buttonUpvoteStroke');
-  	  fill: themed('buttonUpvoteStroke');
-	  }       
 	}
 }
 
@@ -120,7 +105,6 @@
 }
 
 .Voting__button-down {
-	display: none; 
   margin-left: 0.25rem;
   .Voting__button-downvotes {
     color: #aaa;
@@ -140,28 +124,17 @@
   }
   path {
     @include themify($themes) {
-      fill: themed('buttonText');
+      fill: themed('iconPrimary');
     }
   }
 }
 
-.Voting__button--upvoted circle {
-    @include themify($themes) {
-      fill: themed('buttonBackground');
-      stroke: themed('buttonBackground');
-    }    
-}
-
 .Voting__button--upvoted a:hover path {
-  fill: #fff !important;
+  @include themify($themes) {
+    fill: themed('iconSecondary');
+  }
 }
 
-.Voting__button--upvoted a:hover circle {
-    @include themify($themes) {
-      fill: themed('colorAccentHover');
-      stroke: themed('colorAccentHover');
-    }  
-}
 
 .Voting__button--downvoted path {
   fill: $color-red;

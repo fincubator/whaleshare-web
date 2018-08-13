@@ -12,7 +12,7 @@ import MiniHeader from 'app/components/modules/MiniHeader';
 import secureRandom from 'secure-random';
 import Mixpanel from 'mixpanel';
 import Progress from 'react-foundation-components/lib/global/progress-bar';
-import {api} from 'steem';
+import {api} from '@whaleshares/wlsjs';
 
 const path = require('path');
 const ROOT = path.join(__dirname, '../../..');
@@ -196,10 +196,10 @@ export default function useEnterAndConfirmEmailPages(app) {
         if (this.request.query && this.request.query.email)
             default_email = this.request.query.email;
         const body = renderToString(
-            <div className="App CreateAccount">
+            <div className="App RootCreateAccount">
                 <MiniHeader />
-                <br />
-                <div className="row CreateAccount__step" style={{ maxWidth: "32rem" }}>
+                <div className="App__content CreateAccount">
+                  <div className="row CreateAccount__step" style={{ maxWidth: "32rem" }}>
                     <div className="column">
                         <Progress tabIndex="0" value={50} max={100} />
                         <form id="submit_email" action="/submit_email" method="POST">
@@ -245,6 +245,7 @@ export default function useEnterAndConfirmEmailPages(app) {
                         </form>
                     </div>
                 </div>
+              </div>
             </div>
         );
         const props = { body, title: "Email Address", assets, meta: [] };

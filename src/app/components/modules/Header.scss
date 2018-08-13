@@ -45,11 +45,6 @@
   .menu-icon {
     margin: 0.2rem 0;
   }
-  svg > path {
-    @include themify($themes) {
-      fill: themed('textColorPrimary');  
-    } 
-  }
   li.submit-story > a {
     @extend .e-btn;
     margin: 0 1rem 0.25rem 0.75rem;
@@ -234,34 +229,5 @@ ul > li.Header__top-logo > a {
       height: auto;
     }    
   }
-  
-  .icon-svg {
-    fill: $color-teal;
-    @include themify($themes) {
-      fill: themed('colorAccent');
-    }
-  }
 }
 
-.Header__top-logo:hover {
-  .logo-new {
-    .icon-svg {
-      fill: $color-blue-black;
-      @include themify($themes) {
-        fill: themed('colorAccentReverse');
-      }
-    }
-  }
-}
-
-.Header__top-logo a {
-  &:visited, &:active {
-    .logo-new {
-      .icon-svg {      
-        @include themify($themes) {
-            fill: themed('ColorAccent');  
-        }
-      }
-    } 
-  }        
-}

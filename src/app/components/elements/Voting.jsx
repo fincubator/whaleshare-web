@@ -170,7 +170,6 @@ class Voting extends React.Component {
         const cashout_time = post_obj.get('cashout_time');
         const max_payout = parsePayoutAmount(post_obj.get('max_accepted_payout'));
         const pending_payout = parsePayoutAmount(post_obj.get('pending_payout_value'));
-        const promoted = parsePayoutAmount(post_obj.get('promoted'));
         const total_author_payout = parsePayoutAmount(post_obj.get('total_payout_value'));
         const total_curator_payout = parsePayoutAmount(post_obj.get('curator_payout_value'));
 
@@ -180,9 +179,7 @@ class Voting extends React.Component {
         const payout_limit_hit = payout >= max_payout;
         // Show pending payout amount for declined payment posts
         if (max_payout === 0) payout = pending_payout;
-        const up = <Icon name={votingUpActive ? 'empty' : 'chevron-up-circle'} />;
-        const classUp = 'Voting__button Voting__button-up' + (myVote > 0 ? ' Voting__button--upvoted' : '') + (votingUpActive ? ' votingUp' : '');
-
+        
         // There is an "active cashout" if: (a) there is a pending payout, OR (b) there is a valid cashout_time AND it's NOT a comment with 0 votes.
         const cashout_active = pending_payout > 0 || (cashout_time.indexOf('1969') !== 0 && !(is_comment && total_votes == 0));
         const payoutItems = [];
@@ -199,9 +196,6 @@ class Voting extends React.Component {
         } else if (max_payout < 1000000) {
             payoutItems.push({value: tt('voting_jsx.max_accepted_payout', {value: formatDecimal(max_payout).join('')})})
         }
-        if(promoted > 0) {
-            payoutItems.push({value: tt('voting_jsx.promotion_cost', {value: formatDecimal(promoted).join('')})});
-        }
         if(total_author_payout > 0) {
             payoutItems.push({value: tt('voting_jsx.past_payouts', {value: formatDecimal(total_author_payout + total_curator_payout).join('')})});
             payoutItems.push({value: tt('voting_jsx.past_payouts_author', {value: formatDecimal(total_author_payout).join('')})});
@@ -209,7 +203,7 @@ class Voting extends React.Component {
         }
         const payoutEl = <DropdownMenu el="div" items={payoutItems}>
             <span style={payout_limit_hit ? {opacity: '0.5'} : {}}>
-                <FormattedAsset amount={payout} asset="$" classname={max_payout === 0 ? 'strikethrough' : ''} />
+                <FormattedAsset amount={payout} asset="" classname={max_payout === 0 ? 'strikethrough' : ''} />
                 {payoutItems.length > 0 && <Icon name="dropdown-arrow" />}
             </span>
         </DropdownMenu>;
@@ -231,31 +225,65 @@ class Voting extends React.Component {
             voters_list = <DropdownMenu selected={tt('voting_jsx.votes_plural', {count: total_votes})} className="Voting__voters_list" items={voters} el="div" />;
         }
 
+        // voting on post or comment?
+        const depth = post_obj.get('depth');
+        
         let voteUpClick = this.voteUp;
         let dropdown = null;
         if (myVote <= 0 && net_vesting_shares > VOTE_WEIGHT_DROPDOWN_THRESHOLD) {
             voteUpClick = this.toggleWeightUp;
-            dropdown = <FoundationDropdown show={showWeight} onHide={() => this.setState({showWeight: false})}>
-                <div className="Voting__adjust_weight">
-                    <a href="#" onClick={this.voteUp} className="confirm_weight" title={tt('g.upvote')}><Icon size="2x" name="chevron-up-circle" /></a>
-                    <div className="weight-display">{weight / 100}%</div>
-                    <Slider min={100} max={10000} step={100} value={weight} onChange={this.handleWeightChange} />
-                    <CloseButton className="Voting__adjust_weight_close" onClick={() => this.setState({showWeight: false})} />
-                </div>
-            </FoundationDropdown>;
+            if (depth === 0) { // post
+              dropdown = <FoundationDropdown show={showWeight} onHide={() => this.setState({showWeight: false})}>
+                  <div className="Voting__adjust_weight">
+                      <a href="#" onClick={this.voteUp} className="confirm_weight" title={tt('g.upvote')}><Icon size="2x" name="i-share" /></a>
+                      <div className="weight-display">{weight / 100}%</div>
+                      <Slider min={100} max={10000} step={100} value={weight} onChange={this.handleWeightChange} />
+                      <CloseButton className="Voting__adjust_weight_close" onClick={() => this.setState({showWeight: false})} />
+                  </div>
+              </FoundationDropdown>;
+            } else { // comment
+              dropdown = <FoundationDropdown show={showWeight} onHide={() => this.setState({showWeight: false})}>
+                  <div className="Voting__adjust_weight">
+                      <a href="#" onClick={this.voteUp} className="confirm_weight" title={tt('g.upvote')}><Icon size="2x" name="i-up" /></a>
+                      <div className="weight-display">{weight / 100}%</div>
+                      <Slider min={100} max={10000} step={100} value={weight} onChange={this.handleWeightChange} />
+                      <CloseButton className="Voting__adjust_weight_close" onClick={() => this.setState({showWeight: false})} />
+                  </div>
+              </FoundationDropdown>;
+            }
         }
-        return (
-            <span className="Voting">
-                <span className="Voting__inner">
-                    <span className={classUp}>
-                        {votingUpActive ? up : <a href="#" onClick={voteUpClick} title={myVote > 0 ? tt('g.remove_vote') : tt('g.upvote')}>{up}</a>}
-                        {dropdown}
-                    </span>
-                    {payoutEl}
-                </span>
-                {voters_list}
-            </span>
-        );
+
+        const up = <Icon name={votingUpActive ? 'empty' : 'i-up'} />
+        const sh = <Icon name={votingUpActive ? 'empty' : 'i-share'} />
+        const classUp = 'Voting__button Voting__button-up' + (myVote > 0 ? ' Voting__button--upvoted' : '') + (votingUpActive ? ' votingUp' : '');
+
+        if (depth === 0) { // post
+          return (
+              <span className="Voting">
+                  <span className="Voting__inner">
+                      <span className={classUp}>
+                          {votingUpActive ? sh : <a href="#" onClick={voteUpClick} title={myVote > 0 ? tt('g.remove_vote') : tt('g.upvote')}>{sh}</a>}
+                          {dropdown}
+                      </span>
+                      {payoutEl}
+                  </span>
+                  {voters_list}
+              </span>
+          );
+        } else { // comment
+          return (
+              <span className="Voting">
+                  <span className="Voting__inner">
+                      <span className={classUp}>
+                          {votingUpActive ? up : <a href="#" onClick={voteUpClick} title={myVote > 0 ? tt('g.remove_vote') : tt('g.upvote')}>{up}</a>}
+                          {dropdown}
+                      </span>
+                      {payoutEl}
+                  </span>
+                  {voters_list}
+              </span>
+          );
+        }
     }
 }
 

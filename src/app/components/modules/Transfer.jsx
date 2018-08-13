@@ -294,9 +294,6 @@ export default connect(
             const successCallback = () => {
                 // refresh transfer history
                 dispatch({type: 'global/GET_STATE', payload: {url: `@${username}/transfers`}});
-                if(/Savings Withdraw/.test(transferType)) {
-                    dispatch({type: 'user/LOAD_SAVINGS_WITHDRAW', payload: {}})
-                }
                 dispatch(user.actions.hideTransfer())
             };
             const asset2 = toVesting ? 'WLS' : asset;

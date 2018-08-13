@@ -11,7 +11,7 @@ import {Set} from 'immutable'
 import tt from 'counterpart';
 import { localizedCurrency } from 'app/components/elements/LocalizedCurrency';
 import shouldComponentUpdate from 'app/utils/shouldComponentUpdate';
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
 import { INVEST_TOKEN_UPPERCASE } from 'app/client_config';
 
 class Post extends React.Component {
@@ -30,7 +30,7 @@ class Post extends React.Component {
             showNegativeComments: false
         };
         this.showSignUp = () => {
-            serverApiRecordEvent('SignUp', 'Post Promo');
+            // serverApiRecordEvent('SignUp', 'Post Promo');
             window.location = '/pick_account';
         };
         this.shouldComponentUpdate = shouldComponentUpdate(this, 'Post')
@@ -155,7 +155,6 @@ class Post extends React.Component {
                             <li><a href="/created">new posts</a></li>
                             <li><a href="/hot">hot posts</a></li>
                             <li><a href="/trending">trending posts</a></li>
-                            <li><a href="/promoted">promoted posts</a></li>
                             <li><a href="/active">active posts</a></li>
                         </ul>
                     </div>
@@ -173,7 +172,7 @@ class Post extends React.Component {
                     <div className="column">
                         <div className="Post__promo">
                             {tt('g.next_7_strings_single_block.authors_get_paid_when_people_like_you_upvote_their_post')}.
-                            <br />{tt('g.next_7_strings_single_block.if_you_enjoyed_what_you_read_earn_amount', {amount: '$'+localizedCurrency(signup_bonus.substring(1)), INVEST_TOKEN_UPPERCASE})}
+                            <br />{tt('g.next_7_strings_single_block.if_you_enjoyed_what_you_read_earn_amount')}
                             <br />
                             <button type="button" className="button e-btn" onClick={showSignUp}>{tt('loginform_jsx.sign_up_get_steem')}</button>
                         </div>

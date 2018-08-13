@@ -18,7 +18,7 @@ class Testnet extends React.Component {
                   All rewards are 'just for fun' and help test the weight/power of rewarding content as you grow the 'temporary' Whalestake. 
                   <em>We have added a notice bar at the top to remind everyone of this</em>.
                 </p>
-                <h3>3. All earnings will be reset to $0 when the site launches</h3>
+                <h3>3. All earnings will be reset to $0 at Pre-Launch (Open BETA)</h3>
                 <p>So don't worry, if your account has not been activated yet, you are <strong>not &quot;missing out&quot;</strong>. 
                   Also, the price feeds will then be calculating based on the actual value of the WLS token on the DEX.
                 </p>
@@ -26,9 +26,8 @@ class Testnet extends React.Component {
                 <p>At the moment the team is thinking the post content/replies will stay to keep this as an archive of its early development.</p>
                 <h3>5. Whitepaper coming soon</h3>
                 <p>Be patient, things will be explained in time.</p>
-                <h3>6. Launch date is TDB</h3>
-                <p>The team is aiming for 60 Days, give or take. 
-                  Once a few core changes are in place they will have a better handle on the timing and a date for the sharedop and launch will be posted here and in discord.
+                <h3>6. Launch date is September 1, 2018</h3>
+                <p>The Whaleshares platform will open for normal use and the standard account creation process will be activated. At this time anyone is free to sign up. <em>Power Down will not be activated until October 1, 2018</em>.
                 </p>
                 <hr />
                 <p>While we do welcome feedback or credible &quot;bug&quot; finds, we need everyone using the platform at this point to understand once again - 

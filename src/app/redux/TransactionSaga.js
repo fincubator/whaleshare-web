@@ -9,9 +9,9 @@ import tr from 'app/redux/Transaction'
 import tt from 'counterpart'
 import getSlug from 'speakingurl'
 import {DEBT_TICKER} from 'app/client_config'
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient'
-import {PrivateKey, PublicKey} from 'steem/lib/auth/ecc';
-import {api, broadcast, auth, memo} from 'steem';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient'
+import {PrivateKey, PublicKey} from '@whaleshares/wlsjs/lib/auth/ecc';
+import {api, broadcast, auth, memo} from '@whaleshares/wlsjs';
 
 export const transactionWatches = [
     watchForBroadcast,
@@ -162,7 +162,7 @@ function* broadcastOperation({payload:
         let eventType = type.replace(/^([a-z])/, g => g.toUpperCase()).replace(/_([a-z])/g, g => g[1].toUpperCase());
         if (eventType === 'Comment' && !operation.parent_author) eventType = 'Post';
         const page = eventType === 'Vote' ? `@${operation.author}/${operation.permlink}` : '';
-        serverApiRecordEvent(eventType, page);
+        // serverApiRecordEvent(eventType, page);
     } catch(error) {
         console.error('TransactionSage', error);
         if(errorCallback) errorCallback(error.toString())

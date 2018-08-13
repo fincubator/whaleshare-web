@@ -4,7 +4,7 @@ import models from 'db/models';
 import config from 'config';
 import {esc, escAttrs} from 'db/models';
 import {getRemoteIp, rateLimitReq, checkCSRF} from 'server/utils/misc';
-import {broadcast} from 'steem';
+import {broadcast} from '@whaleshares/wlsjs';
 
 export default function useAccountRecoveryApi(app) {
     const router = koa_router();

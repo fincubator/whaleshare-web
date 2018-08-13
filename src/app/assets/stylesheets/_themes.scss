@@ -32,10 +32,8 @@ $themes: (
     buttonTextHover: $color-white,
     buttonBoxShadow: $color-blue-black,
     buttonBoxShadowHover: $color-brightblue,
-    buttonUpvoteStroke: $color-brightblue,
-    buttonUpvoteStrokeHover: $color-white,
-    buttonUpvoteFill: $color-white,
-    buttonUpvoteFillHover: $color-brightblue,
+    iconPrimary: $color-ocean,
+    iconSecondary: $color-moon,
   ),
   wls-dark: (
     colorAccent: $color-lightblue,
@@ -70,10 +68,8 @@ $themes: (
     buttonTextHover: $color-white,
     buttonBoxShadow: $color-lightblue,
     buttonBoxShadowHover: $color-white,
-    buttonUpvoteStroke: $color-brightblue,
-    buttonUpvoteStrokeHover: $color-white,
-    buttonUpvoteFill: $color-white,
-    buttonUpvoteFillHover: $color-brightblue,
+    iconPrimary: $color-ocean,
+    iconSecondary: $color-moon,
   ),
 );
 

@@ -50,8 +50,10 @@ const icons = [
     'reply',
     '100',
     'pencil2',
-    'i-post',
-    'i-search'
+    'i-write',
+    'i-search',
+    'i-share',
+    'i-up',
 ];
 const icons_map = {};
 for (const i of icons) icons_map[i] = require(`assets/icons/${i}.svg`);

@@ -585,34 +585,6 @@
 }
 
 
-
-.icon-svg {
-  transition: 0.2s all 0.05s ease-in-out;
-  @include themify($themes) {
-      fill: themed('textColorSecondary'); 
-    } 
-  &--accent {
-    @include themify($themes) {
-        fill: themed('textColorAccent'); 
-      } 
-  } 
-  &--layout-line1, &--layout-line2, &--layout-line3 {
-    height: 2px;
-    @include opacity(1);
-    transition: 0.3s all ease-in-out;
-  }
-  &--layout-line2 {
-    y: 11px;
-  }
-  &--layout-line1 {
-    y: 6px;
-  }
-  &--layout-line3 {
-    y: 16px;
-  }
-}
-
-
 .articles__layout-selector .icon-svg {
   &--accent {
     @include themify($themes) {

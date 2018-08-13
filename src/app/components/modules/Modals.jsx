@@ -21,13 +21,11 @@ class Modals extends React.Component {
         show_transfer_modal: React.PropTypes.bool,
         show_powerdown_modal: React.PropTypes.bool,
         show_signup_modal: React.PropTypes.bool,
-        show_promote_post_modal: React.PropTypes.bool,
         hideLogin: React.PropTypes.func.isRequired,
         hideConfirm: React.PropTypes.func.isRequired,
         hideSignUp: React.PropTypes.func.isRequired,
         hideTransfer: React.PropTypes.func.isRequired,
         hidePowerdown: React.PropTypes.func.isRequired,
-        hidePromotePost: React.PropTypes.func.isRequired,
         notifications: React.PropTypes.object,
         show_terms_modal: React.PropTypes.bool,
         removeNotification: React.PropTypes.func,
@@ -42,7 +40,7 @@ class Modals extends React.Component {
         const {
             show_login_modal, show_confirm_modal, show_transfer_modal, show_powerdown_modal, show_signup_modal,
             hideLogin, hideTransfer, hidePowerdown, hideConfirm, hideSignUp, show_terms_modal,
-            notifications, removeNotification, hidePromotePost, show_promote_post_modal
+            notifications, removeNotification
         } = this.props;
 
         const notifications_array = notifications ? notifications.toArray().map(n => {
@@ -91,7 +89,6 @@ export default connect(
             show_confirm_modal: state.transaction.get('show_confirm_modal'),
             show_transfer_modal: state.user.get('show_transfer_modal'),
             show_powerdown_modal: state.user.get('show_powerdown_modal'),
-            show_promote_post_modal: state.user.get('show_promote_post_modal'),
             show_signup_modal: state.user.get('show_signup_modal'),
             notifications: state.app.get('notifications'),
             show_terms_modal: state.user.get('show_terms_modal')
@@ -113,10 +110,6 @@ export default connect(
         hidePowerdown: e => {
             if (e) e.preventDefault();
             dispatch(user.actions.hidePowerdown())
-        },
-        hidePromotePost: e => {
-            if (e) e.preventDefault();
-            dispatch(user.actions.hidePromotePost())
         },
         hideSignUp: e => {
             if (e) e.preventDefault();

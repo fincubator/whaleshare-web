@@ -1,4 +1,4 @@
-import {PrivateKey, PublicKey, Aes, key_utils} from 'steem/lib/auth/ecc';
+import {PrivateKey, PublicKey, Aes, key_utils} from '@whaleshares/wlsjs/lib/auth/ecc';
 
 
 // import secureRandom from 'secure-random'

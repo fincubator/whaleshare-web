@@ -6,11 +6,11 @@ import plugins from 'app/utils/JsPlugins';
 import Iso from 'iso';
 import universalRender from 'shared/UniversalRender';
 import ConsoleExports from './utils/ConsoleExports';
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
-import * as steem from 'steem';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+import * as steem from '@whaleshares/wlsjs';
 
 window.onerror = error => {
-    if (window.$STM_csrf) serverApiRecordEvent('client_error', error);
+    // if (window.$STM_csrf) serverApiRecordEvent('client_error', error);
 };
 
 const CMD_LOG_T = 'log-t'
@@ -27,7 +27,6 @@ try {
 }
 
 function runApp(initial_state) {
-    console.log('Initial state', initial_state);
     const konami = {
         code: 'xyzzy',
         enabled: false
@@ -92,7 +91,7 @@ function runApp(initial_state) {
     universalRender({history, location, initial_state})
     .catch(error => {
         console.error(error);
-        serverApiRecordEvent('client_error', error);
+        // serverApiRecordEvent('client_error', error);
     });
 }
 

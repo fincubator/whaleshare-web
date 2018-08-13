@@ -1,6 +1,9 @@
 .sub-menu {
     li {
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem;
+        &.submit-icon {
+          padding-right: 0.75rem;
+        }
         a {
             padding: 0px;
         }
@@ -37,7 +40,7 @@ div.Header__top {
         padding: 0;
         &:hover path, &:focus path {
           @include themify($themes) {
-            fill: themed('textColorAccent');  
+            fill: themed('textColorPrimary');  
           }             
         }
         &:visited path, &:active path {
@@ -51,7 +54,7 @@ div.Header__top {
         > a path {
             transition: 0.2s all ease-in-out;
           @include themify($themes) {
-            fill: themed('textColorPrimary');  
+            fill: themed('textColorAccent');  
           }                 
         }
     }

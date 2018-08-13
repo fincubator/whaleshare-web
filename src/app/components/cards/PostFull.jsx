@@ -17,7 +17,7 @@ import {repLog10, parsePayoutAmount} from 'app/utils/ParsersAndFormatters';
 import DMCAList from 'app/utils/DMCAList'
 import PageViewsCounter from 'app/components/elements/PageViewsCounter';
 import ShareMenu from 'app/components/elements/ShareMenu';
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+// import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
 import Userpic from 'app/components/elements/Userpic';
 import { APP_DOMAIN, APP_NAME } from 'app/client_config';
 import tt from 'counterpart';
@@ -81,7 +81,6 @@ class PostFull extends React.Component {
         username: React.PropTypes.string,
         unlock: React.PropTypes.func.isRequired,
         deletePost: React.PropTypes.func.isRequired,
-        showPromotePost: React.PropTypes.func.isRequired,
         showExplorePost: React.PropTypes.func.isRequired,
     };
 
@@ -145,14 +144,14 @@ class PostFull extends React.Component {
             method: 'share',
             href
         }, (response) => {
-            if (response && !response.error_message)
-                serverApiRecordEvent('FbShare', this.share_params.link);
+            // if (response && !response.error_message)
+                // serverApiRecordEvent('FbShare', this.share_params.link);
         });
         // });
     }
 
     twitterShare(e) {
-        serverApiRecordEvent('TwitterShare', this.share_params.link);
+        // serverApiRecordEvent('TwitterShare', this.share_params.link);
         e.preventDefault();
         const winWidth = 640;
         const winHeight = 320;
@@ -164,7 +163,7 @@ class PostFull extends React.Component {
     }
 
     linkedInShare(e) {
-        serverApiRecordEvent('LinkedInShare', this.share_params.link);
+        // serverApiRecordEvent('LinkedInShare', this.share_params.link);
         e.preventDefault();
         const winWidth = 720;
         const winHeight = 480;
@@ -174,14 +173,6 @@ class PostFull extends React.Component {
         const q = 'title=' + encodeURIComponent(s.title) + '&url=' + encodeURIComponent(s.url) + '&source=Whaleshares&mini=true';
         window.open('https://www.linkedin.com/shareArticle?' + q, 'Share', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
     }
-
-    showPromotePost = () => {
-        const post_content = this.props.cont.get(this.props.post);
-        if (!post_content) return
-        const author = post_content.get('author')
-        const permlink = post_content.get('permlink')
-        this.props.showPromotePost(author, permlink)
-    };
 
     showExplorePost = () => {
         const permlink = this.share_params.link;
@@ -231,7 +222,7 @@ class PostFull extends React.Component {
         };
 
         const share_menu = [
-            {link: '#', onClick: this.fbShare, value: 'Facebook', title: tt('postfull_jsx.share_on_facebook'), icon: 'facebook'},
+            {/* link: '#', onClick: this.fbShare, value: 'Facebook', title: tt('postfull_jsx.share_on_facebook'), icon: 'facebook' */},
             {link: '#', onClick: this.twitterShare, value: 'Twitter', title: tt('postfull_jsx.share_on_twitter'), icon: 'twitter'},
             {link: '#', onClick: this.linkedInShare, value: 'LinkedIn', title: tt('postfull_jsx.share_on_linkedin'), icon: 'linkedin'},
         ];
@@ -328,7 +319,6 @@ class PostFull extends React.Component {
                     </span>
                 }
 
-            {showPromote && <button className="Promote__button float-right button hollow tiny" onClick={this.showPromotePost}>{tt('g.promote')}</button>}
             <TagList post={content} horizontal />
             <div className="PostFull__footer row">
               <div className="column">
@@ -384,9 +374,6 @@ export default connect(
                 operation: {author, permlink},
                 confirm: tt('g.are_you_sure')
             }));
-        },
-        showPromotePost: (author, permlink) => {
-            dispatch({type: 'global/SHOW_DIALOG', payload: {name: 'promotePost', params: {author, permlink}}});
         },
         showExplorePost: (permlink) => {
             dispatch({type: 'global/SHOW_DIALOG', payload: {name: 'explorePost', params: {permlink}}});
