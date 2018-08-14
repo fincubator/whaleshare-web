@@ -32,7 +32,7 @@ Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP H:
 
-![needaccountclaimI.png](https://beta.whaleshares.net/imageupload_data/7cb18f1042ca43929bb312eefb6ac5e9978a5f03)
+![haveaccountclaimI.png](https://beta.whaleshares.net/imageupload_data/360bfbc4d8fd247d278a1362b9bdd59c1335e06c)
 
 ### STEP I:
 
@@ -40,7 +40,7 @@ Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP J
 
-![needaccountclaimJ.png](https://beta.whaleshares.net/imageupload_data/6ff63c749f9c5bfb80cd6eb5862e9687d9ef6d2f)
+![haveaccountclaimJ.png](https://beta.whaleshares.net/imageupload_data/f7d03f5a9f8be9feee455b0b16754a51a02497d0)
 
 ## 2. I want a Whaleshares account but don't have any sharedrop to claim
 
@@ -74,7 +74,7 @@ Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP H:
 
-![needaccountI.png](https://beta.whaleshares.net/imageupload_data/b2c4e1d2e7317d57c2082cbf263bb12794e03a98)
+![needaccountI.png](https://beta.whaleshares.net/imageupload_data/e1ef1df558940cb3bf9e441bb1e1476338dbfefc)
 
 ### STEP I:
 
@@ -116,7 +116,7 @@ Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP H:
 
-![haveaccountclaimI.png](https://beta.whaleshares.net/imageupload_data/d9a7dc4e06bf7a2481145f0b343b7e80ab962af3)
+![needaccountclaimI.png](https://beta.whaleshares.net/imageupload_data/4bad72ef0796f0fe97605b7739ea42054ec1e466)
 
 ### STEP I:
 

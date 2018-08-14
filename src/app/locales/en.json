@@ -106,8 +106,8 @@
     "unfollow": "Unfollow",
     "unmute": "Unmute",
     "unknown": "Unknown",
-    "upvote": "Upvote",
-    "upvote_post": "Upvote post",
+    "upvote": "Reward",
+    "upvote_post": "Reward post",
     "username": "Username",
     "version": "Version",
     "vote": "Vote",
@@ -180,7 +180,7 @@
     "APP_NAME_support": "%(APP_NAME)s Support",
     "please_email_questions_to": "Please email your questions to",
     "next_7_strings_single_block": {
-      "authors_get_paid_when_people_like_you_upvote_their_post": "Authors get paid when people like you upvote their post",
+      "authors_get_paid_when_people_like_you_upvote_their_post": "Authors get paid when people like you share their post",
       "if_you_enjoyed_what_you_read_earn_amount": "If you enjoyed what you read here, create your account today and start earning FREE WLS!",
       "free_steem": "FREE WLS!",
       "sign_up_earn_steem": "Sign up now to earn "
@@ -258,7 +258,7 @@
     "power_up_100": "Power Up 100%%",
     "default_50_50": "Default (50%% / 50%%)",
     "decline_payout": "Decline Payout",
-    "check_this_to_auto_upvote_your_post": "Check this to auto-upvote your post",
+    "check_this_to_auto_upvote_your_post": "Check this box to reward your post automatically",
     "markdown_styling_guide": "Markdown Styling Guide",
     "or_by": "or by",
     "title": "Title",
