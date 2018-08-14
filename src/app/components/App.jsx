@@ -205,17 +205,17 @@ class App extends React.Component {
                         </a>
                     </li>
                     <li>
+                        <a href="/~witnesses" onClick={this.navigate} rel="nofollow">
+                            Vote for Witnesses
+                        </a>
+                    </li>
+                    <li>
                         <a href="/tags" onClick={this.navigate}>
                             {tt('navigation.explore')}
                         </a>
                     </li>
                 </ul>
                 <ul className="vertical menu">
-                    <li>
-                        <a href="/testnet.html" onClick={this.navigate} rel="nofollow">
-                            This is a TestNet!
-                        </a>
-                    </li>
                     <li>
                         <a href="/recover_account_step_1" onClick={this.navigate}>
                             {tt('navigation.stolen_account_recovery')}
