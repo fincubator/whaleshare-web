@@ -106,8 +106,8 @@
     "unfollow": "Unfollow",
     "unmute": "Unmute",
     "unknown": "Unknown",
-    "upvote": "Upvote",
-    "upvote_post": "Upvote post",
+    "upvote": "Reward",
+    "upvote_post": "Reward post",
     "username": "Username",
     "version": "Version",
     "vote": "Vote",
@@ -180,7 +180,7 @@
     "APP_NAME_support": "%(APP_NAME)s Support",
     "please_email_questions_to": "Please email your questions to",
     "next_7_strings_single_block": {
-      "authors_get_paid_when_people_like_you_upvote_their_post": "Authors get paid when people like you upvote their post",
+      "authors_get_paid_when_people_like_you_upvote_their_post": "Authors get paid when people like you share their post",
       "if_you_enjoyed_what_you_read_earn_amount": "If you enjoyed what you read here, create your account today and start earning FREE WLS!",
       "free_steem": "FREE WLS!",
       "sign_up_earn_steem": "Sign up now to earn "
@@ -258,7 +258,7 @@
     "power_up_100": "Power Up 100%%",
     "default_50_50": "Default (50%% / 50%%)",
     "decline_payout": "Decline Payout",
-    "check_this_to_auto_upvote_your_post": "Check this to auto-upvote your post",
+    "check_this_to_auto_upvote_your_post": "Check this box to reward your post automatically",
     "markdown_styling_guide": "Markdown Styling Guide",
     "or_by": "or by",
     "title": "Title",
@@ -601,7 +601,7 @@
     "power_down": "Power Down",
     "amount": "Amount",
     "already_power_down": "You are already powering down %(AMOUNT)s %(LIQUID_TICKER)s (%(WITHDRAWN)s %(LIQUID_TICKER)s paid out so far). Note that if you change the power down amount the payout schedule will reset.",
-    "delegating": "You are delegating %(AMOUNT)s %(LIQUID_TICKER)s. That amount is locked up and not available to power down until the delegation is removed and a full reward period has passed.",
+    "delegating": "Power down is  disabled until October 1, 2018.",
     "per_week": "That's ~%(AMOUNT)s %(LIQUID_TICKER)s per week.",
     "warning": "Leaving less than %(AMOUNT)s %(VESTING_TOKEN)s in your account is not recommended and can leave your account in a unusable state.",
     "error": "Unable to power down (ERROR: %(MESSAGE)s)"

@@ -17,9 +17,11 @@ const SidebarLinks = ({ username }) => (
       </div>
       <div className="c-sidebar__content">
         <ul className="c-sidebar__list">
-          <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://masdacs.io/">Masdac.io Crossposting</a></li>
+          <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://wls.services/sharedroptools/">Claiming Tool</a></li>
+          <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://masdacs.io/">Crossposting Tool</a></li>
           <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://discord.gg/3pqBXKY">Whaleshares Discord</a></li>
           <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://t.me/whalesharesofficial">Whaleshares Telegram</a></li>
+          <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="http://whaleshares.live/">Whaleshares Live</a></li>
         </ul>
       </div>
     </div>

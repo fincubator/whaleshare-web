@@ -1,3 +1,7 @@
+.Text {
+  background-color: white;
+  padding: 1rem;
+}
 .Welcome__banner {
 
   position: relative;
@@ -29,11 +33,19 @@
 
   p {
     position: relative;
+    margin: 0 0 1rem 0;
   }
   h2 {
-    margin-top: 8px;
+    margin: 2rem 0 1rem;
   }
   h3 {
-    margin-top: 0;
+    margin-top: 1rem;
   }  
+  
+  &.Markdown.MarkdownViewer--small img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
 }
