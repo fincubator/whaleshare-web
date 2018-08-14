@@ -5,13 +5,14 @@ class Welcome extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="column large-8 medium-10 small-12">
+                <div className="column large-12 medium-12 small-12">
+                  <div className="Text">
                     <div className="Welcome__banner">
-                        <img src={require('app/assets/images/welcome.jpg')} />
+                        <img src={require('app/assets/images/welcoming-promoart.jpg')} />
                     </div>
-                    <hr />
                     <HelpContent path="welcome" />
                 </div>
+              </div>
             </div>
         );
     }
