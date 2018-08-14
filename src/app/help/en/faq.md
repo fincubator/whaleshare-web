@@ -4,15 +4,15 @@
 
 ### STEP A:
 
-Visit <a href="https://wls.services/sharedroptools">https://wls.services</a>
+Visit <a href="https://wls.services/sharedroptools">wls.services</a>
 
 ### STEP B:
 
-![wlshaveaccountclaim.png](https://beta.whaleshares.net/imageupload_data/701159bc6239689f4bcd43aedb1f4bf9297a429c)
+![wlshaveaccountclaim.png](https://beta.whaleshares.net/imageupload_data/93a6904caaeb69a70fbaa3bd207cb5f8bb6f42f1)
 
 ### STEP C:
 
-Visit <a href="https://wallet.bitshares.org">https://wallet.bitshares.org</a>
+Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP D:
 
@@ -42,19 +42,19 @@ Visit <a href="https://wallet.bitshares.org">https://wallet.bitshares.org</a>
 
 ![needaccountclaimJ.png](https://beta.whaleshares.net/imageupload_data/6ff63c749f9c5bfb80cd6eb5862e9687d9ef6d2f)
 
-## 2. I need a Whaleshares account and want to claim my sharedrop.
+## 2. I want a Whaleshares account but don't have any sharedrop to claim
 
 ### STEP A:
 
-Visit <a href="https://wls.services/sharedroptools">https://wls.services</a>
+Visit <a href="https://wls.services/sharedroptools">wls.services</a>
 
 ### STEP B:
 
-![wlsmakeaccount.png](https://beta.whaleshares.net/imageupload_data/653d0c8f8e526cc68a01ca771854a34eaf435e58)
+![wlsmakeaccount.png](https://beta.whaleshares.net/imageupload_data/e18bd76a99e0fbc31fe3cceaa9f74819d3f80db4)
 
 ### STEP C:
 
-Visit <a href="https://wallet.bitshares.org">https://wallet.bitshares.org</a>
+Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP D:
 
@@ -84,11 +84,11 @@ Visit <a href="https://wallet.bitshares.org">https://wallet.bitshares.org</a>
 
 ![needaccountclaimJ.png](https://beta.whaleshares.net/imageupload_data/6ff63c749f9c5bfb80cd6eb5862e9687d9ef6d2f)
 
-## 3. I need a Whaleshares account and want to claim my sharedrop.
+## 3. I need a Whaleshares account and want to claim my sharedrop
 
 ### STEP A:
 
-Visit <a href="https://wls.services/sharedroptools">https://wls.services</a>
+Visit <a href="https://wls.services/sharedroptools">wls.services</a>
 
 ### STEP B:
 
@@ -96,7 +96,7 @@ Visit <a href="https://wls.services/sharedroptools">https://wls.services</a>
 
 ### STEP C:
 
-Visit <a href="https://wallet.bitshares.org">https://wallet.bitshares.org</a>
+Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP D:
 
