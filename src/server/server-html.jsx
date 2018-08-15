@@ -47,7 +47,7 @@ export default function ServerHTML({ body, assets, locale, title, meta }) {
 
 
 
-            {/*<script src="https://beta.whaleshares.net/cryptochat/bundle.js"></script>*/}
+            {/*<script src="https://whaleshares.io/cryptochat/bundle.js"></script>*/}
         </body>
         </html>
     );

@@ -9,8 +9,8 @@ export default function sendEmail(template, to, params /*, from = null */) {
     //     return;
     // }
 
-    const email_text = `Confirm your email: https://beta.whaleshares.net/confirm_email/${params.confirmation_code}`;
-    const email_html = `Confirm your email: <a href="https://beta.whaleshares.net/confirm_email/${params.confirmation_code}">${params.confirmation_code}</a>`;
+    const email_text = `Confirm your email: https://whaleshares.io/confirm_email/${params.confirmation_code}`;
+    const email_html = `Confirm your email: <a href="https://whaleshares.io/confirm_email/${params.confirmation_code}">${params.confirmation_code}</a>`;
     const msg = {
         to: `${to}`,
         from: config.get('sendgrid.from'),
