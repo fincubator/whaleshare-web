@@ -229,6 +229,9 @@ class App extends React.Component {
                 </ul>
                 <ul className="vertical menu">
                     <li>
+                        <a href="https://gitlab.com/beyondbitcoin/whaleshares-web/uploads/40a04e43d66482289b988bd189c26cef/Whale_paper_v1.pdf" onClick={this.navigate}>{tt('navigation.APP_NAME_whitepaper', {APP_NAME})}</a>
+                    </li>
+                    <li>
                         <a href="/privacy.html" onClick={this.navigate} rel="nofollow">
                             {tt('navigation.privacy_policy')}
                         </a>
