@@ -4,7 +4,7 @@
 
 ### STEP A:
 
-Visit <a href="https://wls.services/sharedroptools">wls.services</a>
+Visit <a href="https://wls.services">wls.services</a>
 
 ### STEP B:
 
@@ -46,7 +46,7 @@ Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP A:
 
-Visit <a href="https://wls.services/sharedroptools">wls.services</a>
+Visit <a href="https://wls.services">wls.services</a>
 
 ### STEP B:
 
@@ -88,7 +88,7 @@ Visit <a href="https://wallet.bitshares.org">wallet.bitshares.org</a>
 
 ### STEP A:
 
-Visit <a href="https://wls.services/sharedroptools">wls.services</a>
+Visit <a href="https://wls.services">wls.services</a>
 
 ### STEP B:
 
