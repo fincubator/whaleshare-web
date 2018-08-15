@@ -79,7 +79,7 @@ class Voting extends React.Component {
             // already voted Up, remove the vote
             const weight = up ? (myVote > 0 ? 0 : this.state.weight) : (myVote < 0 ? 0 : -1 * this.state.weight);
             if (this.state.showWeight) this.setState({showWeight: false});
-            this.props.vote(weight, {author, permlink, username, myVote})
+            this.props.vote(weight, {author, permlink, username, myVote, is_comment})
         };
 
         this.handleWeightChange = weight => {
@@ -179,7 +179,7 @@ class Voting extends React.Component {
         const payout_limit_hit = payout >= max_payout;
         // Show pending payout amount for declined payment posts
         if (max_payout === 0) payout = pending_payout;
-        
+
         // There is an "active cashout" if: (a) there is a pending payout, OR (b) there is a valid cashout_time AND it's NOT a comment with 0 votes.
         const cashout_active = pending_payout > 0 || (cashout_time.indexOf('1969') !== 0 && !(is_comment && total_votes == 0));
         const payoutItems = [];
@@ -227,7 +227,7 @@ class Voting extends React.Component {
 
         // voting on post or comment?
         const depth = post_obj.get('depth');
-        
+
         let voteUpClick = this.voteUp;
         let dropdown = null;
         if (myVote <= 0 && net_vesting_shares > VOTE_WEIGHT_DROPDOWN_THRESHOLD) {
@@ -318,7 +318,7 @@ export default connect(
 
     // mapDispatchToProps
     (dispatch) => ({
-        vote: (weight, {author, permlink, username, myVote}) => {
+        vote: (weight, {author, permlink, username, myVote, is_comment}) => {
             const confirm = () => {
                 if(myVote == null) return null
                 const t = tt('voting_jsx.we_will_reset_curation_rewards_for_this_post')
@@ -333,6 +333,19 @@ export default connect(
                     __config: {title: weight < 0 ? tt('voting_jsx.confirm_flag') : null},
                 },
                 confirm,
+                successCallback: () => {
+                    if ((weight > 0) && !is_comment && (username !== author) ) {
+                        dispatch(transaction.actions.broadcastOperation({
+                            type: 'custom_json',
+                            operation: {
+                                id: 'follow',
+                                required_posting_auths: [username],
+                                json: JSON.stringify(['reblog', {account: username, author, permlink}]),
+                                __config: {title: tt('g.resteem_this_post')}
+                            }
+                        }))
+                    }
+                }
             }))
         },
     })
