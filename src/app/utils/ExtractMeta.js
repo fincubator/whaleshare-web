@@ -11,13 +11,13 @@ function addSiteMeta(metas) {
     metas.push({property: 'og:site_name', content: 'Whaleshares'});
     metas.push({property: 'og:title', content: 'Whaleshares'});
     metas.push({property: 'og:description', content: site_desc});
-    metas.push({property: 'og:image', content: 'https://beta.whaleshares.net/images/wls-share.png'});
+    metas.push({property: 'og:image', content: 'https://whaleshares.io/images/wls-share.png'});
     metas.push({property: 'fb:app_id', content: $STM_Config.fb_app});
     metas.push({name: 'twitter:card', content: 'summary'});
     metas.push({name: 'twitter:site', content: '@whaleshares'});
     metas.push({name: 'twitter:title', content: '#Whaleshares'});
     metas.push({name: 'twitter:description', site_desc});
-    metas.push({name: 'twitter:image', content: 'https://beta.whaleshares.net/images/wls-share.png'});
+    metas.push({name: 'twitter:image', content: 'https://whaleshares.io/images/wls-share.png'});
 }
 
 export default function extractMeta(chain_data, rp) {
@@ -29,7 +29,7 @@ export default function extractMeta(chain_data, rp) {
         const profile = normalizeProfile(author);
         if (content && content.id !== '0.0.0') { // API currently returns 'false' data with id 0.0.0 for posts that do not exist
             const d = extractContent(objAccessor, content, false);
-            const url   = 'https://beta.whaleshares.net' + d.link;
+            const url   = 'https://whaleshares.io' + d.link;
             const title = d.title + ' — Whaleshares';
             const desc  = d.desc + " by " + d.author;
             const image = d.image_link || profile.profile_image
@@ -44,7 +44,7 @@ export default function extractMeta(chain_data, rp) {
             metas.push({property: 'og:title',        content: title});
             metas.push({property: 'og:type',         content: 'article'});
             metas.push({property: 'og:url',          content: url});
-            metas.push({property: 'og:image',        content: image || 'https://beta.whaleshares.net/images/wls-share.png'});
+            metas.push({property: 'og:image',        content: image || 'https://whaleshares.io/images/wls-share.png'});
             metas.push({property: 'og:description',  content: desc});
             metas.push({property: 'og:site_name',    content: 'Whaleshares'});
             metas.push({property: 'fb:app_id',       content: $STM_Config.fb_app});
@@ -56,7 +56,7 @@ export default function extractMeta(chain_data, rp) {
             metas.push({name: 'twitter:site',        content: '@whaleshares'});
             metas.push({name: 'twitter:title',       content: title});
             metas.push({name: 'twitter:description', content: desc});
-            metas.push({name: 'twitter:image',       content: image || 'https://beta.whaleshares.net/images/wls-icon-twshare-2.jpg'});
+            metas.push({name: 'twitter:image',       content: image || 'https://whaleshares.io/images/wls-icon-twshare-2.jpg'});
         } else {
             addSiteMeta(metas);
         }
@@ -65,7 +65,7 @@ export default function extractMeta(chain_data, rp) {
         let {name, about, profile_image} = normalizeProfile(account);
         if(name == null) name = account.name;
         if(about == null) about = "Join thousands on Whaleshares who share and earn rewards.";
-        if(profile_image == null) profile_image = 'https://beta.whaleshares.net/images/wls-icon-twshare-2.png';
+        if(profile_image == null) profile_image = 'https://whaleshares.io/images/wls-icon-twshare-2.png';
         // Set profile tags
         const title = `@${account.name}`;
         const desc  = `The latest posts from ${name}. Follow me at @${account.name}. ${about}`;
