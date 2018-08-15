@@ -68,7 +68,7 @@
     "recent_password": "Recent Password",
     "receive": "Receive ",
     "remove": "Remove",
-    "remove_vote": "Remove Vote",
+    "remove_vote": "Remove Reward & Share",
     "replied_to": "replied to %(account)s",
     "replies": "Replies",
     "reply": "Reply",
@@ -110,8 +110,8 @@
     "upvote_post": "Reward post",
     "username": "Username",
     "version": "Version",
-    "vote": "Vote",
-    "votes": "votes",
+    "vote": "Share",
+    "votes": "shares",
     "wallet": "Wallet",
     "warning": "warning",
     "yes": "Yes",
@@ -164,7 +164,7 @@
     "resteem_this_post": "Recommend This Post",
     "reblog": "Recommend",
     "write_your_story": "Write your story",
-    "remember_voting_and_posting_key": "Remember voting & posting key",
+    "remember_voting_and_posting_key": "Remember sharing & posting key",
     "auto_login_question_mark": "Auto login?",
     "hide_private_key": "Hide private key",
     "show_private_key": "Show private key",
@@ -214,7 +214,7 @@
   "navigation": {
     "about": "About",
     "explore": "Browse Tags",
-    "APP_NAME_whitepaper": "%(APP_NAME)s Whitepaper",
+    "APP_NAME_whitepaper": "%(APP_NAME)s Whale Paper",
     "buy_LIQUID_TOKEN": "Buy %(LIQUID_TOKEN)s",
     "sell_LIQUID_TOKEN": "Sell %(LIQUID_TOKEN)s",
     "currency_market": "Currency Market",
@@ -233,7 +233,7 @@
     "app_center": "App Center",
     "api_docs": "API Docs",
     "bluepaper": "Bluepaper",
-    "whitepaper": "Whitepaper",
+    "whitepaper": "Whale Paper",
     "intro_tagline": "Share Value. Receive Value",
     "intro_paragraph": "Welcome to Whaleshares community!",
     "explorer": "Blockchain Explorer"
@@ -403,9 +403,9 @@
       "other": "%(count)s responses. Click to respond."
     },
     "vote_count": {
-      "zero": "no votes",
-      "one": "1 vote",
-      "other": "%(count)s votes"
+      "zero": "no shares",
+      "one": "1 share",
+      "other": "%(count)s shares"
     }
   },
   "userkeys_jsx": {
@@ -413,7 +413,7 @@
     "private": "Private",
     "public_something_key": "Public %(key)s Key",
     "private_something_key": "Private %(key)s Key",
-    "posting_key_is_required_it_should_be_different": "The posting key is used for posting and voting. It should be different from the active and owner keys.",
+    "posting_key_is_required_it_should_be_different": "The posting key is used for posting and sharing. It should be different from the active and owner keys.",
     "the_active_key_is_used_to_make_transfers_and_place_orders": "The active key is used to make transfers and place orders in the internal market.",
     "the_owner_key_is_required_to_change_other_keys": "The owner key is the master key for the account and is required to change the other keys.",
     "the_private_key_or_password_should_be_kept_offline": "The private key or password for the owner key should be kept offline as much as possible.",
@@ -437,7 +437,7 @@
     "estimated_value": "The estimated value is based on an average value of %(LIQUID_TOKEN)s in US dollars.",
     "non_transferable": "%(VESTING_TOKEN)s is non-transferable and requires 3 months (13 payments) to convert back to %(LIQUID_TOKEN)s.",
     "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Converted %(VESTING_TOKEN)s can be sent to yourself or someone else but can not transfer again without converting back to %(LIQUID_TOKEN)s.",
-    "mana": "Mana is like an energy bar in a computer game that goes down a little bit every time you vote. You start out with 100 percent mana. Every time you share, you will use a small amount of your mana."
+    "mana": "MANA is the % of rewarding power your account has. Each time you share/reward a post or comment your MANA is reduced by 2%. MANA is recharged at a rate of 20% per day. MANA and WHALESTAKE are used to calculate your reward value."
   },
   "promote_post_jsx": {
     "this_post_was_hidden_due_to_low_ratings": "This post was hidden due to low ratings"
@@ -500,7 +500,7 @@
     "the_latest_versions_of": "The latest versions of ",
     "are_well_tested_and_known_to_work_with": "are well tested and known to work with %(APP_URL)s.",
     "due_to_server_maintenance": "Due to server maintenance we are running in read only mode. We are sorry for the inconvenience.",
-    "login_to_vote": "Login to Vote",
+    "login_to_vote": "Login to Share",
     "login_to_post": "Login to Post",
     "login_to_comment": "Login to Comment",
     "posting": "Posting",
