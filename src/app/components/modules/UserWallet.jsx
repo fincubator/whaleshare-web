@@ -52,8 +52,6 @@ class UserWallet extends React.Component {
     }
 
     render() {
-        // const {onShowDepositSteem, onShowWithdrawSteem, onShowDepositPower} = this;
-        // const {convertToSteem, price_per_steem, account, current_user, open_orders} = this.props;
         const { account, current_user } = this.props;
         const gprops = this.props.gprops.toJS();
 
@@ -224,7 +222,6 @@ class UserWallet extends React.Component {
                     {isMyAccount ?
                     <FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={steem_balance_str + ' WLS'} menu={steem_menu} />
                     : steem_balance_str + ' WLS'}
-                    {/*{steemOrders ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Link to="/market"><Tooltip t={tt('market_jsx.open_orders')}>(+{steem_orders_balance_str} WLS)</Tooltip></Link></div> : null}*/}
                 </div>
             </div>
             <div className="UserWallet__balance row zebra">
@@ -236,47 +233,6 @@ class UserWallet extends React.Component {
                     {mana.toFixed(2) + '%'}
                 </div>
             </div>
-
-            {/*<div className="UserWallet__balance row">*/}
-                {/*<div className="column small-12 medium-8">*/}
-                    {/*STEEM DOLLARS*/}
-                    {/*<div className="secondary">{sbdMessage}</div>*/}
-                {/*</div>*/}
-                {/*<div className="column small-12 medium-4">*/}
-                    {/*{isMyAccount ?*/}
-                    {/*<FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={sbd_balance_str} menu={dollar_menu} />*/}
-                    {/*: sbd_balance_str}*/}
-                    {/*{sbdOrders ? <div style={{paddingRight: isMyAccount ? "0.85rem" : null}}><Link to="/market"><Tooltip t={tt('market_jsx.open_orders')}>(+{sbd_orders_balance_str})</Tooltip></Link></div> : null}*/}
-                    {/*{conversions}*/}
-                {/*</div>*/}
-            {/*</div>*/}
-            {/*<div className="UserWallet__balance row zebra">*/}
-                {/*<div className="column small-12 medium-8">*/}
-                    {/*{tt('userwallet_jsx.savings')}*/}
-                    {/*<div className="secondary">*/}
-                        {/*<span>{tt('transfer_jsx.balance_subject_to_3_day_withdraw_waiting_period')}</span>*/}
-                        {/*<span>{tt('transfer_jsx.asset_currently_collecting', {asset: DEBT_TOKENS, interest: sbdInterest})}</span>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-                {/*<div className="column small-12 medium-4">*/}
-                    {/*{isMyAccount ?*/}
-                    {/*<FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={savings_balance_str} menu={savings_menu} />*/}
-                    {/*: savings_balance_str}*/}
-                    {/*<br />*/}
-                    {/*{isMyAccount ?*/}
-                    {/*<FoundationDropdownMenu className="Wallet_dropdown" dropdownPosition="bottom" dropdownAlignment="right" label={savings_sbd_balance_str} menu={savings_sbd_menu} />*/}
-                    {/*: savings_sbd_balance_str}*/}
-                {/*</div>*/}
-            {/*</div>*/}
-            {/*<div className="UserWallet__balance row">*/}
-                {/*<div className="column small-12 medium-8">*/}
-                    {/*{tt('userwallet_jsx.estimated_account_value')}*/}
-                    {/*<div className="secondary">{tt('tips_js.estimated_value', {LIQUID_TOKEN})}</div>*/}
-                {/*</div>*/}
-                {/*<div className="column small-12 medium-4">*/}
-                    {/*{estimate_output}*/}
-                {/*</div>*/}
-            {/*</div>*/}
             <div className="UserWallet__balance row">
                 <div className="column small-12">
                     {isWithdrawScheduled && <span>{tt('userwallet_jsx.next_power_down_is_scheduled_to_happen')}&nbsp; <TimeAgoWrapper date={account.get('next_vesting_withdrawal')} />.</span> }
@@ -322,7 +278,6 @@ export default connect(
         const gprops = state.global.get('props');
         return {
             ...ownProps,
-            open_orders: [],
             price_per_steem,
             gprops
         }
