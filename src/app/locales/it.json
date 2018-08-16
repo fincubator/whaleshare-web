@@ -406,7 +406,7 @@
     "influence_token": "Token che ti danno più controllo sui pagamenti dei post e ti consentono di guadagnare sulle ricompense da curatore.",
     "non_transferable": "%(VESTING_TOKEN)s non è trasferibile e richiede 3 mesi, (13 pagamenti) per riconvertirli in  %(LIQUID_TOKEN)s.",
     "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "I %(VESTING_TOKEN)s convertiti possono essere spediti a te stesso o a qualcun altro ma non possono non ritrasferirli senza essere convertirli di nuovo in %(LIQUID_TOKEN)s.",
-    "mana": "MANA is the % of rewarding power your account has. Each time you share/reward a post or comment your MANA is reduced by 2%. MANA is recharged at a rate of 20% per day. MANA and WHALESTAKE are used to calculate your reward value."
+    "mana": "MANA is the percent of rewarding power your account has. Each time you share/reward a post or comment your MANA is reduced by 2 percent. MANA is recharged at a rate of 20 percent per day. MANA and WHALESTAKE are used to calculate your reward value."
   },
   "promote_post_jsx": {
     "this_post_was_hidden_due_to_low_ratings": "Questo post è stato nascosto a causa della bassa reputazione"
