@@ -1,6 +1,11 @@
 .Text {
-  background-color: white;
   padding: 1rem;
+  
+  @include themify($themes) {
+    color: themed('textColorPrimary');
+    background-color: themed('backgroundColorContrasting');  
+    border: themed('border'); 
+  }
 }
 .Welcome__banner {
 
@@ -34,6 +39,9 @@
   p {
     position: relative;
     margin: 0 0 1rem 0;
+  }
+  h1 {
+    margin: 0 0 1rem;
   }
   h2 {
     margin: 2rem 0 1rem;
