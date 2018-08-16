@@ -87,11 +87,10 @@ class UserWallet extends React.Component {
                 const to_withdraw = account.get('to_withdraw')
                 const withdrawn = account.get('withdrawn')
                 const vesting_shares = account.get('vesting_shares')
-                const delegated_vesting_shares = account.get('delegated_vesting_shares')
                 this.props.showPowerdown({
                     account: name,
                     to_withdraw, withdrawn,
-                    vesting_shares, delegated_vesting_shares,
+                    vesting_shares,
                 });
             }
         }

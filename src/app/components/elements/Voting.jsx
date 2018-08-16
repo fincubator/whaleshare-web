@@ -300,9 +300,7 @@ export default connect(
         const current_account = state.user.get('current')
         const username = current_account ? current_account.get('username') : null;
         const vesting_shares = current_account ? current_account.get('vesting_shares') : 0.0;
-        const delegated_vesting_shares = current_account ? current_account.get('delegated_vesting_shares') : 0.0;
-        const received_vesting_shares = current_account ? current_account.get('received_vesting_shares') : 0.0;
-        const net_vesting_shares = vesting_shares - delegated_vesting_shares + received_vesting_shares;
+        const net_vesting_shares = vesting_shares;
         const voting = state.global.get(`transaction_vote_active_${author}_${permlink}`)
 
         return {
