@@ -92,6 +92,15 @@ class PostSummary extends React.Component {
                                <Icon name="reblog" /> {tt('postsummary_jsx.resteemed')}
                            </div>)
         }
+        
+        /*const url_arr = location.href.split("/");
+        if ((url_arr.length == 4) && (url_arr[3].startsWith("@"))) {
+            if (reblogged_by) return null;
+        }
+        if ((url_arr.length == 5) && (url_arr[4] === "shares")) {
+            console.log('skip');
+            if (!reblogged_by) return null;
+        } else console.log('ok');*/
 
         const {gray, authorRepLog10, flagWeight, isNsfw} = content.get('stats', Map()).toJS()
         const p = extractContent(immutableAccessor, content);
