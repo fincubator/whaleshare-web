@@ -4,10 +4,8 @@
     "amount": "Количество",
     "and": "и",
     "are_you_sure": "Вы уверены?",
-    "ask": "Продажа",
     "balance": "Баланс",
     "balances": "Балансы",
-    "bid": "Покупка",
     "blog": "Блог",
     "browse": "Посмотреть",
     "buy": "Купить",
@@ -15,14 +13,12 @@
     "by": "от",
     "cancel": "Отмена",
     "change_password": "Сменить пароль",
-    "choose_language": "Выберите язык",
     "clear": "Очистить",
     "close": "Закрыть",
     "collapse_or_expand": "Свернуть/Развернуть",
     "comments": "Комментарии",
     "confirm": "Подтвердить",
     "convert": "Конвертировать",
-    "date": "Дата",
     "delete": "Удалить",
     "dismiss": "Скрыть",
     "edit": "Редактировать",
@@ -58,10 +54,8 @@
     "post": "Пост",
     "post_as": "Запостить как",
     "posts": "Посты",
-    "powered_up_100": "100%% в Силе Голоса",
     "preview": "Предварительный просмотр",
     "previous": "Предыдущий",
-    "price": "Цена",
     "print": "Распечатать",
     "re": "RE",
     "re_to": "RE: %(topic)s",
@@ -99,10 +93,10 @@
     "submit_a_story": "Добавить пост",
     "tag": "Тег",
     "to": " к ",
+    "toggle_nightmode": "Toggle Night Mode",
     "all_tags": "All tags",
     "transfer": "Перевод ",
     "trending_topics": "Популярное",
-    "type": "Тип",
     "unfollow": "Отписаться",
     "unmute": "Разблокировать",
     "unknown": "Неизвестно",
@@ -181,14 +175,7 @@
     "please_email_questions_to": "Пожалуйста, шлите ваши вопросы на электронную почту",
     "next_7_strings_single_block": {
       "authors_get_paid_when_people_like_you_upvote_their_post": "Авторы получают вознаграждение, когда пользователи голосуют за их посты",
-      "if_you_enjoyed_what_you_read_earn_amount": "Если Вам понравилось то, что Вы здесь прочитали, создайте свой аккаунт сегодня и начните зарабатывать БЕСПЛАТНЫЕ WLS-ы!",
-      "free_steem": "БЕСПЛАТНЫЕ WLS!",
-      "sign_up_earn_steem": "Зарегистрируйтесь сейчас, чтобы заработать "
-    },
-    "next_3_strings_together": {
-      "show_more": "Показать больше",
-      "show_less": "Показать меньше",
-      "value_posts": "меньше сообщений низкой стоимости"
+      "if_you_enjoyed_what_you_read_earn_amount": "Если Вам понравилось то, что Вы здесь прочитали, создайте свой аккаунт сегодня и начните зарабатывать БЕСПЛАТНЫЕ WLS-ы!"
     },
     "read_only_mode": "По техническим причинам вебсайт доступен только для чтения, приносим свои извинения.",
     "tags_and_topics": "Теги и темы",
@@ -219,27 +206,16 @@
     "about": "О проекте",
     "explore": "Исследовать",
     "APP_NAME_whitepaper": "Белая книга %(APP_NAME)s",
-    "buy_LIQUID_TOKEN": "Купить %(LIQUID_TOKEN)s",
-    "sell_LIQUID_TOKEN": "Продать %(LIQUID_TOKEN)s",
-    "currency_market": "Биржа",
     "stolen_account_recovery": "Восстановление украденного аккаунта",
     "change_account_password": "Изменить пароль аккаунта",
     "witnesses": "Делегаты",
-    "vote_for_witnesses": "Проголосовать за делегатов",
     "privacy_policy": "Политика Конфиденциальности",
     "terms_of_service": "Условия пользования",
     "sign_up": "Присоединиться",
     "learn_more": "Документация",
-    "welcome": "Добро пожаловать",
-    "faq": "ЧаВО",
-    "shop": "Магазин Steemit",
-    "chat": "Чат Steemit",
-    "app_center": "Центр приложений Steemit",
-    "api_docs": "API-документация Steemit",
-    "bluepaper": "Синяя бумага Steem",
-    "whitepaper": "Белая книга Steem",
     "intro_tagline": "Здесь говорят деньги.",
-    "intro_paragraph": "Ваше мнение имеет цену. Присоединяйтесь к сообществу, которое платит за контент и за работу по отбору самого лучшего контента."
+    "intro_paragraph": "Ваше мнение имеет цену. Присоединяйтесь к сообществу, которое платит за контент и за работу по отбору самого лучшего контента.",
+    "explorer": "Blockchain Explorer"
   },
   "main_menu": {
     "hot": "актуальное",
@@ -259,7 +235,6 @@
     "selecting_them": "выбрав их",
     "image_upload": "Загрузка изображения",
     "power_up_100": "Сила Голоса 100%%",
-    "default_50_50": "По умолчанию (50%% / 50%%)",
     "decline_payout": "Отказаться от выплаты",
     "check_this_to_auto_upvote_your_post": "Отметьте, чтобы проголосовать за свой пост",
     "markdown_styling_guide": "Руководство стилизации в Markdown",
@@ -368,7 +343,6 @@
     "pending_payout": "Ожидаемая выплата",
     "payout_declined": "Автор отказался от вознаграждения",
     "max_accepted_payout": "Максимально допустимое вознаграждение: $%(value)s",
-    "promotion_cost": "Цена продвижения: $%(value)s",
     "past_payouts": "Предыдущие выплаты $%(value)s",
     "past_payouts_author": " - Авторские $%(value)s",
     "past_payouts_curators": " - Кураторские $%(value)s",
@@ -386,7 +360,8 @@
     }
   },
   "witnesses_jsx": {
-    "witness_thread": "пост делегата",
+    "external_site": "external site",
+    "disabled": "disabled",
     "top_witnesses": "Топ делегатов",
     "you_have_votes_remaining": {
       "zero": "У Вас не осталось голосов",
@@ -449,9 +424,9 @@
   "tips_js": {
     "liquid_token": "Ликвидные цифровые токены, которые могут переданы куда угодно в любой момент.<br/>%(LIQUID_TOKEN)s может быть конвертирован в %(VESTING_TOKEN)s, этот процесс называется \"увеличение Силы Голоса\".",
     "influence_token": "Токены дают вам возможность влиять на вознаграждения за контент, а также возможность зарабатывать на курации контента.",
-    "estimated_value": "Сметная стоимость основана на среднем значении %(LIQUID_TOKEN)s в долларах США.",
     "non_transferable": "%(VESTING_TOKEN)s - не ликвидные токены, требуется три месяца (13 еженедальных выплат) чтобы сконвертировать их в ликвидные токены %(LIQUID_TOKEN)s.",
-    "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Конвертированные %(VESTING_TOKEN)s токены могут быть отправлены себе или кому-либо еще, но не могут быть переданы вновь без конвертации в %(LIQUID_TOKEN)s."
+    "converted_VESTING_TOKEN_can_be_sent_to_yourself_but_can_not_transfer_again": "Конвертированные %(VESTING_TOKEN)s токены могут быть отправлены себе или кому-либо еще, но не могут быть переданы вновь без конвертации в %(LIQUID_TOKEN)s.",
+    "mana": "MANA is the % of rewarding power your account has. Each time you share/reward a post or comment your MANA is reduced by 2%. MANA is recharged at a rate of 20% per day. MANA and WHALESTAKE are used to calculate your reward value."
   },
   "promote_post_jsx": {
     "this_post_was_hidden_due_to_low_ratings": "Этот пост был скрыт из-за низкого рейтинга"
@@ -491,8 +466,7 @@
   },
   "explorepost_jsx": {
     "copied": "Скопировано!",
-    "copy": "Копировать",
-    "alternative_sources": "Альтернативные источники"
+    "copy": "Копировать"
   },
   "header_jsx": {
     "home": "лента",
@@ -535,9 +509,7 @@
     "keep_me_logged_in": "Оставить меня залогиненным",
     "amazing_community": "удивительное сообщество",
     "to_comment_and_reward_others": " комментировать и вознаграждать других.",
-    "sign_up_get_steem": "Sign up. Get STEEM",
-    "signup_button": "Зарегистрируйтесь",
-    "signup_button_emphasis": " сейчас!",
+    "sign_up_get_steem": "Sign up. Get WLS",
     "returning_users": "Вернувшиеся пользователи: ",
     "join_our": "Присоединяйтесь к нашему"
   },
@@ -584,27 +556,19 @@
     "this_memo_is_private": "Это примечание является приватным",
     "this_memo_is_public": "Это примечание является публичным",
     "convert_to_VESTING_TOKEN": "Перевести в %(VESTING_TOKEN)s",
-    "balance_subject_to_3_day_withdraw_waiting_period": "Вывод баланса из сейфа на обычный счет, занимает 3 дня,",
     "move_funds_to_another_account": "Отправить средства на другой %(APP_NAME)s аккаунт.",
     "protect_funds_by_requiring_a_3_day_withdraw_waiting_period": "Защитите средства от вывода 3-х дневным периодом ожидания.",
     "withdraw_funds_after_the_required_3_day_waiting_period": "Снять средства после необходимого 3 дневного периода ожидания.",
     "from": "От",
     "to": "Кому",
-    "asset_currently_collecting": "начисляемые годовые на %(asset)s: %(interest)s%%.",
     "beware_of_spam_and_phishing_links": "Остерегайтесь спама и фишинговых ссылок в передачах. Не открывайте ссылки от пользователей, которым вы не доверяете. Не предоставляйте свои личные ключи третьим сторонам."
   },
   "userwallet_jsx": {
-    "conversion_complete_tip": "Завершается",
-    "in_conversion": "%(amount)s на конвертации",
     "transfer_to_savings": "Отправить в сейф",
     "power_up": "Усилить силу голоса",
     "power_down": "Уменьшить силу голоса",
     "market": "Биржа",
     "convert_to_LIQUID_TOKEN": "Перевести в %(LIQUID_TOKEN)s",
-    "withdraw_LIQUID_TOKEN": "Снять %(LIQUID_TOKEN)s",
-    "withdraw_DEBT_TOKENS": "Снять %(DEBT_TOKENS)s",
-    "savings": "Сберегательный счет",
-    "estimated_account_value": "Приблизительная стоимость аккаунта",
     "next_power_down_is_scheduled_to_happen": "Следующее понижение силы голоса будет",
     "transfers_are_temporary_disabled": "Переводы временно преостановлены.",
     "history": "ИСТОРИЯ",
