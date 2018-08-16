@@ -1,5 +1,13 @@
 # Whaleshares FAQ 
 
+### PLEASE BE ADVISED:
+
+The account creation/claim is ONLY open for BTS accounts that held WHALESHARE, BTS, BROWNIE.PTS on/before the snapshop date. (Bitshares Block 29222369 at 2018-08-01 03:18:51 UTC)
+
+Other BTS accounts (not in the sharedrop) attempting to create will be rejected and the system will automatically refund the WHALESHARE tokens sent at the end of the claim period (September 15, 2018).
+
+Successful claims will apply your sharedrop as vested WHALESTAKE and the claim closed.  The claim fee WHALESHARE tokens for successful claims are not returned or refunded.
+
 ## 1. I have a Whaleshares account,  how do I claim my sharedrop?
 
 ### STEP A:

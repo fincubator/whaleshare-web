@@ -182,9 +182,8 @@ class App extends React.Component {
                             <h2>{tt('navigation.intro_tagline')}</h2>
                             <h4>{tt('navigation.intro_paragraph')}</h4>
                             <br />
-                            <a className="button button--primary" href="/pick_account"> <b>{tt('navigation.sign_up')}</b> </a>
-                            {/* JSX Comment  &nbsp; &nbsp; &nbsp;
-                            <a className="button hollow uppercase" href="https://steem.io" target="_blank" rel="noopener noreferrer" onClick={this.learnMore}> <b>{tt('navigation.learn_more')}</b> </a> */}
+                            <a className="button button--primary" href="/claim.html"> <b>{tt('g.claim_acc')}</b> </a>
+                            {/* <a className="button button--primary" href="/pick_account"> <b>{tt('navigation.sign_up')}</b> </a> */}
                         </div>
                     </div>
                 </div>
@@ -200,7 +199,7 @@ class App extends React.Component {
                 <TopRightMenu vertical navigate={this.navigate} />
                 <ul className="vertical menu">
                     <li>
-                        <a href="/whalesharesexplorer/" onClick={this.navigate}>
+                        <a href="/whalesharesexplorer/">
                             {tt('navigation.explorer')}
                         </a>
                     </li>
