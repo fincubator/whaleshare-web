@@ -29,7 +29,6 @@ module.exports = {
         },
         users: {
             alice: {
-                open_orders: [],
                 convert_requests: [],
                 history: {
                     trade: [],

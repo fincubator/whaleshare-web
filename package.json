@@ -1,11 +1,11 @@
 {
-  "name": "steemit.com",
+  "name": "whaleshares-web",
   "repository": {
     "type": "git",
-    "url": "https://github.com/steemit/steemit.com.git"
+    "url": "https://gitlab.com/beyondbitcoin/whaleshares-web.git"
   },
-  "version": "1.0.0",
-  "description": "steemit.com is the koa web server & middleware and react.js in-browser code for the world's first blockchain content + social media monetization platform!",
+  "version": "0.1.0",
+  "description": "Whaleshares is a platform for building, managing and rewarding Friends in a Web of Trust.  Build a network of trusted Friends empower one another with Magical Whaleshares (WLS)!",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production ./node_modules/babel-cli/bin/babel-node.js ./node_modules/.bin/webpack --config ./webpack/prod.config.js; rm -rf ./lib; NODE_ENV=production babel --plugins transform-runtime,transform-inline-environment-variables src --out-dir lib -Dq",
@@ -19,12 +19,12 @@
     "webpush": "./node_modules/babel-cli/bin/babel-node.js ./scripts/webpush_notify.js",
     "checktranslations": "node scripts/check_translations.js"
   },
-  "author": "Steemit, Inc.",
+  "author": "Whaleshares",
   "license": "MIT",
   "dependencies": {
     "@sendgrid/mail": "^6.2.1",
     "@steem/crypto-session": "git+https://github.com/steemit/crypto-session.git#83a90b319ce5bc6a70362d52a15a815de7e729bb",
-    "@whaleshares/wlsjs": "^0.1.0",
+    "@whaleshares/wlsjs": "^0.1.1",
     "assert": "^1.3.0",
     "autoprefixer-loader": "^3.2.0",
     "babel-cli": "^6.22.2",
