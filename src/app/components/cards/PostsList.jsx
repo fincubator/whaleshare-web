@@ -162,6 +162,17 @@ class PostsList extends React.Component {
         const {posts, showSpam, loading, category, content,
             ignore_result, account, nsfwPref} = this.props;
         const {thumbSize, showPost} = this.state
+        
+        var shares_mode = 0;
+        const url_arr = location.href.split("/");
+        if ((url_arr.length == 4) && (url_arr[3].startsWith("@"))) {
+            shares_mode = 1;
+        }
+        if ((url_arr.length == 5) && (url_arr[4] === "shares")) {
+            shares_mode = 2;
+        }
+        const feed_author = (shares_mode > 0) ? url_arr[3].substring(1) : "";
+        
         const postsInfo = [];
         posts.forEach((item) => {
             const cont = content.get(item);
@@ -169,9 +180,18 @@ class PostsList extends React.Component {
                 console.error('PostsList --> Missing cont key', item)
                 return
             }
-            const ignore = ignore_result && ignore_result.has(cont.get('author'))
+            var ignore = ignore_result && ignore_result.has(cont.get('author'))
             const hide = cont.getIn(['stats', 'hide'])
-            if(!(ignore || hide) || showSpam) // rephide
+
+            var skip = false
+            if (shares_mode == 1) {
+                if (feed_author != cont.get('author')) skip = true;
+            }
+            if (shares_mode == 2) {
+                if (feed_author == cont.get('author')) skip = true;
+            }
+
+            if ((!(ignore || hide) || showSpam) && !skip) // rephide
                 postsInfo.push({item, ignore})
         });
         const renderSummary = items => items.map(item => <li key={item.item}>

@@ -114,6 +114,7 @@ async function universalRender({ location, initial_state, offchain, ErrorPage, t
         // to resolve data correctly
         if (url.indexOf('/curation-rewards') !== -1) url = url.replace(/\/curation-rewards$/, '/transfers');
         if (url.indexOf('/author-rewards') !== -1) url = url.replace(/\/author-rewards$/, '/transfers');
+        if (url.endsWith('/shares')) url = url.substring(0,url.length-7);
 
         onchain = await api.getStateAsync(url);
 

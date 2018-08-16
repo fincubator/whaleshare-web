@@ -42,6 +42,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
         const user_menu = [
             {link: feed_link, icon: "home", value: tt('g.feed'), addon: <NotifiCounter fields="feed" />},
             {link: account_link, icon: 'profile', value: tt('g.blog')},
+            {link: `/@${accountname}/shares`, value: 'Shares'},
             {link: comments_link, icon: 'replies', value: tt('g.comments')},
             {link: replies_link, icon: 'reply', value: tt('g.replies'), addon: <NotifiCounter fields="comment_reply" />},
             {link: wallet_link, icon: 'wallet', value: tt('g.wallet'), addon: <NotifiCounter fields="follow,send,receive,account_update" />},

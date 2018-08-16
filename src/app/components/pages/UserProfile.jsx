@@ -205,8 +205,7 @@ export default class UserProfile extends React.Component {
         }
         else if( section === 'settings' ) {
             tab_content = <Settings routeParams={this.props.routeParams} />
-        }
-        else if( section === 'comments' && account.post_history ) {
+        } else if( section === 'comments' && account.post_history ) {
            if( account.comments )
            {
                 let posts = accountImm.get('posts') || accountImm.get('comments');
@@ -227,7 +226,7 @@ export default class UserProfile extends React.Component {
            else {
               tab_content = (<center><LoadingIndicator type="circle" /></center>);
            }
-        } else if(!section || section === 'blog') {
+        } else if(!section || section === 'blog' || section === 'shares') {
             if (account.blog) {
                 let posts = accountImm.get('blog');
                 const emptyText = isMyAccount ? <div>
@@ -345,6 +344,7 @@ export default class UserProfile extends React.Component {
             <div className="columns small-10 medium-12 medium-expand">
                 <ul className="menu" style={{flexWrap: "wrap"}}>
                     <li><Link to={`/@${accountname}`} activeClassName="active">{tt('g.blog')}</Link></li>
+                    <li><Link to={`/@${accountname}/shares`} activeClassName="active">Shares</Link></li>
                     <li><Link to={`/@${accountname}/comments`} activeClassName="active">{tt('g.comments')}</Link></li>
                     <li><Link to={`/@${accountname}/recent-replies`} activeClassName="active">
                         {tt('g.replies')} {isMyAccount && <NotifiCounter fields="comment_reply" />}
