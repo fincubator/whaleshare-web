@@ -8,7 +8,7 @@ import user from 'app/redux/User'
 import tr from 'app/redux/Transaction'
 import tt from 'counterpart'
 import getSlug from 'speakingurl'
-import {DEBT_TICKER} from 'app/client_config'
+import {LIQUID_TICKER} from 'app/client_config'
 // import {serverApiRecordEvent} from 'app/utils/ServerApiClient'
 import {PrivateKey, PublicKey} from '@whaleshares/wlsjs/lib/auth/ecc';
 import {api, broadcast, auth, memo} from '@whaleshares/wlsjs';
@@ -383,7 +383,7 @@ function* preBroadcast_comment({operation, username}) {
     // comment_options must come directly after comment
     if(comment_options) {
         const {
-            max_accepted_payout = ["1000000.000", DEBT_TICKER].join(" "),
+            max_accepted_payout = ["1000000.000", LIQUID_TICKER].join(" "),
             percent_steem_dollars = 10000, // 10000 === 100%
             allow_votes = true,
             allow_curation_rewards = true,

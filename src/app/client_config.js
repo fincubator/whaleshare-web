@@ -14,8 +14,6 @@ export const LIQUID_TOKEN_UPPERCASE = 'WLS';
 export const VESTING_TOKEN = 'WHALESTAKE';
 export const INVEST_TOKEN_UPPERCASE = 'WHALESTAKE';
 export const INVEST_TOKEN_SHORT = 'WHALESTAKE';
-export const DEBT_TOKEN = 'WLS DOLLAR';
-export const DEBT_TOKENS = 'WLS DOLLARS';
 export const CURRENCY_SIGN = '$';
 export const WIKI_URL = '';
 export const LANDING_PAGE_URL = 'https://whaleshares.io/';
@@ -26,8 +24,6 @@ export const WHITEPAPER_URL = 'https://gitlab.com/beyondbitcoin/whaleshares-web/
 // these are dealing with asset types, not displaying to client, rather sending data over websocket
 export const LIQUID_TICKER = 'WLS';
 export const VEST_TICKER = 'VESTS';
-export const DEBT_TICKER = 'SBD';
-export const DEBT_TOKEN_SHORT = 'SBD';
 
 // application settings
 export const DEFAULT_LANGUAGE = 'en'; // used on application internationalization bootstrap
