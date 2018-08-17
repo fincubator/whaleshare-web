@@ -60,7 +60,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
                     dropdownPosition="bottom"
                     dropdownAlignment="right"
                     dropdownContent={
-                        <VerticalMenu items={user_menu} title={username} />
+                        <VerticalMenu className={'Usermenu'} items={user_menu} title={username} />
                     }
                 >
                     {!vertical && <li className={'Header__userpic '}>

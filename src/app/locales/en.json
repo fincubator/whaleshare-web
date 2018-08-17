@@ -99,7 +99,7 @@
     "usermenu" : {
       "blog": "Blog",
       "comments": "Comments",
-      "feed": "feed",
+      "feed": "Feed",
       "logout": "Logout",
       "night": "Toggle Night Mode",
       "password": "Change Password",

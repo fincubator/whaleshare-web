@@ -49,10 +49,10 @@ div.Header__top {
           }             
         }          
         > a {
-            padding: 1.25rem 0.25rem 0.875rem 0.875rem;
+          padding: 1.25rem 0.25rem 0.875rem 0.875rem;
         }
         > a path {
-            transition: 0.2s all ease-in-out;
+          transition: 0.2s all ease-in-out;
           @include themify($themes) {
             fill: themed('textColorAccent');  
           }                 

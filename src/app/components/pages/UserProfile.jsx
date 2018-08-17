@@ -374,13 +374,13 @@ export default class UserProfile extends React.Component {
         let accountjoin = account.created;
 
         const top_menu = <div className="row UserProfile__top-menu">
-            <div className="columns small-10 medium-12 medium-expand">
+            <div className="columns small-12 medium-12 medium-expand">
                 <ul className="menu" style={{flexWrap: "wrap"}}>
-                    <li><Link to={`/@${accountname}`} activeClassName="active">{tt('g.blog')}</Link></li>
-                    <li><Link to={`/@${accountname}/shares`} activeClassName="active">Shares</Link></li>
-                    <li><Link to={`/@${accountname}/comments`} activeClassName="active">{tt('g.comments')}</Link></li>
+                    <li><Link to={`/@${accountname}`} activeClassName="active">{tt('g.usermenu.blog')}</Link></li>
+                    <li><Link to={`/@${accountname}/shares`} activeClassName="active">{tt('g.usermenu.shares')}</Link></li>
+                    <li><Link to={`/@${accountname}/comments`} activeClassName="active">{tt('g.usermenu.comments')}</Link></li>
                     <li><Link to={`/@${accountname}/recent-replies`} activeClassName="active">
-                        {tt('g.replies')} {isMyAccount && <NotifiCounter fields="comment_reply" />}
+                        {tt('g.usermenu.replies')} {isMyAccount && <NotifiCounter fields="comment_reply" />}
                     </Link></li>
                     {/*<li><Link to={`/@${accountname}/feed`} activeClassName="active">Feed</Link></li>*/}
                     <li>

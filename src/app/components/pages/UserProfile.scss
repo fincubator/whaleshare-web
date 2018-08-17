@@ -17,6 +17,7 @@
   .row {
       .columns {
           overflow-x: auto;
+          padding-left: 0;
       }
   }
   .menu {
@@ -33,13 +34,13 @@
         background-color: $color-blue-black;
       }
       &.active {
-          @include themify($themes) {
-            background-color: themed('backgroundColor');  
-            color: themed('textColorPrimary');  
-          }            
-          z-index: 2;
-          font-weight: bold;
-        }
+        @include themify($themes) {
+          background-color: themed('backgroundColor');  
+          color: themed('textColorPrimary');  
+        }            
+        z-index: 2;
+        font-weight: bold;
+      }
   }
 
   div.UserProfile__top-menu {
@@ -154,12 +155,12 @@
 
 @media screen and (max-width: 39.9375em) {
 
-    div.UserProfile__top-nav .menu li>a {
-        padding: 8px;
+    .UserProfile__top-nav .menu li > a {
+        font-size: 0.75rem;
+        padding: 0.5rem;
     }
-
+    
     .UserProfile__top-menu > div.columns {
-        padding-left: 0;
         padding-right: 0;
     }
 
