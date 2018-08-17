@@ -352,7 +352,8 @@
     }
   },
   "witnesses_jsx": {
-    "external_site": "external site",
+    "external_site": "External link",
+    "page": "Whaleshares link",
     "disabled": "disabled",
     "top_witnesses": "Witness Voting",
     "you_have_votes_remaining": {
