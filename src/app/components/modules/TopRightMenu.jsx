@@ -26,9 +26,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
     const mcl = vertical ? '' : ' sub-menu';
     const lcn = vertical ? '' : 'show-for-medium';
     const nav = navigate || defaultNavigate;
-    // const submit_story = $STM_Config.read_only_mode ? null : <li className={lcn + ' submit-story' + (vertical ? ' last' : '')}><a href="/submit.html" onClick={nav}>{tt('g.submit_a_story')}</a></li>;
-    // const submit_icon = $STM_Config.read_only_mode ? null : <li className="show-for-small-only"><Link to="/submit.html"><Icon name="pencil2" /></Link></li>;
-    const submit_story = '';
+    let submit_story = null;
     const feed_link = `/@${username}/feed`;
     const replies_link = `/@${username}/recent-replies`;
     const wallet_link = `/@${username}/transfers`;
@@ -38,10 +36,11 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
     const settings_link = `/@${username}/settings`;
     const tt_search = tt('g.search');
     if (loggedIn) { // change back to if(username) after bug fix:  Clicking on Login does not cause drop-down to close #TEMP!
-        const submit_story = $STM_Config.read_only_mode ? null : <li className="submit-icon"><Link to="/submit.html"><Icon size="2x" name="i-write" /></Link></li>;
+        submit_story = $STM_Config.read_only_mode ? null : <li className="submit-icon"><Link to="/submit.html"><Icon size="2x" name="i-write" /></Link></li>;
         const user_menu = [
             {link: feed_link, icon: "home", value: tt('g.feed'), addon: <NotifiCounter fields="feed" />},
             {link: account_link, icon: 'profile', value: tt('g.blog')},
+            {link: `/@${username}/shares`, value: 'Shares'},
             {link: comments_link, icon: 'replies', value: tt('g.comments')},
             {link: replies_link, icon: 'reply', value: tt('g.replies'), addon: <NotifiCounter fields="comment_reply" />},
             {link: wallet_link, icon: 'wallet', value: tt('g.wallet'), addon: <NotifiCounter fields="follow,send,receive,account_update" />},
