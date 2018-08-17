@@ -31,6 +31,7 @@ import Callout from 'app/components/elements/Callout';
 import normalizeProfile from 'app/utils/NormalizeProfile';
 import userIllegalContent from 'app/utils/userIllegalContent';
 import proxifyImageUrl from 'app/utils/ProxifyUrl';
+import Immutable from "immutable";
 
 export default class UserProfile extends React.Component {
     constructor() {
@@ -96,7 +97,7 @@ export default class UserProfile extends React.Component {
 
     render() {
         const {
-            props: {current_user, wifShown, global_status, follow},
+            props: {current_user, wifShown, global_status, follow, content},
             onPrint
         } = this;
         let { accountname, section } = this.props.routeParams;
@@ -229,6 +230,27 @@ export default class UserProfile extends React.Component {
         } else if(!section || section === 'blog' || section === 'shares') {
             if (account.blog) {
                 let posts = accountImm.get('blog');
+
+
+                let posts_filterd = Immutable.List();
+
+                posts.forEach((item) => {
+                    const cont = content.get(item);
+                    if(!cont) {
+                        console.error('PostsList --> Missing cont key', item)
+                        return
+                    }
+
+                    if (((accountname !== cont.get('author')) && (section === 'shares')) ||
+                        ((accountname === cont.get('author')) && (section === 'blog')) ){
+                        posts_filterd = posts_filterd.push(item);
+                    }
+                });
+
+                posts = posts_filterd;
+
+
+
                 const emptyText = isMyAccount ? <div>
                     {tt('user_profile.looks_like_you_havent_posted_anything_yet')}<br /><br />
                     <Link to="/submit.html">{tt('user_profile.create_a_post')}</Link><br />
@@ -461,7 +483,8 @@ module.exports = {
                 global_status: state.global.get('status'),
                 accounts: state.global.get('accounts'),
                 follow: state.global.get('follow'),
-                follow_count: state.global.get('follow_count')
+                follow_count: state.global.get('follow_count'),
+                content: state.global.get('content')
             };
         },
         dispatch => ({
