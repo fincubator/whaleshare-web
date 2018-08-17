@@ -93,7 +93,7 @@ class Author extends React.Component {
         if (!(follow || mute) || username === author) {
             return (
                 <span className="author" itemProp="author" itemScope itemType="http://schema.org/Person">
-                    <strong><Link to={'/@' + author}>{author}</Link></strong> <Reputation value={authorRepLog10} />
+                    <strong><Link to={'/@' + author}>{author}</Link></strong> {/* <Reputation value={authorRepLog10} /> */}
                 </span>
             );
         }
@@ -102,7 +102,7 @@ class Author extends React.Component {
             <span className="Author">
                 <span itemProp="author" itemScope itemType="http://schema.org/Person">
                     <strong><Link className="ptc" ref={(link) => {this.authorProfileLink = link}} to={'/@' + author}>{author}<Icon name="dropdown-arrow" /></Link></strong>
-                    <Reputation value={authorRepLog10} />
+                    {/* <Reputation value={authorRepLog10} /> */}
                 </span>
                 <Overlay
                     show={this.state.show}

@@ -367,10 +367,9 @@ class CommentImpl extends React.Component {
                   </div>
                   <Author author={comment.author} authorRepLog10={authorRepLog10} />
                 </span>
-                        &nbsp; &middot; &nbsp;
-                        <Link to={comment_link} className="PlainLink">
-                          <TimeAgoWrapper date={comment.created} className="updated" />
-                        </Link>
+                <Link to={comment_link} className="PlainLink">
+                  <TimeAgoWrapper date={comment.created} className="updated" />
+                </Link>
                 { (this.state.collapsed || hide_body) &&
                   <Voting post={post} showList={false} /> }
                 { this.state.collapsed && comment.children > 0 &&
