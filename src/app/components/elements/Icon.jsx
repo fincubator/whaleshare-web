@@ -54,6 +54,16 @@ const icons = [
     'i-search',
     'i-share',
     'i-up',
+    'i-blog',
+    'i-comments',
+    'i-feed',
+    'i-logout',
+    'i-night',
+    'i-password',
+    'i-replies',
+    'i-settings',
+    'i-shares',
+    'i-wallet',
 ];
 const icons_map = {};
 for (const i of icons) icons_map[i] = require(`assets/icons/${i}.svg`);

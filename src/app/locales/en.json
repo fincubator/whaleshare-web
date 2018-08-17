@@ -96,6 +96,18 @@
     "upvote": "Reward",
     "upvote_post": "Reward post",
     "username": "Username",
+    "usermenu" : {
+      "blog": "Blog",
+      "comments": "Comments",
+      "feed": "feed",
+      "logout": "Logout",
+      "night": "Toggle Night Mode",
+      "password": "Change Password",
+      "replies": "Replies",
+      "settings": "Settings",
+      "shares": "Shares",
+      "wallet": "Wallet"
+    },
     "version": "Version",
     "vote": "Share",
     "votes": "shares",

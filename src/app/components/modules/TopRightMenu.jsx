@@ -31,6 +31,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
     const replies_link = `/@${username}/recent-replies`;
     const wallet_link = `/@${username}/transfers`;
     const account_link = `/@${username}`;
+    const shares = `/@${username}/shares`;
     const comments_link = `/@${username}/comments`;
     const reset_password_link = `/@${username}/password`;
     const settings_link = `/@${username}/settings`;
@@ -38,17 +39,17 @@ function TopRightMenu({username, showLogin, logout, loggedIn, vertical, navigate
     if (loggedIn) { // change back to if(username) after bug fix:  Clicking on Login does not cause drop-down to close #TEMP!
         submit_story = $STM_Config.read_only_mode ? null : <li className="submit-icon"><Link to="/submit.html"><Icon size="2x" name="i-write" /></Link></li>;
         const user_menu = [
-            {link: feed_link, icon: "home", value: tt('g.feed'), addon: <NotifiCounter fields="feed" />},
-            {link: account_link, icon: 'profile', value: tt('g.blog')},
-            {link: `/@${username}/shares`, value: 'Shares'},
-            {link: comments_link, icon: 'replies', value: tt('g.comments')},
-            {link: replies_link, icon: 'reply', value: tt('g.replies'), addon: <NotifiCounter fields="comment_reply" />},
-            {link: wallet_link, icon: 'wallet', value: tt('g.wallet'), addon: <NotifiCounter fields="follow,send,receive,account_update" />},
-            {link: '#', icon: 'eye', onClick: toggleNightmode, value: tt('g.toggle_nightmode') },
-            {link: reset_password_link, icon: 'key', value: tt('g.change_password')},
-            {link: settings_link, icon: 'cog', value: tt('g.settings')},
+            {link: feed_link, icon: 'i-feed', value: tt('g.usermenu.feed'), addon: <NotifiCounter fields="feed" />},
+            {link: account_link, icon: 'i-blog', value: tt('g.usermenu.blog')},
+            {link: shares, icon: 'i-shares', value: tt('g.usermenu.shares')},
+            {link: comments_link, icon: 'i-comments', value: tt('g.usermenu.comments')},
+            {link: replies_link, icon: 'i-replies', value: tt('g.usermenu.replies'), addon: <NotifiCounter fields="comment_reply" />},
+            {link: wallet_link, icon: 'i-wallet', value: tt('g.usermenu.wallet'), addon: <NotifiCounter fields="follow,send,receive,account_update" />},
+            {link: '#', icon: 'i-night', onClick: toggleNightmode, value: tt('g.usermenu.night') },
+            {link: reset_password_link, icon: 'i-password', value: tt('g.usermenu.password')},
+            {link: settings_link, icon: 'i-settings', value: tt('g.usermenu.settings')},
             loggedIn ?
-                {link: '#', icon: 'enter', onClick: logout, value: tt('g.logout')} :
+                {link: '#', icon: 'i-logout', onClick: logout, value: tt('g.usermenu.logout')} :
                 {link: '#', onClick: showLogin, value: tt('g.login')}
         ];
         return (
