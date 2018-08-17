@@ -9,7 +9,6 @@
     "blog": "Blog",
     "browse": "Navegar",
     "buy": "Comprar",
-    "buy_or_sell": "Comprar o Vender",
     "by": "por",
     "cancel": "Cancelar",
     "change_password": "Cambiar Contraseña",
@@ -18,7 +17,6 @@
     "collapse_or_expand": "Plegar/Expandir",
     "comments": "Comentarios",
     "confirm": "Confirmar",
-    "convert": "Convertir",
     "delete": "Borrar",
     "dismiss": "Descartar",
     "edit": "Editar",
@@ -31,8 +29,6 @@
     "hide": "Ocultar",
     "in": "en",
     "in_reply_to": "en respuesta a",
-    "insufficient_balance": "Saldo insuficiente",
-    "invalid_amount": "Cantidad inválida",
     "joined": "Unió",
     "loading": "Cargando",
     "login": "Iniciar sesión",
@@ -46,7 +42,6 @@
     "ok": "Ok",
     "older": "Más viejo",
     "or": "o",
-    "order_placed": "Órden dispuesta",
     "password": "Contraseña",
     "payouts": "Pagos",
     "permissions": "Permisos",
@@ -85,10 +80,10 @@
     "show": "Mostrar",
     "sign_in": "Registrarse",
     "sign_up": "Inscribirse",
+    "claim_acc": "Claim Account",
     "since": "desde",
     "submit": "Enviar",
     "power_up": "Power Up",
-    "submit_a_story": "Publicar",
     "tag": "Etiqueta",
     "to": "hasta",
     "toggle_nightmode": "Toggle Night Mode",
@@ -206,7 +201,6 @@
     "privacy_policy": "Política de Privacidad",
     "terms_of_service": "Términos del Servicio",
     "sign_up": "Unirse",
-    "learn_more": "Para saber más",
     "intro_tagline": "El dinero habla.",
     "intro_paragraph": "Tu voz tiene valor. Únete a la comunidad que te paga por publicar y votar contenido de alta calidad",
     "explorer": "Blockchain Explorer"
@@ -255,7 +249,6 @@
     "share_on_twitter": "Compartir en Twitter",
     "share_on_linkedin": "Compartir en Linkedin",
     "recent_password": "Contraseña reciente",
-    "in_week_convert_DEBT_TOKEN_to_LIQUID_TOKEN": "En 3.5 días, convertir 1 %(amount)s 2 %(DEBT_TOKEN)s a 3 %(LIQUID_TOKEN)s",
     "view_the_full_context": "Ver todo el contexto",
     "view_the_direct_parent": "Ver el comentario relacionado",
     "you_are_viewing_a_single_comments_thread_from": "Estás viendo  los comentarios relacionados de"
@@ -394,12 +387,6 @@
     "APP_NAME_password_backup": "%(APP_NAME)s Contraseña de apoyo o seguridad",
     "APP_NAME_password_backup_required": "%(APP_NAME)s Contraseña de apoyo o seguridad (requerida)",
     "after_printing_write_down_your_user_name": "Después de imprimir, escribe tu nombre de usuario"
-  },
-  "converttosteem_jsx": {
-    "your_existing_DEBT_TOKEN_are_liquid_and_transferable": "La cantidad de %(DEBT_TOKEN)s son líquidos y transferibles. Si lo deseas también puedes comprar o vender %(DEBT_TOKEN)s directamente en esta página en el %(link)s o transferir a un mercado externo",
-    "this_is_a_price_feed_conversion": "Esto es la conversión de precio. Los 3.5 días de retraso son necesarios para prevenir el abuso con las medias del precio",
-    "convert_to_LIQUID_TOKEN": "Convertir a %(LIQUID_TOKEN)s",
-    "DEBT_TOKEN_will_be_unavailable": "Esta acción tardará 3.5 días en procesarse y no puede ser cancelada. Estos %(DEBT_TOKEN)s dejarán inmediatamente de estar disponibles"
   },
   "tips_js": {
     "liquid_token": "Tokens canjeables pueden ser transferidos a cualquier sitio en cualquier momento.1%(LIQUID_TOKEN)s y pueden ser convertidos a %(VESTING_TOKEN)s en un proceso llamado power up.",

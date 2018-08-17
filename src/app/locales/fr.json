@@ -9,7 +9,6 @@
     "blog": "Blog",
     "browse": "Naviguer",
     "buy": "Acheter",
-    "buy_or_sell": "Acheter ou vendre",
     "by": "par",
     "cancel": "Annuler",
     "change_password": "Changer le mot de passe",
@@ -18,7 +17,6 @@
     "collapse_or_expand": "Compacter / Etendre",
     "comments": "Commentaires",
     "confirm": "Confirmer",
-    "convert": "Convertir",
     "delete": "Supprimer",
     "dismiss": "Ignorer",
     "edit": "Editer",
@@ -31,8 +29,6 @@
     "hide": "Masquer",
     "in": "dans",
     "in_reply_to": "en réponse à",
-    "insufficient_balance": "Solde insuffisant",
-    "invalid_amount": "Montant invalide",
     "joined": "Inscrit en",
     "loading": "Chargement en cours",
     "login": "Se connecter",
@@ -46,7 +42,6 @@
     "ok": "Ok",
     "older": "Plus ancien",
     "or": "ou",
-    "order_placed": "Ordre effectué",
     "password": "Mot de passe",
     "payouts": "Gains",
     "permissions": "Permissions",
@@ -85,10 +80,10 @@
     "show": "Montrer",
     "sign_in": "S'inscrire",
     "sign_up": "S'inscrire",
+    "claim_acc": "Claim Account",
     "since": "depuis",
     "submit": "Soumettre",
     "power_up": "Augmenter son influence",
-    "submit_a_story": "Poster",
     "tag": "Mot clé",
     "to": "vers",
     "toggle_nightmode": "Toggle Night Mode",
@@ -206,7 +201,6 @@
     "privacy_policy": "Politique de confidentialité",
     "terms_of_service": "Conditions d'utilisation",
     "sign_up": "Rejoindre",
-    "learn_more": "En savoir plus",
     "intro_tagline": "Présentations sur la monnaie",
     "intro_paragraph": "Votre voix vaut quelque chose. Rejoignez la communauté qui vous rémunère pour vos articles et participez à la curation du contenu de qualité.",
     "explorer": "Blockchain Explorer"
@@ -255,7 +249,6 @@
     "share_on_twitter": "Partager sur Twitter",
     "share_on_linkedin": "Partager sur Linkedin",
     "recent_password": "Mot de passe antérieur",
-    "in_week_convert_DEBT_TOKEN_to_LIQUID_TOKEN": "Dans 3.5 jours, conversion de %(amount)s %(DEBT_TOKEN)s en %(LIQUID_TOKEN)s",
     "view_the_full_context": "Voir le contexte complet",
     "view_the_direct_parent": "Voir le message précédent",
     "you_are_viewing_a_single_comments_thread_from": "Vous visualisez un commentaire unique de l'article"
@@ -394,12 +387,6 @@
     "APP_NAME_password_backup": "Sauvegarde de mot de passe pour  %(APP_NAME)s",
     "APP_NAME_password_backup_required": "Sauvegarde de mot de passe pour %(APP_NAME)s (requis)",
     "after_printing_write_down_your_user_name": "Après impression, veuillez indiquer votre identifiant"
-  },
-  "converttosteem_jsx": {
-    "your_existing_DEBT_TOKEN_are_liquid_and_transferable": "Vos %(DEBT_TOKEN)s existants sont en liquide et donc transférable. Vous pouvez par exemple ėchanger %(DEBT_TOKEN)s directement sur ce site via le lien %(link)s, ou les transférer vers un marché externe.",
-    "this_is_a_price_feed_conversion": "Il s'agit d'une conversion au taux du marché. Le délais de 3.5 jours est nécessaire afin d'éviter les abus de ceux qui tenterait de parier sur les modifications à court terme du taux du marché moyen.",
-    "convert_to_LIQUID_TOKEN": "Convertir en %(LIQUID_TOKEN)s",
-    "DEBT_TOKEN_will_be_unavailable": "Cette action aura lieu dans 3.5 jours et ne peut être annulée. Ces %(DEBT_TOKEN)s deviendront immédiatement non disponibles."
   },
   "tips_js": {
     "liquid_token": "Des jetons négociables peuvent être transférés n'importe où à tout moment. <br/> %(LIQUID_TOKEN)s peuvent être convertis en %(VESTING_TOKEN)s lors d'un processus appelé conversion en influence, ou power up.",

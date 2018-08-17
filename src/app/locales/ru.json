@@ -9,7 +9,6 @@
     "blog": "Блог",
     "browse": "Посмотреть",
     "buy": "Купить",
-    "buy_or_sell": "Купить или Продать",
     "by": "от",
     "cancel": "Отмена",
     "change_password": "Сменить пароль",
@@ -18,7 +17,6 @@
     "collapse_or_expand": "Свернуть/Развернуть",
     "comments": "Комментарии",
     "confirm": "Подтвердить",
-    "convert": "Конвертировать",
     "delete": "Удалить",
     "dismiss": "Скрыть",
     "edit": "Редактировать",
@@ -31,8 +29,6 @@
     "hide": "Скрыть",
     "in": "в",
     "in_reply_to": "в ответ на",
-    "insufficient_balance": "Недостаточный баланс",
-    "invalid_amount": "Недостаточно средств",
     "joined": "Присоединился",
     "loading": "Загрузка",
     "login": "Войти",
@@ -46,7 +42,6 @@
     "ok": "ОК",
     "older": "Старее",
     "or": "или",
-    "order_placed": "Заказ размещен",
     "password": "Пароль",
     "payouts": "Выплаты",
     "permissions": "Разрешения",
@@ -87,10 +82,10 @@
     "show": "Показать",
     "sign_in": "Войти",
     "sign_up": "Регистрация",
+    "claim_acc": "Claim Account",
     "since": "начиная с",
     "submit": "Отправить",
     "power_up": "Усилить силу голоса",
-    "submit_a_story": "Добавить пост",
     "tag": "Тег",
     "to": " к ",
     "toggle_nightmode": "Toggle Night Mode",
@@ -212,7 +207,6 @@
     "privacy_policy": "Политика Конфиденциальности",
     "terms_of_service": "Условия пользования",
     "sign_up": "Присоединиться",
-    "learn_more": "Документация",
     "intro_tagline": "Здесь говорят деньги.",
     "intro_paragraph": "Ваше мнение имеет цену. Присоединяйтесь к сообществу, которое платит за контент и за работу по отбору самого лучшего контента.",
     "explorer": "Blockchain Explorer"
@@ -261,7 +255,6 @@
     "share_on_twitter": "Поделиться в Twitter",
     "share_on_linkedin": "Поделиться в Linkedin",
     "recent_password": "Недавний пароль",
-    "in_week_convert_DEBT_TOKEN_to_LIQUID_TOKEN": "В 3,5 дня перевести %(amount)s %(DEBT_TOKEN)s в %(LIQUID_TOKEN)s",
     "view_the_full_context": "Показать полный контекст",
     "view_the_direct_parent": "Просмотр прямого родителя",
     "you_are_viewing_a_single_comments_thread_from": "Вы читаете одну нить комментариев от"
@@ -414,12 +407,6 @@
     "APP_NAME_password_backup": "%(APP_NAME)s резервное копирование пароля",
     "APP_NAME_password_backup_required": "%(APP_NAME)s резервное копирование пароля (обязательно!)",
     "after_printing_write_down_your_user_name": "После печати запишите ваше имя пользователя"
-  },
-  "converttosteem_jsx": {
-    "your_existing_DEBT_TOKEN_are_liquid_and_transferable": "Ваши %(DEBT_TOKEN)s токены ликвидны. Вы можете конвертировать %(DEBT_TOKEN)s на этом сайте (%(link)s) или вывести на биржу/обменник.",
-    "this_is_a_price_feed_conversion": "Конвертация на сайте выполняется три с половиной дня - это требуется, чтобы исключить манипуляции с ценами.",
-    "convert_to_LIQUID_TOKEN": "Ковертировать в %(LIQUID_TOKEN)s",
-    "DEBT_TOKEN_will_be_unavailable": "Эта операция будет проходить 3-5 дней от настоящего момента и ее нельзя отменить. Эти %(DEBT_TOKEN)s мгновенно станут недоступны"
   },
   "tips_js": {
     "liquid_token": "Ликвидные цифровые токены, которые могут переданы куда угодно в любой момент.<br/>%(LIQUID_TOKEN)s может быть конвертирован в %(VESTING_TOKEN)s, этот процесс называется \"увеличение Силы Голоса\".",

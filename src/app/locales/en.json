@@ -9,7 +9,6 @@
     "blog": "Blog",
     "browse": "Browse",
     "buy": "Buy",
-    "buy_or_sell": "Buy or Sell",
     "by": "by",
     "cancel": "Cancel",
     "change_password": "Change Password",
@@ -18,7 +17,6 @@
     "collapse_or_expand": "Collapse/Expand",
     "comments": "Comments",
     "confirm": "Confirm",
-    "convert": "Convert",
     "delete": "Delete",
     "dismiss": "Dismiss",
     "edit": "Edit",
@@ -31,8 +29,6 @@
     "hide": "Hide",
     "in": "in",
     "in_reply_to": "in reply to",
-    "insufficient_balance": "Insufficient balance",
-    "invalid_amount": "Invalid amount",
     "joined": "Joined",
     "loading": "Loading",
     "login": "Login",
@@ -46,7 +42,6 @@
     "ok": "Ok",
     "older": "Older",
     "or": "or",
-    "order_placed": "Order placed",
     "password": "Password",
     "payouts": "Payouts",
     "permissions": "Permissions",
@@ -89,7 +84,6 @@
     "since": "since",
     "submit": "Submit",
     "power_up": "Power Up",
-    "submit_a_story": "Post",
     "tag": "Tag",
     "to": " to ",
     "toggle_nightmode": "Toggle Night Mode",
@@ -207,7 +201,6 @@
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service",
     "sign_up": "Join",
-    "learn_more": "Learn More",
     "intro_tagline": "Share Value. Receive Value",
     "intro_paragraph": "Welcome to Whaleshares community!",
     "explorer": "Blockchain Explorer"
@@ -256,7 +249,6 @@
     "share_on_twitter": "Share on Twitter",
     "share_on_linkedin": "Share on Linkedin",
     "recent_password": "Recent Password",
-    "in_week_convert_DEBT_TOKEN_to_LIQUID_TOKEN": "In 3.5 days, convert %(amount)s %(DEBT_TOKEN)s into %(LIQUID_TOKEN)s",
     "view_the_full_context": "View the full context",
     "view_the_direct_parent": "View the direct parent",
     "you_are_viewing_a_single_comments_thread_from": "You are viewing a single comment's thread from"
@@ -395,12 +387,6 @@
     "APP_NAME_password_backup": "%(APP_NAME)s Password Backup",
     "APP_NAME_password_backup_required": "%(APP_NAME)s Password Backup (required)",
     "after_printing_write_down_your_user_name": "After printing, write down your user name"
-  },
-  "converttosteem_jsx": {
-    "your_existing_DEBT_TOKEN_are_liquid_and_transferable": "Your existing %(DEBT_TOKEN)s are liquid and transferable. Instead you may wish to trade %(DEBT_TOKEN)s directly in this site under %(link)s or transfer to an external market.",
-    "this_is_a_price_feed_conversion": "This is a price feed conversion. The 3.5 day delay is necessary to prevent abuse from gaming the price feed average",
-    "convert_to_LIQUID_TOKEN": "Convert to %(LIQUID_TOKEN)s",
-    "DEBT_TOKEN_will_be_unavailable": "This action will take place 3.5 days from now and can not be canceled. These %(DEBT_TOKEN)s will immediately become unavailable"
   },
   "tips_js": {
     "liquid_token": "Tradeable tokens that may be transferred anywhere at anytime.<br/>%(LIQUID_TOKEN)s can be converted to %(VESTING_TOKEN)s in a process called powering up.",
