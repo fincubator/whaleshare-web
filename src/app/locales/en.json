@@ -560,7 +560,6 @@
     "power_down": "Power Down",
     "amount": "Amount",
     "already_power_down": "You are already powering down %(AMOUNT)s %(LIQUID_TICKER)s (%(WITHDRAWN)s %(LIQUID_TICKER)s paid out so far). Note that if you change the power down amount the payout schedule will reset.",
-    "delegating": "Power down is  disabled until October 1, 2018.",
     "per_week": "That's ~%(AMOUNT)s %(LIQUID_TICKER)s per week.",
     "warning": "Leaving less than %(AMOUNT)s %(VESTING_TOKEN)s in your account is not recommended and can leave your account in a unusable state.",
     "error": "Unable to power down (ERROR: %(MESSAGE)s)"

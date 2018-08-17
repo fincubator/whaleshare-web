@@ -13,7 +13,7 @@ import Tooltip from 'app/components/elements/Tooltip'
 import {FormattedHTMLMessage} from 'app/Translator';
 import tt from 'counterpart';
 import {List} from 'immutable'
-import { LIQUID_TOKEN, LIQUID_TICKER, DEBT_TOKENS, VESTING_TOKEN } from 'app/client_config';
+import { LIQUID_TOKEN, LIQUID_TICKER, VESTING_TOKEN } from 'app/client_config';
 import transaction from 'app/redux/Transaction';
 
 const assetPrecision = 1000;
@@ -87,11 +87,10 @@ class UserWallet extends React.Component {
                 const to_withdraw = account.get('to_withdraw')
                 const withdrawn = account.get('withdrawn')
                 const vesting_shares = account.get('vesting_shares')
-                const delegated_vesting_shares = account.get('delegated_vesting_shares')
                 this.props.showPowerdown({
                     account: name,
                     to_withdraw, withdrawn,
-                    vesting_shares, delegated_vesting_shares,
+                    vesting_shares,
                 });
             }
         }

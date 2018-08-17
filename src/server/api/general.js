@@ -154,7 +154,6 @@ export default function useGeneralApi(app) {
                 fee: config.get('registrar.fee'),
                 creator: config.get('registrar.account'),
                 new_account_name: account.name,
-                delegation: config.get('registrar.delegation'),
                 owner: account.owner_key,
                 active: account.active_key,
                 posting: account.posting_key,
@@ -461,7 +460,7 @@ export default function useGeneralApi(app) {
 
 
 function* createAccount({
-                            signingKey, fee, creator, new_account_name, json_metadata = '', delegation,
+                            signingKey, fee, creator, new_account_name, json_metadata = '',
                             owner, active, posting, memo
                         }) {
 

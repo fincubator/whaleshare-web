@@ -30,7 +30,7 @@ class Powerdown extends React.Component {
 
     render() {
         const {broadcasting, new_withdraw, manual_entry} = this.state
-        const {account, available_shares, withdrawn, to_withdraw, vesting_shares, delegated_vesting_shares} = this.props
+        const {account, available_shares, withdrawn, to_withdraw, vesting_shares} = this.props
         const formatSp = (amount) => numberWithCommas(vestsToSp(this.props.state, amount))
         const sliderChange = (value) => {
             this.setState({new_withdraw: value, manual_entry: false})
@@ -52,8 +52,8 @@ class Powerdown extends React.Component {
             }
             // workaround bad math in react-rangeslider
             let withdraw = new_withdraw
-            if (withdraw > vesting_shares - delegated_vesting_shares) {
-                withdraw = vesting_shares - delegated_vesting_shares
+            if (withdraw > vesting_shares) {
+                withdraw = vesting_shares
             }
             const vesting_shares = `${ withdraw.toFixed(6) } ${ VEST_TICKER }`
             this.props.withdrawVesting({account, vesting_shares, errorCallback, successCallback})
@@ -69,14 +69,6 @@ class Powerdown extends React.Component {
                 </li>
             )
         }
-        if (delegated_vesting_shares !== 0) {
-            const AMOUNT = formatSp(delegated_vesting_shares)
-            notes.push(
-                <li key="delegating">
-                    {tt('powerdown_jsx.delegating', {AMOUNT, LIQUID_TICKER})}
-                </li>
-            )
-        }
         if (notes.length === 0) {
             let AMOUNT = vestsToSpf(this.props.state, new_withdraw) / 13
             AMOUNT = AMOUNT.toFixed(AMOUNT >= 10 ? 0 : 1)
@@ -87,7 +79,7 @@ class Powerdown extends React.Component {
             )
         }
         // NOTE: remove this post hf20
-        if (new_withdraw > vesting_shares - delegated_vesting_shares - spToVestsf(this.props.state, 5)) {
+        if (new_withdraw > vesting_shares - spToVestsf(this.props.state, 5)) {
             const AMOUNT = 5
             notes.push(
                 <li key="warning" className="warning">
@@ -113,7 +105,7 @@ class Powerdown extends React.Component {
                 <Slider
                     value={new_withdraw}
                     step={0.000001}
-                    max={vesting_shares - delegated_vesting_shares}
+                    max={vesting_shares}
                     format={formatSp}
                     onChange={sliderChange}
                 />
@@ -140,14 +132,12 @@ export default connect(
         const to_withdraw = parseFloat(values.get('to_withdraw')) / 1e6
         const withdrawn = parseFloat(values.get('withdrawn')) / 1e6
         const vesting_shares = assetFloat(values.get('vesting_shares'), VEST_TICKER)
-        const delegated_vesting_shares = assetFloat(values.get('delegated_vesting_shares'), VEST_TICKER)
-        const available_shares = vesting_shares - to_withdraw - withdrawn - delegated_vesting_shares
+        const available_shares = vesting_shares - to_withdraw - withdrawn
 
         return {
             ...ownProps,
             account,
             available_shares,
-            delegated_vesting_shares,
             state,
             to_withdraw,
             vesting_shares,
