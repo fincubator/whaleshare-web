@@ -96,6 +96,18 @@
     "upvote": "Reward",
     "upvote_post": "Reward post",
     "username": "Username",
+    "usermenu" : {
+      "blog": "Blog",
+      "comments": "Comments",
+      "feed": "Feed",
+      "logout": "Logout",
+      "night": "Toggle Night Mode",
+      "password": "Change Password",
+      "replies": "Replies",
+      "settings": "Settings",
+      "shares": "Shares",
+      "wallet": "Wallet"
+    },
     "version": "Version",
     "vote": "Share",
     "votes": "shares",
@@ -340,7 +352,8 @@
     }
   },
   "witnesses_jsx": {
-    "external_site": "external site",
+    "external_site": "External link",
+    "page": "Whaleshares link",
     "disabled": "disabled",
     "top_witnesses": "Witness Voting",
     "you_have_votes_remaining": {

@@ -78,7 +78,7 @@ class Witnesses extends React.Component {
             accountWitnessProxy, onWitnessChange} = this
         const sorted_witnesses = this.props.witnesses
             .sort((a, b) => Long.fromString(String(b.get('votes'))).subtract(Long.fromString(String(a.get('votes'))).toString()));
-        const up = <Icon name="chevron-up-circle" />;
+        const up = <Icon name="i-up" />;
         let witness_vote_count = 30
         let rank = 1
         const witnesses = sorted_witnesses.map(item => {
@@ -95,7 +95,7 @@ class Witnesses extends React.Component {
                 if(links.remote.test(thread)) {
                     witness_thread = <a href={thread}>{tt('witnesses_jsx.external_site')}&nbsp;<Icon name="extlink" /></a>
                 } else {
-                    witness_thread = <Link to={thread}>{tt('witnesses_jsx.external_site')}</Link>
+                    witness_thread = <Link to={thread}>{tt('witnesses_jsx.page')}</Link>
                 }
             }
 
@@ -105,7 +105,7 @@ class Witnesses extends React.Component {
             
             return (
                     <tr key={owner}>
-                        <td width="75">
+                        <td width="90">
                             {(rank < 10) && '0'}{rank++}
                             &nbsp;&nbsp;
                             <span className={classUp}>
@@ -138,9 +138,9 @@ class Witnesses extends React.Component {
                 return !sorted_witnesses.has(item)
             }).map(item => {
                 return (
-                       <div className="row" key={item}>
+                       <div className="row Witnesses__Voting" key={item}>
                            <div className="column small-12">
-                              <span>{/*className="Voting"*/}
+                              <span>
                                   <span className="Voting__button Voting__button-up space-right Voting__button--upvoted">
                                       <a href="#" onClick={accountWitnessVote.bind(this, item, false)}
                                           title={tt('g.vote')}>{up}</a>

@@ -47,3 +47,12 @@
 .Icon.dropdown-arrow polygon {
   fill: $dark-gray;
 }
+
+.Usermenu .Icon {
+  @include themify($themes) {
+    color: themed('iconPrimary');
+  }
+  path {
+    fill: $color-text-gray;
+  }
+}
