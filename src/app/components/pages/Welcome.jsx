@@ -11,6 +11,9 @@ class Welcome extends React.Component {
                         <img src={require('app/assets/images/welcoming-promoart.jpg')} />
                     </div>
                     <HelpContent path="welcome" />
+                    <div className="Welcome__video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EjvWEoJ-shc?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                 </div>
               </div>
             </div>
