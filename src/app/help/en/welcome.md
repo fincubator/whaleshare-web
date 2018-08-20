@@ -9,3 +9,8 @@ While we know earning rewards in the form of new "digital cryptocurrencies" can 
 Wishing you all the best,
 
 The Whaleshares Development Team
+
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/EjvWEoJ-shc?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+
+

@@ -1,10 +1,10 @@
 .Text {
   padding: 1rem;
-  
+
   @include themify($themes) {
     color: themed('textColorPrimary');
-    background-color: themed('backgroundColorContrasting');  
-    border: themed('border'); 
+    background-color: themed('backgroundColorContrasting');
+    border: themed('border');
   }
 }
 .Welcome__banner {
@@ -32,11 +32,6 @@
 
 }
 
-.Welcome__video {
-  margin: 20px auto;
-  width: 50%;
-}
-
 .HelpContent {
 
   height: inherit;
@@ -53,8 +48,8 @@
   }
   h3 {
     margin-top: 1rem;
-  }  
-  
+  }
+
   &.Markdown.MarkdownViewer--small img {
     width: 100%;
     height: auto;
