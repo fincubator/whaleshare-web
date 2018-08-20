@@ -341,14 +341,14 @@
     "past_payouts_author": " - Author $%(value)s",
     "past_payouts_curators": " - Curators $%(value)s",
     "we_will_reset_curation_rewards_for_this_post": " will reset your curation rewards for this post",
-    "removing_your_vote": "Removing your vote",
-    "changing_to_an_upvote": "Changing to an Up-Vote",
-    "changing_to_a_downvote": "Changing to a Down-Vote",
+    "removing_your_vote": "Removing your share",
+    "changing_to_an_upvote": "Changing to a share",
+    "changing_to_a_downvote": "Changing to a flag",
     "confirm_flag": "Confirm Flag",
     "and_more": "and %(count)s more",
     "votes_plural": {
-      "one": "%(count)s vote",
-      "other": "%(count)s votes"
+      "one": "%(count)s share",
+      "other": "%(count)s shares"
     }
   },
   "witnesses_jsx": {
