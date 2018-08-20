@@ -46,7 +46,8 @@ export function* fetchState(location_change_action) {
     if (url.indexOf("/curation-rewards") !== -1) url = url.replace("/curation-rewards", "/transfers");
     if (url.indexOf("/author-rewards") !== -1) url = url.replace("/author-rewards", "/transfers");
     // console.error(`fetching data ${url}`);
-    if (url.indexOf("/shares") !== -1) url = url.replace("/shares", "");
+    if (url.endsWith('/posts')) url = url.substring(0,url.length-6);
+    if (url.endsWith('/shares')) url = url.substring(0,url.length-7);
 
     yield put({type: 'FETCH_DATA_BEGIN'});
     try {
