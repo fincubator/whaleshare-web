@@ -172,7 +172,7 @@ class PostSummary extends React.Component {
             <Voting post={post} showList={false} />
             <VotesAndComments post={post} commentsLink={comments_link} />
             <span className="PostSummary__time_author_category">
-                {!archived && <Reblog author={p.author} permlink={p.permlink} parent_author={p.parent_author} />}
+                {/* {!archived && <Reblog author={p.author} permlink={p.permlink} parent_author={p.parent_author} />} */}
                 <span className="show-for-medium">
                     {author_category}
                 </span>
@@ -184,7 +184,7 @@ class PostSummary extends React.Component {
                 <Voting post={post} showList={false} />
                 <VotesAndComments post={post} commentsLink={comments_link} />
                 <span className="PostSummary__time_author_category">
-                    {!archived && <Reblog author={p.author} permlink={p.permlink} parent_author={p.parent_author} />}
+                    {/* {!archived && <Reblog author={p.author} permlink={p.permlink} parent_author={p.parent_author} />} */}
                 </span>
             </div>
         )

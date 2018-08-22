@@ -221,16 +221,15 @@
 }
 
 .Voting__adjust_weight {
-  padding: 20px 20px 20px;
-  margin-right: 10px;
-  width: 350px;
-  min-width: 320px;
+  padding: 1rem;
+  width: 18rem;
   overflow: hidden;
+
   .Icon:hover {
     animation: none !important;
   }
   .weight-display {
-    width: 3rem;
+    width: 2rem;
     float: left;
     margin-right: 0.5rem;
     text-align: right;
@@ -268,7 +267,7 @@
   }
   .rangeslider-horizontal {
     height: 10px;
-    width: 200px;
+    width: 16rem;
     background: none;
     float: left;
     margin-top: 18px;
@@ -289,10 +288,10 @@
     }
   }
   .Voting__adjust_weight_close {
-    position: static;
+    float: right;
     line-height: 2.6rem;
     font-size: 2rem;
-    margin-left: 1rem;
+    margin: 0 !important;
   }
 }
 
