@@ -326,7 +326,7 @@ class PostFull extends React.Component {
                 <Voting post={post} />
               </div>
               <div className="RightShare__Menu small-11 medium-5 large-5 columns text-right">
-                {!readonly && <Reblog author={author} permlink={permlink} />}
+                {/* {!readonly && <Reblog author={author} permlink={permlink} />} */}
                 <span className="PostFull__reply">
                   {showReplyOption && <a onClick={onShowReply}>{tt('g.reply')}</a>}
                   {' '}{!readonly && showEditOption && !showEdit && <a onClick={onShowEdit}>{tt('g.edit')}</a>}
