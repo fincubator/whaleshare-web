@@ -61,12 +61,6 @@ export default function resolveRoute(path)
     if (path === '/pick_account') {
         return {page: 'PickAccount'};
     }
-    if (path === '/recover_account_step_1') {
-        return {page: 'RecoverAccountStep1'};
-    }
-    if (path === '/recover_account_step_2') {
-        return {page: 'RecoverAccountStep2'};
-    }
     if (path === '/waiting_list.html') {
         return {page: 'WaitingList'};
     }

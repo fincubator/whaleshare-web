@@ -216,11 +216,6 @@ class App extends React.Component {
                 </ul>
                 <ul className="vertical menu">
                     <li>
-                        <a href="/recover_account_step_1" onClick={this.navigate}>
-                            {tt('navigation.stolen_account_recovery')}
-                        </a>
-                    </li>
-                    <li>
                         <a href="/change_password" onClick={this.navigate}>
                             {tt('navigation.change_account_password')}
                         </a>
