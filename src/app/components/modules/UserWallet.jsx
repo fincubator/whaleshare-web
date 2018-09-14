@@ -71,37 +71,32 @@ class UserWallet extends React.Component {
             });
         };
 
-        // const savings_balance = account.get('savings_balance');
-        // const savings_sbd_balance = account.get('savings_sbd_balance');
-
         const powerDown = (cancel, e) => {
             e.preventDefault()
-            const name = account.get('name');
-            if (cancel) {
-                const vesting_shares = cancel ? '0.000000 VESTS' : account.get('vesting_shares');
-                this.setState({toggleDivestError: null});
-                const errorCallback = e2 => {this.setState({toggleDivestError: e2.toString()})};
-                const successCallback = () => {this.setState({toggleDivestError: null})}
-                this.props.withdrawVesting({account: name, vesting_shares, errorCallback, successCallback})
-            } else {
-                const to_withdraw = account.get('to_withdraw')
-                const withdrawn = account.get('withdrawn')
-                const vesting_shares = account.get('vesting_shares')
-                this.props.showPowerdown({
-                    account: name,
-                    to_withdraw, withdrawn,
-                    vesting_shares,
-                });
-            }
+            // const name = account.get('name');
+            // if (cancel) {
+            //     const vesting_shares = cancel ? '0.000000 VESTS' : account.get('vesting_shares');
+            //     this.setState({toggleDivestError: null});
+            //     const errorCallback = e2 => {this.setState({toggleDivestError: e2.toString()})};
+            //     const successCallback = () => {this.setState({toggleDivestError: null})}
+            //     this.props.withdrawVesting({account: name, vesting_shares, errorCallback, successCallback})
+            // } else {
+            //     const to_withdraw = account.get('to_withdraw')
+            //     const withdrawn = account.get('withdrawn')
+            //     const vesting_shares = account.get('vesting_shares')
+            //     this.props.showPowerdown({
+            //         account: name,
+            //         to_withdraw, withdrawn,
+            //         vesting_shares,
+            //     });
+            // }
         }
 
 
         const balance_steem = parseFloat(account.get('balance').split(' ')[0]);
-        // const saving_balance_steem = parseFloat(savings_balance.split(' ')[0]);
         const divesting = parseFloat(account.get('vesting_withdraw_rate').split(' ')[0]) > 0.000000;
 
         // set displayed estimated value
-        // const total_sbd = sbd_balance + sbd_balance_savings + savings_sbd_pending + sbdOrders + conversionValue;
         // const total_steem = vesting_steem + balance_steem + saving_balance_steem + savings_pending + steemOrders;
         // let total_value = '$' + numberWithCommas(
         //     ((total_steem * price_per_steem) + total_sbd
@@ -132,18 +127,12 @@ class UserWallet extends React.Component {
 
         let steem_menu = [
             { value: tt('g.transfer'), link: '#', onClick: showTransfer.bind( this, 'WLS', 'Transfer to Account' ) },
-            // { value: tt('userwallet_jsx.transfer_to_savings'), link: '#', onClick: showTransfer.bind( this, 'STEEM', 'Transfer to Savings' ) },
             { value: tt('userwallet_jsx.power_up'), link: '#', onClick: showTransfer.bind( this, 'VESTS', 'Transfer to Account' ) },
-        ]
+        ];
         let power_menu = [
             { value: tt('userwallet_jsx.power_down'), link: '#', onClick: powerDown.bind(this, false) }
-        ]
-        // let dollar_menu = [
-        //     { value: tt('g.transfer'), link: '#', onClick: showTransfer.bind( this, 'SBD', 'Transfer to Account' ) },
-        //     { value: tt('userwallet_jsx.transfer_to_savings'), link: '#', onClick: showTransfer.bind( this, 'SBD', 'Transfer to Savings' ) },
-        //     { value: tt('userwallet_jsx.market'), link: '/market' },
-        //     { value: tt('userwallet_jsx.convert_to_LIQUID_TOKEN', {LIQUID_TOKEN}), link: '#', onClick: convertToSteem },
-        // ]
+        ];
+
         // if(isMyAccount) {
             // steem_menu.push({ value: tt('g.buy'), link: '#', onClick: onShowDepositSteem.bind(this, current_user.get('username')) });
             // steem_menu.push({ value: tt('g.sell'), link: '#', onClick: onShowWithdrawSteem });
