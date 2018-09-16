@@ -182,8 +182,7 @@ class App extends React.Component {
                             <h2>{tt('navigation.intro_tagline')}</h2>
                             <h4>{tt('navigation.intro_paragraph')}</h4>
                             <br />
-                            <a className="button button--primary" href="/claim.html"> <b>{tt('g.claim_acc')}</b> </a>
-                            {/* <a className="button button--primary" href="/pick_account"> <b>{tt('navigation.sign_up')}</b> </a> */}
+                            <a className="button button--primary" href="/pick_account"> <strong>{tt('navigation.sign_up')}</strong></a>
                         </div>
                     </div>
                 </div>
