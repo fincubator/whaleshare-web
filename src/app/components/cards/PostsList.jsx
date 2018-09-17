@@ -9,6 +9,7 @@ import Icon from 'app/components/elements/Icon';
 import shouldComponentUpdate from 'app/utils/shouldComponentUpdate';
 import {connect} from 'react-redux'
 import tt from 'counterpart';
+import {browserHistory} from "react-router";
 
 function topPosition(domElt) {
     if (!domElt) {
@@ -166,8 +167,8 @@ class PostsList extends React.Component {
         posts.forEach((item) => {
             const cont = content.get(item);
             if(!cont) {
-                console.error('PostsList --> Missing cont key', item)
-                return
+                console.error('PostsList --> Missing cont key', item);
+                return;
             }
             const ignore = ignore_result && ignore_result.has(cont.get('author'))
             const hide = cont.getIn(['stats', 'hide'])
@@ -226,6 +227,9 @@ export default connect(
         },
         removeHighSecurityKeys: () => {
             dispatch({type: 'user/REMOVE_HIGH_SECURITY_KEYS'})
-        }
+        },
+        getContent: (payload) => (new Promise((resolve, reject) => {
+            dispatch({type: 'GET_CONTENT', payload: {...payload, resolve, reject}})
+        }))
     })
 )(PostsList)

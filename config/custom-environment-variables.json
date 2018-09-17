@@ -81,5 +81,6 @@
   "steemd_connection_client": "SDC_CLIENT_STEEMD_URL",
   "steemd_connection_server": "SDC_SERVER_STEEMD_URL",
   "chain_id": "SDC_CHAIN_ID",
-  "address_prefix": "SDC_ADDRESS_PREFIX"
+  "address_prefix": "SDC_ADDRESS_PREFIX",
+  "wls_api_url": "SDC_WLS_API_URL"
 }
