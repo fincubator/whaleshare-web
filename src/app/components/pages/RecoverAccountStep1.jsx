@@ -69,7 +69,7 @@ class RecoverAccountStep1 extends React.Component {
                 const ownerUpdate = /Z$/.test(account.last_owner_update) ? account.last_owner_update : account.last_owner_update + 'Z'
                 const ownerUpdateTime = new Date(ownerUpdate).getTime()
                 const THIRTY_DAYS_AGO = new Date(Date.now() - (30 * 24 * 60 * 60 * 1000)).getTime()
-                if(ownerUpdateTime < Math.max(THIRTY_DAYS_AGO, constants.JULY_14_HACK))
+                if(ownerUpdateTime < THIRTY_DAYS_AGO)
                     this.setState({name_error: tt('recoveraccountstep1_jsx.unable_to_recover_account_not_change_ownership_recently')})
             }
         })
