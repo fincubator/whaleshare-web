@@ -28,6 +28,10 @@ import {routeRegex} from "app/ResolveRoute";
 import {contentStats} from 'app/utils/StateFunctions'
 
 import {api} from '@whaleshares/wlsjs';
+import {fetchFollowCount, loadFollows} from "../app/redux/FollowSaga";
+import {fork} from "redux-saga/effects";
+
+let fetch = require('node-fetch');
 
 const sagaMiddleware = createSagaMiddleware(
     ...userWatches, // keep first to remove keys early when a page change happens
@@ -108,16 +112,56 @@ async function universalRender({ location, initial_state, offchain, ErrorPage, t
 
     // below is only executed on the server
     let server_store, onchain;
+    let posts_shares_load = 0; // 0: no loading, 1: posts, 2: shares
     try {
         let url = location === '/' ? 'trending' : location;
+
+        if (url.match(routeRegex.UserProfile1)) {
+            url += '/posts';
+        }
+
         // Replace /curation-rewards and /author-rewards with /transfers for UserProfile
         // to resolve data correctly
         if (url.indexOf('/curation-rewards') !== -1) url = url.replace(/\/curation-rewards$/, '/transfers');
         if (url.indexOf('/author-rewards') !== -1) url = url.replace(/\/author-rewards$/, '/transfers');
-        if (url.endsWith('/posts')) url = url.substring(0,url.length-6);
-        if (url.endsWith('/shares')) url = url.substring(0,url.length-7);
+        if (url.endsWith('/posts')) {
+            url = url.substring(0,url.length-6);
+            posts_shares_load = 1;
+        }
+        if (url.endsWith('/shares')) {
+            url = url.substring(0,url.length-7);
+            posts_shares_load = 2;
+        }
 
         onchain = await api.getStateAsync(url);
+
+        // posts/shared split - loading posts
+        if (posts_shares_load > 0) {
+            const m = url.match(/^\/@([a-z0-9\.-]+)/);
+            const username = m[1];
+
+            let post_keys = [];
+
+            const wls_api_url = (posts_shares_load == 1)
+                ? `${$STM_Config.wls_api_url}/posts/${username}`
+                : `${$STM_Config.wls_api_url}/shares/${username}`;
+
+            const fetch_result = await fetch(wls_api_url);
+            const json_result = await fetch_result.json();
+            if (json_result.status === 'success') {
+                for(let p of json_result.data) {
+                    const post_key = `${p.author}/${p.permlink}`;
+                    post_keys.push(post_key);
+                    onchain.content[post_key] = p;
+                }
+            }
+
+            if (posts_shares_load == 1) {
+                onchain.accounts[username].posts = post_keys;
+            } else {
+                onchain.accounts[username].shares = post_keys;
+            }
+        }
 
         if (Object.getOwnPropertyNames(onchain.accounts).length === 0 && (url.match(routeRegex.UserProfile1) || url.match(routeRegex.UserProfile3))) { // protect for invalid account
             return {

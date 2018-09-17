@@ -6,6 +6,7 @@ import GlobalReducer from './GlobalReducer';
 import constants from './constants';
 import {fromJS, Map} from 'immutable'
 import {api} from '@whaleshares/wlsjs';
+import {routeRegex} from "../ResolveRoute";
 
 export const fetchDataWatches = [watchLocationChange, watchDataRequests, watchFetchJsonRequests, watchFetchState, watchGetContent];
 
@@ -41,17 +42,65 @@ export function* fetchState(location_change_action) {
 
     let url = `${pathname}`;
     if (url === '/') url = 'trending';
+
+    if (url.match(routeRegex.UserProfile1)) {
+        url += '/posts';
+    }
+
     // Replace /curation-rewards and /author-rewards with /transfers for UserProfile
     // to resolve data correctly
     if (url.indexOf("/curation-rewards") !== -1) url = url.replace("/curation-rewards", "/transfers");
     if (url.indexOf("/author-rewards") !== -1) url = url.replace("/author-rewards", "/transfers");
     // console.error(`fetching data ${url}`);
-    if (url.endsWith('/posts')) url = url.substring(0,url.length-6);
-    if (url.endsWith('/shares')) url = url.substring(0,url.length-7);
+
+    let posts_shares_load = 0; // 0: no loading, 1: posts, 2: shares
+    if (url.endsWith('/posts')) {
+        url = url.substring(0,url.length-6);
+        posts_shares_load = 1;
+    }
+    if (url.endsWith('/shares')) {
+        url = url.substring(0,url.length-7);
+        posts_shares_load = 2;
+    }
 
     yield put({type: 'FETCH_DATA_BEGIN'});
     try {
-        const state = yield call([api, api.getStateAsync], url)
+        let state = yield call([api, api.getStateAsync], url);
+
+        if (posts_shares_load > 0) {
+            const username = m[1];
+            // console.log(`blog_post_load... username=${username}`);
+
+            if ((typeof state.accounts[username].posts === 'undefined') ||
+                (state.accounts[username].posts === null) ||
+                (state.accounts[username].posts.length == 0)) {
+
+                // console.log(`update posts`);
+
+                let post_keys = [];
+
+                const wls_api_url = (posts_shares_load == 1)
+                    ? `${$STM_Config.wls_api_url}/posts/${username}`
+                    : `${$STM_Config.wls_api_url}/shares/${username}`;
+
+                const fetch_result = yield call(fetch, wls_api_url);
+                const json_result = yield call([fetch_result, fetch_result.json]);
+                if (json_result.status === 'success') {
+                    for(let p of json_result.data) {
+                        const post_key = `${p.author}/${p.permlink}`;
+                        post_keys.push(post_key);
+                        state.content[post_key] = p;
+                    }
+                }
+
+                if (posts_shares_load == 1) {
+                    state.accounts[username].posts = post_keys;
+                } else {
+                    state.accounts[username].shares = post_keys;
+                }
+            }
+        }
+
         yield put(GlobalReducer.actions.receiveState(state));
     } catch (error) {
         console.error('~~ Saga fetchState error ~~>', url, error);
@@ -75,123 +124,152 @@ export function* fetchData(action) {
     category = category.toLowerCase();
 
     yield put({type: 'global/FETCHING_DATA', payload: {order, category}});
-    let call_name, args;
-    if (order === 'trending') {
-        call_name = 'getDiscussionsByTrendingAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if (order === 'trending30') {
-        call_name = 'getDiscussionsByTrending30Async';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'active' ) {
-        call_name = 'getDiscussionsByActiveAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'cashout' ) {
-        call_name = 'getDiscussionsByCashoutAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'payout' ) {
-        call_name = 'getPostDiscussionsByPayout';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'payout_comments' ) {
-        call_name = 'getCommentDiscussionsByPayout';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'updated' ) {
-        call_name = 'getDiscussionsByActiveAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'created' || order === 'recent' ) {
-        call_name = 'getDiscussionsByCreatedAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'by_replies' ) {
-        call_name = 'getRepliesByLastUpdateAsync';
-        args = [author, permlink, constants.FETCH_DATA_BATCH_SIZE];
-    } else if( order === 'responses' ) {
-        call_name = 'getDiscussionsByChildrenAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'votes' ) {
-        call_name = 'getDiscussionsByVotesAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'hot' ) {
-        call_name = 'getDiscussionsByHotAsync';
-        args = [
-        { tag: category,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'by_feed' ) { // https://github.com/steemit/steem/issues/249
-        call_name = 'getDiscussionsByFeedAsync';
-        args = [
-        { tag: accountname,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'by_author' ) {
-        call_name = 'getDiscussionsByBlogAsync';
-        args = [
-        { tag: accountname,
-          limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
-    } else if( order === 'by_comments' ) {
-        call_name = 'getDiscussionsByCommentsAsync';
-        args = [
-        { limit: constants.FETCH_DATA_BATCH_SIZE,
-          start_author: author,
-          start_permlink: permlink}];
+
+    if ((category === 'posts') || (category === 'shares')) {
+        ////////////////////////////////////////////////////////////////////////////////
+
+        yield put({type: 'FETCH_DATA_BEGIN'});
+        try {
+            // const data = yield call([api, api[call_name]], ...args);
+            // yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
+
+            let data = [];
+
+            const wls_api_url = `${$STM_Config.wls_api_url}/${category}/${accountname}?start_author=${author}&start_permlink=${permlink}`;
+            const fetch_result = yield call(fetch, wls_api_url);
+            const json_result = yield call([fetch_result, fetch_result.json]);
+            if (json_result.status === 'success') {
+               data = json_result.data;
+            }
+
+            yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
+        } catch (error) {
+            console.error('~~ Saga fetchData error ~~>', call_name, args, error);
+            yield put({type: 'global/STEEM_API_ERROR', error: error.message});
+        }
+
     } else {
-        call_name = 'getDiscussionsByActiveAsync';
-        args = [{
-            tag: category,
-            limit: constants.FETCH_DATA_BATCH_SIZE,
-            start_author: author,
-            start_permlink: permlink}];
+        ////////////////////////////////////////////////////////////////////////////////
+
+        let call_name, args;
+        if (order === 'trending') {
+            call_name = 'getDiscussionsByTrendingAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if (order === 'trending30') {
+            call_name = 'getDiscussionsByTrending30Async';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'active' ) {
+            call_name = 'getDiscussionsByActiveAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'cashout' ) {
+            call_name = 'getDiscussionsByCashoutAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'payout' ) {
+            call_name = 'getPostDiscussionsByPayout';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'payout_comments' ) {
+            call_name = 'getCommentDiscussionsByPayout';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'updated' ) {
+            call_name = 'getDiscussionsByActiveAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'created' || order === 'recent' ) {
+            call_name = 'getDiscussionsByCreatedAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'by_replies' ) {
+            call_name = 'getRepliesByLastUpdateAsync';
+            args = [author, permlink, constants.FETCH_DATA_BATCH_SIZE];
+        } else if( order === 'responses' ) {
+            call_name = 'getDiscussionsByChildrenAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'votes' ) {
+            call_name = 'getDiscussionsByVotesAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'hot' ) {
+            call_name = 'getDiscussionsByHotAsync';
+            args = [
+                { tag: category,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'by_feed' ) { // https://github.com/steemit/steem/issues/249
+            call_name = 'getDiscussionsByFeedAsync';
+            args = [
+                { tag: accountname,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'by_author' ) {
+            call_name = 'getDiscussionsByBlogAsync';
+            args = [
+                { tag: accountname,
+                    limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else if( order === 'by_comments' ) {
+            call_name = 'getDiscussionsByCommentsAsync';
+            args = [
+                { limit: constants.FETCH_DATA_BATCH_SIZE,
+                    start_author: author,
+                    start_permlink: permlink}];
+        } else {
+            call_name = 'getDiscussionsByActiveAsync';
+            args = [{
+                tag: category,
+                limit: constants.FETCH_DATA_BATCH_SIZE,
+                start_author: author,
+                start_permlink: permlink}];
+        }
+        yield put({type: 'FETCH_DATA_BEGIN'});
+        try {
+            const data = yield call([api, api[call_name]], ...args);
+            yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
+        } catch (error) {
+            console.error('~~ Saga fetchData error ~~>', call_name, args, error);
+            yield put({type: 'global/STEEM_API_ERROR', error: error.message});
+        }
     }
-    yield put({type: 'FETCH_DATA_BEGIN'});
-    try {
-        const data = yield call([api, api[call_name]], ...args);
-        yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
-    } catch (error) {
-        console.error('~~ Saga fetchData error ~~>', call_name, args, error);
-        yield put({type: 'global/STEEM_API_ERROR', error: error.message});
-    }
+
     yield put({type: 'FETCH_DATA_END'});
 }
 

@@ -85,6 +85,8 @@ export default class UserProfile extends React.Component {
         switch(category) {
           case 'feed': order = 'by_feed'; break;
           case 'blog': order = 'by_author'; break;
+          case 'posts': order = 'by_author'; break;
+          case 'shares': order = 'by_author'; break;
           case 'comments': order = 'by_comments'; break;
           case 'recent_replies': order = 'by_replies'; break;
           default: console.log('unhandled category:', category);
@@ -142,7 +144,7 @@ export default class UserProfile extends React.Component {
             }
         }
 
-        const rep = repLog10(account.reputation);
+        // const rep = repLog10(account.reputation);
 
         const isMyAccount = username === account.name
         let tab_content = null;
@@ -209,7 +211,7 @@ export default class UserProfile extends React.Component {
         } else if( section === 'comments' && account.post_history ) {
            if( account.comments )
            {
-                let posts = accountImm.get('posts') || accountImm.get('comments');
+                let posts = accountImm.get('comments');
                 if (!fetching && (posts && !posts.size)) {
                     tab_content = <Callout>{tt('user_profile.user_hasnt_made_any_posts_yet', {name: accountname})}</Callout>;
                 } else {
@@ -227,65 +229,9 @@ export default class UserProfile extends React.Component {
            else {
               tab_content = (<center><LoadingIndicator type="circle" /></center>);
            }
-        } else if(!section || section === 'blog') {
-            if (account.blog) {
-                let posts = accountImm.get('blog');
-                const emptyText = isMyAccount ? <div>
-                        {tt('user_profile.looks_like_you_havent_posted_anything_yet')}<br /><br />
-                        <Link to="/submit.html">{tt('user_profile.create_a_post')}</Link><br />
-                        <Link to="/trending">{tt('user_profile.explore_trending_articles')}</Link><br />
-                        <Link to="/welcome">{tt('user_profile.read_the_quick_start_guide')}</Link><br />
-                        <Link to="/faq.html">{tt('user_profile.browse_the_faq')}</Link><br />
-                    </div>:
-                    tt('user_profile.user_hasnt_started_bloggin_yet', {name: accountname});
-
-                if (!fetching && (posts && !posts.size)) {
-                    tab_content = <Callout>{emptyText}</Callout>;
-                } else {
-                    tab_content = (
-                        <PostsList
-                            account={account.name}
-                            posts={posts}
-                            loading={fetching}
-                            category="blog"
-                            loadMore={this.loadMore}
-                            showSpam
-                        />
-                    );
-                }
-            } else {
-                tab_content = (<center><LoadingIndicator type="circle" /></center>);
-            }
-        } else if(section === 'posts' || section === 'shares') {
-            if (account.blog) {
-                let posts = accountImm.get('blog');
-                let posts_filterd = Immutable.List();
-
-                posts.forEach((item) => {
-                    const cont = content.get(item);
-                    if (!cont) {
-                        console.error('PostsList --> Missing cont key', item)
-                        return
-                    }
-
-                    if (((accountname !== cont.get('author')) && (section === 'shares')) ||
-                        ((accountname === cont.get('author')) && (section === 'posts'))) {
-                        posts_filterd = posts_filterd.push(item);
-                    }
-                });
-
-                // if ((section === 'posts') && (posts_filterd.size < 10)) {
-                //     if (typeof this.state.data_offset == 'undefined') this.state.data_offset = {
-                //         accountname,
-                //         offset: 0
-                //     };
-                //     if ((posts_filterd.size > this.state.data_offset.offset) || (accountname != this.state.data_offset.accountname)) {
-                //         this.state.data_offset = {accountname, offset: posts_filterd.size};
-                //         if (this.loadMore && posts) this.loadMore(posts.last(), 'blog');
-                //     }
-                // }
-
-                posts = posts_filterd;
+        } else if(!section || section === 'blog' || section === 'posts') {
+            if (account.posts) {
+                let posts = accountImm.get('posts');
 
                 let emptyText = "";
                 if (isMyAccount) {
@@ -309,7 +255,42 @@ export default class UserProfile extends React.Component {
                             account={account.name}
                             posts={posts}
                             loading={fetching}
-                            category="blog"
+                            category="posts"
+                            loadMore={this.loadMore}
+                            showSpam
+                        />
+                    );
+                }
+            } else {
+                tab_content = (<center><LoadingIndicator type="circle" /></center>);
+            }
+        } else if(section === 'shares') {
+            if (account.shares) {
+                let posts = accountImm.get('shares');
+
+                let emptyText = "";
+                if (isMyAccount) {
+                    emptyText = <div>
+                        {tt('user_profile.looks_like_you_havent_posted_anything_yet')}<br /><br />
+                        <Link to="/submit.html">{tt('user_profile.create_a_post')}</Link><br />
+                        <Link to="/trending">{tt('user_profile.explore_trending_articles')}</Link><br />
+                        <Link to="/welcome">{tt('user_profile.read_the_quick_start_guide')}</Link><br />
+                        <Link to="/faq.html">{tt('user_profile.browse_the_faq')}</Link><br />
+                    </div>
+                } else {
+                    emptyText = (section === 'shares') ? tt('user_profile.user_hasnt_started_sharing_yet', {name: accountname}) :
+                        tt('user_profile.user_hasnt_started_bloggin_yet', {name: accountname});
+                }
+
+                if (!fetching && (posts && !posts.size)) {
+                    tab_content = <Callout>{emptyText}</Callout>;
+                } else {
+                    tab_content = (
+                        <PostsList
+                            account={account.name}
+                            posts={posts}
+                            loading={fetching}
+                            category="shares"
                             loadMore={this.loadMore}
                             showSpam
                         />
@@ -400,11 +381,11 @@ export default class UserProfile extends React.Component {
             {link: `/@${accountname}/author-rewards`, label: tt('g.author_rewards'), value: tt('g.author_rewards')}
         ];
 
-        let blogMenu = [
-            {link: `/@${accountname}`, label: tt('g.usermenu.blog'), value: tt('g.usermenu.blog')},
-            {link: `/@${accountname}/posts`, label: 'Posts (experiment)', value: 'Posts'},
-            {link: `/@${accountname}/shares`, label: `${tt('g.usermenu.shares')} (experiment)`, value: tt('g.usermenu.shares')}
-        ];
+        // let blogMenu = [
+        //     {link: `/@${accountname}`, label: tt('g.usermenu.blog'), value: tt('g.usermenu.blog')},
+        //     {link: `/@${accountname}/posts`, label: 'Posts (experiment)', value: 'Posts'},
+        //     {link: `/@${accountname}/shares`, label: `${tt('g.usermenu.shares')} (experiment)`, value: tt('g.usermenu.shares')}
+        // ];
 
         // set account join date
         let accountjoin = account.created;
@@ -413,14 +394,14 @@ export default class UserProfile extends React.Component {
             <div className="columns small-12 medium-12 medium-expand">
                 <ul className="menu" style={{flexWrap: "wrap"}}>
                     {/*<li><Link to={`/@${accountname}`} activeClassName="active">{tt('g.usermenu.blog')}</Link></li>*/}
-                    {/*<li><Link to={`/@${accountname}/posts`} activeClassName="active">Posts</Link></li>*/}
-                    {/*<li><Link to={`/@${accountname}/shares`} activeClassName="active">{tt('g.usermenu.shares')}</Link></li>*/}
-                    <li>
-                        <LinkWithDropdown closeOnClickOutside dropdownPosition="bottom" dropdownAlignment="left"
-                            dropdownContent={ <VerticalMenu items={blogMenu} /> }>
-                            <a className={rewardsClass}> Blog <Icon name="dropdown-arrow" /></a>
-                        </LinkWithDropdown>
-                    </li>
+                    <li><Link to={`/@${accountname}`} activeClassName="active">Posts</Link></li>
+                    <li><Link to={`/@${accountname}/shares`} activeClassName="active">{tt('g.usermenu.shares')}</Link></li>
+                    {/*<li>*/}
+                        {/*<LinkWithDropdown closeOnClickOutside dropdownPosition="bottom" dropdownAlignment="left"*/}
+                            {/*dropdownContent={ <VerticalMenu items={blogMenu} /> }>*/}
+                            {/*<a className={rewardsClass}> Blog <Icon name="dropdown-arrow" /></a>*/}
+                        {/*</LinkWithDropdown>*/}
+                    {/*</li>*/}
                     <li><Link to={`/@${accountname}/comments`} activeClassName="active">{tt('g.usermenu.comments')}</Link></li>
                     <li><Link to={`/@${accountname}/recent-replies`} activeClassName="active">
                         {tt('g.usermenu.replies')} {isMyAccount && <NotifiCounter fields="comment_reply" />}
