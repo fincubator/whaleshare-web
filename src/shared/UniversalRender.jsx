@@ -134,6 +134,7 @@ async function universalRender({ location, initial_state, offchain, ErrorPage, t
         }
 
         onchain = await api.getStateAsync(url);
+        onchain.post_reward_fund = await api.getRewardFundAsync("post");
 
         // posts/shared split - loading posts
         if (posts_shares_load > 0) {
