@@ -181,7 +181,7 @@ class UserWallet extends React.Component {
 
         const mana = manaPower(account.toJS());
 
-        const full_value_shares = estimatedValueOfRewardShares(account.toJS(), gprops, post_reward_fund, 100); // weight = 100%
+        const value_shares = estimatedValueOfRewardShares(account.toJS(), gprops, post_reward_fund, 100); // weight = 100%
 
         return (<div className="UserWallet">
             {claimbox}
@@ -223,7 +223,7 @@ class UserWallet extends React.Component {
                 <div className="column small-12 medium-4">
                     {mana.toFixed(2) + '%'}
                     <br />
-                    {full_value_shares.toFixed(2) + ' WLS'}
+                    {value_shares.toFixed(2) + ' WLS'}
                 </div>
             </div>
             <div className="UserWallet__balance row">

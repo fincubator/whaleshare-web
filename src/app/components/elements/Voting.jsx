@@ -239,13 +239,13 @@ class Voting extends React.Component {
             voteUpClick = this.toggleWeightUp;
 
 
-            const full_value_shares = estimatedValueOfRewardShares(account, gprops, post_reward_fund, (weight / 100));
+            const value_shares = estimatedValueOfRewardShares(account, gprops, post_reward_fund, (weight / 100));
 
             if (depth === 0) { // post
               dropdown = <FoundationDropdown show={showWeight} onHide={() => this.setState({showWeight: false})}>
                   <div className="Voting__adjust_weight">
                       <a href="#" onClick={this.voteUp} className="confirm_weight" title={tt('g.upvote')}><Icon size="2x" name="i-share" /></a>
-                      <div className="weight-display">{weight / 100}% ({full_value_shares.toFixed(2) + ' WLS'})</div>
+                      <div className="weight-display">{weight / 100}% ({value_shares.toFixed(2) + ' WLS'})</div>
                       <Slider min={100} max={10000} step={100} value={weight} onChange={this.handleWeightChange} />
                       <CloseButton className="Voting__adjust_weight_close" onClick={() => this.setState({showWeight: false})} />
                   </div>
@@ -254,7 +254,7 @@ class Voting extends React.Component {
               dropdown = <FoundationDropdown show={showWeight} onHide={() => this.setState({showWeight: false})}>
                   <div className="Voting__adjust_weight">
                       <a href="#" onClick={this.voteUp} className="confirm_weight" title={tt('g.upvote')}><Icon size="2x" name="i-up" /></a>
-                      <div className="weight-display">{weight / 100}% ({full_value_shares.toFixed(2) + ' WLS'})</div>
+                      <div className="weight-display">{weight / 100}% ({value_shares.toFixed(2) + ' WLS'})</div>
                       <Slider min={100} max={10000} step={100} value={weight} onChange={this.handleWeightChange} />
                       <CloseButton className="Voting__adjust_weight_close" onClick={() => this.setState({showWeight: false})} />
                   </div>
