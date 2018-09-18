@@ -10,6 +10,7 @@ import DropdownMenu from 'app/components/elements/DropdownMenu';
 import TimeAgoWrapper from 'app/components/elements/TimeAgoWrapper';
 import FoundationDropdown from 'app/components/elements/FoundationDropdown';
 import CloseButton from 'react-foundation-components/lib/global/close-button';
+import { estimatedValueOfRewardShares } from 'app/utils/StateFunctions'
 import tt from 'counterpart';
 
 const ABOUT_FLAG = <div>
@@ -126,8 +127,12 @@ class Voting extends React.Component {
     }
 
     render() {
-        const {active_votes, showList, voting, flag, net_vesting_shares, is_comment, post_obj} = this.props;
-        const {username} = this.props;
+        const { username, active_votes, showList, voting, flag, net_vesting_shares, is_comment, post_obj} = this.props;
+
+        const { account } = this.props;
+        const gprops = this.props.gprops.toJS();
+        const post_reward_fund = this.props.post_reward_fund.toJS();
+
         const {votingUp, votingDown, showWeight, weight, myVote} = this.state;
         // console.log('-- Voting.render -->', myVote, votingUp, votingDown);
         if(flag && !username) return null
@@ -232,11 +237,15 @@ class Voting extends React.Component {
         let dropdown = null;
         if (myVote <= 0 && net_vesting_shares > VOTE_WEIGHT_DROPDOWN_THRESHOLD) {
             voteUpClick = this.toggleWeightUp;
+
+
+            const full_value_shares = estimatedValueOfRewardShares(account, gprops, post_reward_fund, (weight / 100));
+
             if (depth === 0) { // post
               dropdown = <FoundationDropdown show={showWeight} onHide={() => this.setState({showWeight: false})}>
                   <div className="Voting__adjust_weight">
                       <a href="#" onClick={this.voteUp} className="confirm_weight" title={tt('g.upvote')}><Icon size="2x" name="i-share" /></a>
-                      <div className="weight-display">{weight / 100}%</div>
+                      <div className="weight-display">{weight / 100}% ({full_value_shares.toFixed(2) + ' WLS'})</div>
                       <Slider min={100} max={10000} step={100} value={weight} onChange={this.handleWeightChange} />
                       <CloseButton className="Voting__adjust_weight_close" onClick={() => this.setState({showWeight: false})} />
                   </div>
@@ -245,7 +254,7 @@ class Voting extends React.Component {
               dropdown = <FoundationDropdown show={showWeight} onHide={() => this.setState({showWeight: false})}>
                   <div className="Voting__adjust_weight">
                       <a href="#" onClick={this.voteUp} className="confirm_weight" title={tt('g.upvote')}><Icon size="2x" name="i-up" /></a>
-                      <div className="weight-display">{weight / 100}%</div>
+                      <div className="weight-display">{weight / 100}% ({full_value_shares.toFixed(2) + ' WLS'})</div>
                       <Slider min={100} max={10000} step={100} value={weight} onChange={this.handleWeightChange} />
                       <CloseButton className="Voting__adjust_weight_close" onClick={() => this.setState({showWeight: false})} />
                   </div>
@@ -301,7 +310,11 @@ export default connect(
         const username = current_account ? current_account.get('username') : null;
         const vesting_shares = current_account ? current_account.get('vesting_shares') : 0.0;
         const net_vesting_shares = vesting_shares;
-        const voting = state.global.get(`transaction_vote_active_${author}_${permlink}`)
+        const voting = state.global.get(`transaction_vote_active_${author}_${permlink}`);
+
+        const gprops = state.global.get('props');
+        const post_reward_fund = state.global.get('post_reward_fund');
+        const account = username ? state.global.getIn(['accounts', username]).toJS() : null;
 
         return {
             post: ownProps.post,
@@ -310,7 +323,10 @@ export default connect(
             author, permlink, username, active_votes, net_vesting_shares, is_comment,
             post_obj: post,
             loggedin: username != null,
-            voting
+            voting,
+            gprops,
+            post_reward_fund,
+            account
         }
     },
 

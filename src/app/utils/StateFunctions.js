@@ -51,7 +51,7 @@ export function vestingSteem(account, gprops) {
  *
  * weight (%) value between 0 and 100
  */
-export function fullValueShares(account, gprops, post_reward_fund, weight) {
+export function estimatedValueOfRewardShares(account, gprops, post_reward_fund, weight) {
     const steem_power = vestingSteem(account, gprops);
     const total_vesting_shares = parseFloat(gprops.total_vesting_shares.split( ' ' )[0]);
     const total_vesting_fund_steem = parseFloat(gprops.total_vesting_fund_steem.split( ' ' )[0]);
