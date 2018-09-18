@@ -56,14 +56,14 @@ export function fullValueShares(account, gprops, post_reward_fund, weight) {
     const total_vesting_shares = parseFloat(gprops.total_vesting_shares.split( ' ' )[0]);
     const total_vesting_fund_steem = parseFloat(gprops.total_vesting_fund_steem.split( ' ' )[0]);
 
-    // const vesting_shares = steem_power * (total_vesting_shares / total_vesting_fund_steem);
+    const vesting_shares = steem_power * (total_vesting_shares / total_vesting_fund_steem);
 
     const voting_power = account.voting_power;
     const reward_balance = parseFloat(post_reward_fund.reward_balance.split( ' ' )[0]);
     const recent_claims = post_reward_fund.recent_claims;
-    const g = (total_vesting_shares/total_vesting_fund_steem) * (reward_balance/recent_claims);
+    // const g = (total_vesting_shares/total_vesting_fund_steem) * (reward_balance/recent_claims);
 
-    const vote_value = ( voting_power / 50 ) * steem_power * weight * g;
+    const vote_value = ( voting_power / 50 ) * vesting_shares * weight * (reward_balance/recent_claims);
     return vote_value;
 }
 
