@@ -45,6 +45,28 @@ export function vestingSteem(account, gprops) {
     return vesting_steemf;
 }
 
+/**
+ * value of 100 up-vote(shares/rewards)
+ * https://www.steem.center/index.php?title=Rewards:Formulas#Worth_of_a_vote
+ */
+export function fullValueShares(account, gprops, post_reward_fund, weight) {
+    // const weight = 100; // values between 0 and 1 (0 for 0%, and 1 for 100%)
+
+    const steem_power = vestingSteem(account, gprops);
+    const total_vesting_shares = parseFloat(gprops.total_vesting_shares.split( ' ' )[0]);
+    const total_vesting_fund_steem = parseFloat(gprops.total_vesting_fund_steem.split( ' ' )[0]);
+
+    // const vesting_shares = steem_power * (total_vesting_shares / total_vesting_fund_steem);
+
+    const voting_power = account.voting_power;
+    const reward_balance = parseFloat(post_reward_fund.reward_balance.split( ' ' )[0]);
+    const recent_claims = post_reward_fund.recent_claims;
+    const g = (total_vesting_shares/total_vesting_fund_steem) * (reward_balance/recent_claims);
+
+    const vote_value = ( voting_power / 50 ) * steem_power * weight * g;
+    return vote_value;
+}
+
 export function manaPower(account) {
     const last_vote_time = new Date(account["last_vote_time"] + "Z").getTime();
     const diff_in_seconds = new Date(Date.now() - last_vote_time).getTime() / 1000;
