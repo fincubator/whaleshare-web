@@ -5,7 +5,7 @@ import g from 'app/redux/GlobalReducer'
 import TransferHistoryRow from 'app/components/cards/TransferHistoryRow';
 import TransactionError from 'app/components/elements/TransactionError';
 import TimeAgoWrapper from 'app/components/elements/TimeAgoWrapper';
-import {numberWithCommas, vestingSteem, manaPower, fullValueShares} from 'app/utils/StateFunctions'
+import {numberWithCommas, vestingSteem, manaPower, estimatedValueOfRewardShares } from 'app/utils/StateFunctions'
 import FoundationDropdownMenu from 'app/components/elements/FoundationDropdownMenu'
 import WalletSubMenu from 'app/components/elements/WalletSubMenu'
 import shouldComponentUpdate from 'app/utils/shouldComponentUpdate';
@@ -181,7 +181,7 @@ class UserWallet extends React.Component {
 
         const mana = manaPower(account.toJS());
 
-        const full_value_shares = fullValueShares(account.toJS(), gprops, post_reward_fund, 100); // weight = 100%
+        const value_shares = estimatedValueOfRewardShares(account.toJS(), gprops, post_reward_fund, 100); // weight = 100%
 
         return (<div className="UserWallet">
             {claimbox}
@@ -223,7 +223,7 @@ class UserWallet extends React.Component {
                 <div className="column small-12 medium-4">
                     {mana.toFixed(2) + '%'}
                     <br />
-                    {full_value_shares.toFixed(2) + ' WLS'}
+                    {value_shares.toFixed(2) + ' WLS'}
                 </div>
             </div>
             <div className="UserWallet__balance row">
