@@ -17,27 +17,27 @@ class ExplorePost extends Component {
             copied: false
         };
         this.onCopy = this.onCopy.bind(this);
-        this.Steemd = this.Steemd.bind(this);
-        this.Steemdb = this.Steemdb.bind(this);
-        this.Busy = this.Busy.bind(this);
-        this.Phist = this.Phist.bind(this);
+        // this.Steemd = this.Steemd.bind(this);
+        // this.Steemdb = this.Steemdb.bind(this);
+        // this.Busy = this.Busy.bind(this);
+        // this.Phist = this.Phist.bind(this);
     }
 
-    Steemd() {
-        // serverApiRecordEvent('SteemdView', this.props.permlink);
-    }
+    // Steemd() {
+    //     // serverApiRecordEvent('SteemdView', this.props.permlink);
+    // }
 
-    Steemdb() {
-        // serverApiRecordEvent('SteemdbView', this.props.permlink);
-    }
+    // Steemdb() {
+    //     // serverApiRecordEvent('SteemdbView', this.props.permlink);
+    // }
 
-    Busy() {
-        // serverApiRecordEvent('Busy view', this.props.permlink);
-    }
+    // Busy() {
+    //     // serverApiRecordEvent('Busy view', this.props.permlink);
+    // }
 
-    Phist() {
-        // serverApiRecordEvent('PhistView', this.props.permlink);
-    }
+    // Phist() {
+    //     // serverApiRecordEvent('PhistView', this.props.permlink);
+    // }
 
     onCopy() {
         this.setState({
@@ -47,19 +47,19 @@ class ExplorePost extends Component {
 
     render() {
         const link = this.props.permlink;
-        const steemd = 'https://steemd.com' + link;
-        const steemdb = 'https://steemdb.com' + link;
-        const busy = 'https://busy.org' + link;
-        const steemit = 'https://beta.whaleshares.com' + link;
-        const phist = 'https://phist.steemdata.com/history?identifier=steemit.com' + link;
+        // const steemd = 'https://steemd.com' + link;
+        // const steemdb = 'https://steemdb.com' + link;
+        // const busy = 'https://busy.org' + link;
+        const whaleshares_io = 'https://whaleshares.io' + link;
+        // const phist = 'https://phist.steemdata.com/history?identifier=steemit.com' + link;
         let text = this.state.copied == true ? tt('explorepost_jsx.copied') : tt('explorepost_jsx.copy');
         return (
             <span className="ExplorePost">
                 <h4>{tt('g.share_this_post')}</h4>
                 <hr />
                 <div className="input-group">
-                    <input className="input-group-field share-box" type="text" value={steemit} onChange={(e) => e.preventDefault()} />
-                    <CopyToClipboard text={steemit} onCopy={this.onCopy} className="ExplorePost__copy-button input-group-label">
+                    <input className="input-group-field share-box" type="text" value={whaleshares_io} onChange={(e) => e.preventDefault()} />
+                    <CopyToClipboard text={whaleshares_io} onCopy={this.onCopy} className="ExplorePost__copy-button input-group-label">
                       <span>{text}</span>
                     </CopyToClipboard>
                 </div>
@@ -68,5 +68,4 @@ class ExplorePost extends Component {
     }
 }
 
-export default connect(
-)(ExplorePost)
+export default connect()(ExplorePost)
