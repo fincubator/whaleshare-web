@@ -12,6 +12,7 @@ import FoundationDropdown from 'app/components/elements/FoundationDropdown';
 import CloseButton from 'react-foundation-components/lib/global/close-button';
 import { estimatedValueOfRewardShares } from 'app/utils/StateFunctions'
 import tt from 'counterpart';
+// import {vestingSteem} from "../../utils/StateFunctions";
 
 const ABOUT_FLAG = <div>
     <p>{tt('voting_jsx.flagging_post_can_remove_rewards_the_flag_should_be_used_for_the_following')}</p>
@@ -126,6 +127,7 @@ class Voting extends React.Component {
         }
     }
 
+
     render() {
         const { username, active_votes, showList, voting, flag, net_vesting_shares, is_comment, post_obj} = this.props;
 
@@ -218,11 +220,18 @@ class Voting extends React.Component {
             const avotes = active_votes.toJS();
             avotes.sort((a, b) => Math.abs(parseInt(a.rshares)) > Math.abs(parseInt(b.rshares)) ? -1 : 1)
             let voters = [];
+
+            const reward_balance = parseFloat(post_reward_fund.reward_balance.split( ' ' )[0]);
+            const recent_claims = post_reward_fund.recent_claims;
+
             for( let v = 0; v < avotes.length && voters.length < MAX_VOTES_DISPLAY; ++v ) {
-                const {percent, voter} = avotes[v]
-                const sign = Math.sign(percent)
-                if(sign === 0) continue
-                voters.push({value: (sign > 0 ? '+ ' : '- ') + voter, link: '/@' + voter})
+                const {percent, voter, rshares} = avotes[v];
+                const sign = Math.sign(percent);
+                if(sign === 0) continue;
+
+                const value_voter = rshares * (reward_balance/recent_claims);
+
+                voters.push({value: (sign > 0 ? '+ ' : '- ') + voter + ' (' + (percent/100) + '%, ' + value_voter.toFixed(2) + ' WLS)', link: '/@' + voter})
             }
             if (total_votes > voters.length) {
                 voters.push({value: <span>&hellip; {tt('voting_jsx.and_more', {count: total_votes - voters.length})}</span>});
@@ -237,7 +246,6 @@ class Voting extends React.Component {
         let dropdown = null;
         if (myVote <= 0 && net_vesting_shares > VOTE_WEIGHT_DROPDOWN_THRESHOLD) {
             voteUpClick = this.toggleWeightUp;
-
 
             const value_shares = estimatedValueOfRewardShares(account, gprops, post_reward_fund, (weight / 100));
 
@@ -326,7 +334,7 @@ export default connect(
             voting,
             gprops,
             post_reward_fund,
-            account
+            account,
         }
     },
 
