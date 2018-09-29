@@ -267,12 +267,10 @@ class UserWallet extends React.Component {
 export default connect(
     // mapStateToProps
     (state, ownProps) => {
-        let price_per_steem = undefined
         const gprops = state.global.get('props');
         const post_reward_fund = state.global.get('post_reward_fund');
         return {
             ...ownProps,
-            price_per_steem,
             gprops,
             post_reward_fund
         }
