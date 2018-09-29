@@ -20,13 +20,13 @@
       background: themed('backgroundColorOpaque');
       color: themed('textColorPrimary');
       border: themed('border');
-    }  
+    }
     &:hover {
       @include themify($themes) {
         background: themed('backgroundColor');
         color: themed('textColorPrimary');
         border: themed('borderDark');
-      }  
+      }
     }
   }
 }

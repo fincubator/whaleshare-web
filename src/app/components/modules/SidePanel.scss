@@ -4,8 +4,8 @@ $menu-width: 250px;
   display: block;
 
   .menu > li.last {
-    border-bottom: 1px solid $color-border-dark;   
-    color: $color-text-gray-light;  
+    border-bottom: 1px solid $color-border-dark;
+    color: $color-text-gray-light;
   }
 
   > div {
@@ -23,7 +23,7 @@ $menu-width: 250px;
         border-bottom: 1px solid $color-blue-black-darkest;
       }
       > a:hover, &:focus {
-        background-color:  $color-blue-black;
+        background-color: $color-blue-black;
         border-bottom: 1px solid $color-brightblue;
 
       }
@@ -76,5 +76,5 @@ $menu-width: 250px;
     > div > .menu > li > a {
       padding: 0.3rem 1rem;
     }
-}
+  }
 }

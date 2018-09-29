@@ -3,17 +3,17 @@
 // import config from 'config'
 
 /** usage
-<code>
-import {plugin, tagRules} from 'app/utils/RemarkablePlugin'
-import Remarkable from 'remarkable'
-const remarkable = new Remarkable()
-remarkable.use(plugin(tagRules))
-const renderedText = remarkable.render(`#jsc @user`)
-console.log('hashtags', tagRules.hashtags())
-console.log('usertags', tagRules.usertags())
-console.log('renderedText', renderedText)
-</code>
-*/
+ <code>
+ import {plugin, tagRules} from 'app/utils/RemarkablePlugin'
+ import Remarkable from 'remarkable'
+ const remarkable = new Remarkable()
+ remarkable.use(plugin(tagRules))
+ const renderedText = remarkable.render(`#jsc @user`)
+ console.log('hashtags', tagRules.hashtags())
+ console.log('usertags', tagRules.usertags())
+ console.log('renderedText', renderedText)
+ </code>
+ */
 // export const tagRules = {
 //     done: () => {
 //         const ret = {
@@ -51,7 +51,7 @@ console.log('renderedText', renderedText)
 //     text: (tokens, i, options, env, renderer) => {
 //         if(tagRules.youtubeId)
 //             return `youtube:${tagRules.youtubeId}${tagRules.youtubeTime ? ',' + tagRules.youtubeTime : ''}`
-// 
+//
 //         if(tagLinkOpen)
 //             return renderer.rules.text(tokens, i, options, env, renderer)
 //         let content = tokens[i].content
@@ -77,7 +77,7 @@ console.log('renderedText', renderedText)
 //         // unescapted ipfs links (temp, until the reply editor categorizes the image)
 //         //if(config.ipfs_prefix)
 //         //    content = content.replace(linksRe.ipfsPrefix, config.ipfs_prefix)
-// 
+//
 //         return content
 //     },
 //     link_close: (tokens, i, options, env, renderer) => {
@@ -93,7 +93,7 @@ console.log('renderedText', renderedText)
 // let hashtags = new Set()
 // let usertags = new Set()
 // let tagLinkOpen
-// 
+//
 // export const imageLinks = {
 //     done: () => {
 //         if(image.length > 1) links.delete(image[1])
@@ -140,11 +140,11 @@ console.log('renderedText', renderedText)
 // let links = new Set()
 
 /**
-Usage...
-<code>
-import Remarkable from 'remarkable'
-const remarkable = new Remarkable()
-const customRules = {
+ Usage...
+ <code>
+ import Remarkable from 'remarkable'
+ const remarkable = new Remarkable()
+ const customRules = {
     text: (tokens, i, options, env, ctx) => {
         const token = tokens[i]
         const content = token.content
@@ -152,11 +152,11 @@ const customRules = {
         return content
     }
 }
-remarkable.use(plugin(customRules))
-const renderedText = remarkable.render(`#jsc`)
-console.log('renderedText', renderedText)
-</code>
-*/
+ remarkable.use(plugin(customRules))
+ const renderedText = remarkable.render(`#jsc`)
+ console.log('renderedText', renderedText)
+ </code>
+ */
 // export const plugin = rules => md => {
 //     // const render = md.renderer.render
 //     md.renderer.render = (tokens, options, env) => {

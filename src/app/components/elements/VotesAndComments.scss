@@ -2,8 +2,8 @@
   path {
     transition: 0.2s all ease-in-out;
     @include themify($themes) {
-     fill: themed('iconColorSecondary'); 
-    }       
+      fill: themed('iconColorSecondary');
+    }
   }
   circle {
     stroke: none;
@@ -17,8 +17,8 @@
 .VotesAndComments__votes {
   padding-right: 1rem;
   @include themify($themes) {
-    border-right: themed('borderLight'); 
-  }   
+    border-right: themed('borderLight');
+  }
 }
 
 .VotesAndComments__comments {

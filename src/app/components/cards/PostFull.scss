@@ -11,12 +11,12 @@
   }
 
   @include themify($themes) {
-      border-bottom: themed('border');
+    border-bottom: themed('border');
   }
   .button.hollow {
     @include themify($themes) {
-        border: themed('borderAccent');
-        color: themed('textColorAccent');
+      border: themed('borderAccent');
+      color: themed('textColorAccent');
     }
   }
 
@@ -32,8 +32,8 @@
 .PostFull__time_author_category {
   font-weight: 400;
   @include themify($themes) {
-      border-right: themed('border');
-      color: themed('textColorSecondary');
+    border-right: themed('border');
+    color: themed('textColorSecondary');
   }
 
   padding-right: .6rem;
@@ -47,18 +47,20 @@
   margin: 1.75rem 0 1.2rem 0;
 
   @include themify($themes) {
-      color: themed('textColorSecondary');
-    }
+    color: themed('textColorSecondary');
+  }
 
-  strong, a {color: #999}
+  strong, a {
+    color: #999
+  }
   font-size: 120%;
   display: block;
 
   > .Userpic {
     float: left;
     margin: -1.35rem 0.75rem 0 0;
-  	width: 5rem;
-  	height: 5rem;
+    width: 5rem;
+    height: 5rem;
   }
   > .right-side {
     margin-left: 60px;
@@ -110,7 +112,7 @@
       top: 5px;
       svg {
         @include themify($themes) {
-            fill: themed('textColorSecondary');
+          fill: themed('textColorSecondary');
         }
       }
     }
@@ -132,7 +134,7 @@
   font-size: 94%;
   svg {
     @include themify($themes) {
-        fill: themed('textColorSecondary');
+      fill: themed('textColorSecondary');
     }
   }
   a, .FoundationDropdownMenu__label {
@@ -158,7 +160,7 @@
     padding-right: .4rem;
     margin-right: .4rem;
     @include themify($themes) {
-        border-right: themed('border');
+      border-right: themed('border');
     }
   }
 }
@@ -173,8 +175,8 @@
   font-size: 94%;
   font-weight: 600;
   @include themify($themes) {
-      border-right: themed('border');
-      fill: themed('textColorSecondary');
+    border-right: themed('border');
+    fill: themed('textColorSecondary');
   }
 }
 
@@ -182,9 +184,11 @@
   padding-right: .4rem;
   margin-right: .4rem;
   @include themify($themes) {
-      border-right: themed('border');
+    border-right: themed('border');
   }
-  a {margin: 0 0.15rem;}
+  a {
+    margin: 0 0.15rem;
+  }
 }
 
 .PostFull__lifetime {
@@ -202,7 +206,7 @@
 }
 
 .explore-post {
-  margin-right: 0px!important;
+  margin-right: 0px !important;
   cursor: pointer;
   &:hover {
     svg {
@@ -212,7 +216,7 @@
 }
 
 input.share-box {
-  width: 75%!important;
+  width: 75% !important;
   display: inline;
 }
 
@@ -229,11 +233,11 @@ input.share-box {
 }
 
 .chain-right {
-    -webkit-transform: rotate(120deg);
-    -moz-transform: rotate(120deg);
-    -ms-transform: rotate(120deg);
-    -o-transform: rotate(120deg);
-    transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  transform: rotate(120deg);
 }
 
 /* Small only */
