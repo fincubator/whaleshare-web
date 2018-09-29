@@ -141,18 +141,18 @@ export default connect(
     // caculate powerdown_limit
     const WLS_BLOCKS_PER_YEAR = 10512000;
     const current_head_block_num = state.global.getIn(['props', 'head_block_number']);
-    const at_year = Math.min( Math.floor(current_head_block_num/WLS_BLOCKS_PER_YEAR), 8);
-    const start_inflation_rate = 10000/(1 << at_year);
+    const at_year = Math.min(Math.floor(current_head_block_num / WLS_BLOCKS_PER_YEAR), 8);
+    const start_inflation_rate = 10000 / (1 << at_year);
     const inflation_rate_floor = 488;
-    const end_inflation_rate = start_inflation_rate/2;
+    const end_inflation_rate = start_inflation_rate / 2;
     const dif_inflation_rate = start_inflation_rate - end_inflation_rate;
     const inflation_rate_adjustment = ((current_head_block_num % WLS_BLOCKS_PER_YEAR) * dif_inflation_rate) / WLS_BLOCKS_PER_YEAR;
-    const current_inflation_rate = Math.max( start_inflation_rate - inflation_rate_adjustment, inflation_rate_floor );
-    const powerdown_limit = Math.floor((10000 - current_inflation_rate)/100);
+    const current_inflation_rate = Math.max(start_inflation_rate - inflation_rate_adjustment, inflation_rate_floor);
+    const powerdown_limit = Math.floor((10000 - current_inflation_rate) / 100);
     // console.log(`powerdown_limit=${powerdown_limit}`);
 
     ////////////////////////////////
-    const available_shares = Math.floor((vesting_shares * powerdown_limit)/100) - to_withdraw - withdrawn;
+    const available_shares = Math.floor((vesting_shares * powerdown_limit) / 100) - to_withdraw - withdrawn;
 
     return {
       ...ownProps,

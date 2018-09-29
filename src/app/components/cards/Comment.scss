@@ -74,13 +74,11 @@
   font-size: 100%;
   font-weight: 600;
   padding-right: 0.5rem;
-  a {    
+  a {
     @extend .link;
     @extend .link--primary;
   }
 }
-
-
 
 .Comment__header_collapse {
   float: right;
@@ -106,8 +104,8 @@
     color: themed('textColorPrimary');
   }
   a {
-   @extend .link;
-   @extend .link--primary;
+    @extend .link;
+    @extend .link--primary;
   }
   .Voting__voters_list {
     @include themify($themes) {
@@ -117,7 +115,9 @@
     margin-right: 1rem;
   }
   .Comment__footer__controls {
-    a {margin: 0 0.2rem;}
+    a {
+      margin: 0 0.2rem;
+    }
   }
 }
 
@@ -130,14 +130,16 @@
 }
 
 .Comment__negative_group {
-    color: $medium-gray;
-    border-top: 1px solid $light-gray;
-    padding-top: 1rem;
-    clear: none;
-    button {
-      opacity: 0.35;
-      &:hover {opacity: 0.5;}
+  color: $medium-gray;
+  border-top: 1px solid $light-gray;
+  padding-top: 1rem;
+  clear: none;
+  button {
+    opacity: 0.35;
+    &:hover {
+      opacity: 0.5;
     }
+  }
 }
 
 .depth {
@@ -214,7 +216,7 @@
   .depth.di-6 {
     left: -100px;
   }
-  .Comment .highlighted { 
+  .Comment .highlighted {
     padding-left: 0;
   }
 }

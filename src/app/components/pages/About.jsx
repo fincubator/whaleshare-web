@@ -1,27 +1,34 @@
 import React from 'react';
-import { APP_NAME, APP_URL } from 'app/client_config';
+import {APP_NAME, APP_URL} from 'app/client_config';
 import tt from 'counterpart';
 
 class About extends React.Component {
-    render() {
-        return (
-            <div className="row">
-                <div className="column">
-                    <div className="float-right"><a href="#" onClick={e => {e.preventDefault(); alert(process.env.VERSION)}}>{tt('g.version')}</a></div>
-                    <h2>{tt('about_jsx.about_app', {APP_NAME})}</h2>
-                    <p>
-                        {tt('about_jsx.about_app_details')}
-                        <a href="https://steem.io/">{tt('about_jsx.learn_more_at_app_url', {APP_URL})}</a>.
-                    </p>
-                    <h2>{tt('about_jsx.resources')}</h2>
-                    <h3><a href="https://gitlab.com/beyondbitcoin/whaleshares-web/uploads/40a04e43d66482289b988bd189c26cef/Whale_paper_v1.pdf" onClick={this.navigate}>{tt('navigation.APP_NAME_whitepaper', {APP_NAME})}</a> <small>[PDF]</small></h3>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="row">
+        <div className="column">
+          <div className="float-right"><a href="#" onClick={e => {
+            e.preventDefault();
+            alert(process.env.VERSION)
+          }}>{tt('g.version')}</a></div>
+          <h2>{tt('about_jsx.about_app', {APP_NAME})}</h2>
+          <p>
+            {tt('about_jsx.about_app_details')}
+            <a href="https://steem.io/">{tt('about_jsx.learn_more_at_app_url', {APP_URL})}</a>.
+          </p>
+          <h2>{tt('about_jsx.resources')}</h2>
+          <h3><a
+            href="https://gitlab.com/beyondbitcoin/whaleshares-web/uploads/40a04e43d66482289b988bd189c26cef/Whale_paper_v1.pdf"
+            onClick={this.navigate}>{tt('navigation.APP_NAME_whitepaper', {APP_NAME})}</a>
+            <small>[PDF]</small>
+          </h3>
+        </div>
+      </div>
+    );
+  }
 }
 
 module.exports = {
-    path: 'about.html',
-    component: About
+  path: 'about.html',
+  component: About
 };

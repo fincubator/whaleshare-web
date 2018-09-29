@@ -5,15 +5,15 @@
   }
   .dropdown-pane {
     @include themify($themes) {
-      border: themed('borderDark');  
-    }    
+      border: themed('borderDark');
+    }
   }
 }
 
 .Voting__button {
   .Icon {
     // Put the icon in a layer to improve rendering performance (scrolling especially)
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
   }
   path {
     fill: $dark-gray;
@@ -28,61 +28,61 @@
 
 .Voting__about-flag {
   margin-right: 30px;
-  .button {  
+  .button {
     text-decoration: none;
     font-weight: bold;
     transition: 0.2s all ease-in-out;
     text-transform: capitalize;
     border-radius: 0;
-    @include font-size(18px);       
+    @include font-size(18px);
     @include themify($themes) {
-      background-color: themed('buttonBackground');  
-      box-shadow: 0px 0px 0px 0 rgba(0,0,0,0), 5px 5px 0 0 themed('buttonBoxShadow');   
+      background-color: themed('buttonBackground');
+      box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0), 5px 5px 0 0 themed('buttonBoxShadow');
       color: themed('buttonText');
     }
     &:hover, &:focus {
       @include themify($themes) {
-        background-color: themed('buttonBackgroundHover');  
-        box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.1), 7px 7px 0 0 themed('buttonBoxShadowHover');   
+        background-color: themed('buttonBackgroundHover');
+        box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1), 7px 7px 0 0 themed('buttonBoxShadowHover');
         color: themed('buttonTextHover');
-        text-shadow: 0 1px 0 rgba(0,0,0,0.20);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.20);
       }
     }
     &:visited, &:active {
       @include themify($themes) {
-        color: themed('buttonText');  
-      } 
-    } 
+        color: themed('buttonText');
+      }
+    }
   }
 }
 
 .Voting__button-up {
-	width: 2rem !important;
-	height: auto !important;
-	margin-right: 0.5rem;
-	
-	> a {
-	  padding-right: 0.5rem;
-	}
-	svg {
-	  width: 2rem !important;
-	  height: auto !important;
-	  position: relative;
-	  top: -0.5rem;
-	}
-	.confirm_weight svg {
-  	top: 0;
-	}
-	path {
-  	@include themify($themes) {
-  	  fill: themed('iconSecondary');
-  	}       
-	}
-	a:hover path {
-  	@include themify($themes) {
-  	  fill: themed('iconPrimary');
-  	}       
-	}
+  width: 2rem !important;
+  height: auto !important;
+  margin-right: 0.5rem;
+
+  > a {
+    padding-right: 0.5rem;
+  }
+  svg {
+    width: 2rem !important;
+    height: auto !important;
+    position: relative;
+    top: -0.5rem;
+  }
+  .confirm_weight svg {
+    top: 0;
+  }
+  path {
+    @include themify($themes) {
+      fill: themed('iconSecondary');
+    }
+  }
+  a:hover path {
+    @include themify($themes) {
+      fill: themed('iconPrimary');
+    }
+  }
 }
 
 .Voting__button-up.votingUp {
@@ -135,7 +135,6 @@
   }
 }
 
-
 .Voting__button--downvoted path {
   fill: $color-red;
 }
@@ -164,15 +163,15 @@
     font-size: 82.5%;
     display: block;
     @include themify($themes) {
-      color: themed('textColorSecondary');  
-    }  
+      color: themed('textColorSecondary');
+    }
   }
 }
 
 .Voting__inner {
   @include themify($themes) {
-    border-right: themed('borderLight'); 
-  } 
+    border-right: themed('borderLight');
+  }
   padding-right: .8rem;
   margin-right: .6rem;
   .DropdownMenu .Icon.dropdown-arrow {
@@ -193,31 +192,31 @@
 }
 
 .Voting__adjust_weight_down {
-    @extend .Voting__adjust_weight;
+  @extend .Voting__adjust_weight;
 
-    @include themify($themes) {
-      background-color: themed('backgroundColor'); 
-    } 
+  @include themify($themes) {
+    background-color: themed('backgroundColor');
+  }
 
+  right: 0;
+  width: auto !important;
+  max-width: 500px;
+
+  div.clear {
+    clear: both;
+  }
+  p, span {
+    white-space: normal !important;
+  }
+  .weight-display {
+    color: $color-red !important;
+  }
+  .rangeslider {
+    margin-right: 2rem;
+  }
+  .close-button {
     right: 0;
-    width: auto !important;
-    max-width: 500px;
-
-    div.clear {
-      clear: both;
-    }
-    p, span {
-      white-space: normal !important;
-    }
-    .weight-display {
-      color: $color-red !important;
-    }
-    .rangeslider {
-      margin-right: 2rem;
-    }
-    .close-button {
-      right: 0;
-    }
+  }
 }
 
 .Voting__adjust_weight {
@@ -295,7 +294,6 @@
   }
 }
 
-
 @media screen and (max-width: 39.9375em) {
   .Voting__button-up {
     .dropdown-pane {
@@ -320,29 +318,30 @@
 
 /* Pulse for upvote action */
 @-webkit-keyframes pulse {
-    0% {
-        -webkit-box-shadow: 0 0 0 0 rgba(6, 214, 169, 2);
-    }
-    70% {
-        -webkit-box-shadow: 0 0 0 10px rgba(6, 214, 169, 1);
-    }
-    100% {
-        -webkit-box-shadow: 0 0 0 0 rgba(6, 214, 169, 1);
-    }
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(6, 214, 169, 2);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(6, 214, 169, 1);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(6, 214, 169, 1);
+  }
 }
+
 @keyframes pulse {
-    0% {
-        -moz-box-shadow: 0 0 0 0 rgba(6, 214, 169, 2);
-        box-shadow: 0 0 0 0 rgba(6, 214, 169, 2);
-    }
-    70% {
-        -moz-box-shadow: 0 0 0 10px rgba(6, 214, 169, 0);
-        box-shadow: 0 0 0 10px rgba(6, 214, 169, 0);
-    }
-    100% {
-        -moz-box-shadow: 0 0 0 0 rgba(6, 214, 169, 0);
-        box-shadow: 0 0 0 0 rgba(6, 214, 169, 0);
-    }
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(6, 214, 169, 2);
+    box-shadow: 0 0 0 0 rgba(6, 214, 169, 2);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(6, 214, 169, 0);
+    box-shadow: 0 0 0 10px rgba(6, 214, 169, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(6, 214, 169, 0);
+    box-shadow: 0 0 0 0 rgba(6, 214, 169, 0);
+  }
 }
 
 .weight-container {

@@ -10,8 +10,8 @@
 
   svg path, svg polygon {
     @include themify($themes) {
-        fill: themed('textColorSecondary');  
-    }      
+      fill: themed('textColorSecondary');
+    }
   }
 
   > li > a {
@@ -25,17 +25,17 @@
     text-decoration: none;
     @include themify($themes) {
       background-color: themed('backgroundColorOpaque');
-    }      
+    }
   }
 
   > li.title {
     padding: 0.4rem;
     font-weight: bold;
-    text-align:left;
+    text-align: left;
     padding-left: 16px;
     @include themify($themes) {
-      border-bottom: themed('border');        
-    }    
+      border-bottom: themed('border');
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import SvgImage from 'app/components/elements/SvgImage';
-import { translateHtml } from 'app/Translator';
+import {translateHtml} from 'app/Translator';
 
 const mailchimp_form = `
 <!-- Begin MailChimp Signup Form -->
@@ -26,32 +26,32 @@ const mailchimp_form = `
 
 export default class Index extends React.Component {
 
-    constructor(params) {
-        super(params);
-        this.state = {
-            submitted: false,
-            error: ''
-        };
-    }
+  constructor(params) {
+    super(params);
+    this.state = {
+      submitted: false,
+      error: ''
+    };
+  }
 
-    //onSubmit(e) {
-    //    e.preventDefault();
-    //    const email = e.target.elements.email.value;
-    //    console.log('-- Index.onSubmit -->', email);
-    //}
+  //onSubmit(e) {
+  //    e.preventDefault();
+  //    const email = e.target.elements.email.value;
+  //    console.log('-- Index.onSubmit -->', email);
+  //}
 
-    render() {
-        return (
-            <div className="Index">
-                <div className="text-center">
-                    {/*<img src={require('app/assets/images/steemit.svg')} />*/}
-                    <SvgImage name="steemit" width="480px" height="240px" />
-                </div>
-                <h1 className="center text-center">
-                    {translateHtml('APP_NAME_is_a_social_media_platform_where_everyone_gets_paid_for_creating_and_curating_content')}.
-                </h1>
-                <br />
-                <br />
-            </div>);
-    }
+  render() {
+    return (
+      <div className="Index">
+        <div className="text-center">
+          {/*<img src={require('app/assets/images/steemit.svg')} />*/}
+          <SvgImage name="steemit" width="480px" height="240px"/>
+        </div>
+        <h1 className="center text-center">
+          {translateHtml('APP_NAME_is_a_social_media_platform_where_everyone_gets_paid_for_creating_and_curating_content')}.
+        </h1>
+        <br/>
+        <br/>
+      </div>);
+  }
 };

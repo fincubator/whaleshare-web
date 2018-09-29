@@ -1,15 +1,15 @@
 .Claim {
   padding: 1rem;
-  
+
   @include themify($themes) {
     color: themed('textColorPrimary');
-    background-color: themed('backgroundColorContrasting');  
-    border: themed('border'); 
+    background-color: themed('backgroundColorContrasting');
+    border: themed('border');
   }
 }
 
 .App__content {
-    @include MQ(ML) {
-      padding-bottom: 2.5rem;
-    }
+  @include MQ(ML) {
+    padding-bottom: 2.5rem;
+  }
 }

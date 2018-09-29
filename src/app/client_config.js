@@ -35,13 +35,13 @@ export const FRACTION_DIGITS_MARKET = 3; // accurate amount of deciaml digits (e
 // meta info
 export const TWITTER_HANDLE = '@Whaleshares';
 export const SHARE_IMAGE = 'https://' +
-    APP_DOMAIN +
-    '/images/wls-share.png';
+  APP_DOMAIN +
+  '/images/wls-share.png';
 export const TWITTER_SHARE_IMAGE = 'https://' +
-    APP_DOMAIN +
-    '/images/wls-icon-twshare-2.jpg';
+  APP_DOMAIN +
+  '/images/wls-icon-twshare-2.jpg';
 export const SITE_DESCRIPTION = 'Whaleshares is a social media platform where everyone gets paid for ' +
-    'creating and curating content.';
+  'creating and curating content.';
 
 // various
 export const SUPPORT_EMAIL = 'support@' + APP_DOMAIN;
