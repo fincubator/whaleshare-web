@@ -349,6 +349,10 @@
     "votes_plural": {
       "one": "%(count)s share",
       "other": "%(count)s shares"
+    },
+    "comment_votes_plural": {
+      "one": "%(count)s reward",
+      "other": "%(count)s rewards"
     }
   },
   "witnesses_jsx": {
