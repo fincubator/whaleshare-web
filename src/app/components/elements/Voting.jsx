@@ -216,6 +216,9 @@ class Voting extends React.Component {
             </span>
     </DropdownMenu>;
 
+    // voting on post or comment?
+    const depth = post_obj.get('depth');
+
     let voters_list = null;
     if (showList && total_votes > 0 && active_votes) {
       const avotes = active_votes.toJS();
@@ -240,13 +243,12 @@ class Voting extends React.Component {
       if (total_votes > voters.length) {
         voters.push({value: <span>&hellip; {tt('voting_jsx.and_more', {count: total_votes - voters.length})}</span>});
       }
-      voters_list =
-        <DropdownMenu selected={tt('voting_jsx.votes_plural', {count: total_votes})} className="Voting__voters_list"
-                      items={voters} el="div"/>;
+      if (depth === 0) { // post
+        voters_list = <DropdownMenu selected={tt('voting_jsx.votes_plural', {count: total_votes})} className="Voting__voters_list" items={voters} el="div"/>;
+      } else { // comment
+        voters_list = <DropdownMenu selected={tt('voting_jsx.comment_votes_plural', {count: total_votes})} className="Voting__voters_list" items={voters} el="div"/>;
+      }
     }
-
-    // voting on post or comment?
-    const depth = post_obj.get('depth');
 
     let voteUpClick = this.voteUp;
     let dropdown = null;
