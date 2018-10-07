@@ -7,9 +7,8 @@ const SidebarLinks = ({username}) => (
     </div>
     <div className="c-sidebar__content">
       <ul className="c-sidebar__list">
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href={'/@' + username}>My blog</a></li>
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href={'/@' + username + '/transfers'}>My
-          wallet</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href={'/@' + username}>My Blog</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href={'/@' + username + '/transfers'}>My Wallet</a></li>
         <li className="c-sidebar__list-item"><a className="c-sidebar__link" href={'/@' + username + '/feed'}>My Feed</a>
         </li>
       </ul>
@@ -19,16 +18,12 @@ const SidebarLinks = ({username}) => (
     </div>
     <div className="c-sidebar__content">
       <ul className="c-sidebar__list">
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://wls.services">Claiming
-          Tool</a></li>
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://masdacs.io/">Crossposting
-          Tool</a></li>
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://discord.gg/3pqBXKY">Whaleshares
-          Discord</a></li>
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://t.me/whalesharesofficial">Whaleshares
-          Telegram</a></li>
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="http://whaleshares.live/">Whaleshares
-          Live</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://wls.services">Claiming Tool</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://masdacs.io/">Crossposting Tool</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://discord.gg/3pqBXKY">Whaleshares Discord</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://t.me/whalesharesofficial">Whaleshares Telegram</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="http://whaleshares.live/">Whaleshares Live</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="http://whaled.live/">WhaleD Explorer</a></li>
       </ul>
     </div>
   </div>
