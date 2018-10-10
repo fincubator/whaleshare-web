@@ -12,6 +12,7 @@
     "by": "por",
     "cancel": "Cancelar",
     "change_password": "Cambiar Contraseña",
+    "choose_language": "Select Language",
     "clear": "Limpiar",
     "close": "Cerrar",
     "collapse_or_expand": "Plegar/Expandir",
@@ -96,6 +97,18 @@
     "upvote": "Votar",
     "upvote_post": "Votar publicación",
     "username": "Nombre de usuario",
+    "usermenu" : {
+      "blog": "Blog",
+      "comments": "Comments",
+      "feed": "Feed",
+      "logout": "Logout",
+      "night": "Toggle Night Mode",
+      "password": "Change Password",
+      "replies": "Replies",
+      "settings": "Settings",
+      "shares": "Shares",
+      "wallet": "Wallet"
+    },
     "version": "Versión",
     "vote": "Voto",
     "votes": "votos",
@@ -147,7 +160,7 @@
     "account_name_should_have_only_letters_digits_or_dashes": "El nombre de usuario debería tener sólo letras, dígitos o guiones.",
     "cannot_increase_reward_of_post_within_the_last_minute_before_payout": "No se puede aumentar la recompensa de la publicación dentro del último minuto antes del pago.",
     "vote_currently_exists_user_must_be_indicate_a_to_reject_witness": "Este voto ya existe, el usuario tiene que quitar el voto al witness",
-    "only_one_APP_NAME_account_allowed_per_ip_address_every_10_minutes": "Sólo una cuenta Steem permitida por dirección IP cada 10 minutos",
+    "only_one_APP_NAME_account_allowed_per_ip_address_every_10_minutes": "Sólo una cuenta permitida por dirección IP cada 10 minutos",
     "resteem_this_post": "Reesteemea esta Publicación",
     "reblog": "Reesteemear",
     "write_your_story": "Escribe tu historia",
@@ -186,15 +199,15 @@
       "other": "%(count)s Respuestas"
     },
     "post_key_warning": {
-        "confirm": "You are about to publish a STEEM private key or master password. You will probably lose control of the associated account and all its funds.",
-        "warning": "Legitimate users, including employees of Steemit Inc., will never ask you for a private key or master password.",
+        "confirm": "You are about to publish a private key or master password. You will probably lose control of the associated account and all its funds.",
+        "warning": "Legitimate users will never ask you for a private key or master password.",
         "checkbox": "I understand"
     }
   },
   "navigation": {
     "about": "Sobre",
     "explore": "Explorar",
-    "APP_NAME_whitepaper": "%(APP_NAME)s Documentación técnica",
+    "APP_NAME_whitepaper": "%(APP_NAME)s Whale Paper",
     "stolen_account_recovery": "Recuperación de cuentas robadas",
     "change_account_password": "Cambia la contraseña de la cuenta",
     "witnesses": "Testigos",
@@ -340,6 +353,7 @@
   },
   "witnesses_jsx": {
     "external_site": "external site",
+    "page": "Whaleshares url",
     "disabled": "disabled",
     "top_witnesses": "Votación para testigo",
     "you_have_votes_remaining": {
@@ -400,7 +414,7 @@
   },
   "about_jsx": {
     "about_app": "Sobre %(APP_NAME)s",
-    "about_app_details": "%(APP_NAME)s es una plataforma social online donde todo el mundo genera ingresos creando y votando contenido. Usa un sistema muy sólido de puntos digitales llamado Steem que soporta valor real gracias al precio de mercado y gracias a su liquidez.",
+    "about_app_details": "%(APP_NAME)s es una plataforma social online donde todo el mundo genera ingresos creando y votando contenido. Usa un sistema muy sólido de puntos digitales llamado Whaleshares que soporta valor real gracias al precio de mercado y gracias a su liquidez.",
     "learn_more_at_app_url": "Aprende más en %(APP_URL)s",
     "resources": "Recursos"
   },
@@ -469,7 +483,7 @@
     "you_account_has_been_successfully_created": "Tu cuenta se ha creado con éxito!",
     "you_account_has_been_successfully_recovered": "Tu cuenta ha sido recuperada con éxito!",
     "password_update_succes": "La contraseña %(accountName)s ha sido cambiada correctamente",
-    "password_info": "La contraseña o la contraseña privada fue introducida incorrectamente. Probablemente. Ayuda: Las contraseñas generadas por Steemit nunca contendrán 0 (cero), O (o mayúscula), I (i mayúscula), l (L minúscula).",
+    "password_info": "La contraseña o la contraseña privada fue introducida incorrectamente. Probablemente. Ayuda: Las contraseñas generadas nunca contendrán 0 (cero), O (o mayúscula), I (i mayúscula), l (L minúscula).",
     "enter_your_username": "Introduce tu nombre de usuario",
     "password_or_wif": "Contraseña o WIF",
     "this_operation_requires_your_key_or_master_password": "Esta operación requiere %(authType)s contraseña o la contraseña maestra",
@@ -540,7 +554,7 @@
     "transfers_are_temporary_disabled": "Las transferencias están temporalmente inhabilitadas.",
     "history": "HISTORIA",
     "redeem_rewards": "Liquidar recompensas (Transferir al saldo)",
-    "buy_steem_or_steem_power": "Compra WLS o WLS POWER."
+    "buy_steem_or_steem_power": "Compra WLS o WHALESTAKE."
   },
   "powerdown_jsx": {
     "power_down": "Power Down",
