@@ -5,6 +5,7 @@ import {takeEvery, takeLatest} from 'redux-saga';
 import tt from 'counterpart';
 import {api} from '@whaleshares/wlsjs';
 import {setUserPreferences} from 'app/utils/ServerApiClient';
+import * as WlsApi from "../utils/WlsApi";
 
 const wait = ms => (
   new Promise(resolve => {
@@ -17,7 +18,8 @@ export const sharedWatches = [watchGetState, watchTransactionErrors, watchUserSe
 export function* getAccount(username, force = false) {
   let account = yield select(state => state.global.get('accounts').get(username))
   if (force || !account) {
-    [account] = yield call([api, api.getAccountsAsync], [username])
+    // [account] = yield call([api, api.getAccountsAsync], [username])
+    [account] = yield WlsApi.rest2jsonrpc(`/database_api/get_accounts/[["${username}"]]`);
     if (account) {
       account = fromJS(account)
       yield put(g.actions.receiveAccount({account}))
