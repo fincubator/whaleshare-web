@@ -1,6 +1,7 @@
 import {fromJS, Map, Set} from 'immutable'
 import {call, put, select} from 'redux-saga/effects';
 import {api} from '@whaleshares/wlsjs';
+import * as WlsApi from '../utils/WlsApi';
 
 /**
  This loadFollows both 'blog' and 'ignore'
@@ -8,7 +9,9 @@ import {api} from '@whaleshares/wlsjs';
 
 //fetch for follow/following count
 export function* fetchFollowCount(account) {
-  const counts = yield call([api, api.getFollowCountAsync], account)
+  // const counts = yield call([api, api.getFollowCountAsync], account);
+  const counts = yield WlsApi.rest2jsonrpc(`/follow_api/get_follow_count/${account}`);
+
   yield put({
     type: 'global/UPDATE',
     payload: {
@@ -49,8 +52,13 @@ export function* loadFollows(method, account, type, force = false) {
 }
 
 function* loadFollowsLoop(method, account, type, start = '', limit = 100) {
-  if (method === "getFollowersAsync") limit = 1000;
-  const res = fromJS(yield api[method](account, start, type, limit));
+  let api_method = "get_following";
+  if (method === "getFollowersAsync") {
+    limit = 1000;
+    api_method = "get_followers";
+  }
+  // const res = fromJS(yield api[method](account, start, type, limit));
+  const res = fromJS(yield WlsApi.rest2jsonrpc(`/follow_api/${api_method}/["${account}","${start}","${type}",${limit}]`));
   // console.log('res.toJS()', res.toJS())
 
   let cnt = 0
