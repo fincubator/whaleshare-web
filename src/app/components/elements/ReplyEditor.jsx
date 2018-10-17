@@ -388,7 +388,7 @@ class ReplyEditor extends React.Component {
                                 onBlur={body.onBlur} tabIndex={2}/>
                 : <span>
                                     <Dropzone onDrop={this.onDrop}
-                                              className={type === 'submit_story' ? 'dropzone' : 'none'}
+                                              className={type !== 'edit' ? 'dropzone' : 'none'}
                                               disableClick multiple={false} accept="image/*"
                                               ref={(node) => {
                                                 this.dropzone = node;
@@ -396,13 +396,13 @@ class ReplyEditor extends React.Component {
                                         <textarea {...body.props}
                                                   ref="postRef"
                                                   onPasteCapture={this.onPasteCapture}
-                                                  className={type === 'submit_story' ? 'upload-enabled' : ''}
+                                                  className={type !== 'edit' ? 'upload-enabled' : ''}
                                                   disabled={loading} rows={isStory ? 10 : 3}
                                                   placeholder={isStory ? tt('g.write_your_story') + '...' : tt('g.reply')}
                                                   autoComplete="off"
                                                   tabIndex={2}/>
                                     </Dropzone>
-                  {type === 'submit_story' &&
+                  {type !== 'edit' &&
                   <p className="drag-and-drop">
                     {tt('reply_editor.insert_images_by_dragging_dropping')}
                     {noClipboardData ? '' : tt('reply_editor.pasting_from_the_clipboard')}
