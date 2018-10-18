@@ -14,6 +14,7 @@ const urlSet = ({domain = domainPath, path} = {}) => {
  */
 export const any = (flags = 'i') => new RegExp(urlSet(), flags)
 export const local = (flags = 'i') => new RegExp(urlSet({domain: '(?:localhost|(?:.*\\.)?whaleshares.io)'}), flags)
+export const local_cdn = (flags = 'i') => new RegExp(urlSet({domain: '(?:localhost|(?:.*\\.)?wls.rjght.com)'}), flags)
 export const remote = (flags = 'i') => new RegExp(urlSet({domain: `(?!localhost|(?:.*\\.)?whaleshares.io)${domainPath}`}), flags)
 export const youTube = (flags = 'i') => new RegExp(urlSet({domain: '(?:(?:.*\.)?youtube.com|youtu.be)'}), flags)
 export const image = (flags = 'i') => new RegExp(urlSet({path: imagePath}), flags)
@@ -24,6 +25,7 @@ export const imageFile = (flags = 'i') => new RegExp(imagePath, flags)
 export default {
   any: any(),
   local: local(),
+  local_cdn: local_cdn(),
   remote: remote(),
   image: image(),
   imageFile: imageFile(),
