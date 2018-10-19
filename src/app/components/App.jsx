@@ -208,7 +208,7 @@ class App extends React.Component {
           </li>
           <li>
             <a href="/~witnesses" onClick={this.navigate} rel="nofollow">
-              Vote for Witnesses
+              {tt('navigation.vote_for_witnesses')}
             </a>
           </li>
           <li>
