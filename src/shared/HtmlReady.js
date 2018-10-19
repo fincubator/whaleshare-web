@@ -3,6 +3,7 @@ import tt from 'counterpart'
 import linksRe, {any as linksAny} from 'app/utils/Links'
 import {validate_account_name} from 'app/utils/ChainValidation'
 import proxifyImageUrl from 'app/utils/ProxifyUrl'
+import {local_cdn} from "../app/utils/Links";
 
 export const getPhishingWarningMessage = () => tt('g.phishy_message');
 
@@ -43,7 +44,7 @@ const XMLSerializer = new xmldom.XMLSerializer()
  *          - if img URL, normalize URL and convert to <img> tag
  *          - otherwise, normalize URL and convert to <a> link
  *  - proxifyImages()
- *    - prepend proxy URL to any non-local <img> src's
+ *    - prepend proxy URL to any non-local (local_cdn) <img> src's
  *
  * We could implement 2 levels of HTML mutation for maximum reuse:
  *  1. Normalization of HTML - non-proprietary, pre-rendering cleanup/normalization
@@ -195,7 +196,7 @@ function proxifyImages(doc) {
   if (!doc) return;
   [...doc.getElementsByTagName('img')].forEach(node => {
     const url = node.getAttribute('src')
-    if (!linksRe.local.test(url))
+    if (!linksRe.local_cdn.test(url))
       node.setAttribute('src', proxifyImageUrl(url, true))
   })
 }

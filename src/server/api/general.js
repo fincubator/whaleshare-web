@@ -12,6 +12,7 @@ import Mixpanel from 'mixpanel';
 import Tarantool from 'db/tarantool';
 import {PublicKey, Signature, hash} from '@whaleshares/wlsjs/lib/auth/ecc';
 import {api, broadcast} from '@whaleshares/wlsjs';
+// import * as WlsApi from '../../app/utils/WlsApi';
 
 const mixpanel = config.get('mixpanel') ? Mixpanel.init(config.get('mixpanel')) : null;
 
@@ -254,6 +255,7 @@ export default function useGeneralApi(app) {
           console.error('/login_account missing this.session.login_challenge');
         } else {
           const [chainAccount] = yield api.getAccountsAsync([account])
+          // let [chainAccount] = yield WlsApi.rest2jsonrpc(`/database_api/get_accounts/[["${account}"]]`);
           if (!chainAccount) {
             console.error('/login_account missing blockchain account', account);
           } else {
