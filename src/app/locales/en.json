@@ -17,6 +17,7 @@
     "close": "Close",
     "collapse_or_expand": "Collapse/Expand",
     "comments": "Comments",
+    "claim_rewards": "Claim rewards",
     "confirm": "Confirm",
     "delete": "Delete",
     "dismiss": "Dismiss",
@@ -45,6 +46,7 @@
     "or": "or",
     "password": "Password",
     "payouts": "Payouts",
+    "people_i_follow": "People I follow",
     "permissions": "Permissions",
     "phishy_message": "Link expanded to plain text; beware of a potential phishing attempt",
     "post": "Post",
@@ -115,6 +117,7 @@
     "wallet": "Wallet",
     "warning": "warning",
     "yes": "Yes",
+    "your_current_rewards": "Your current rewards",
     "posting": "Posting",
     "owner": "Owner",
     "active": "Active",
@@ -216,11 +219,24 @@
     "sign_up": "Join",
     "intro_tagline": "Share Value. Receive Value",
     "intro_paragraph": "Welcome to Whaleshares community!",
-    "explorer": "Blockchain Explorer"
+    "explorer": "Blockchain Explorer",
+    "vote_for_witnesses": "Vote for Witnesses"
   },
   "main_menu": {
     "hot": "hot",
     "trending": "trending"
+  },
+  "sidebar_links": {
+    "quick_links": "Quick Links",
+    "my_blog": "My blog",
+    "my_wallet": "My Wallet",
+    "my_feed": "My feed",
+    "useful": "Useful",
+    "claiming_tool": "Claiming Tool",
+    "crossposting_tool": "Crossposting Tool",
+    "discord": "Whaleshares Discord",
+    "telegram": "Whaleshares Telegram",
+    "whaled": "WhaleD Explorer"
   },
   "reply_editor": {
     "shorten_title": "Shorten title",

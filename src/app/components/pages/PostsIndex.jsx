@@ -115,7 +115,7 @@ class PostsIndex extends React.Component {
     // At homepage (@user/feed) say "People I follow"
     let page_title = 'Posts'; // sensible default here?
     if (typeof this.props.username !== 'undefined' && category === 'feed') {
-      page_title = 'People I follow'; // todo: localization
+      page_title = tt('g.people_i_follow'); // localized only in EN and ES
     } else {
       switch (topics_order) {
         case 'trending': // cribbed from Header.jsx where it's repeated 2x already :P

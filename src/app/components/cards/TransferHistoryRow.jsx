@@ -23,18 +23,18 @@ class TransferHistoryRow extends React.Component {
     if (type === 'transfer_to_vesting') {
       if (data.from === context) {
         if (data.to === "") {
-          description_start += tt('g.transfer') + data.amount.split(' ')[0] + tt('g.to') + "WHALESTAKE";
+          description_start += tt('g.transfer') + data.amount.split(' ')[0] + tt('g.to') + " WHALESTAKE";
         }
         else {
-          description_start += tt('g.transfer') + data.amount.split(' ')[0] + " WHALESTAKE" + tt('g.to');
+          description_start += tt('g.transfer') + data.amount.split(' ')[0] + " WHALESTAKE " + tt('g.to');
           other_account = data.to;
         }
       }
       else if (data.to === context) {
-        description_start += tt('g.receive') + data.amount.split(' ')[0] + " WHALESTAKE" + tt('g.from');
+        description_start += tt('g.receive') + data.amount.split(' ')[0] + " WHALESTAKE " + tt('g.from');
         other_account = data.from;
       } else {
-        description_start += tt('g.transfer') + data.amount.split(' ')[0] + " WHALESTAKE" + tt('g.from') + data.from + tt('g.to');
+        description_start += tt('g.transfer') + data.amount.split(' ')[0] + " WHALESTAKE " + tt('g.from') + data.from + tt('g.to');
         other_account = data.to;
       }
     } else if (/^transfer$/.test(type)) {
@@ -59,7 +59,7 @@ class TransferHistoryRow extends React.Component {
       else
         description_start += tt('transferhistoryrow_jsx.start_power_down_of') + ' ' + powerdown_vests + " WLS";
     } else if (type === 'curation_reward') {
-      description_start += `${curation_reward} WHALESTAKE` + tt('g.for');
+      description_start += `${curation_reward} WHALESTAKE ` + tt('g.for') + ' ';
       other_account = data.comment_author + "/" + data.comment_permlink;
     } else if (type === 'author_reward') {
       let steem_payout = "";
@@ -88,7 +88,7 @@ class TransferHistoryRow extends React.Component {
           break;
       }
 
-      description_start += `Claim rewards: ${rewards_str}`;
+      description_start += tt('g.claim_rewards') + `${rewards_str}`;
       description_end = '';
     } else if (type === 'interest') {
       description_start += `${tt('transferhistoryrow_jsx.receive_interest_of')} ${data.interest}`;
