@@ -80,7 +80,7 @@ class MarkdownViewer extends Component {
 
     let renderedText = html ? text : remarkable.render(text)
 
-    renderedText = emoji.emojify(renderedText, (name) => name);
+    renderedText = emoji.emojify(renderedText);
 
     // Embed videos, link mentions and hashtags, etc...
     if (renderedText) renderedText = HtmlReady(renderedText, {hideImages}).html
