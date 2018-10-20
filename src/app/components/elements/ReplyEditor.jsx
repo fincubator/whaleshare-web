@@ -15,6 +15,8 @@ import {Set} from 'immutable'
 import Remarkable from 'remarkable'
 import Dropzone from 'react-dropzone'
 import tt from 'counterpart'
+import 'emoji-mart/css/emoji-mart.css'
+import { Picker } from 'emoji-mart'
 
 const remarkable = new Remarkable({html: true, linkify: false, breaks: true})
 
@@ -51,7 +53,7 @@ class ReplyEditor extends React.Component {
 
   constructor(props) {
     super()
-    this.state = {progress: {}}
+    this.state = {progress: {}, emoji_picker_open: false }
     this.initForm(props)
   }
 
@@ -386,32 +388,63 @@ class ReplyEditor extends React.Component {
                                 value={this.state.rte_value}
                                 onChange={this.onChange}
                                 onBlur={body.onBlur} tabIndex={2}/>
-                : <span>
-                                    <Dropzone onDrop={this.onDrop}
-                                              className={type !== 'edit' ? 'dropzone' : 'none'}
-                                              disableClick multiple={false} accept="image/*"
-                                              ref={(node) => {
-                                                this.dropzone = node;
-                                              }}>
-                                        <textarea {...body.props}
-                                                  ref="postRef"
-                                                  onPasteCapture={this.onPasteCapture}
-                                                  className={type !== 'edit' ? 'upload-enabled' : ''}
-                                                  disabled={loading} rows={isStory ? 10 : 3}
-                                                  placeholder={isStory ? tt('g.write_your_story') + '...' : tt('g.reply')}
-                                                  autoComplete="off"
-                                                  tabIndex={2}/>
-                                    </Dropzone>
-                  {type !== 'edit' &&
-                  <p className="drag-and-drop">
-                    {tt('reply_editor.insert_images_by_dragging_dropping')}
-                    {noClipboardData ? '' : tt('reply_editor.pasting_from_the_clipboard')}
-                    {tt('reply_editor.or_by')} <a onClick={this.onOpenClick}>{tt('reply_editor.selecting_them')}</a>.
-                  </p>
-                  }
-                  {progress.message && <div className="info">{progress.message}</div>}
-                  {progress.error && <div className="error">{tt('reply_editor.image_upload')} : {progress.error}</div>}
-                                </span>
+                : <span style={{position: 'relative'}}>
+                    <Dropzone onDrop={this.onDrop}
+                              className={type !== 'edit' ? 'dropzone' : 'none'}
+                              disableClick multiple={false} accept="image/*"
+                              ref={(node) => {
+                                this.dropzone = node;
+                              }} style={{position: 'relative'}}>
+                        <textarea {...body.props}
+                                  ref="postRef"
+                                  onPasteCapture={this.onPasteCapture}
+                                  className={type !== 'edit' ? 'upload-enabled' : ''}
+                                  disabled={loading} rows={isStory ? 10 : 3}
+                                  placeholder={isStory ? tt('g.write_your_story') + '...' : tt('g.reply')}
+                                  autoComplete="off"
+                                  tabIndex={2}/>
+
+                        <span className="wdt-emoji-picker"
+                                                style={{
+                                                  position: 'absolute',
+                                                  right: '10px',
+                                                  bottom: '5px',
+                                                  width: '20px',
+                                                  height: '20px'
+                                                }}>
+                          <span onClick={
+                            (event) => {
+                              this.setState({emoji_picker_open: !this.state.emoji_picker_open})
+                            }
+                          }
+                          >😀</span>
+                        </span>
+                      {
+                        this.state.emoji_picker_open &&
+                        <Picker
+                          onClick={(emoji, event) => {
+                            // console.log(emoji.colons);
+                            const {body} = this.state;
+                            const {selectionStart, selectionEnd} = this.refs.postRef;
+                            body.props.onChange(`${body.value.substring(0, selectionStart)} ${emoji.colons} ${body.value.substring(selectionEnd, body.value.length)}`);
+                          }}
+                          style={{
+                            right: '0px',
+                            position: 'absolute'
+                          }} />
+                      }
+                    </Dropzone>
+
+                    {type !== 'edit' &&
+                    <p className="drag-and-drop">
+                      {tt('reply_editor.insert_images_by_dragging_dropping')}
+                      {noClipboardData ? '' : tt('reply_editor.pasting_from_the_clipboard')}
+                      {tt('reply_editor.or_by')} <a onClick={this.onOpenClick}>{tt('reply_editor.selecting_them')}</a>.
+                    </p>
+                    }
+                    {progress.message && <div className="info">{progress.message}</div>}
+                    {progress.error && <div className="error">{tt('reply_editor.image_upload')} : {progress.error}</div>}
+                  </span>
               }
             </div>
             <div className={vframe_section_shrink_class}>
@@ -624,7 +657,7 @@ export default (formId) => connect(
       if (rtags.images.size) meta.image = rtags.images; else delete meta.image
       if (rtags.links.size) meta.links = rtags.links; else delete meta.links
 
-      meta.app = "steemit/0.1"
+      meta.app = "wls/0.1"
       if (isStory) {
         meta.format = isHtml ? 'html' : 'markdown'
       }
