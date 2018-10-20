@@ -428,6 +428,7 @@ class ReplyEditor extends React.Component {
                             const {selectionStart, selectionEnd} = this.refs.postRef;
                             body.props.onChange(`${body.value.substring(0, selectionStart)} ${emoji.colons} ${body.value.substring(selectionEnd, body.value.length)}`);
                           }}
+                          title='Pick your emoji…' emoji='point_up'
                           style={{
                             right: '0px',
                             position: 'absolute'
