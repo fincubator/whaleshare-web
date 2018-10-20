@@ -7,6 +7,7 @@ import sanitizeConfig, {noImageText} from 'app/utils/SanitizeConfig'
 import sanitize from 'sanitize-html'
 import HtmlReady from 'shared/HtmlReady'
 import tt from 'counterpart';
+var emoji = require('node-emoji');
 
 const remarkable = new Remarkable({
   html: true, // remarkable renders first then sanitize runs...
@@ -78,6 +79,8 @@ class MarkdownViewer extends Component {
     text = text.replace(/<!--([\s\S]+?)(-->|$)/g, '(html comment removed: $1)')
 
     let renderedText = html ? text : remarkable.render(text)
+
+    renderedText = emoji.emojify(renderedText);
 
     // Embed videos, link mentions and hashtags, etc...
     if (renderedText) renderedText = HtmlReady(renderedText, {hideImages}).html
