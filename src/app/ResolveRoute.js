@@ -24,6 +24,9 @@ export default function resolveRoute(path) {
   if (path === '/claim.html') {
     return {page: 'Claim'};
   }
+  if (path === '/newsignup.html') {
+    return {page: 'NewSignup'};
+  }
   if (path === '/faq.html') {
     return {page: 'Faq'};
   }
@@ -51,18 +54,18 @@ export default function resolveRoute(path) {
   if (path === '/change_password') {
     return {page: 'ChangePassword'};
   }
-  if (path === '/create_account') {
-    return {page: 'CreateAccount'};
-  }
-  if (path === '/approval') {
-    return {page: 'Approval'};
-  }
-  if (path === '/pick_account') {
-    return {page: 'PickAccount'};
-  }
-  if (path === '/waiting_list.html') {
-    return {page: 'WaitingList'};
-  }
+  // if (path === '/create_account') {
+  //   return {page: 'CreateAccount'};
+  // }
+  // if (path === '/approval') {
+  //   return {page: 'Approval'};
+  // }
+  // if (path === '/pick_account') {
+  //   return {page: 'PickAccount'};
+  // }
+  // if (path === '/waiting_list.html') {
+  //   return {page: 'WaitingList'};
+  // }
   if (path === '/~witnesses') {
     return {page: 'Witnesses'};
   }
