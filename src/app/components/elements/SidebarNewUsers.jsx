@@ -7,7 +7,7 @@ const SidebarNewUsers = () => (
     </div>
     <div className="c-sidebar__content">
       <ul className="c-sidebar__list">
-        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="/pick_account">Sign Up</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="/newsignup.html">Sign Up</a></li>
         <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="/claim.html">Claim Account</a></li>
         <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://newacc.wls.services/anonacc">Premium
           Fast Account Creation Service</a></li>

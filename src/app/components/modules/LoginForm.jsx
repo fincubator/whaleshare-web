@@ -80,7 +80,7 @@ class LoginForm extends Component {
   SignUp() {
     const onType = document.getElementsByClassName("OpAction")[0].textContent;
     // serverApiRecordEvent('FreeMoneySignUp', onType);
-    window.location.href = "/pick_account";
+    window.location.href = "/newsignup.html";
   }
 
   SignIn() {
