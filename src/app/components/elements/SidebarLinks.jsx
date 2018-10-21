@@ -25,6 +25,7 @@ const SidebarLinks = ({username}) => (
         <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://t.me/whalesharesofficial">{tt('sidebar_links.telegram')}</a></li>
         <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="http://whaled.live/">{tt('sidebar_links.whaled')}</a></li>
         <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="http://whaleshares.live/">Whaleshares Live</a></li>
+        <li className="c-sidebar__list-item"><a className="c-sidebar__link" href="https://whaleshares.info/">WhaleToken Info</a></li>
       </ul>
     </div>
   </div>
