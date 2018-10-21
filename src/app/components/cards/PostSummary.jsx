@@ -208,7 +208,7 @@ class PostSummary extends React.Component {
               {username ? <span>{tt('postsummary_jsx.adjust_your')} <Link
                   to={`/@${username}/settings`}>{tt('postsummary_jsx.display_preferences')}</Link>.</span>
                 : <span><Link
-                  to="/pick_account">{tt('postsummary_jsx.create_an_account')}</Link> {tt('postsummary_jsx.to_save_your_preferences')}.</span>}
+                  to="/newsignup.html">{tt('postsummary_jsx.create_an_account')}</Link> {tt('postsummary_jsx.to_save_your_preferences')}.</span>}
 
               {summary_footer}
             </div>

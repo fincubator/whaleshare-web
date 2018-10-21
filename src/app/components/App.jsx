@@ -129,7 +129,7 @@ class App extends React.Component {
       depositSteem, signup_bonus, username, nightmodeEnabled
     } = this.props;
     const lp = false; //location.pathname === '/';
-    const miniHeader = location.pathname === '/create_account' || location.pathname === '/pick_account';
+    const miniHeader = location.pathname === '/create_account' || location.pathname === '/pick_account' || location.pathname === '/newsignup.html';
     const headerHidden = miniHeader && location.search === '?whistle_signup'
     const params_keys = Object.keys(params);
     const ip = location.pathname === '/' || (params_keys.length === 2 && params_keys[0] === 'order' && params_keys[1] === 'category');
@@ -184,7 +184,7 @@ class App extends React.Component {
               <h2>{tt('navigation.intro_tagline')}</h2>
               <h4>{tt('navigation.intro_paragraph')}</h4>
               <br/>
-              <a className="button button--primary" href="/pick_account">
+              <a className="button button--primary" href="/newsignup.html">
                 <strong>{tt('navigation.sign_up')}</strong></a>
             </div>
           </div>
