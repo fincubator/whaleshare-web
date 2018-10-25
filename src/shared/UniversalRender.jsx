@@ -61,7 +61,7 @@ const onRouterError = (error) => {
   console.error('onRouterError', error);
 };
 
-async function universalRender({location, initial_state, offchain, ErrorPage, tarantool, userPreferences}) {
+async function universalRender({location, initial_state, offchain, ErrorPage, userPreferences}) {
   let error, redirect, renderProps;
   try {
     [error, redirect, renderProps] = await runRouter(location, RootRoute);
@@ -200,14 +200,6 @@ async function universalRender({location, initial_state, offchain, ErrorPage, ta
     server_store = createStore(rootReducer, {global: onchain, offchain});
     server_store.dispatch({type: '@@router/LOCATION_CHANGE', payload: {pathname: location}});
     server_store.dispatch({type: 'SET_USER_PREFERENCES', payload: userPreferences});
-    // if (offchain.account) {
-    //     try {
-    //         const notifications = await tarantool.select('notifications', 0, 1, 0, 'eq', offchain.account);
-    //         server_store.dispatch({type: 'UPDATE_NOTIFICOUNTERS', payload: notificationsArrayToMap(notifications)});
-    //     } catch(e) {
-    //         console.warn('WARNING! cannot retrieve notifications from tarantool in universalRender:', e.message);
-    //     }
-    // }
   } catch (e) {
     // Ensure 404 page when username not found
     if (location.match(routeRegex.UserProfile1)) {

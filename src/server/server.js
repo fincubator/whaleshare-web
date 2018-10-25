@@ -12,12 +12,7 @@ import prod_logger from './prod_logger';
 import favicon from 'koa-favicon';
 import staticCache from 'koa-static-cache';
 import useRedirects from './redirects';
-import useOauthLogin from './api/oauth';
 import useGeneralApi from './api/general';
-import useAccountRecoveryApi from './api/account_recovery';
-import useNotificationsApi from './api/notifications';
-import useEnterAndConfirmEmailPages from './sign_up_pages/enter_confirm_email';
-import useEnterAndConfirmMobilePages from './sign_up_pages/enter_confirm_mobile';
 import useUserJson from './json/user_json';
 import usePostJson from './json/post_json';
 import isBot from 'koa-isbot';
@@ -211,15 +206,9 @@ app.use(function* (next) {
 });
 
 useRedirects(app);
-useEnterAndConfirmEmailPages(app);
-useEnterAndConfirmMobilePages(app);
 useUserJson(app);
 usePostJson(app);
-
-useAccountRecoveryApi(app);
-useOauthLogin(app);
 useGeneralApi(app);
-useNotificationsApi(app);
 
 // helmet wants some things as bools and some as lists, makes config difficult.
 // our config uses strings, this splits them to lists on whitespace.
