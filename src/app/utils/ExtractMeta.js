@@ -11,7 +11,7 @@ function addSiteMeta(metas) {
   metas.push({property: 'og:site_name', content: 'Whaleshares'});
   metas.push({property: 'og:title', content: 'Whaleshares'});
   metas.push({property: 'og:description', content: site_desc});
-  metas.push({property: 'og:image', content: 'https://whaleshares.io/images/wls-share.png'});
+  metas.push({property: 'og:image', content: 'https://whaleshares.io/images/whaleshares-preview.png'});
   metas.push({property: 'fb:app_id', content: $STM_Config.fb_app});
   metas.push({name: 'twitter:card', content: 'summary'});
   metas.push({name: 'twitter:site', content: '@whaleshares'});
