@@ -33,7 +33,7 @@
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' whaleshares.io wss://whaleshares.io/ws https://whaleshares.io wls.rjght.com https://wls.rjght.com beta.whaleshares.net wss://beta.whaleshares.net/ws https://beta.whaleshares.net rpc.wls.services wss://rpc.wls.services https://rpc.wls.services api.wls.services https://api.wls.services",
+      "connectSrc": "'self' whaleshares.io wss://whaleshares.io/ws https://whaleshares.io wls.rjght.com rpc.whaleshares.io wss://rpc.whaleshares.io https://rpc.whaleshares.io https://wls.rjght.com rpc.wls.services wss://rpc.wls.services https://rpc.wls.services api.wls.services https://api.wls.services",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com fonts.googleapis.com zavoloklom.github.io",
       "frameAncestors": "'none'",
@@ -96,8 +96,8 @@
     "auth_token": false
   },
   "upload_image": "https://whaleshares.io",
-  "steemd_connection_client": "https://rpc.wls.services",
-  "steemd_connection_server": "https://rpc.wls.services",
+  "steemd_connection_client": "https://rpc.whaleshares.io",
+  "steemd_connection_server": "https://rpc.whaleshares.io",
   "chain_id": "de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866",
   "address_prefix": "WLS",
   "wls_api_url": "https://api.wls.services"
