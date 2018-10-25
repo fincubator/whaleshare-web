@@ -2,7 +2,7 @@ import extractContent from 'app/utils/ExtractContent';
 import {objAccessor} from 'app/utils/Accessors';
 import normalizeProfile from 'app/utils/NormalizeProfile';
 
-const site_desc = 'Whaleshares is a platform for building, managing and rewarding Friends in a Web of Trust.  Build a network of trusted Friends empower one another with Magical Whaleshares (WLS)!';
+const site_desc = 'Whaleshares is a platform for building, managing and rewarding Friends in a Web of Trust.';
 
 function addSiteMeta(metas) {
   metas.push({title: 'Whaleshares'});
