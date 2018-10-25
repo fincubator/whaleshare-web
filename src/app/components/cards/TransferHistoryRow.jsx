@@ -62,49 +62,14 @@ class TransferHistoryRow extends React.Component {
       description_start += `${curation_reward} WHALESTAKE ` + tt('g.for') + ' ';
       other_account = data.comment_author + "/" + data.comment_permlink;
     } else if (type === 'author_reward') {
-      let steem_payout = "";
-      if (data.steem_payout !== '0.000 WLS') steem_payout = ", " + data.steem_payout;
-      // description_start += `${data.sbd_payout}${steem_payout}, ${tt('g.and')} ${author_reward} WHALESTAKE ${tt('g.for')} ${data.author}/${data.permlink}`;
       description_start += `${author_reward} WHALESTAKE ${tt('g.for')} ${data.author}/${data.permlink}`;
 
       // other_account = ``;
       description_end = '';
     } else if (type === 'claim_reward_balance') {
-
-      let rewards = [];
-      if (parseFloat(data.reward_steem.split(' ')[0]) > 0) rewards.push(data.reward_steem);
-      if (parseFloat(data.reward_vests.split(' ')[0]) > 0) rewards.push(`${reward_vests} WHALESTAKE`);
-
-      let rewards_str;
-      switch (rewards.length) {
-        case 3:
-          rewards_str = `${rewards[0]}, ${rewards[1]} and ${rewards[2]}`;
-          break;
-        case 2:
-          rewards_str = `${rewards[0]} and ${rewards[1]}`;
-          break;
-        case 1:
-          rewards_str = `${rewards[0]}`;
-          break;
-      }
-
-      description_start += tt('g.claim_rewards') + `${rewards_str}`;
+      description_start += tt('g.claim_rewards') + `${reward_vests} WHALESTAKE`;
       description_end = '';
-    } else if (type === 'interest') {
-      description_start += `${tt('transferhistoryrow_jsx.receive_interest_of')} ${data.interest}`;
-    } else if (type === 'fill_convert_request') {
-      description_start += `Fill convert request: ${data.amount_in} for ${data.amount_out}`;
-    } else if (type === 'fill_order') {
-      if (data.open_owner == context) {
-        // my order was filled by data.current_owner
-        description_start += `Paid ${data.open_pays} for ${data.current_pays}`;
-      } else {
-        // data.open_owner filled my order
-        description_start += `Paid ${data.current_pays} for ${data.open_pays}`;
-      }
     } else if (type === 'comment_benefactor_reward') {
-      let steem_payout = "";
-      if (data.steem_payout !== '0.000 WLS') steem_payout = ", " + data.steem_payout;
       description_start += `${benefactor_reward} WHALESTAKE for ${data.author}/${data.permlink}`;
       description_end = '';
     } else {
