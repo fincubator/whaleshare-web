@@ -1,4 +1,4 @@
-
+import fetch from 'node-fetch';
 
 export const rest2jsonrpc = async (path_params) => {
   // if (!process.env.BROWSER || window.$STM_Config.wls_api_url) return;

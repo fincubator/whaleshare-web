@@ -30,6 +30,7 @@ import {contentStats} from 'app/utils/StateFunctions'
 import {api} from '@whaleshares/wlsjs';
 import {fetchFollowCount, loadFollows} from "../app/redux/FollowSaga";
 import {fork} from "redux-saga/effects";
+import * as WlsApi from "../app/utils/WlsApi";
 
 let fetch = require('node-fetch');
 
@@ -133,8 +134,10 @@ async function universalRender({location, initial_state, offchain, ErrorPage, us
       posts_shares_load = 2;
     }
 
-    onchain = await api.getStateAsync(url);
-    onchain.post_reward_fund = await api.getRewardFundAsync("post");
+    // onchain = await api.getStateAsync(url);
+    // onchain.post_reward_fund = await api.getRewardFundAsync("post");
+    onchain = await WlsApi.rest2jsonrpc(`/database_api/get_state?params=["${url}"]`);
+    onchain.post_reward_fund = await WlsApi.rest2jsonrpc(`/database_api/get_reward_fund/post`);
 
     // posts/shared split - loading posts
     if (posts_shares_load > 0) {
