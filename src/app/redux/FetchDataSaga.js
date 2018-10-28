@@ -67,6 +67,10 @@ export function* fetchState(location_change_action) {
   yield put({type: 'FETCH_DATA_BEGIN'});
   try {
     let state = yield call([api, api.getStateAsync], url);
+    // const state_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
+    // const state_json_result = yield call([state_fetch_result, state_fetch_result.json]);
+    // let state = state_json_result.result;
+    // console.log(`state=${JSON.stringify(state)}`);
 
     if (posts_shares_load > 0) {
       const username = m[1];
@@ -154,7 +158,7 @@ export function* fetchData(action) {
 
     let call_name, args;
     if (order === 'trending') {
-      call_name = 'getDiscussionsByTrendingAsync';
+      call_name = 'get_discussions_by_trending'; // 'getDiscussionsByTrendingAsync';
       args = [
         {
           tag: category,
@@ -163,7 +167,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'trending30') {
-      call_name = 'getDiscussionsByTrending30Async';
+      call_name = 'get_discussions_by_trending30'; // getDiscussionsByTrending30Async
       args = [
         {
           tag: category,
@@ -172,7 +176,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'active') {
-      call_name = 'getDiscussionsByActiveAsync';
+      call_name = 'get_discussions_by_active'; // getDiscussionsByActiveAsync
       args = [
         {
           tag: category,
@@ -181,7 +185,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'cashout') {
-      call_name = 'getDiscussionsByCashoutAsync';
+      call_name = 'get_discussions_by_cashout'; // getDiscussionsByCashoutAsync
       args = [
         {
           tag: category,
@@ -190,7 +194,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'payout') {
-      call_name = 'getPostDiscussionsByPayout';
+      call_name = 'get_post_discussions_by_payout'; // getPostDiscussionsByPayout
       args = [
         {
           tag: category,
@@ -199,7 +203,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'payout_comments') {
-      call_name = 'getCommentDiscussionsByPayout';
+      call_name = 'get_comment_discussions_by_payout'; // getCommentDiscussionsByPayout
       args = [
         {
           tag: category,
@@ -208,7 +212,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'updated') {
-      call_name = 'getDiscussionsByActiveAsync';
+      call_name = 'get_discussions_by_active'; // getDiscussionsByActiveAsync
       args = [
         {
           tag: category,
@@ -217,7 +221,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'created' || order === 'recent') {
-      call_name = 'getDiscussionsByCreatedAsync';
+      call_name = 'get_discussions_by_created'; // getDiscussionsByCreatedAsync
       args = [
         {
           tag: category,
@@ -226,10 +230,10 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'by_replies') {
-      call_name = 'getRepliesByLastUpdateAsync';
+      call_name = 'get_replies_by_last_update'; // getRepliesByLastUpdateAsync
       args = [author, permlink, constants.FETCH_DATA_BATCH_SIZE];
     } else if (order === 'responses') {
-      call_name = 'getDiscussionsByChildrenAsync';
+      call_name = 'get_discussions_by_children'; // getDiscussionsByChildrenAsync
       args = [
         {
           tag: category,
@@ -238,7 +242,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'votes') {
-      call_name = 'getDiscussionsByVotesAsync';
+      call_name = 'get_discussions_by_votes'; // getDiscussionsByVotesAsync
       args = [
         {
           tag: category,
@@ -247,7 +251,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'hot') {
-      call_name = 'getDiscussionsByHotAsync';
+      call_name = 'get_discussions_by_hot'; // getDiscussionsByHotAsync
       args = [
         {
           tag: category,
@@ -256,7 +260,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'by_feed') { // https://github.com/steemit/steem/issues/249
-      call_name = 'getDiscussionsByFeedAsync';
+      call_name = 'get_discussions_by_feed'; // getDiscussionsByFeedAsync
       args = [
         {
           tag: accountname,
@@ -265,7 +269,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'by_author') {
-      call_name = 'getDiscussionsByBlogAsync';
+      call_name = 'get_discussions_by_blog'; // getDiscussionsByBlogAsync
       args = [
         {
           tag: accountname,
@@ -274,7 +278,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else if (order === 'by_comments') {
-      call_name = 'getDiscussionsByCommentsAsync';
+      call_name = 'get_discussions_by_comments'; // getDiscussionsByCommentsAsync
       args = [
         {
           limit: constants.FETCH_DATA_BATCH_SIZE,
@@ -282,7 +286,7 @@ export function* fetchData(action) {
           start_permlink: permlink
         }];
     } else {
-      call_name = 'getDiscussionsByActiveAsync';
+      call_name = 'get_discussions_by_active'; // getDiscussionsByActiveAsync
       args = [{
         tag: category,
         limit: constants.FETCH_DATA_BATCH_SIZE,
@@ -292,7 +296,11 @@ export function* fetchData(action) {
     }
     yield put({type: 'FETCH_DATA_BEGIN'});
     try {
-      const data = yield call([api, api[call_name]], ...args);
+      // const data = yield call([api, api[call_name]], ...args);
+      const data_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/${call_name}?params=${JSON.stringify(args)}`);
+      const data_json_result = yield call([data_fetch_result, data_fetch_result.json]);
+      let data = data_json_result.result;
+
       yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
     } catch (error) {
       console.error('~~ Saga fetchData error ~~>', call_name, args, error);

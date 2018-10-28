@@ -109,7 +109,10 @@ function* usernamePasswordLogin2({
   // no saved password
   if (!username || !password) {
     const offchain_account = yield select(state => state.offchain.get('account'))
-    if (offchain_account) serverApiLogout()
+    if (offchain_account) {
+      console.log(`LOG OUT HERE: usernamePasswordLogin2 username=${username}`);
+      serverApiLogout()
+    }
     return
   }
 
@@ -320,10 +323,14 @@ function* logout() {
   yield put(user.actions.saveLoginConfirm(false)) // Just incase it is still showing
   if (process.env.BROWSER)
     localStorage.removeItem('autopost2')
+
+
+  console.log(`logout from UserSaga`);
   serverApiLogout();
 }
 
 function* loginError({payload: {/*error*/}}) {
+  console.log(`logout from loginError`);
   serverApiLogout();
 }
 

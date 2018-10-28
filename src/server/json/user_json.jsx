@@ -2,7 +2,6 @@ import koa_router from 'koa-router';
 import React from 'react';
 import {routeRegex} from "app/ResolveRoute";
 import {api} from '@whaleshares/wlsjs'
-import * as WlsApi from "../../app/utils/WlsApi";
 
 export default function useUserJson(app) {
   const router = koa_router();
@@ -15,8 +14,8 @@ export default function useUserJson(app) {
     let user = "";
     let status = "";
 
-    // const [chainAccount] = yield api.getAccountsAsync([user_name]);
-    let [chainAccount] = yield WlsApi.rest2jsonrpc(`/database_api/get_accounts/[["${account}"]]`);
+    const [chainAccount] = yield api.getAccountsAsync([user_name]);
+    // let [chainAccount] = yield WlsApi.rest2jsonrpc(`/database_api/get_accounts/[["${user_name}"]]`);
 
     if (chainAccount) {
       user = chainAccount;

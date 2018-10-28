@@ -331,7 +331,6 @@ function* accepted_vote({operation: {author, permlink, weight}}) {
 
 function* accepted_withdraw_vesting({operation}) {
   let [account] = yield call([api, api.getAccountsAsync], [operation.account])
-  // let [account] = yield WlsApi.rest2jsonrpc(`/database_api/get_accounts/[["${operation.account}"]]`);
   account = fromJS(account)
   yield put(g.actions.receiveAccount({account}))
 }
@@ -471,7 +470,6 @@ function* createPermlink(title, author, parent_author, parent_permlink) {
 }
 
 import diff_match_patch from 'diff-match-patch'
-import * as WlsApi from "../utils/WlsApi";
 
 const dmp = new diff_match_patch()
 

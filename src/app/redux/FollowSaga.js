@@ -1,7 +1,6 @@
 import {fromJS, Map, Set} from 'immutable'
 import {call, put, select} from 'redux-saga/effects';
 import {api} from '@whaleshares/wlsjs';
-import * as WlsApi from '../utils/WlsApi';
 
 /**
  This loadFollows both 'blog' and 'ignore'
@@ -10,7 +9,9 @@ import * as WlsApi from '../utils/WlsApi';
 //fetch for follow/following count
 export function* fetchFollowCount(account) {
   // const counts = yield call([api, api.getFollowCountAsync], account);
-  const counts = yield WlsApi.rest2jsonrpc(`/follow_api/get_follow_count/${account}`);
+  const fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/follow_api/get_follow_count/${account}`);
+  const json_result = yield call([fetch_result, fetch_result.json]);
+  let counts = json_result.result;
 
   yield put({
     type: 'global/UPDATE',
@@ -58,7 +59,10 @@ function* loadFollowsLoop(method, account, type, start = '', limit = 100) {
     api_method = "get_followers";
   }
   // const res = fromJS(yield api[method](account, start, type, limit));
-  const res = fromJS(yield WlsApi.rest2jsonrpc(`/follow_api/${api_method}/["${account}","${start}","${type}",${limit}]`));
+  const fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/follow_api/${api_method}?params=["${account}","${start}","${type}",${limit}]`);
+  const json_result = yield call([fetch_result, fetch_result.json]);
+  const res = fromJS(json_result.result);
+
   // console.log('res.toJS()', res.toJS())
 
   let cnt = 0

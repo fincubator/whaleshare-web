@@ -30,7 +30,6 @@ import {contentStats} from 'app/utils/StateFunctions'
 import {api} from '@whaleshares/wlsjs';
 import {fetchFollowCount, loadFollows} from "../app/redux/FollowSaga";
 import {fork} from "redux-saga/effects";
-import * as WlsApi from "../app/utils/WlsApi";
 
 let fetch = require('node-fetch');
 
@@ -136,8 +135,14 @@ async function universalRender({location, initial_state, offchain, ErrorPage, us
 
     // onchain = await api.getStateAsync(url);
     // onchain.post_reward_fund = await api.getRewardFundAsync("post");
-    onchain = await WlsApi.rest2jsonrpc(`/database_api/get_state?params=["${url}"]`);
-    onchain.post_reward_fund = await WlsApi.rest2jsonrpc(`/database_api/get_reward_fund/post`);
+
+    const onchain_fetch_result = await fetch(`${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
+    const onchain_json_result = await onchain_fetch_result.json();
+    onchain = onchain_json_result.result;
+
+    const post_reward_fund_fetch_result = await fetch(`${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_reward_fund/post`);
+    const post_reward_fund_json_result = await post_reward_fund_fetch_result.json();
+    onchain.post_reward_fund = post_reward_fund_json_result.result;
 
     // posts/shared split - loading posts
     if (posts_shares_load > 0) {
