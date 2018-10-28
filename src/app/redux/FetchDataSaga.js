@@ -66,10 +66,10 @@ export function* fetchState(location_change_action) {
 
   yield put({type: 'FETCH_DATA_BEGIN'});
   try {
-    let state = yield call([api, api.getStateAsync], url);
-    // const state_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
-    // const state_json_result = yield call([state_fetch_result, state_fetch_result.json]);
-    // let state = state_json_result.result;
+    // let state = yield call([api, api.getStateAsync], url);
+    const state_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
+    const state_json_result = yield call([state_fetch_result, state_fetch_result.json]);
+    let state = state_json_result.result;
     // console.log(`state=${JSON.stringify(state)}`);
 
     if (posts_shares_load > 0) {
