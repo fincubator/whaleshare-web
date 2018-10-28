@@ -18,10 +18,6 @@ export default {
       //require.ensure([], (require) => {
       cb(null, [require('app/components/pages/Welcome')]);
       //});
-    } else if (route.page === 'Claim') {
-      //require.ensure([], (require) => {
-      cb(null, [require('app/components/pages/Claim')]);
-      //});
     } else if (route.page === 'NewSignup') {
       //require.ensure([], (require) => {
       cb(null, [require('app/components/pages/NewSignup')]);
@@ -37,10 +33,6 @@ export default {
     } else if (route.page === 'Privacy') {
       //require.ensure([], (require) => {
       cb(null, [require('app/components/pages/Privacy')]);
-      //});
-    } else if (route.page === 'Testnet') {
-      //require.ensure([], (require) => {
-      cb(null, [require('app/components/pages/Testnet')]);
       //});
     } else if (route.page === 'Support') {
       //require.ensure([], (require) => {
@@ -61,18 +53,6 @@ export default {
     } else if (route.page === 'ChangePassword') {
       //require.ensure([], (require) => {
       cb(null, [require('app/components/pages/ChangePasswordPage')]);
-      //});
-    } else if (route.page === 'PickAccount') {
-      //require.ensure([], (require) => {
-      cb(null, [require('app/components/pages/PickAccount')]);
-      //});
-    } else if (route.page === 'CreateAccount') {
-      //require.ensure([], (require) => {
-      cb(null, [require('app/components/pages/CreateAccount')]);
-      //});
-    } else if (route.page === 'Approval') {
-      //require.ensure([], (require) => {
-      cb(null, [require('app/components/pages/Approval')]);
       //});
     } else if (route.page === 'WaitingList') {
       //require.ensure([], (require) => {
