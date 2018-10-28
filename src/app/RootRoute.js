@@ -54,10 +54,6 @@ export default {
       //require.ensure([], (require) => {
       cb(null, [require('app/components/pages/ChangePasswordPage')]);
       //});
-    } else if (route.page === 'WaitingList') {
-      //require.ensure([], (require) => {
-      cb(null, [require('app/components/pages/WaitingList')]);
-      //});
     } else if (route.page === 'Witnesses') {
       //require.ensure([], (require) => {
       cb(null, [require('app/components/pages/Witnesses')]);

@@ -5,7 +5,6 @@ import Reveal from 'react-foundation-components/lib/global/reveal';
 import LoginForm from 'app/components/modules/LoginForm';
 import ConfirmTransactionForm from 'app/components/modules/ConfirmTransactionForm';
 import Transfer from 'app/components/modules/Transfer';
-import SignUp from 'app/components/modules/SignUp';
 import user from 'app/redux/User';
 import Powerdown from 'app/components/modules/Powerdown';
 import tr from 'app/redux/Transaction';
