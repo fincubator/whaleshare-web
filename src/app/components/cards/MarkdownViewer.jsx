@@ -62,7 +62,7 @@ class MarkdownViewer extends Component {
     const {allowNoImage} = this.state
     let {text} = this.props
     if (!text) text = '' // text can be empty, still view the link meta data
-    const {large, /*formId, canEdit, jsonMetadata,*/ highQualityPost} = this.props
+    const {large, canEdit, /*formId, jsonMetadata,*/ highQualityPost} = this.props;
 
     let html = false;
     // See also ReplyEditor isHtmlTest
@@ -83,7 +83,7 @@ class MarkdownViewer extends Component {
     renderedText = emoji.emojify(renderedText);
 
     // Embed videos, link mentions and hashtags, etc...
-    if (renderedText) renderedText = HtmlReady(renderedText, {hideImages}).html
+    if (renderedText) renderedText = HtmlReady(renderedText, {hideImages, enable_proxify_images: !canEdit}).html
 
     // Complete removal of javascript and other dangerous tags..
     // The must remain as close as possible to dangerouslySetInnerHTML
