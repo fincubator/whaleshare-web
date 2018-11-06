@@ -17,11 +17,11 @@ export const sharedWatches = [watchGetState, watchTransactionErrors, watchUserSe
 export function* getAccount(username, force = false) {
   let account = yield select(state => state.global.get('accounts').get(username))
   if (force || !account) {
-    // [account] = yield call([api, api.getAccountsAsync], [username])
-    const fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_accounts?params=[["${username}"]]`);
-    const json_result = yield call([fetch_result, fetch_result.json]);
-    [account] = json_result.result;
-    console.log(`getAccount............. account=${JSON.stringify(account)}`);
+    [account] = yield call([api, api.getAccountsAsync], [username])
+    // const fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_accounts?params=[["${username}"]]`);
+    // const json_result = yield call([fetch_result, fetch_result.json]);
+    // [account] = json_result.result;
+    // console.log(`getAccount............. account=${JSON.stringify(account)}`);
     if (account) {
       account = fromJS(account)
       yield put(g.actions.receiveAccount({account}))
@@ -37,10 +37,10 @@ export function* watchGetState() {
 /** Manual refreshes.  The router is in FetchDataSaga. */
 export function* getState({payload: {url}}) {
   try {
-    // const state = yield call([api, api.getStateAsync], url);
-    const state_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
-    const state_json_result = yield call([state_fetch_result, state_fetch_result.json]);
-    const state = state_json_result.result;
+    const state = yield call([api, api.getStateAsync], url);
+    // const state_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
+    // const state_json_result = yield call([state_fetch_result, state_fetch_result.json]);
+    // const state = state_json_result.result;
 
     yield put(g.actions.receiveState(state));
   } catch (error) {
