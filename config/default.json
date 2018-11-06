@@ -1,6 +1,5 @@
 {
   "database_url": "mysql://root:password@127.0.0.1/steemit_dev",
-  "disable_signups": false,
   "facebook_app_id": false,
   "grant": {
     "facebook": {
@@ -59,42 +58,14 @@
     "secret_key": false,
     "site_key": false
   },
-  "registrar": {
-    "account": "-",
-    "fee": "0.5 STEEM",
-    "delegation": "150250.000000 VESTS",
-    "signing_key": "5J..."
-  },
   "requestAccountRecovery": {
     "recovery_account": "steem",
     "signing_key": "5J..."
-  },
-  "sendgrid": {
-    "from": "noreply@example.com",
-    "key": "SG.xxx_yyyy",
-    "templates": {
-      "confirm_email": false,
-      "waiting_list_invite": false
-    }
   },
   "server_session_secret": "exiKdyF+IwRIXJDmtGIl4vWUz4i3eVSISpfZoeYc0s4=",
   "session_cookie_key": "stm-dev",
   "session_key": "steemses",
   "site_domain": "whaleshares.io",
-  "tarantool": {
-    "host": "localhost",
-    "password": "",
-    "port": "3301",
-    "username": "guest"
-  },
-  "telesign": {
-    "customer_id": false,
-    "rest_api_key": false
-  },
-  "twilio": {
-    "account_sid": false,
-    "auth_token": false
-  },
   "upload_image": "https://whaleshares.io",
   "steemd_connection_client": "https://rpc.whaleshares.io",
   "steemd_connection_server": "https://rpc.whaleshares.io",
