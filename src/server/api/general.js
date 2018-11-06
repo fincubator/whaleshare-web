@@ -8,6 +8,17 @@ import Mixpanel from 'mixpanel';
 import {PublicKey, Signature, hash} from '@whaleshares/wlsjs/lib/auth/ecc';
 import {api, broadcast} from '@whaleshares/wlsjs';
 // import * as WlsApi from '../../app/utils/WlsApi';
+import RIPEMD160 from 'ripemd160';
+const fs = require('fs');
+const AWS = require('aws-sdk');
+
+const s3 = new AWS.S3({
+  accessKeyId: config.get('s3.access_key'),
+  secretAccessKey: config.get('s3.secret_key'),
+  region: config.get('s3.region'),
+  endpoint: config.get('s3.endpoint'),
+  signatureVersion: config.get('s3.signatureVersion')
+});
 
 const mixpanel = config.get('mixpanel') ? Mixpanel.init(config.get('mixpanel')) : null;
 
@@ -35,6 +46,15 @@ function logRequest(path, ctx, extra) {
   const info = Object.keys(d).map((k) => `${ k }=${ _stringval(d[k]) }`).join(' ')
   console.log(`-- /${ path } --> ${ info }`)
 }
+
+const writeFile = (filepath, data) => {
+  return new Promise(function(resolve, reject) {
+    fs.writeFile(filepath, data, function(err) {
+      if (err) reject(err);
+      else resolve('success');
+    });
+  });
+};
 
 export default function useGeneralApi(app) {
   const router = koa_router({prefix: '/api/v1'});
@@ -128,6 +148,61 @@ export default function useGeneralApi(app) {
       this.body = JSON.stringify({status: 'ok'});
     } catch (error) {
       console.error('Error in /setUserPreferences api call', this.session.uid, error);
+      this.body = JSON.stringify({error: error.message});
+      this.status = 500;
+    }
+  });
+
+  router.post('/imageupload', koaBody, async function(){
+    try {
+      const username = this.session.a;
+      if ((username === undefined) || (username === null)) {
+        throw new Error("invalid user");
+      }
+
+      const jsonBody = this.request.body;
+
+      // data:image/jpeg;base64,
+      let indexData = 0;
+      if (jsonBody.data[23] === ',') {
+        indexData = 23;
+      } else if (jsonBody.data[22] === ',') {
+        indexData = 22;
+      } else if (jsonBody.data[21] === ',') {
+        indexData = 21;
+      } else {
+        throw new Error("could not find index of [,]")
+      }
+
+      let prefix_data = jsonBody.data.substring(0, indexData);
+      let base64_data = jsonBody.data.substring(indexData);
+
+      // extract content type
+      let file_ext = null;
+      if (prefix_data.startsWith('data:image/jpeg;')) file_ext = 'jpeg';
+      else if (prefix_data.startsWith('data:image/jpg;')) file_ext = 'jpg';
+      else if (prefix_data.startsWith('data:image/png;')) file_ext = 'png';
+      else if (prefix_data.startsWith('data:image/gif;')) file_ext = 'gif';
+      else throw new Error("invalid content type");
+
+      const content_type = `image/${file_ext}`;
+
+      let buffer = new Buffer(base64_data, 'base64');
+      const hash_buffer = (new RIPEMD160().update(buffer).digest('hex'));
+      const s3_file_path = `${username}/${hash_buffer}.${file_ext}`;
+
+      await s3.putObject({
+        ACL: 'public-read',
+        Bucket: config.get('s3.bucket'),
+        Key: s3_file_path,
+        Body: buffer,
+        ContentType: content_type
+      }).promise();
+
+      const img_full_path = `https://img.whaleshares.io/${config.get('s3.bucket')}/${s3_file_path}`;
+      this.body = JSON.stringify({status: 'success', message: 'OK', data: img_full_path});
+    } catch (error) {
+      console.error('Error in /imageupload api call', this.session.uid, error);
       this.body = JSON.stringify({error: error.message});
       this.status = 500;
     }
