@@ -100,5 +100,13 @@
   "steemd_connection_server": "https://rpc.whaleshares.io",
   "chain_id": "de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866",
   "address_prefix": "WLS",
-  "wls_api_url": "https://api.wls.services"
+  "wls_api_url": "https://api.wls.services",
+  "s3": {
+    "access_key": "",
+    "secret_key": "",
+    "region": "nl-ams",
+    "endpoint": "s3.nl-ams.scw.cloud",
+    "signatureVersion": "v4",
+    "bucket": "img-bucket"
+  }
 }

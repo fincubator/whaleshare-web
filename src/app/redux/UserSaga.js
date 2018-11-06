@@ -418,8 +418,7 @@ function* uploadImage({payload: {file, dataUrl, filename = 'image.txt', progress
     data = new Buffer(dataBs64, 'base64')
   }
 
-  const postUrl = `${$STM_Config.upload_image}/imageupload`;
-
+  const postUrl = `/api/v1/imageupload`;
   const xhr = new XMLHttpRequest()
   xhr.open('POST', postUrl)
   xhr.onload = function () {
@@ -430,7 +429,8 @@ function* uploadImage({payload: {file, dataUrl, filename = 'image.txt', progress
       progress({error: 'Error: ' + error})
       return
     }
-    const url = `${$STM_Config.upload_image}/imageupload_data/${res.data}`;
+    // const url = `${$STM_Config.upload_image}/imageupload_data/${res.data}`;
+    const url = res.data;
     progress({url})
   }
   xhr.onerror = function (error) {
