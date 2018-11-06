@@ -9,7 +9,6 @@ import {PublicKey, Signature, hash} from '@whaleshares/wlsjs/lib/auth/ecc';
 import {api, broadcast} from '@whaleshares/wlsjs';
 // import * as WlsApi from '../../app/utils/WlsApi';
 import RIPEMD160 from 'ripemd160';
-const fs = require('fs');
 const AWS = require('aws-sdk');
 
 const s3 = new AWS.S3({
@@ -46,15 +45,6 @@ function logRequest(path, ctx, extra) {
   const info = Object.keys(d).map((k) => `${ k }=${ _stringval(d[k]) }`).join(' ')
   console.log(`-- /${ path } --> ${ info }`)
 }
-
-const writeFile = (filepath, data) => {
-  return new Promise(function(resolve, reject) {
-    fs.writeFile(filepath, data, function(err) {
-      if (err) reject(err);
-      else resolve('success');
-    });
-  });
-};
 
 export default function useGeneralApi(app) {
   const router = koa_router({prefix: '/api/v1'});
