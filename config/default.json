@@ -46,7 +46,7 @@
     "reportOnly": false,
     "setAllHeaders": true
   },
-  "img_proxy_prefix": "https://wls.rjght.com/imageproxy/",
+  "img_proxy_prefix": "https://imgp.whaleshares.io/",
   "ipfs_prefix": false,
   "mixpanel": false,
   "newrelic": false,
