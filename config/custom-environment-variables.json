@@ -1,5 +1,4 @@
 {
-  "database_url": "SDC_DATABASE_URL",
   "facebook_app_id": "SDC_FACEBOOK_APP_ID",
   "grant": {
     "facebook": {
