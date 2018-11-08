@@ -17,26 +17,11 @@ class ExplorePost extends Component {
       copied: false
     };
     this.onCopy = this.onCopy.bind(this);
-    // this.Steemd = this.Steemd.bind(this);
-    // this.Steemdb = this.Steemdb.bind(this);
     // this.Busy = this.Busy.bind(this);
-    // this.Phist = this.Phist.bind(this);
   }
-
-  // Steemd() {
-  //     // serverApiRecordEvent('SteemdView', this.props.permlink);
-  // }
-
-  // Steemdb() {
-  //     // serverApiRecordEvent('SteemdbView', this.props.permlink);
-  // }
 
   // Busy() {
   //     // serverApiRecordEvent('Busy view', this.props.permlink);
-  // }
-
-  // Phist() {
-  //     // serverApiRecordEvent('PhistView', this.props.permlink);
   // }
 
   onCopy() {
@@ -47,11 +32,8 @@ class ExplorePost extends Component {
 
   render() {
     const link = this.props.permlink;
-    // const steemd = 'https://steemd.com' + link;
-    // const steemdb = 'https://steemdb.com' + link;
     // const busy = 'https://busy.org' + link;
     const whaleshares_io = 'https://whaleshares.io' + link;
-    // const phist = 'https://phist.steemdata.com/history?identifier=steemit.com' + link;
     let text = this.state.copied == true ? tt('explorepost_jsx.copied') : tt('explorepost_jsx.copy');
     return (
       <span className="ExplorePost">

@@ -190,7 +190,7 @@ function img(state, child) {
   }
 }
 
-// For all img elements with non-local URLs, prepend the proxy URL (e.g. `https://img0.steemit.com/0x0/`)
+// For all img elements with non-local URLs, prepend the proxy URL (e.g. `https://imgp.whaleshares.io/0x0/`)
 function proxifyImages(doc, enable_proxify_images=true) {
   if (!doc) return;
   [...doc.getElementsByTagName('img')].forEach(node => {
