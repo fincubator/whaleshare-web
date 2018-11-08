@@ -25,6 +25,7 @@ class MarkdownViewer extends Component {
     large: React.PropTypes.bool,
     // formId: React.PropTypes.string, // This is unique for every editor of every post (including reply or edit)
     canEdit: React.PropTypes.bool,
+    enable_proxify_images: React.PropTypes.bool,
     jsonMetadata: React.PropTypes.object,
     highQualityPost: React.PropTypes.bool,
     noImage: React.PropTypes.bool,
@@ -38,6 +39,7 @@ class MarkdownViewer extends Component {
     large: false,
     allowDangerousHTML: false,
     hideImages: false,
+    enable_proxify_images: true,
   }
 
   constructor() {
@@ -50,6 +52,7 @@ class MarkdownViewer extends Component {
       np.large !== this.props.large ||
       // np.formId !== this.props.formId ||
       np.canEdit !== this.props.canEdit ||
+      np.enable_proxify_images !== this.props.enable_proxify_images ||
       ns.allowNoImage !== this.state.allowNoImage
   }
 
@@ -62,7 +65,7 @@ class MarkdownViewer extends Component {
     const {allowNoImage} = this.state
     let {text} = this.props
     if (!text) text = '' // text can be empty, still view the link meta data
-    const {large, canEdit, /*formId, jsonMetadata,*/ highQualityPost} = this.props;
+    const {large, canEdit, enable_proxify_images, /*formId, jsonMetadata,*/ highQualityPost} = this.props;
 
     let html = false;
     // See also ReplyEditor isHtmlTest
@@ -83,7 +86,7 @@ class MarkdownViewer extends Component {
     renderedText = emoji.emojify(renderedText);
 
     // Embed videos, link mentions and hashtags, etc...
-    if (renderedText) renderedText = HtmlReady(renderedText, {hideImages, enable_proxify_images: !canEdit}).html
+    if (renderedText) renderedText = HtmlReady(renderedText, {hideImages, enable_proxify_images: enable_proxify_images}).html
 
     // Complete removal of javascript and other dangerous tags..
     // The must remain as close as possible to dangerouslySetInnerHTML

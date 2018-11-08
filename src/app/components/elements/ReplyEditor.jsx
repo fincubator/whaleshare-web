@@ -501,7 +501,7 @@ class ReplyEditor extends React.Component {
               </div>}
               <h6>{tt('g.preview')}</h6>
               <MarkdownViewer formId={formId} text={body.value} canEdit jsonMetadata={jsonMetadata} large={isStory}
-                              noImage={noImage}/>
+                              noImage={noImage} enable_proxify_images={false} />
             </div>}
           </form>
         </div>

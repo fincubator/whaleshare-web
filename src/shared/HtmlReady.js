@@ -140,8 +140,8 @@ function link(state, child) {
       }
 
       // Unlink potential phishing attempts
-      if (child.textContent.match(/https?:\/\/(.*@)?(www\.)?bet\.whaleshares\.net/)
-        && !url.match(/https?:\/\/(.*@)?(www\.)?beta\.whaleshares\.net/)) {
+      if (child.textContent.match(/https?:\/\/(.*@)?whaleshares\.io/)
+        && !url.match(/https?:\/\/(.*@)?whaleshares\.io/)) {
         const phishyDiv = child.ownerDocument.createElement('div');
         phishyDiv.textContent = `${child.textContent} / ${url}`;
         phishyDiv.setAttribute('title', getPhishingWarningMessage());
@@ -194,15 +194,15 @@ function img(state, child) {
 function proxifyImages(doc, enable_proxify_images=true) {
   if (!doc) return;
   [...doc.getElementsByTagName('img')].forEach(node => {
-    const url = node.getAttribute('src')
-    if (!linksRe.local.test(url)) {
+    const url = node.getAttribute('src');
+    // if (!linksRe.local.test(url)) {
       if (enable_proxify_images) {
         node.setAttribute('src', proxifyImageUrl(url, true));
       }
       // else {
       //   node.setAttribute('src', url);
       // }
-    }
+    // }
   })
 }
 
