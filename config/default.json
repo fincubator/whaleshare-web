@@ -32,7 +32,7 @@
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' whaleshares.io wss://whaleshares.io/ws https://whaleshares.io wls.rjght.com rpc.whaleshares.io wss://rpc.whaleshares.io https://rpc.whaleshares.io https://wls.rjght.com rpc.wls.services wss://rpc.wls.services https://rpc.wls.services api.wls.services https://api.wls.services",
+      "connectSrc": "'self' whaleshares.io wss://whaleshares.io/ws https://whaleshares.io rpc.whaleshares.io wss://rpc.whaleshares.io https://rpc.whaleshares.io rpc.wls.services wss://rpc.wls.services https://rpc.wls.services api.wls.services https://api.wls.services",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com fonts.googleapis.com zavoloklom.github.io",
       "frameAncestors": "'none'",

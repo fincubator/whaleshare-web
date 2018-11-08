@@ -3,7 +3,6 @@ import tt from 'counterpart'
 import linksRe, {any as linksAny} from 'app/utils/Links'
 import {validate_account_name} from 'app/utils/ChainValidation'
 import proxifyImageUrl from 'app/utils/ProxifyUrl'
-import {local_cdn} from "../app/utils/Links";
 
 export const getPhishingWarningMessage = () => tt('g.phishy_message');
 
@@ -196,7 +195,7 @@ function proxifyImages(doc, enable_proxify_images=true) {
   if (!doc) return;
   [...doc.getElementsByTagName('img')].forEach(node => {
     const url = node.getAttribute('src')
-    if (!linksRe.local_cdn.test(url)) {
+    if (!linksRe.local.test(url)) {
       if (enable_proxify_images) {
         node.setAttribute('src', proxifyImageUrl(url, true));
       }
