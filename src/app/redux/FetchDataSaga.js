@@ -66,10 +66,10 @@ export function* fetchState(location_change_action) {
 
   yield put({type: 'FETCH_DATA_BEGIN'});
   try {
-    // let state = yield call([api, api.getStateAsync], url);
-    const state_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
-    const state_json_result = yield call([state_fetch_result, state_fetch_result.json]);
-    let state = state_json_result.result;
+    let state = yield call([api, api.getStateAsync], url);
+    // const state_fetch_result = yield call(fetch, `${$STM_Config.wls_api_url}/rest2jsonrpc/database_api/get_state?params=["${url}"]`);
+    // const state_json_result = yield call([state_fetch_result, state_fetch_result.json]);
+    // let state = state_json_result.result;
     // console.log(`state=${JSON.stringify(state)}`);
 
     if (posts_shares_load > 0) {
@@ -132,30 +132,23 @@ export function* fetchData(action) {
 
   if ((category === 'posts') || (category === 'shares')) {
     ////////////////////////////////////////////////////////////////////////////////
-
     yield put({type: 'FETCH_DATA_BEGIN'});
     try {
-      const data = yield call([api, api[call_name]], ...args);
-      yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
+      let data = [];
+      const wls_api_url = `${$STM_Config.wls_api_url}/${category}/${accountname}?start_author=${author}&start_permlink=${permlink}`;
+      const fetch_result = yield call(fetch, wls_api_url);
+      const json_result = yield call([fetch_result, fetch_result.json]);
+      if (json_result.status === 'success') {
+        data = json_result.data;
+      }
 
-      // let data = [];
-      //
-      // const wls_api_url = `${$STM_Config.wls_api_url}/${category}/${accountname}?start_author=${author}&start_permlink=${permlink}`;
-      // const fetch_result = yield call(fetch, wls_api_url);
-      // const json_result = yield call([fetch_result, fetch_result.json]);
-      // if (json_result.status === 'success') {
-      //   data = json_result.data;
-      // }
-      //
-      // yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
+      yield put(GlobalReducer.actions.receiveData({data, order, category, author, permlink, accountname}));
     } catch (error) {
       console.error('~~ Saga fetchData error ~~>', call_name, args, error);
       yield put({type: 'global/STEEM_API_ERROR', error: error.message});
     }
-
   } else {
     ////////////////////////////////////////////////////////////////////////////////
-
     let call_name, args;
     if (order === 'trending') {
       // call_name = 'get_discussions_by_trending';
