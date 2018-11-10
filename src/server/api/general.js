@@ -151,6 +151,10 @@ export default function useGeneralApi(app) {
       }
 
       const jsonBody = this.request.body;
+      // console.log(`jsonBody.data.length=${jsonBody.data.length}`);
+      if (jsonBody.data.length > 5242880) { // 5MB
+        throw new Error("File size too big!");
+      }
 
       // data:image/jpeg;base64,
       let indexData = 0;
@@ -178,6 +182,11 @@ export default function useGeneralApi(app) {
       const content_type = `image/${file_ext}`;
 
       let buffer = new Buffer(base64_data, 'base64');
+      // console.log(`buffer.length=${buffer.length}`);
+      if (buffer.length > 4194304) { // 4MB
+        throw new Error("File size too big!");
+      }
+
       const hash_buffer = (new RIPEMD160().update(buffer).digest('hex'));
       const s3_file_path = `${username}/${hash_buffer}.${file_ext}`;
 
