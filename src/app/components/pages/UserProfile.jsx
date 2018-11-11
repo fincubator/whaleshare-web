@@ -464,7 +464,7 @@ export default class UserProfile extends React.Component {
 
     let cover_image_style = {}
     if (cover_image) {
-      cover_image_style = {backgroundImage: "url(" + proxifyImageUrl(cover_image, '2048x512') + ")"}
+      cover_image_style = {backgroundImage: "url(" + proxifyImageUrl(cover_image, '1024x256') + ")"}
     }
 
     return (
