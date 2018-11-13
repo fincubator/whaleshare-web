@@ -418,6 +418,8 @@ function* uploadImage({payload: {file, dataUrl, filename = 'image.txt', progress
     data = new Buffer(dataBs64, 'base64')
   }
 
+  // console.log(data.length);
+
   const postUrl = `/api/v1/imageupload`;
   const xhr = new XMLHttpRequest()
   xhr.open('POST', postUrl)
@@ -446,7 +448,7 @@ function* uploadImage({payload: {file, dataUrl, filename = 'image.txt', progress
   };
 
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.send(JSON.stringify({data: data}));
+  xhr.send(JSON.stringify({data: data, username: username}));
 }
 
 

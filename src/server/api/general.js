@@ -49,7 +49,11 @@ function logRequest(path, ctx, extra) {
 export default function useGeneralApi(app) {
   const router = koa_router({prefix: '/api/v1'});
   app.use(router.routes());
-  const koaBody = koa_body();
+  const koaBody = koa_body({
+    "formLimit": "5mb",
+    "jsonLimit": "5mb",
+    "textLimit": "5mb"
+  });
 
 
   router.post('/login_account', koaBody, function* () {
@@ -143,7 +147,7 @@ export default function useGeneralApi(app) {
     }
   });
 
-  router.post('/imageupload', koaBody, async function(){
+  router.post('/imageupload', koaBody, function* (){
     try {
       const username = this.session.a;
       if ((username === undefined) || (username === null)) {
@@ -190,7 +194,7 @@ export default function useGeneralApi(app) {
       const hash_buffer = (new RIPEMD160().update(buffer).digest('hex'));
       const s3_file_path = `${username}/${hash_buffer}.${file_ext}`;
 
-      await s3.putObject({
+      yield s3.putObject({
         ACL: 'public-read',
         Bucket: config.get('s3.bucket'),
         Key: s3_file_path,
@@ -199,7 +203,7 @@ export default function useGeneralApi(app) {
       }).promise();
 
       const img_full_path = `https://img.whaleshares.io/${config.get('s3.bucket')}/${s3_file_path}`;
-      this.body = JSON.stringify({status: 'success', message: 'OK', data: img_full_path});
+      this.body = JSON.stringify({status: 'ok', message: 'success', data: img_full_path});
     } catch (error) {
       console.error('Error in /imageupload api call', this.session.uid, error);
       this.body = JSON.stringify({error: error.message});
