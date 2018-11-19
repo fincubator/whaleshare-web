@@ -81,7 +81,7 @@ class Voting extends React.Component {
       // already voted Up, remove the vote
       const weight = up ? (myVote > 0 ? 0 : this.state.weight) : (myVote < 0 ? 0 : -1 * this.state.weight);
       if (this.state.showWeight) this.setState({showWeight: false});
-      this.props.vote(weight, {author, permlink, username, myVote, is_comment})
+      this.props.vote(weight, {author, permlink, username, myVote})
     };
 
     this.handleWeightChange = weight => {
@@ -352,7 +352,7 @@ export default connect(
 
   // mapDispatchToProps
   (dispatch) => ({
-    vote: (weight, {author, permlink, username, myVote, is_comment}) => {
+    vote: (weight, {author, permlink, username, myVote}) => {
       const confirm = () => {
         if (myVote == null) return null
         const t = tt('voting_jsx.we_will_reset_curation_rewards_for_this_post')
@@ -367,20 +367,7 @@ export default connect(
           voter: username, author, permlink, weight,
           __config: {title: weight < 0 ? tt('voting_jsx.confirm_flag') : null},
         },
-        confirm,
-        successCallback: () => {
-          if ((weight > 0) && !is_comment && (username !== author)) {
-            dispatch(transaction.actions.broadcastOperation({
-              type: 'custom_json',
-              operation: {
-                id: 'follow',
-                required_posting_auths: [username],
-                json: JSON.stringify(['reblog', {account: username, author, permlink}]),
-                __config: {title: tt('g.resteem_this_post')}
-              }
-            }))
-          }
-        }
+        confirm
       }))
     },
   })
