@@ -31,7 +31,7 @@
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' whaleshares.io wss://whaleshares.io/ws https://whaleshares.io pubrpc.whaleshares.io rpc.whaleshares.io wss://rpc.whaleshares.io https://rpc.whaleshares.io rpc.wls.services wss://rpc.wls.services https://rpc.wls.services api.wls.services https://api.wls.services api.whaleshares.io https://api.whaleshares.io",
+      "connectSrc": "'self' wls.fintehru.org wss://whaleshares.io/ws https://wls.fintehru.org pubrpc.whaleshares.io rpc.whaleshares.io wss://rpc.whaleshares.io https://rpc.whaleshares.io rpc.wls.services wss://rpc.wls.services https://rpc.wls.services api.wls.services https://api.wls.services api.whaleshares.io https://api.whaleshares.io",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com fonts.googleapis.com zavoloklom.github.io",
       "frameAncestors": "'none'",
@@ -60,8 +60,8 @@
   "server_session_secret": "exiKdyF+IwRIXJDmtGIl4vWUz4i3eVSISpfZoeYc0s4=",
   "session_cookie_key": "stm-dev",
   "session_key": "steemses",
-  "site_domain": "whaleshares.io",
-  "upload_image": "https://whaleshares.io",
+  "site_domain": "wls.fintehru.org",
+  "upload_image": "https://wls.fintehru.org",
   "steemd_connection_client": "https://pubrpc.whaleshares.io",
   "steemd_connection_server": "https://pubrpc.whaleshares.io",
   "chain_id": "de999ada2ff7ed3d3d580381f229b40b5a0261aec48eb830e540080817b72866",

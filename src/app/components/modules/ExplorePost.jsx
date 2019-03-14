@@ -33,7 +33,7 @@ class ExplorePost extends Component {
   render() {
     const link = this.props.permlink;
     // const busy = 'https://busy.org' + link;
-    const whaleshares_io = 'https://whaleshares.io' + link;
+    const whaleshares_io = 'https://wls.fintehru.org' + link;
     let text = this.state.copied == true ? tt('explorepost_jsx.copied') : tt('explorepost_jsx.copy');
     return (
       <span className="ExplorePost">

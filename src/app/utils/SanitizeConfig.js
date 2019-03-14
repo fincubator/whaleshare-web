@@ -126,7 +126,7 @@ export default ({large = true, highQualityPost = true, noImage = false, sanitize
       href = href.trim()
       const attys = {href}
       // If it's not a (relative or absolute) steemit URL...
-      if (!href.match(/^(\/(?!\/)|https:\/\/whaleshares.io)/)) {
+      if (!href.match(/^(\/(?!\/)|https:\/\/wls.fintehru.org)/)) {
         // attys.target = '_blank' // pending iframe impl https://mathiasbynens.github.io/rel-noopener/
         attys.rel = highQualityPost ? 'noopener' : 'nofollow noopener'
       }

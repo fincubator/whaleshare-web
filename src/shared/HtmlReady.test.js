@@ -14,8 +14,8 @@ describe('htmlready', () => {
     expect(HtmlReady(teststring).html).to.equal(teststring);
   });
 
-  it('should allow links where the text portion and href contains whaleshares.io', () => {
-    const dirty = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://whaleshares.io/signup" xmlns="http://www.w3.org/1999/xhtml">https://whaleshares.io/signup</a></xml>';
+  it('should allow links where the text portion and href contains wls.fintehru.org', () => {
+    const dirty = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://wls.fintehru.org/signup" xmlns="http://www.w3.org/1999/xhtml">https://wls.fintehru.org/signup</a></xml>';
     const res = HtmlReady(dirty).html;
     expect(res).to.equal(dirty);
   });
@@ -23,18 +23,18 @@ describe('htmlready', () => {
   it('should not allow links where the text portion contains steemit.com but the link does not', () => {
     // There isn't an easy way to mock counterpart, even with proxyquire, so we just test for the missing translation message -- ugly but ok
 
-    const dirty = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://whaleshares.io/signup" xmlns="http://www.w3.org/1999/xhtml">https://whaleshares.io/signup</a></xml>';
-    const cleansed = '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://whaleshares.io/signup / https://whaleshares.io/signup</div></xml>';
+    const dirty = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://wls.fintehru.org/signup" xmlns="http://www.w3.org/1999/xhtml">https://wls.fintehru.org/signup</a></xml>';
+    const cleansed = '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://wls.fintehru.org/signup / https://wls.fintehru.org/signup</div></xml>';
     const res = HtmlReady(dirty).html;
     expect(res).to.equal(cleansed);
 
-    const withuser = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://whaleshares.io/signup" xmlns="http://www.w3.org/1999/xhtml">https://official@whaleshares.io/signup</a></xml>';
-    const cleansedwithuser = '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://official@whaleshare.io/signup / https://whaleshare.io/signup</div></xml>';
+    const withuser = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://wls.fintehru.org/signup" xmlns="http://www.w3.org/1999/xhtml">https://official@wls.fintehru.org/signup</a></xml>';
+    const cleansedwithuser = '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://official@wls.fintehru.org/signup / https://wls.fintehru.org/signup</div></xml>';
     const reswithuser = HtmlReady(withuser).html;
     expect(reswithuser).to.equal(cleansedwithuser);
 
-    const noendingslash = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://whaleshare.io" xmlns="http://www.w3.org/1999/xhtml">https://whaleshares.io</a></xml>';
-    const cleansednoendingslash = '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://whaleshares.io / https://whaleshare.io</div></xml>';
+    const noendingslash = '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://wls.fintehru.org" xmlns="http://www.w3.org/1999/xhtml">https://wls.fintehru.org</a></xml>';
+    const cleansednoendingslash = '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://wls.fintehru.org / https://wls.fintehru.org</div></xml>';
     const resnoendingslash = HtmlReady(noendingslash).html;
     expect(resnoendingslash).to.equal(cleansednoendingslash);
   });

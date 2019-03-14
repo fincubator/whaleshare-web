@@ -47,7 +47,7 @@ export default function ServerHTML({body, assets, locale, title, meta}) {
     {assets.script.map((href, idx) => <script key={idx} src={href}></script>)}
 
 
-    {/*<script src="https://whaleshares.io/cryptochat/bundle.js"></script>*/}
+    {/*<script src="https://wls.fintehru.org/cryptochat/bundle.js"></script>*/}
     </body>
     </html>
   );

@@ -1,4 +1,4 @@
-FROM node:7.5
+FROM node:8
 
 # yarn > npm
 #RUN npm install --global yarn
@@ -20,7 +20,6 @@ COPY . /var/app
 #  npm run build
 
 RUN mkdir tmp && \
-  npm test && \
   npm run-script build
 
 ENV PORT 8080

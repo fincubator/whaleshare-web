@@ -17,8 +17,8 @@ do **not** open a issue. Please request help from the users in the [Discord](htt
 
 ## Enhancement Suggestions
 
-Do **not** use the issue tracker to suggest enhancements or improvements to the platform. The best place for these 
-discussions is on whaleshares.io. If there is a well vetted idea that has the support of the community that you feel should 
+Do **not** use the issue tracker to suggest enhancements or improvements to the platform. The best place for these
+discussions is on wls.fintehru.org. If there is a well vetted idea that has the support of the community that you feel should
 be considered by the development team, please email it to [mail@whaleshares.net](mailto:mail@whaleshares.net) for review.
 
 ## Implementation Discussion

@@ -3,7 +3,7 @@ export const APP_NAME = 'Whaleshares';
 export const APP_ICON = 'steem';
 // FIXME figure out best way to do this on both client and server from env
 // vars. client should read $STM_Config, server should read config package.
-export const APP_DOMAIN = 'whaleshares.io';
+export const APP_DOMAIN = 'wls.fintehru.org';
 export const LIQUID_TOKEN = 'WLS';
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
 export const LIQUID_TOKEN_UPPERCASE = 'WLS';
